@@ -1,0 +1,28 @@
+﻿.gmnoprint div {
+    background: rgba(255, 255, 255, 0.38) !important;
+}
+
+.gmnoprint > .gm-style-mtc:nth-of-type(3) {
+    top: 105px;
+}
+
+.gmnoprint > .gm-style-mtc:nth-of-type(2) {
+    top: 70px;
+}
+
+.gmnoprint > .gm-style-mtc:nth-of-type(1) {
+    top: 35px;
+}
+
+.gmnoprint > .gm-style-mtc {
+    width: 50px !important;
+    position: absolute !important;
+}
+
+.gmnoprint div {
+    background: rgba(255, 255, 255, 0.38) !important;
+}
+
+.gmnoprint [draggable="false"].gm-style-cc, .gmnoprint.gm-style-cc {
+    display: none;
+}

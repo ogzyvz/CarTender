@@ -1,0 +1,380 @@
+@font-face {
+  font-family: 'infoline';
+  src:  url('fonts/infoline.eot?shaequ');
+  src:  url('fonts/infoline.eot?shaequ#iefix') format('embedded-opentype'),
+    url('fonts/infoline.ttf?shaequ') format('truetype'),
+    url('fonts/infoline.woff?shaequ') format('woff'),
+    url('fonts/infoline.svg?shaequ#infoline') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ii-"]:before, [class*=" ii-"]:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'infoline' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ii-Artboard5:before {
+  content: "\e900";
+}
+.ii-add:before {
+  content: "\e901";
+}
+.ii-agaclar-fidanlar:before {
+  content: "\e902";
+}
+.ii-alacaklar:before {
+  content: "\e903";
+}
+.ii-ambarmevcudu:before {
+  content: "\e904";
+}
+.ii-anasayfa:before {
+  content: "\e905";
+}
+.ii-arazi-islahi:before {
+  content: "\e906";
+}
+.ii-araziler:before {
+  content: "\e907";
+}
+.ii-ari:before {
+  content: "\e908";
+}
+.ii-ayarlar:before {
+  content: "\e909";
+}
+.ii-bicerdover:before {
+  content: "\e90a";
+}
+.ii-bicerdover2:before {
+  content: "\e90b";
+}
+.ii-bina-yapi:before {
+  content: "\e90c";
+}
+.ii-bitki:before {
+  content: "\e90d";
+}
+.ii-bitkiseluretim:before {
+  content: "\e90e";
+}
+.ii-bolgeler:before {
+  content: "\e90f";
+}
+.ii-borclar:before {
+  content: "\e910";
+}
+.ii-ciftci:before {
+  content: "\e911";
+}
+.ii-ciftlik:before {
+  content: "\e912";
+}
+.ii-ciftlik3:before {
+  content: "\e913";
+}
+.ii-ciftlik4:before {
+  content: "\e914";
+}
+.ii-destekler:before {
+  content: "\e915";
+}
+.ii-deve:before {
+  content: "\e916";
+}
+.ii-domuz:before {
+  content: "\e917";
+}
+.ii-donemler:before {
+  content: "\e918";
+}
+.ii-edit:before {
+  content: "\e919";
+}
+.ii-elma:before {
+  content: "\e91a";
+}
+.ii-etki-alanlari:before {
+  content: "\e91b";
+}
+.ii-filtre:before {
+  content: "\e91c";
+}
+.ii-gelirler .path1:before {
+  content: "\e91d";
+  color: rgb(0, 0, 0);
+}
+.ii-gelirler .path2:before {
+  content: "\e91e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.ii-gelirler .path3:before {
+  content: "\e91f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.ii-gelirler .path4:before {
+  content: "\e920";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.ii-gelirler .path5:before {
+  content: "\e921";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.ii-gelirler .path6:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.ii-gelirler .path7:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.ii-gelirler .path8:before {
+  content: "\e924";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.ii-gelirler .path9:before {
+  content: "\e925";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.ii-gelirler .path10:before {
+  content: "\e926";
+  margin-left: -1em;
+  color: rgb(19, 0, 0);
+}
+.ii-genel-isletme-ozellikleri:before {
+  content: "\e927";
+}
+.ii-giderler .path1:before {
+  content: "\e928";
+  color: rgb(0, 0, 0);
+}
+.ii-giderler .path2:before {
+  content: "\e929";
+  margin-left: -1.0302734375em;
+  color: rgb(0, 0, 0);
+}
+.ii-giderler .path3:before {
+  content: "\e92a";
+  margin-left: -1.0302734375em;
+  color: rgb(0, 0, 0);
+}
+.ii-giderler .path4:before {
+  content: "\e92b";
+  margin-left: -1.0302734375em;
+  color: rgb(0, 0, 0);
+}
+.ii-giderler .path5:before {
+  content: "\e92c";
+  margin-left: -1.0302734375em;
+  color: rgb(0, 0, 0);
+}
+.ii-giderler .path6:before {
+  content: "\e92d";
+  margin-left: -1.0302734375em;
+  color: rgb(0, 0, 0);
+}
+.ii-giderler .path7:before {
+  content: "\e92e";
+  margin-left: -1.0302734375em;
+  color: rgb(0, 0, 0);
+}
+.ii-giderler .path8:before {
+  content: "\e92f";
+  margin-left: -1.0302734375em;
+  color: rgb(0, 0, 0);
+}
+.ii-giderler .path9:before {
+  content: "\e930";
+  margin-left: -1.0302734375em;
+  color: rgb(0, 0, 0);
+}
+.ii-giderler .path10:before {
+  content: "\e931";
+  margin-left: -1.0302734375em;
+  color: rgb(19, 0, 0);
+}
+.ii-gubre:before {
+  content: "\e932";
+}
+.ii-gunes:before {
+  content: "\e933";
+}
+.ii-hareketler:before {
+  content: "\e934";
+}
+.ii-harita:before {
+  content: "\e935";
+}
+.ii-harita-pin:before {
+  content: "\e936";
+}
+.ii-havzalar:before {
+  content: "\e937";
+}
+.ii-hayvanlar:before {
+  content: "\e938";
+}
+.ii-hayvansaluretim:before {
+  content: "\e939";
+}
+.ii-hesap-kodlari:before {
+  content: "\e93a";
+}
+.ii-hesap-kodlari-liste:before {
+  content: "\e93b";
+}
+.ii-hesap-kodu-operasyonlari:before {
+  content: "\e93c";
+}
+.ii-icerikler:before {
+  content: "\e93d";
+}
+.ii-ilceler:before {
+  content: "\e93e";
+}
+.ii-isletme-ciktilari:before {
+  content: "\e93f";
+}
+.ii-isletme-ciktilari-detayli:before {
+  content: "\e940";
+}
+.ii-isletme-envanteri:before {
+  content: "\e941";
+}
+.ii-isletmeler:before {
+  content: "\e942";
+}
+.ii-isletme-masraflari:before {
+  content: "\e943";
+}
+.ii-isletme-sayilari:before {
+  content: "\e944";
+}
+.ii-isletme-tipleri:before {
+  content: "\e945";
+}
+.ii-istasyon:before {
+  content: "\e946";
+}
+.ii-istasyon2:before {
+  content: "\e947";
+}
+.ii-istasyon3:before {
+  content: "\e948";
+}
+.ii-kazakistan:before {
+  content: "\e949";
+}
+.ii-kelebek:before {
+  content: "\e94a";
+}
+.ii-kisiler:before {
+  content: "\e94b";
+}
+.ii-kotalar:before {
+  content: "\e94c";
+}
+.ii-krediler:before {
+  content: "\e94d";
+}
+.ii-kullanicilar:before {
+  content: "\e94e";
+}
+.ii-listview:before {
+  content: "\e94f";
+}
+.ii-lokasyon:before {
+  content: "\e950";
+}
+.ii-lokasyon2:before {
+  content: "\e951";
+}
+.ii-misafirler:before {
+  content: "\e953";
+}
+.ii-petek:before {
+  content: "\e954";
+}
+.ii-raporlar:before {
+  content: "\e955";
+}
+.ii-remove:before {
+  content: "\e956";
+}
+.ii-roller:before {
+  content: "\e957";
+}
+.ii-satinalma:before {
+  content: "\e958";
+}
+.ii-satislar:before {
+  content: "\e959";
+}
+.ii-sebze:before {
+  content: "\e95a";
+}
+.ii-se-hesaplamalari:before {
+  content: "\e95b";
+}
+.ii-sehirler:before {
+  content: "\e95c";
+}
+.ii-sermayeuretim:before {
+  content: "\e95d";
+}
+.ii-tabletler:before {
+  content: "\e95e";
+}
+.ii-tarla:before {
+  content: "\e95f";
+}
+.ii-tarla1:before {
+  content: "\e960";
+}
+.ii-tavuk:before {
+  content: "\e961";
+}
+.ii-tipoloji:before {
+  content: "\e962";
+}
+.ii-tipolojiler-grafigi:before {
+  content: "\e963";
+}
+.ii-tipoloji-listesi:before {
+  content: "\e964";
+}
+.ii-toplu-islemler:before {
+  content: "\e965";
+}
+.ii-tuketim:before {
+  content: "\e966";
+}
+.ii-turkiye:before {
+  content: "\e967";
+}
+.ii-veri-durumu:before {
+  content: "\e968";
+}
+.ii-yumurta:before {
+  content: "\e969";
+}
+

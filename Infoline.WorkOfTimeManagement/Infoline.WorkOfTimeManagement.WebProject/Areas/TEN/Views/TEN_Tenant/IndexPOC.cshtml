@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Demo Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("yellow").Text("Son Kiracı").Value("Özşahlar").IconClass("fa fa-home")
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("navy").Text("Toplam Kiracı").Value("8 Adet").IconClass("fa fa-home")
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("blue").Text("Aktif Kiracı").Value("7 Adet").IconClass("fa fa-home")
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("red").Text("Demo Kiracı").Value("55 Adet ").IconClass("fa fa-home")
+    </div>
+</div>
+
+
+@(Html.Akilli()
+    .Grid<Infoline.WorkOfTimeManagement.BusinessData.TEN_Tenant>("TEN_Tenant")
+    .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "TEN_Tenant", new { area = "TEN" })).Filter(a => a.TenantIsPOC == false).Sort(a => a.Add(c => c.TenantCode)).PageSize(25))
+    .Columns(x =>
+    {
+        x.Bound(y => y.id).GridSelector(GridSelectorType.Checkbox);
+        x.Bound(y => y.TenantName).Title("Kiracı Adı").Width(120);
+        x.Bound(y => y.TenantCode).Title("Kiracı Kodu").Width(100);
+        x.Bound(y => y.WebDomain).Title("Web Uygulama Linki").Width(120);
+        x.Bound(y => y.DBCatalog).Title("Veritabanı Adı").Width(120);
+        x.Bound(y => y.WebApplicationName).Title("IIS Uygulama Adı(Web)").Width(120);
+    })
+    .Selectable(x => x.Mode(GridSelectionMode.Multiple))
+    .ToolBar(x =>
+    {
+        x.Custom().Text("Ekle").HtmlAttributes(new Dictionary<string, object>() {{"data-show", "always" }, { "data-method", "GET" } }).Url(Url.Action("Insert", "TEN_Tenant", new { area = "TEN", isPOC = true }));
+        x.Custom().Text("Düzenle").HtmlAttributes(new Dictionary<string, object>() {{"data-show", "single" }, { "data-method", "GET" } }).Url(Url.Action("Update", "TEN_Tenant", new { area = "TEN" }));
+        x.Custom().Text("Detay").HtmlAttributes(new Dictionary<string, object>() {{"data-show", "single" }, { "data-default", "" } }).Url(Url.Action("Detail", "TEN_Tenant", new { area = "TEN" }));
+        x.Custom().Text("Sil").HtmlAttributes(new Dictionary<string, object>() {{"data-ask", "" }}).Url(Url.Action("Delete", "TEN_Tenant", new { area = "TEN" }));
+    }))

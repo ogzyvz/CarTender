@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <connection>
+    <server>46.221.52.221</server>
+    <userName>developer</userName>
+    <password>eoaNGvGI8y6m7e56kgPzJQ==</password>
+    <database>IntranetManagement</database>
+  </connection>
+
+  <webPages>
+    <!--<page area="SYS" table="Language" view="Language" />-->
+  </webPages>
+  <extensionVersion>1.0.0</extensionVersion>
+</config>

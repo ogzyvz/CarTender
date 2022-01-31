@@ -1,0 +1,82 @@
+﻿@using Infoline.WorkOfTimeManagement.BusinessAccess
+@{
+    var Controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLowerInvariant();
+    var Action = HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString().ToLowerInvariant();
+    //var Area = HttpContext.Current.Request.RequestContext.RouteData.DataTokens["area"].ToString().ToLowerInvariant();
+
+    var userStatus = (PageSecurity)HttpContext.Current.Session["userStatus"];
+}
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element text-center">
+
+                    <span>
+                        <img alt="image" class="img-circle" src="/content/themes/img/profile_small.jpg" />
+                    </span>
+
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">@(userStatus != null ? (userStatus.user.firstname + " " + userStatus.user.lastname) : "Misafir Kullanıcı")</strong>
+                            </span> <span class="text-muted text-xs block">@(userStatus != null ? userStatus.user.loginname : "Giriş Yapılmadı") <b class="caret"></b></span>
+                        </span>
+                    </a>
+
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="@Url.Action("Profile","Account",new { area=""})">Profilim</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Action("SignOut","Account",new { area=""})">Oturumu Kapat</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    <img style="height:34px;" src="~/Content/Custom/img/logo.png" />
+                    <span class="hide">Infoline +</span>
+                </div>
+            </li>
+
+
+            <li>
+                <a href="@Url.Action("Index","Account",new {area=""})" data-toggle="tooltip" title="SİSTEM ÖZETİ" data-placement="right"><i class="fa fa-bar-chart"></i> <span class="nav-label">Sistem Özeti</span></a>
+            </li>
+
+            <li>
+                <a href="#" data-toggle="tooltip" title="Kiracı İşlemleri" data-placement="right"><i class="fa fa-desktop"></i> <span class="nav-label">Kiracı İşlemleri</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="@Url.Action("Insert","TEN_Tenant",new {area="TEN",isPOC = false })">Yeni Kiracı Ekle</a></li>
+                    <li><a href="@Url.Action("Index","TEN_Tenant",new {area="TEN"})">Kiracı Listesi</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" data-toggle="tooltip" title="Kiracı İşlemleri" data-placement="right"><i class="fa fa-folder"></i> <span class="nav-label">Demo İşlemleri</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    @*<li><a href="@Url.Action("Insert","TEN_Tenant",new {area="TEN",isPOC = true })">Yeni Demo Ekle</a></li>
+                    <li><a href="@Url.Action("IndexPOC","TEN_Tenant",new {area="TEN" })">Demo Listesi</a></li>*@
+                    <li><a href="@Url.Action("DemoRequests","VWTEN_DemonstrationRequest",new {area="TEN" })">Demo Talepleri</a></li>
+                </ul>
+            </li>
+
+
+
+            <li>
+                <a href="#" data-toggle="tooltip" title="KULLANICI YÖNETİMİ" data-placement="right"><i class="fa fa-user-secret"></i> <span class="nav-label">Kullanıcı ve Rol İşlemleri </span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="@Url.Action("Index","VWSH_User",new {area="SH" })">Kullanıcı İşlemleri</a></li>
+                    <li><a href="@Url.Action("Index","SH_Role",new {area="SH" })">Rol İşlemleri</a></li>
+                </ul>
+            </li>
+
+
+            <li class="special_link">
+                <a href="@Url.Action("Help","Account",new {area=string.Empty })" style="color:#fff;"><i class="fa fa-question-circle"></i> <span class="nav-label">Yardım</span></a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+<a class="navbar-minimalize minimalize-styl-1 btn btn-primary pull-left" href="#"><i class="fa fa-bars"></i> </a>

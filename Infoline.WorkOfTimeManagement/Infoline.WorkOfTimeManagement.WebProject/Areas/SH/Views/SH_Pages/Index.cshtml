@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Sayfa Havuzu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(
+    Html.Akilli().Grid <Infoline.WorkOfTimeManagement.BusinessData.SH_Pages > ("SH_Pages")
+     .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "SH_Pages", new { area = "SH" })).Filter(a => a.Add(b => b.ReturnParametre).IsEqualTo("ActionResult")).Sort(a => a.Add(b => b.Status).Ascending()).Sort(a => a.Add(b => b.created).Descending()).PageSize(25))
+     .Columns(a =>
+     {
+         a.Bound(q => q.id).GridSelector(GridSelectorType.Checkbox);
+         a.Bound(y => y.created).Title("Kayıt Tarihi").Format(Extensions.DateFormatShort(true)).Width(160);
+         a.Bound(y => y.Action).Title("Sayfa Linki");
+         a.Bound(y => y.Description).Title("Sayfa Başlık").Width(320);
+         a.Bound(y => y.Bread).Title("Site Map Açıklama").Width(160);
+     })
+     .ToolBar(x =>
+     {
+
+         x.Custom().Text("SAYFA İÇERİK GÜNCELLEME").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-method", "GET" } }).Url(Url.Action("Update", "SH_Pages", new { area = "SH" }));
+     })
+)

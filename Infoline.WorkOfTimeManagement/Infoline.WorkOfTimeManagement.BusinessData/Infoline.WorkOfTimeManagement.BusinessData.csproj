@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D4C5ADCB-6C8B-4C48-972B-5C919C6BACF4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Infoline.WorkOfTimeManagement.BusinessData</RootNamespace>
+    <AssemblyName>Infoline.WorkOfTimeManagement.BusinessData</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GeoAPI">
+      <HintPath>..\..\Solution Items\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseObjects\SYS_Email.cs" />
+    <Compile Include="DatabaseObjects\SYS_Files.cs" />
+    <Compile Include="DatabaseObjects\TEN_DemonstrationRequest.cs" />
+    <Compile Include="DatabaseObjects\TEN_Tenant.cs" />
+    <Compile Include="DatabaseObjects\VWSYS_Email.cs" />
+    <Compile Include="DatabaseObjects\VWSYS_Files.cs" />
+    <Compile Include="DatabaseObjects\VWSYS_Tables.cs" />
+    <Compile Include="DatabaseObjects\VWSYS_TablesColumns.cs" />
+    <Compile Include="DatabaseObjects\VWSYS_TablesIndexes.cs" />
+    <Compile Include="DatabaseObjects\VWSYS_TablesRelations.cs" />
+    <Compile Include="DatabaseObjects\VWTEN_DemonstrationRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <!--<ItemGroup>
+    <Content Include="Libs\GeoAPI.dll" />
+    <Content Include="Libs\Infoline.Framework.dll" />
+    <Content Include="Libs\NetTopologySuite.dll" />
+    <Content Include="Libs\Npgsql.dll" />
+  </ItemGroup>-->
+  <ItemGroup>
+    <Compile Include="DatabaseObjects\InfolineTable.cs" />
+    <Compile Include="DatabaseObjects\SH_Pages.cs" />
+    <Compile Include="DatabaseObjects\SH_PagesRole.cs" />
+    <Compile Include="DatabaseObjects\SH_Role.cs" />
+    <Compile Include="DatabaseObjects\SH_Ticket.cs" />
+    <Compile Include="DatabaseObjects\SH_User.cs" />
+    <Compile Include="DatabaseObjects\SH_UserRole.cs" />
+    <Compile Include="DatabaseObjects\SYS_Enums.cs" />
+    <Compile Include="DatabaseObjects\UT_City.cs" />
+    <Compile Include="DatabaseObjects\UT_Town.cs" />
+    <Compile Include="DatabaseObjects\VWSH_PagesRole.cs" />
+    <Compile Include="DatabaseObjects\VWSH_User.cs" />
+    <Compile Include="DatabaseObjects\VWSH_UserRole.cs" />
+    <Compile Include="DatabaseObjects\VWSH_UserPageReport.cs" />
+    <Compile Include="DatabaseObjects\VWSH_UserRolePageReport.cs" />
+    <Compile Include="DatabaseObjects\VWSH_RolePageReport.cs" />
+    <Compile Include="DatabaseObjects\VWSH_PagesRolePageReport.cs" />
+    <Compile Include="DatabaseObjects\VWUT_City.cs" />
+    <Compile Include="DatabaseObjects\VWUT_Town.cs" />
+    <Compile Include="DatabaseObjects\VWSH_Ticket.cs" />
+  </ItemGroup>
+  <!--<ItemGroup>
+    <Content Include="Templates\1_ConnectionString.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\2_CreateBasicTables.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\3_CreateDatabaseObjects.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\4_CreateDatabaseFunctions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\5_CreateSecurityObjects.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\6_CreateHandlers.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\7_CreateMvc.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\General_Manager.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+  </ItemGroup>-->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

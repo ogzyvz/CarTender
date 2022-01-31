@@ -1,0 +1,262 @@
+﻿@using BotDetect;
+@using BotDetect.Web.Mvc;
+@model Infoline.WorkOfTimeManagement.BusinessData.SH_User
+@{
+    ViewBag.Title = "Kullanıcı Kaydı";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+@{
+    MvcCaptcha UserControlCaptcha2 = new MvcCaptcha("UserControlCaptcha2");
+    UserControlCaptcha2.Reset();
+    UserControlCaptcha2.ImageFormat = ImageFormat.Png;
+    UserControlCaptcha2.ImageStyle = ImageStyle.CaughtInTheNet2;
+    UserControlCaptcha2.CodeStyle = CodeStyle.Numeric;
+    UserControlCaptcha2.CodeLength = 5;
+    UserControlCaptcha2.ImageSize = new System.Drawing.Size(91, 22);
+    UserControlCaptcha2.ImageStyle = ImageStyle.BlackOverlap;
+    UserControlCaptcha2.CustomLightColor = System.Drawing.ColorTranslator.FromHtml("#eeeeee");
+    UserControlCaptcha2.CustomDarkColor = System.Drawing.ColorTranslator.FromHtml("#717171");
+}
+
+@section Javascript{
+    <script src="~/Content/Kendo/js/jszip.min.js"></script>
+    <script src="~/Content/Kendo/js/kendo.all.min.js"></script>
+    <script src="~/Content/Kendo/js/kendo.aspnetmvc.min.js"></script>
+    <script src="~/Content/Kendo/js/Kendo.Custom.js"></script>
+
+    <script type="text/javascript">
+
+
+        $(document)
+            .on("ready", function () {
+                $('#UserControlCaptcha2_CaptchaImage').parents('a').attr('title', 'Kodu yenilemek için tıklayınız...').attr('onclick', 'UserControlCaptcha2.ReloadImage(); this.blur(); return false;').removeAttr('href').attr("tabindex", -1);
+                $('#UserControlCaptcha2_CaptchaImage').attr('alt', 'Yenilemek için TIKLAYINIZ').attr("tabindex", -1)
+                $('#UserControlCaptcha2_CaptchaDiv').attr('style', 'width: 90px !important; height: 20px !important;').attr("tabindex", -1);
+                $("#BDC_VCID_UserControlCaptcha2,#BDC_BackWorkaround_UserControlCaptcha2,#UserControlCaptcha2_SoundLink,#UserControlCaptcha2_ReloadLink").attr("tabindex", -1);
+
+                if (window.localStorage["language"] == "TR") {
+                    kendo.culture("tr-TR");
+                } else if (window.localStorage["language"] == "EN") {
+                    kendo.culture("en-US");
+                }
+            })
+            .on("complete", "form", function (e, resp) {
+                if (resp.Result) {
+                    $('body').loadingModal({ text: "Anasayfaya yönlendiriliyorsunuz.", animation: 'rotatingPlane', backgroundColor: 'black' });
+                } else {
+                    $('#UserControlCaptcha2_CaptchaImage').trigger("click");
+                }
+            });
+
+    </script>
+}
+
+@section Css{
+    <link href="~/Content/Kendo/css/kendo.common-material.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Kendo/css/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Kendo/css/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Kendo/css/kendo.material.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Kendo/css/kendo.dataviz.material.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .BDC_CaptchaIconsDiv {
+            display: none !important;
+        }
+    </style>
+}
+
+<script type="text/javascript" data-selector="modalContainer">
+    function GetCityId() {
+        return {
+            CityNumber: $('#city').data('kendoDropDownList').dataItem().CityNumber,
+            filtre: $('#town').data('kendoDropDownList').filterInput.val()
+        };
+    }
+</script>
+
+<style type="text/css">
+    .form-group {
+        margin-bottom: 10px;
+    }
+</style>
+
+
+
+@using (Html.BeginForm("SignUp", "Account", FormMethod.Post, new Dictionary<string, object>() {
+    { "role", "form" },
+    { "data-formType", "Ajax" },
+    { "data-loadingtitle" , "Kayıt olma işlemi yapılıyor.Lütfen bekleyiniz." }
+}))
+{
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        @Html.TextBoxFor(model => model.firstname, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen adınızı giriniz.."}
+            }).Validate(Validations.TextTurkceSpace(true))
+    </div>
+    
+    <div class="form-group">
+        @Html.TextBoxFor(model => model.lastname, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen soyadınızı giriniz"},
+            }).Validate(Validations.TextTurkce(true))
+    </div>
+    
+    <div class="form-group">
+        @Html.TextBoxFor(model => model.title, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen ünvanınızı giriniz.."},
+            }).Validate(Validations.TextTurkceSpace09(true))
+    </div>
+    
+    <div class="form-group">
+        @Html.TextBoxFor(model => model.tckimlikno, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen TC kimlik no giriniz.."},
+                { "data-validateurl","/Account/ValidateTc" }
+            }).Validate(Validations.TCKimlik)
+    </div>
+
+    <div class="form-group">
+        @(Html.Kendo().DatePickerFor(model => model.birthday).HtmlAttributes(new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen doğum tarihinizi giriniz.."},
+            }).Value(DateTime.Now.AddYears(-30)).Format(Extensions.DateFormatShort())
+            .Validate(Validations.Required)
+        )
+
+    </div>
+    
+    <div class="form-group">
+        @Html.TextBoxFor(model => model.loginname, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen kullanıcı adınızı giriniz.."},
+                {"data-validateurl","/Account/ValidateLoginName"},
+            }).Validate(Validations.UserName(true))
+    </div>
+
+    <div class="form-group">
+        @Html.TextBoxFor(model => model.email, new Dictionary<string, object>()
+            {
+                {"placeholder","Email adresi"},
+                {"class","form-control"},
+                { "data-validateurl","/Account/ValidateEmail" }
+            }).Validate(Validations.EMail(true))
+    </div>
+
+    <div class="form-group">
+
+        @Html.PasswordFor(model => model.password, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen şifrenizi giriniz.."},
+            }).Validate(Validations.Password(true))
+    </div>
+
+    <div class="form-group">
+        @Html.Password("rePassword", "", new Dictionary<string, object>()
+    {
+        {"class", "form-control"},
+        {"placeholder", "Lütfen şifrenizi tekrar giriniz.."},
+    }).Validate(Validations.PasswordMatch("#password"))
+    </div>
+    
+    <div class="form-group">
+        @Html.TextBoxFor(model => model.phone, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen telefon numarınızı giriniz"},
+            }).Validate(Validations.TelefonNo(false))
+    </div>
+    
+    <div class="form-group">
+        @Html.TextBoxFor(model => model.cellphone, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen cep telefonu numarınızı giriniz."},
+            }).Validate(Validations.TelefonNo(false))
+    </div>
+    
+    <div class="form-group">
+        @(Html.Kendo().DropDownListFor(model => model.city).HtmlAttributes(new Dictionary<string, object>()
+            {
+                {"style", "width:100%;border:1px solid lightgray"},
+                {"class", "form-control"},
+            })
+            .Filter(FilterType.Contains)
+            .OptionLabel("Lütfen Şehir Seçiniz..")
+            .DataTextField("Name")
+            .DataValueField("Id")
+            .DataSource(s =>
+            {
+                s.Read(r =>
+                {
+                    r.Action("GetUT_City", "General", new { area = string.Empty }); //General controllerının içine datasının oldugu metodu yaz ilk parametreye method ismini ver
+                });
+            }).Validate(Validations.Required)
+        )
+    </div>
+    
+    <div class="form-group">
+        @(Html.Kendo().DropDownListFor(model => model.town).HtmlAttributes(new Dictionary<string, object>()
+            {
+                {"style", "width:100%;border:1px solid lightgray"},
+                {"class", "form-control"},
+            })
+            .OptionLabel("Lütfen İlçe Seçiniz..")
+            .DataTextField("Name")
+            .DataValueField("Id")
+            .Filter(FilterType.Contains)
+            .DataSource(s =>
+            {
+                s.Read(r =>
+                {
+                    r.Action("GetUT_TownByCityNumber", "General", new { area = string.Empty }).Data("GetCityId"); //General controllerının içine datasının oldugu metodu yaz ilk parametreye method ismini ver
+                })
+               .ServerFiltering(true);
+            }).Validate(Validations.Required)
+             .CascadeFrom("city")
+
+        )
+    </div>
+
+    <div class="form-group">
+        @Html.TextAreaFor(model => model.address, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen adresinizi giriniz.."},
+                { "data-validatefields" , "firstName,lastname,tckimlikno,birthday" },
+                { "data-validateurl","/Account/ValidateTCMernis" }
+            }).Validate(Validations.Adres(true))
+    </div>
+
+    <div class="form-group">
+        <label class="control-label hide">Captcha</label>
+        <div class="input-group m-b-xs">
+            <span class="input-group-addon padv5">@Html.Captcha(UserControlCaptcha2)</span>
+            @Html.TextBox("CaptchaCode2", "", new Dictionary<string, object>() {
+                {"class","form-control"},
+                {"autocomplete","off"},
+                {"placeholder","Resimdeki Karakterleri Giriniz.."}
+            }).Validate(Validations.Required)
+        </div>
+    </div>
+
+    <div class="form-group clearfix">
+        <a type="button" href="@Url.Action("SignIn", "Account")" class="btn btn-md pull-left btn-danger">Kullanıcı Girişi</a>
+        <button type="submit" class="btn btn-success pull-right btn-md">Kayıt Ol</button>
+    </div>
+
+}

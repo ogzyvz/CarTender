@@ -1,0 +1,1229 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="DeepManage - Gerçek Zamanlı Cihaz Yönetimi">
+    <meta name='keywords' content='enterprise mobility management, emm, mdm, device management, Android, IOS, remote control' />
+    <meta name='keywords' content='kurumsal cihaz yönetimi, Android, IOS, uzaktan kontrol' />
+    <meta name="author" content="Infoline Bilgi Teknolojileri">
+    <title>WorkOfWork - Gerçek Zamanlı Cihaz Yönetimi</title>
+
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--
+            Google Font
+            ================================================== -->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+    <!--
+            CSS Files
+            ================================================== -->
+    <!-- Plugins -->
+    <link rel="stylesheet" href="content/plugins/custom/plugins.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="content/plugins/custom/style.css">
+    <style>
+        .nav > li.active {
+            border-left: none !important;
+            background: none !important;
+        }
+
+        .navbar-fixed-top {
+            border-bottom: none !important;
+        }
+    </style>
+
+    <!-- Modernizer Script for old Browsers -->
+    <script src='scripts/plugins/custom/modernizr-2.6.2.min.js'></script>
+
+    <link href="content/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="content/plugins/openlayermap/ol.css" type="text/css">
+    <link href="content/plugins/openlayermap/olCustom.css" rel="stylesheet">
+    <link href="content/plugins/openlayermap/geocoder.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129054355-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-129054355-1');
+    </script>
+</head>
+<body>
+    <template english>
+        <a href="{{origin}}{{goHome}}?clang=en-us" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i> EN<b class="caret"></b></a>
+    </template>
+    <template turkish>
+        <a href="{{origin}}{{goHome}}?clang=tr-tr" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i> TR<b class="caret"></b></a>
+    </template>
+    <template one-new>
+        <!-- Start Single Post -->
+        <div class="item">
+            <div class="one-post">
+                <div class="post-img">
+                    <a href="">
+                        <img src="$: image :$" alt="Fatih Projesi Tablet dağıtımı" class="img-responsive">
+                    </a>
+                </div>
+                <div class="post-text">
+                    <div class="title-text">
+                        <a href="" class="title-post">$: pagetitle :$</a>
+                        <div class="post-details">
+                            <a href=""><i class="fa fa-folder-open"></i> Genel</a>
+                            <a href=""><i class="fa fa-calendar-o"></i> $: publishedon :$</a>
+                        </div>
+                    </div>
+                    <div class="post-concept">
+                        <p>$: content :$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!--
+        Start Header
+        ==================================== -->
+    {{>scriptscore}}
+    <header id="home" class="home bg-image waves">
+        <div class="overlay">
+            <div id="particles-js"></div>
+            <!-- Start Navigation Bar -->
+
+            <nav class="navbar navbar-default nav-sec navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="" title="DeepManage"><img src="images/logo_white.svg" alt="DeepManage Logo"></a>
+                    </div>
+                    <!-- / navbar-header -->
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a class="" href="#home"><span>ANA SAYFA</span></a></li>
+                            <li><a href="#about"><span>ÖZELLİKLER</span></a></li>
+                            <li><a href="#screenshots"><span>EKRAN GÖRÜNTÜLERİ</span></a></li>
+                            <li><a href="#blog"><span>HABERLER</span></a></li>
+                            <li><a href="#contact-us"><span>İLETİŞİM</span></a></li>
+                            <li class="dropdown" id="language">
+                                <a class="dropdown-toggle closeClick" data-toggle="dropdown"><i class="fa fa-globe"></i> TR<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="closeClick" href="{{origin}}{{goHome}}?clang=en-us">EN</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end nav-collapse -->
+                </div>
+                <!-- end container -->
+            </nav>
+
+            <!-- End Navigation Bar -->
+
+            <div class="container">
+                <div class="row">
+                    <!-- Start Text Header -->
+                    <div class="col-md-7 col-sm-6">
+                        <div class="header-inner">
+                            <div class="header-content">
+                                <h1 class="home-title word word--magneto wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">WorkOfTime</h1>
+                                <h4 class="wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
+                                    Şirketinizin iş süreçlerini yönetmek için kullandığınız yazılımın artık size kar getirmesini sağlamak istiyormusunuz ? 
+                                    WorkOfTime size şirket süreçlerinizi kolaylıkla yapmanızı, size iş yükü getirmek yerine size zaman ve personel maliyeti kazandırır.
+                                </h4>
+                                <div class="bttn-head">
+                                    <!--<a href="#video-app" class="bttn-applora-gradient wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
+                                        <i class="icon-control-play"></i>
+                                        <span>Demo Video</span>
+                                    </a>-->
+                                    <a data-wow-delay="0.2s" data-wow-duration="1s" href="https://www.youtube.com/watch?v=RV3jKkjpWnc" data-lity class="bttn-applora-gradient wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
+                                        <i class="icon-control-play"></i>
+                                        <span>Demo Video</span>
+                                    </a>
+
+                                    <a href="#contact-us" class="bttn-applora-gradient wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
+                                        <i class="icon-call-out"></i>
+                                        <span>Bize Ulaşın</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Text Header -->
+                    <!-- Start Photo Here -->
+                    <div class="col-md-5 col-sm-6">
+                        <div class="photo-header">
+                            <img src="images/header-slider/devices_screen.png" alt="DeepManage Screen" class="img-responsive wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="1s">
+                        </div>
+                    </div>
+                    <!-- End Photo Here -->
+                </div>
+            </div>
+            <!-- End Container -->
+        </div>
+        <!-- End Overlay -->
+    </header>
+    <!-- End Header -->
+    <!--
+        End Header
+        ==================================== -->
+    <!--
+        Start About Section
+        ==================================== -->
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="mobile-features">
+                    <!-- Start Mobile Slider -->
+                    <div class="col-md-4">
+                        <div class="features-slider owl-carousel owl-theme wow fadeInLeft" data-wow-duration="1s">
+                            <div class="item">
+                                <div class="single-feat-img">
+                                    <img src="images/screenshot/deepmessage.png" alt="Güvenli Mesajlaşma" class="img-responsive">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="single-feat-img">
+                                    <img src="images/screenshot/appnotification.jpg" alt="Toplu Mesaj ve Bildirim" class="img-responsive">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="single-feat-img">
+                                    <img src="images/screenshot/deeptask.png" alt="Görev Yönetimi" class="img-responsive">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="single-feat-img">
+                                    <img src="images/screenshot/appemergency.png" alt="Acil Çağrı Yönetimi" class="img-responsive">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="single-feat-img">
+                                    <img src="images/screenshot/appprofile.jpg" alt="Kurumsal Profil Yönetimi" class="img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Mobile Slider -->
+                    <!-- Start Mobile Slider Content -->
+                    <div class="col-md-8">
+                        <!-- Start Slider Links -->
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active-icon" data-owl-item="0"><a href="#tab_a" data-toggle="pill"><i class="fa fa-commenting-o"></i></a></li>
+                            <li data-owl-item="1"><a href="#tab_b" data-toggle="pill"><i class="fa fa-bell-o"></i></a></li>
+                            <li data-owl-item="2"><a href="#tab_c" data-toggle="pill"><i class="fa fa-tasks"></i></a></li>
+                            <li data-owl-item="3"><a href="#tab_d" data-toggle="pill"><i class="fa fa-warning"></i></a></li>
+                            <li data-owl-item="4"><a href="#tab_e" data-toggle="pill"><i class="fa fa-sliders"></i></a></li>
+                        </ul>
+                        <!-- End Slider Links -->
+                        <div class="tab-content">
+                            <!-- Start Single One -->
+                            <div class="tab-pane active" id="tab_a" data-owl-item="0">
+                                <h4>Güvenli Mesajlaşma</h4>
+                                <p>Kuruluşunuzda güvenli bir şekilde mesajlaşmayı sağlayan kurumsal düzeyde bir mesajlaşma çözümü sağlar. Mesajlar, kullanıcı cihazları arasında geçiş halindeyken şifrelenir ve veri kaybı önleme politikaları düzenlenerek tam bir güvenlik sağlanır.</p>
+                            </div>
+                            <!-- End Single One -->
+                            <!-- Start Single One -->
+                            <div class="tab-pane" id="tab_b" data-owl-item="1">
+                                <h4>Toplu Mesaj ve Bildirim</h4>
+                                <p>Çalışanlarınıza geniş özellikli filtreleme ve yetkilendirme kriterlerine bağlı olarak toplu mesaj ve bildirim gönderilmesine olanak sağlar.</p>
+                            </div>
+                            <!-- End Single One -->
+                            <!-- Start Single One -->
+                            <div class="tab-pane" id="tab_c" data-owl-item="2">
+                                <h4>Görev Yönetimi</h4>
+                                <p>Sahadaki satış ve teknik servis çalışanlarına anlık olarak harita üzerinden görev atar ve takip edebilirsiniz.</p>
+                            </div>
+                            <!-- End Single One -->
+                            <!-- Start Single One -->
+                            <div class="tab-pane" id="tab_d" data-owl-item="3">
+                                <h4>Acil Çağrı Yönetimi</h4>
+                                <p>Acil Çağrı Yönetim konsolu ile sahada yardıma ihtiyaç duyan personellerin anlık çağrılarını konum ve zaman damgalı olarak takip edebilirsiniz.</p>
+                            </div>
+                            <!-- End Single One -->
+                            <!-- Start Single One -->
+                            <div class="tab-pane" id="tab_e" data-owl-item="4">
+                                <h4>Kurumsal Profil Yönetimi</h4>
+                                <p>
+                                    DeepDirectory kuruluşunuz üzerindeki kullanıcı bilgilerinin diğer web ve mobil uygulamalar ile paylaşılmasını, rol, profil, departman ve bölge gibi kayıtları uygulamalar üzerinde kullanabilmenize olanak sağlar
+                                </p>
+                            </div>
+                            <!-- End Single One -->
+                            <!-- Start Single One -->
+                        </div>
+                        <!-- End tab content -->
+                    </div>
+                    <!-- End Mobile Slider Content -->
+                </div>
+                <!-- End mobile-features -->
+            </div>
+            <!-- End row -->
+        </div>
+        <!-- End Container -->
+    </section>
+    <!-- End About -->
+    <!--
+        End About Section
+        ==================================== -->
+    <!--
+        Start Features Section
+        ==================================== -->
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="all-features">
+                <div class="row">
+
+                    <!-- Start Left Features -->
+                    <div class="col-md-4 feat-width">
+                        <div class="feat-left wow fadeInRight" data-wow-duration="1s">
+                            <!-- Start Single Item -->
+                            <div class="single-feat first-feat">
+                                <div class="icon-place">
+                                    <i class="icon-briefcase"></i>
+                                </div>
+                                <div class="feat-text">
+                                    <h4>Bölümleme Ayrıştırma</h4>
+                                    <p>Kurumsal ve kişisel verilerin cihazlarda tamamen ayrılmasını, kurumsal verilerin güvence altına alınmasını ve çalışanların gizliliğini korumayı sağlar.</p>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+                            <!-- Start Single Item -->
+                            <div class="single-feat">
+                                <div class="icon-place">
+                                    <i class="icon-screen-smartphone"></i>
+                                </div>
+                                <div class="feat-text">
+                                    <h4>Cihaz Yönetimi</h4>
+                                    <p>Kurumsal ağınıza, içeriğinize ve kaynaklara bağlanan akıllı telefonlar ve tabletler gibi cihazları görmenizi sağlar.</p>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+                        </div>
+                    </div>
+                    <!-- End Left Features -->
+                    <!-- Start Center Features [Photo] -->
+                    <div class="col-md-4 feat-width">
+                        <div class="feat-center">
+                            <img src="images/android-mascot.png" alt="Applora" class="img-responsive">
+                        </div>
+                    </div>
+                    <!-- End Center Features [Photo] -->
+                    <!-- Start Right Features -->
+                    <div class="col-md-4 feat-width">
+                        <div class="feat-right wow fadeInLeft" data-wow-duration="1s">
+                            <!-- Start Single Item -->
+                            <div class="single-feat first-feat">
+                                <div class="icon-place">
+                                    <i class="icon-cloud-download"></i>
+                                </div>
+                                <div class="feat-text">
+                                    <h4>Uygulama Yönetimi</h4>
+                                    <p>DeepManage Mobil Uygulama Yönetimi, kuruluşunuza kayıtlı tüm cihazlardaki kurumsal uygulamaları yönetmenizi sağlar.</p>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+                            <!-- Start Single Item -->
+                            <div class="single-feat">
+                                <div class="icon-place">
+                                    <i class="icon-book-open"></i>
+                                </div>
+                                <div class="feat-text">
+                                    <h4>İçerik Yönetimi</h4>
+                                    <p>Belge dağıtımını güvence altına alır ve İçerik Kilidi ile istediğiniz zaman, her yerde, içerik işbirliğini geliştirir.</p>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+                        </div>
+                    </div>
+                    <!-- End Right Features -->
+                </div>
+                <!-- End row -->
+            </div>
+            <!-- End all-features -->
+        </div>
+        <!-- End Container -->
+    </section>
+    <!-- End features -->
+    <!--
+        End Features Section
+        ==================================== -->
+    <!--
+        Start Random Features
+        ==================================== -->
+
+    <section id="feat-one" class="feat-one">
+        <div class="container">
+            <!-- Start Single One -->
+            <div class="row">
+                <!-- Start Photo -->
+                <div class="col-md-6 col-md-push-6 wow fadeInRight" data-wow-duration="1s">
+                    <div class="feat-one-img">
+                        <img src="images/kontrolpaneli.png" alt="Admin Kontrol Paneli" class="img-responsive">
+                    </div>
+                </div>
+                <!-- End Photo -->
+                <!-- Start Text -->
+                <div class="col-md-6 col-md-pull-6 wow fadeInLeft" data-wow-duration="1s">
+                    <div class="feat-one-text">
+                        <h2>Kurumsal Bilgilerinizin Güvenliğinizi Sağlayın</h2>
+                        <p>Kurumsal tabletlerin kişiselleştirilmesi ve cihaz kontrolünün merkezden yapılması sağlanmaktadır. Mobil Cihaz Yönetimi (MDM) son kullanıcı isterlerini en aza indirip mobil cihazların şeffaflığını sağlamaktadır. Merkez IT yöneticilerinin kontrol mekanizmasını arttırarak, yeni hizmetlerin benimsenmesini kolaylaştırmakta ve cihazın çalışma süresini arttırmaktadır.</p>
+
+                    </div>
+                </div>
+                <!-- End Text -->
+            </div>
+            <!-- end row -->
+            <!-- End Single One -->
+            <!-- Start Single One -->
+            <div class="row">
+                <!-- Start Photo -->
+                <div class="col-md-6 wow fadeInLeft" data-wow-duration="1s">
+                    <div class="feat-two-img">
+                        <img src="images/imac2.jpg" alt="IMAC Kontrol Paneli" class="img-responsive">
+                    </div>
+                </div>
+                <!-- End Photo -->
+                <!-- Start Text -->
+                <div class="col-md-6 wow fadeInRight" data-wow-duration="1s">
+                    <div class="feat-two-text">
+                        <h2>Kontrolü Elinize Alın</h2>
+                        <p>Cihaz kontrolünü son kullanıcının klasik kullanımından çıkarıp,  merkezci bir kontrole geçişi sağlamaktadır. Mobil cihazlar uzaktan kontrol edilebilir, güncellenebilir, takip edilebilir bir yapıya kavuşmaktadır. Yazılım işletim sistemine ayrıca fırmware seviyesinde yüklenebilmektedir. Son kullanıcının silmesinin önüne geçilmektedir</p>
+                    </div>
+                </div>
+                <!-- End Text -->
+            </div>
+            <!-- end row -->
+            <!-- End Single One -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- End feat-one -->
+    <!--
+        End Random Features
+        ==================================== -->
+    <!--
+        Start Download Section
+        ==================================== -->
+
+    <section id="download" class="download">
+        <div class="overlay">
+            <div class="container">
+                <!-- Start Section Title -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                            <h2>DeepManage Uygulamasını Deneyin</h2>
+                            <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Section Title -->
+                <div class="download-content">
+                    <div class="text-download wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
+                        <p>DeepManage uygulasını mobil cihazınızda denemek için indirin.</p>
+                    </div>
+                    <!-- Start Store Button -->
+                    <div class="store-butt">
+                        <a href="{{playstore}}" target="_blank" class="bttn-applora-gradient wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
+                            <i class="fa fa-android"></i>
+                            <span>Google Play</span>
+                        </a>
+                        <a title="Çok Yakında App Store'da" id="appstore" href="" class="bttn-applora-gradient wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s" style="opacity:0.2">
+                            <i class="fa fa-apple"></i>
+                            <span>App Store</span>
+                        </a>
+                    </div>
+                    <!-- End Store Button -->
+                    <!-- Start Image Download -->
+                    <div class="image-download">
+                        <img src="images/phone3d.png" alt="DeepManage Telefon" class="img-responsive">
+                    </div>
+                    <!-- End Image Download -->
+                </div>
+                <!-- End download-content -->
+            </div>
+            <!-- End container -->
+        </div>
+        <!-- end overlay -->
+    </section>
+    <!-- End download -->
+    <!--
+        End Download Section
+        ==================================== -->
+    <!--
+        Start Screenshot Section
+        ==================================== -->
+
+    <section id="screenshots" class="screenshots">
+        <div class="container text-center">
+            <!-- Start Section Title -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                        <h2>Ekran Görüntüleri</h2>
+                        <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Section Title -->
+            <!-- Start All Items -->
+            <div class="all-outer">
+                <!-- Start Slider -->
+                <div class="screenshot owl-carousel owl-theme wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+
+                    <!-- Start Single Screen -->
+                    <div class="item">
+                        <img src="images/screenshot/s0.jpg" class="img-responsive" alt="Kullanıcı Profil" />
+                    </div>
+                    <!-- End Single Screen -->
+                    <!-- Start Single Screen -->
+                    <div class="item">
+                        <img src="images/screenshot/s1.jpg" class="img-responsive" alt="Menü" />
+                    </div>
+                    <!-- End Single Screen -->
+                    <!-- Start Single Screen -->
+                    <div class="item">
+                        <img src="images/screenshot/s2.jpg" class="img-responsive" alt="İçerik Kütüphanesi" />
+                    </div>
+                    <!-- End Single Screen -->
+                    <!-- Start Single Screen -->
+                    <div class="item">
+                        <img src="images/screenshot/s3.jpg" class="img-responsive" alt="Uygulamalar" />
+                    </div>
+                    <!-- End Single Screen -->
+                    <!-- Start Single Screen -->
+                    <div class="item">
+                        <img src="images/screenshot/s4.png" class="img-responsive" alt="DeepTask" />
+                    </div>
+                    <!-- End Single Screen -->
+                    <!-- Start Single Screen -->
+                    <div class="item">
+                        <img src="images/screenshot/s5.png" class="img-responsive" alt="DeepMessage" />
+                    </div>
+                    <!-- End Single Screen -->
+
+                </div>
+                <!-- End Slider -->
+
+                <div class="image-mock">
+                    <img src="images/device_white.png" class="img-responsive center-block" alt="Mobil Cihaz" />
+                </div>
+            </div>
+            <!-- End All Items -->
+
+        </div>
+        <!-- End container -->
+    </section>
+    <!-- End screenshots -->
+    <!--
+        End Screenshot Section
+        ==================================== -->
+    <!--
+        Start Statistics App
+        ==================================== -->
+
+    <section id="statistic-app" class="statistic-app">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="all-statis text-center">
+                        <!-- Start Left Photo -->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="statis-img">
+                                <img src="images/phone3d_2.png" alt="DeepManage" class="img-responsive wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="1s">
+                                <img src="images/phone3d_3.png" alt="DeepManage" class="img-responsive hidden-xs wow fadeInRight" data-wow-delay="0.7s" data-wow-duration="1s">
+                            </div>
+                        </div>
+                        <!-- End Left Photo -->
+                        <!-- Start Right Statis -->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="statis-content">
+                                <div class="row">
+
+                                    <!-- Start Single Statis -->
+                                    <div class="col-md-6 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                        <div class="single-statis">
+                                            <div class="statis-icon">
+                                                <i class="icon-cloud-download"></i>
+                                                <div class="curvedarrow"></div>
+                                            </div>
+                                            <div class="statis-block">
+                                                <h4 class="statis-number">960753</h4>
+                                                <p>Fatih Projesi</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Statis -->
+                                    <!-- Start Single Statis -->
+                                    <div class="col-md-6 fix-width-right wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
+                                        <div class="single-statis">
+                                            <div class="statis-icon">
+                                                <i class="icon-heart"></i>
+                                                <div class="curvedarrow"></div>
+                                            </div>
+                                            <div class="statis-block">
+                                                <h4 class="statis-number">10500</h4>
+                                                <p>TÜKAS Projesi</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Statis -->
+                                    <!-- Start Single Statis -->
+                                    <div class="col-md-6 fix-width-left wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
+                                        <div class="single-statis statis-reset">
+                                            <div class="statis-icon">
+                                                <i class="icon-people"></i>
+                                                <div class="curvedarrow"></div>
+                                            </div>
+                                            <div class="statis-block">
+                                                <h4 class="statis-number">33567</h4>
+                                                <p>Kocaeli Belediyesi</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Statis -->
+                                    <!-- Start Single Statis -->
+                                    <div class="col-md-6 fix-width-right wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="1s">
+                                        <div class="single-statis statis-reset">
+                                            <div class="statis-icon">
+                                                <i class="icon-star"></i>
+                                                <div class="curvedarrow"></div>
+                                            </div>
+                                            <div class="statis-block">
+                                                <h4 class="statis-number">360</h4>
+                                                <p>Tarbil</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Statis -->
+                                </div>
+                                <!-- End row -->
+
+                            </div>
+                            <!-- end statis-content -->
+                        </div>
+                        <!-- End Right Statis -->
+                    </div>
+                    <!-- End all-statis -->
+                </div>
+                <!-- End row -->
+            </div>
+            <!-- End container -->
+        </div>
+        <!-- End overlay -->
+    </section>
+    <!-- End statistic-app -->
+    <!--
+        End Statistics App
+        ==================================== -->
+    <!--
+        Start Faqs App
+        ==================================== -->
+    <!--<section id="faqs" class="faqs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                        <h2>Sıkça Sorulan Sorular</h2>
+                        <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 wow fadeInRight" data-wow-duration="1s">
+                    <div class="faqs-img">
+                        <img src="images/alldevice.jpg" alt="DeepManage Cihaz Yönetimi" class="img-responsive">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 wow fadeInLeft" data-wow-duration="1s">
+                    <div class="faq-content-wrapper">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="">MDM (Mobil Cihaz Yönetimi) Amacı Nedir?</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        <p>Eğitimde Fatih Projesi kapsamında dağıtımı yapılan tablet bilgisayarların, uzaktan yönetim ile yazılım güncelleme, arıza takip, USB, Kamera, SD kart gibi donanımsal bölümlerin aktif veya deaktif olmasının sağlanması, güvenli internet gibi erişimlerin gerçekleştirilmesini sağlar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="collapsed">DeepManage Hangi işletim sistemlerinde çalışır</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree" class="collapsed">3. Attach large file easily?</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingFour">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour" class="collapsed">4. Tons of features and easy to use and customize?</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                    <div class="panel-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>-->
+    <!-- End faqs -->
+    <!--
+        End Testimonials App
+        ==================================== -->
+    <!--
+        Start Video App
+        ==================================== -->
+    <!--<section id="video-app" class="video-app text-center">
+        <div class="container">
+            <a class="play-btn wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s" href="https://www.youtube.com/watch?v=RV3jKkjpWnc" data-lity>
+                <img src="images/play_btn.png" alt="Applora">
+            </a>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-center wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
+                        <h2>Tanıtım Videosu</h2>
+                        <span class="title-underline wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+            <p class="wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="1s">DeepManage için hazırlamış olduğumuz kısa tanıtım videosunu izleyin!</p>
+        </div>
+    </section>-->
+    <!-- End video-app -->
+    <!--
+        End Video App
+        ==================================== -->
+    <!--
+        End Faqs App
+        ==================================== -->
+    <!--
+        Start Our Blog
+        ==================================== -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                        <h2>Son Haberler</h2>
+                        <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="news" class="blog-slider owl-carousel owl-theme">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End blog -->
+    <!--
+        End Our Blog
+        ==================================== -->
+    <!--
+        Start Contact Us
+        ==================================== -->
+
+    <section id="contact-us" class="contact-us">
+        <div class="overlay">
+            <div class="container">
+                <!-- Start Section Title -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                            <h2>Bize Ulaşın</h2>
+                            <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Section Title -->
+                <div class="row">
+                    <!-- Start Google Map -->
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                        <div class="mobile-place">
+                            <div class="mobile-preview">
+                                <!--<div class="google-map-area">
+                                    <div id="contacts" class="map-area">
+                                        <div id="googleMap" style="width:100%;height:395px;"></div>
+                                    </div>
+                                </div>-->
+                                <div class="form-group">
+                                    <div class="google-map" id="map" style="height: 400px"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Google Map -->
+                    <!-- Start Form & Info -->
+                    <div class="col-md-8">
+                        <div class="row">
+                            <!-- Start Address Info -->
+                            <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                <div class="single-info">
+                                    <div class="icon-contact">
+                                        <i class="icon-location-pin"></i>
+                                    </div>
+                                    <div class="info-text">
+                                        <h4>Adres</h4>
+                                        <p>Hacettepe Teknokent 6. Ar-Ge No 68  Beytepe / Ankara</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Address Info -->
+                            <!-- Start Phone Info -->
+                            <div class="col-md-3 col-sm-4 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
+                                <div class="single-info">
+                                    <div class="icon-contact">
+                                        <i class="icon-phone"></i>
+                                    </div>
+                                    <div class="info-text">
+                                        <h4>Telefon</h4>
+                                        <p>+90 (312) 440 02 50</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Phone Info -->
+                            <!-- Start E-Mail Info -->
+                            <div class="col-md-3 col-sm-4 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
+                                <div class="single-info">
+                                    <div class="icon-contact">
+                                        <i class="icon-envelope"></i>
+                                    </div>
+                                    <div class="info-text">
+                                        <h4>E-Mail</h4>
+                                        <p>info@deepmanage.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End E-Mail Info -->
+                            <!-- Start Contact Form -->
+                            <div class="col-sm-12 wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="1s">
+                                <div class="contact-form">
+                                    <form id="form" action="">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" placeholder="Adınız" class="form-control" name="FullName" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="email" placeholder="E-Mail" class="form-control" name="EmailAddress" required>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" placeholder="Kurum" class="form-control" name="Foundation" required>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <textarea id="msg-contact" placeholder="Mesajınız" class="form-control" name="Description" required></textarea>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="butt-send">
+                                                    <a id="formSubmitBtn" class="bttn-applora-gradient">
+                                                        <i class="fa fa-paper-plane-o"></i>
+                                                        <span>Mesajı Gönder</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- End Contact Form -->
+                        </div>
+                        <!-- End row -->
+                    </div>
+                    <!-- End Form & Info -->
+                </div>
+                <!-- End row -->
+            </div>
+            <!-- End container -->
+        </div>
+        <!-- End overlay -->
+    </section>
+    <!-- End contact-us -->
+    <!--
+        End Contact Us
+        ==================================== -->
+    <!--
+        Start Footer
+        ==================================== -->
+    <style>
+        .footer {
+            padding: 50px 0 !important;
+            background-color: #2b323f !important;
+        }
+    </style>
+    <footer id="footer" class="footer" style="z-index:9999999">
+        <div class="container">
+            <!-- Start Subscribe Button -->
+            <!--<div class="subscribe-box">
+                <div class="subscribe-text wow fadeInUp" data-wow-duration="1s">
+                    <h4>Haber Bültenine Üye Olun</h4>
+                </div>
+                <div class="wow fadeInUp" data-wow-duration="1s">
+                    <form class="subscribe-form custom-input name-email clearfix" action="http://www.infoline-tr.com/deepmanage-haber-bulten-uyeligi.html" method="get">
+                        <input type="email" name="email" placeholder="Email adresinizi yazın..." required />
+                        <button class="btn" type="submit" name="submit">
+                            <i class="icon-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>-->
+            <!-- End Subscribe Button -->
+            <!-- Start Logo Footer -->
+            <div class="logo-footer wow fadeInUp" data-wow-duration="1s">
+                <a href="">
+                    <img src="images/logo/logo_white_alt.svg" alt="DeepManage" title="DeepManage">
+                </a>
+            </div>
+            <!-- End Logo Footer -->
+            <!-- Start Social Links -->
+            <div class="social-footer text-center wow fadeInUp" data-wow-duration="1s">
+                <a class="social-applora-gradient" href="http://www.facebook.com/deepmanage" target="_blank"><i class='fa fa-facebook'></i></a>
+                <a class="social-applora-gradient" href="http://www.twitter.com/deepmanage" target="_blank"><i class='fa fa-twitter'></i></a>
+                <a class="social-applora-gradient" href="http://www.linkedin.com/company/15245900/" target="_blank"><i class='fa fa-linkedin'></i></a>
+            </div>
+            <!-- End Social Links -->
+            <!-- Start Copyright -->
+            <div class="copyright text-center wow fadeInUp" data-wow-duration="1s">
+                <p>Copyright © 2018 <a href="http://www.infoline-tr.com">INFOLINE Bilgi Teknolojileri</a>. Tüm Hakları Saklıdır.</p>
+            </div>
+            <!-- End Copyright -->
+        </div>
+        <!-- End container -->
+    </footer>
+    <!-- End footer -->
+    <!--
+        End Footer
+        ==================================== -->
+    <!--
+        Start Back To Top
+        ==================================== -->
+
+    <div id="scroll-top">
+        <i class="fa fa-angle-up fa-2x"></i>
+    </div>
+
+    <!--
+        End Back To Top
+        ==================================== -->
+    <!--
+        Start Preloader
+        ==================================== -->
+
+    <div id="loading-mask">
+        <div class="loader">
+            <div class="loader-inner"></div>
+            <div class="loader-inner"></div>
+            <div class="loader-inner"></div>
+            <div class="loader-inner"></div>
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+
+    <!--
+        End Preloader
+        ==================================== -->
+    <!--
+            JS Files
+            ==================================== -->
+    <!-- Plugins -->
+    <script src="scripts/plugins/openlayermap/ol.js"></script>
+    <script src="scripts/plugins/openlayermap/openlayer-map-helpers.js"></script>
+    <script src="scripts/plugins/openlayermap/openlayer-map-geocoder.js"></script>
+    <script src="scripts/plugins/custom/plugins.js"></script>
+    <script src="scripts/plugins/validate/jquery.validate.min.js"></script>
+    <script src="scripts/plugins/toastr/toastr.min.js"></script>
+    <script src="scripts/infolinearge.js"></script>
+    <!-- Particles Run -->
+    <script src="scripts/plugins/custom/particles-lines.js"></script>
+    <!-- Google Map js -->
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS3RyoeN47FKPcn21s6XzWZUwEtLHn-xQ"></script>-->
+    <!-- Custom JS -->
+    <script src="scripts/plugins/custom/custom.js"></script>
+
+
+
+    <!--<script>
+        // Google Map
+        function initialize() {
+            var mapOptions = {
+                zoom: 15,
+                scrollwheel: false,
+                center: new google.maps.LatLng(39.86223897990779, 32.73607060674135)
+            };
+            var map = new google.maps.Map(document.getElementById('googleMap'),
+                mapOptions);
+            var marker = new google.maps.Marker({
+                position: map.getCenter(),
+                animation: google.maps.Animation.BOUNCE,
+                icon: 'images/map_marker.png',
+                map: map
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>-->
+    <script>
+        $(document).ready(function () {
+
+            var selectedLang = "{{currentLangPre}}";
+
+            var requiredWords = {
+                EmailAddress: "Lütfen geçerli bir e-posta adresi giriniz.",
+                Description: "Lütfen açıklama giriniz.",
+                Title_User: "Lütfen ünvan giriniz.",
+                Foundation: "Lütfen kurum giriniz.",
+                FullName: "Lütfen ad-soyad giriniz.",
+                PhoneNumber: "Lütfen geçerli bir telefon numarası giriniz. (Örnek:+901123456789)",
+                Address: "Lütfen adres giriniz.",
+                CompanyName: "Lütfen şirket adını giriniz.",
+                ApplicationType: "Lütfen uygulama tipi seçiniz."
+            }
+
+
+            var _columns = {
+            };
+
+
+            function juInsertObject(reference, inject, func) {
+                reference = reference || {};
+                inject = inject || {};
+                for (var key in inject) {
+                    if (func && typeof (func) == 'function') {
+                        var result = func(key, inject[key], reference);
+                        if (result === true || result === false) {
+                            if (result === true)
+                                reference[key] = inject[key];
+                        }
+                        else if (result !== undefined)
+                            reference[key] = result;
+                    } else
+                        reference[key] = inject[key];
+                }
+                return reference;
+            }
+            function convertTimestamp(timestamp) {
+                var d = new Date(timestamp * 1000),
+                    yyyy = d.getFullYear(),
+                    mm = ('0' + (d.getMonth() + 1)).slice(-2),
+                    dd = ('0' + d.getDate()).slice(-2),
+                    hh = d.getHours(),
+                    h = hh,
+                    min = ('0' + d.getMinutes()).slice(-2),
+                    time;
+
+                time = yyyy + '-' + mm + '-' + dd + ' / ' + h + ':' + min;
+                return time;
+            }
+
+            function insertObject(element, obj, level) {
+                obj = juInsertObject(obj, _columns, function (key, injectValue, reference) {
+                    if (reference[key] === undefined)
+                        reference[key] = injectValue;
+                    reference["$" + key] = "$: " + injectValue + " :$";
+                });
+                return jQuery.prototype.insertObject.call(element, obj, level, _columns);
+            }
+
+            //$.getJSON('http://www.infoline-tr.com/deep-manage-haberler.json', function (data) {
+            //    data.forEach(function (one) {
+            //        one.publishedon = convertTimestamp(one.publishedon);
+            //        one.content = $(one.content).html();
+            //        one["image"] = "http://www.infoline-tr.com" + "/" + one["tv.NewsImage"];
+            //        $('#news').trigger('add.owl.carousel', [insertObject($("[one-new]"), one)])
+            //              .trigger('refresh.owl.carousel');
+
+            //    });
+
+            //});
+            var ajx = new juAjax({
+                data: { uri: 'http://www.infoline-tr.com/deep-manage-haberler.json' },
+                url: '/home/getnews',
+                success: function (response) {
+                    if (response && response.Data && response.Data.length) {
+
+                        response.Data.forEach(function (one) {
+                            one.publishedon = convertTimestamp(one.publishedon);
+                            one.content = $(one.content).html();
+                            one["image"] = "http://www.infoline-tr.com" + "/" + one["tv.NewsImage"];
+                            $('#news').trigger('add.owl.carousel', [insertObject($("[one-new]"), one)])
+                                  .trigger('refresh.owl.carousel');
+
+                        });
+
+                    }
+
+                },
+                error: function (response) {
+                    toastr.error(response.Message);
+                    $("#formSubmitBtn").bind("click", clickFn);
+                }
+            });
+
+
+            function clearInputs(form) {
+                form.find("input").val('');
+                form.find("textarea").val('');
+                form.find("select").val('');
+            }
+            function clickFn(e) {
+
+                var _columns = {
+                    fullname: "FullName",
+                    email: "EmailAddress",
+                    foundation: "Foundation",
+                    description: "Description",
+                }
+
+                var _messages = {};
+                _messages[_columns.fullname] = requiredWords.FullName;
+                _messages[_columns.email] = requiredWords.EmailAddress;
+                _messages[_columns.foundation] = requiredWords.Foundation;
+                _messages[_columns.description] = requiredWords.Description;
+
+                var _rules = {};
+                _rules[_columns.fullname] = { required: true };
+                _rules[_columns.foundation] = { required: true };
+                _rules[_columns.description] = { required: true };
+                _rules[_columns.email] = { required: true, email: true, regex: /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i };
+
+                var formdata = juFormData({
+                    form: $("#form"),
+                    columns: _columns,
+                    messages: _messages,
+                    rules: _rules
+                });
+                if (formdata) {
+                    $("#formSubmitBtn").unbind();
+                    var ajx = new juAjax({
+                        data: formdata,
+                        url: '/home/systemlog',
+                        success: function (response) {
+                            toastr.success(response.Message);
+                            setTimeout(function () {
+                                clearInputs($("#form"));
+                                $("#formSubmitBtn").bind("click", clickFn);
+                                stop();
+                            }, 1000);
+                        },
+                        error: function (response) {
+                            toastr.error(response.Message);
+                            $("#formSubmitBtn").bind("click", clickFn);
+                        }
+                    });
+                }
+                else
+                    stop();
+            }
+
+            $("#formSubmitBtn").click(clickFn);
+
+            setTimeout(function () {
+                $(".closeClick").unbind("click");
+            }, 500);
+
+            var _map = new InfolineMap({
+                target: $('#map'),
+                minZoom: 2,
+                center: [32.73607060674135, 39.86223897990779] //39.86223897990779, 32.73607060674135
+            });
+
+            _map.Resize();
+            _map.SetBounding();
+
+            var geojsonObject = {
+                'type': 'FeatureCollection',
+                'crs': {
+                    'type': 'name',
+                    'properties': {
+                        'name': 'EPSG:3857'
+                    }
+                },
+                'features': [
+                ]
+            };
+
+            var obj = {
+                'type': 'Feature',
+                "properties": {
+                    "animateflash": false,
+                    "customStyle": "Marker",
+                    "customStylePath": 'images/map_marker.png',
+                    "scale": 0.8,
+                    "anchor": [0.5, 50]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [32.73607060674135, 39.86223897990779]
+                }
+            }
+            geojsonObject.features.push(obj);
+            _map.SetData(geojsonObject, true);
+            _map.SetBounding(17);
+
+
+        });
+    </script>
+</body>
+
+</html>

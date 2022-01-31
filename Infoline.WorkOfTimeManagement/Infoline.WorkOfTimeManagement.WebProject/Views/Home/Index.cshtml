@@ -1,0 +1,1757 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154212733-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-154212733-1');
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="WorkOfTime - Şirket süreçlerinizi yönetmek, zamandan tasarruf sağlayarak kazanç sağlamanız için WorkOfTime'a geçin.'">
+    <meta name='keywords' content='insan kaynakları, müşteri ilişkileri yönetimi, CRM, işletme yönetimi, muhasebe ve finans, satış & sipariş yönetimi, satın alma yönetimi, ürün & stok işlemleri, proje yönetimi, saha görev yönetimi, ofis yönetimi, sistem yönetimi, raporlama, Şirket Süreç Yönetimi, şirket yönetimi, ön muhasebe, tahsilat yönetimi, stok yönetimi, envanter yönetimi, performans yönetimi, hedef yönetimi, satış raporları, ik raporları, depo yönetimi, work of time, wot, WORKOFTİME, WORK OF TİME, workoftime' />
+    <meta name="author" content="Infoline Bilgi Teknolojileri">
+    <title>WorkOfTime - Zamanımızın İş Yapış Şekli</title>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <!--
+    Google Font
+    ================================================== -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <!--
+    CSS FilesUY
+    ================================================== -->
+    <!-- Plugins -->
+    <link href="~/Content/Home/content/plugins/custom/plugins.css" rel="stylesheet" />
+    <!-- Main Style -->
+    <link href="~/Content/Home/content/plugins/custom/style.css" rel="stylesheet" />
+    <!-- Modernizer Script for old Browsers -->
+    <script src="~/Content/Custom/js/lightbox.js"></script>
+    <script src='/Content/Home/scripts/plugins/custom/modernizr-2.6.2.min.js'></script>
+    <script src="~/Content/Themes/js/jquery-2.1.1.js"></script>
+    <script src="~/Content/Home/scripts/bootstrap.min.js"></script>
+    <script src="~/Content/Themes/js/plugins/toastr/toastr.min.js"></script>
+    <script src="~/Content/Themes/js/plugins/linq/jquery.linq.min.js"></script>
+    <script src="~/Content/Themes/js/jquery.livequery.min.js"></script>
+    <script src="~/Content/Plugins/Loading/js/jquery.loadingModal.min.js"></script>
+    <script src="~/Content/Plugins/Bootstrap-Dialog/dist/js/bootstrap-dialog.min.js"></script>
+
+    <script src="~/Content/Plugins/Validator/js/Validator.js"></script>
+    <link href="/Content/Home/content/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/Home/content/plugins/openlayermap/ol.css" type="text/css">
+    <link href="/Content/Home/content/plugins/openlayermap/olCustom.css" rel="stylesheet">
+    <link href="/Content/Home/content/plugins/openlayermap/geocoder.css" rel="stylesheet">
+    @*<link href="~/Content/Harita/fonts/MapIcon/flaticon.css" rel="stylesheet" />*@
+    <link href="~/Content/Plugins/Fontello/css/fontello.css" rel="stylesheet" />
+    <link href="~/Content/Custom/css/lightbox.css" rel="stylesheet" />
+    <script src="~/Content/Custom/js/lazyload.min.js"></script>
+    @*<link href="~/Content/Themes/css/bootstrap.min.css" rel="stylesheet">*@
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="~/Content/Custom/js/tagmanager.js"></script>
+    <script src="~/Content/Custom/js/language.js"></script>
+
+    <script src="~/Content/Custom/js/master.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js' data-selector="modalContainer"></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+
+    <style type="text/css">
+        div#rc-anchor-container {
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <template english>
+        <a href="#?clang=en-us" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i> EN<b class="caret"></b></a>
+    </template>
+    <template turkish>
+        <a href="#?clang=tr-tr" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i> TR<b class="caret"></b></a>
+    </template>
+
+    <template one-new>
+        <!-- Start Single Post -->
+        <div class="item">
+            <div class="one-post">
+                <div class="post-img">
+                    <a href="">
+                        <img src="$: image :$" alt="workoftime" class="img-responsive">
+                    </a>
+                </div>
+                <div class="post-text">
+                    <div class="title-text">
+                        <a href="" class="title-post">$: pagetitle :$</a>
+                        <div class="post-details">
+                            <a href=""><i class="fa fa-folder-open"></i> Genel</a>
+                            <a href=""><i class="fa fa-calendar-o"></i> $: publishedon :$</a>
+                        </div>
+                    </div>
+                    <div class="post-concept">
+                        <p>$: content :$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!--
+        Start Header
+        ==================================== -->
+    @*{{>scriptscore}}*@
+    <header id="home" class="home bg-image waves">
+        <div class="overlay">
+            <div id="particles-js"></div>
+            <!-- Start Navigation Bar -->
+            <nav class="navbar navbar-default nav-sec navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-menu-3" style="color: white;font-size: 24px;padding-right: 10px"></span>
+                        </button>
+                        <a class="navbar-brand" href="" title="WorkOfTime"><img src="/Content/Home/images/workoftimebeyaz.png" alt="WorkOfTime Logo"></a>
+                    </div>
+                    <!-- / navbar-header -->
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#whatis"><span>NE YAPIYORUZ ?</span></a></li>
+                            <li><a href="#modules"><span>ÜRÜNLER</span></a></li>
+                            <li><a href="#screenshots"><span>EKRAN GÖRÜNTÜLERİ</span></a></li>
+                            <li><a href="#application"><span>UYGULAMA</span></a></li>
+                            <li><a href="#price"><span>FİYATLAR</span></a></li>
+                            @*<li><a href="#blog"><span>HABERLER</span></a></li>*@
+                            <li><a href="#quality"><span>KALİTE</span></a></li>
+                            <li><a href="#contact-us"><span>İLETİŞİM</span></a></li>
+                            <li class="dropdown" id="selectLanguage">
+                                <a data-href="/TEN/VWTEN_DemonstrationRequest/Insert" class="dropdown-toggle closeClick" data-toggle="dropdown"><i class="fa fa-globe"></i><strong> TR</strong><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a data-href="/TEN/VWTEN_DemonstrationRequest/Insert" href="#">TR</a></li>
+                                    <li><a data-href="/TEN/VWTEN_DemonstrationRequest/Insert" href="#">ENG</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end nav-collapse -->
+                </div>
+                <!-- end container -->
+            </nav>
+            <!-- End Navigation Bar -->
+            <div class="container">
+                <div class="row">
+                    <!-- Start Text Header -->
+                    <div class="col-md-7 col-sm-6">
+                        <div class="header-inner">
+                            <div class="header-content">
+                                <h1 class="home-title word word--magneto wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">İş,&nbsp;Zaman,&nbsp;Tasarruf...</h1>
+                                <h4 class="wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
+                                    Zaman; pratik, akıllı ve tasarruf sağlatacak yazılımların zamanı.
+                                    Hantal, kullanımı zor yazılımların işten çok iş çıkarmasından kurtulmanın zamanı geldi.
+                                    Siz de şirket süreçlerinizi daha kolay işletmek, iş yükünden kurtulmak ve zaman tasarrufu sağlamak için "Zamanın Yeni İş Yapış Şekli" WorkOfTime'a geçin.
+                                </h4>
+                                <div class="bttn-head">
+                                    <!--<a href="#video-app" class="bttn-applora-gradient wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
+                                        <i class="icon-control-play"></i>
+                                        <span>Demo Video</span>
+                                    </a>-->
+                                    <a href="#" data-task="Insert" data-modal="true" title="Demo Talebi" style="line-height: 14px;" data-href="@Url.Action("Video", "Home", new {area = ""})" class="bttn-applora-gradient">
+                                        <i class="fa fa-play-circle-o"></i>
+                                        <span>Tanıtım Video</span>
+                                    </a>
+
+
+                                    <a href="#" data-task="Insert" data-modal="true" title="Demo Talebi" style="line-height: 14px;" data-href="@Url.Action("Insert", "VWTEN_DemonstrationRequest", new {area = "TEN"})" class="bttn-applora-gradient">
+                                        <i class="fa fa-paper-plane"></i>
+                                        <span>Demo Talebi</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Text Header -->
+                    <!-- Start Photo Here -->
+                    <div class="col-md-5 col-sm-6">
+                        <div class="photo-header">
+                            <img src="~/Content/Home/images/mockup.png" alt="WorkofTime Screen" class="img-responsive wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="1s">
+                        </div>
+                    </div>
+                    <!-- End Photo Here -->
+                </div>
+            </div>
+            <!-- End Container -->
+        </div>
+        <!-- End Overlay -->
+    </header>
+    <!-- End Header -->
+    <!--
+        End Header
+        ==================================== -->
+    <!--
+    Start Random Features
+    ==================================== -->
+    <section id="whatis" class="feat-one">
+        <div class="container">
+            <!-- Start Section Title -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                        <h2>WORKOFTIME NEDİR?</h2>
+                        <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Section Title -->
+            <!-- Start Single One -->
+            <div class="row">
+                <!-- Start Photo -->
+                <div class="col-md-6 col-md-push-6 wow fadeInRight" data-wow-duration="1s">
+                    <div class="feat-one-img">
+                        <img src="~/Content/Home/images/watch.png" alt="workoftime" class="img-responsive">
+                    </div>
+                </div>
+                <!-- End Photo -->
+                <!-- Start Text -->
+                <div class="col-md-6 col-md-pull-6 wow fadeInLeft" data-wow-duration="1s">
+                    <div class="feat-one-text">
+                        <h2>Karmaşık yazılımlardan sıkılmadınız mı?</h2>
+                        <p>İşletmelerin kaynakları arttıkça, yönetmesi güç hale gelir. İşletme kaynaklarının optimum seviyede kullanımını sağlamak için yazılım kullanılması gerekliliği ortaya çıkmaktadır. İşletme süreçlerinin ve çalışanlarının tüm görevlerinin merkezi bir noktadan yönetilmesi gerekmektedir. Günümüzde kullanılan yazılımlar; karmaşık, kullanıcıları yoran, verilecek eğitimlerle bile kullanması çok zor durumdadır.</p>
+                    </div>
+                </div>
+                <!-- End Text -->
+            </div>
+            <!-- end row -->
+            <!-- End Single One -->
+            <!-- Start Single One -->
+            <div class="row">
+                <!-- Start Photo -->
+                <div class="col-md-6 wow fadeInLeft" data-wow-duration="1s">
+                    <div class="feat-two-img">
+                        <img src="/Content/Home/images/hedef.png" alt="Hedef" class="img-responsive">
+                    </div>
+                </div>
+                <!-- End Photo -->
+                <!-- Start Text -->
+                <div class="col-md-6 wow fadeInRight" data-wow-duration="1s">
+                    <div class="feat-two-text">
+                        <h2>WorkOfTime ile herşey çok pratik...</h2>
+                        <p>WorkOfTime tam da bu noktada devreye girmektedir. Kullanıcı dostu arayüzleri, kullanım kolaylığı, zaman tasarrufu sağlayan yapısı ile tüm işletmelerin ihtiyaçlarına hızlı ve optimum çözümler getirmektedir. İşletmenize ait, üretim süreçleri, insan kaynakları yönetimi, satış&sipariş yönetimi, satınalma yönetimi, envanter-zimmet yönetimi, stok&depo yönetimi, müşteri ilişkileri yönetimi, muhasebe ve finans yönetimi işleriniz WorkofTime ayrıcalığıyla kolayca yönetilebilir ve raporlanabilir hale gelmektedir.</p>
+                    </div>
+                </div>
+                <!-- End Text -->
+            </div>
+            <!-- end row -->
+            <!-- End Single One -->
+            <div class="row">
+                <!-- Start Photo -->
+                <div class="col-md-6 col-md-push-6 wow fadeInRight" data-wow-duration="1s">
+                    <div class="feat-one-img">
+                        <img src="~/Content/Home/images/tasarruf.png" alt="zamandan tasarruf" class="img-responsive">
+                    </div>
+                </div>
+                <!-- End Photo -->
+                <!-- Start Text -->
+                <div class="col-md-6 col-md-pull-6 wow fadeInLeft" data-wow-duration="1s">
+                    <div class="feat-one-text">
+                        <h2>Zamandan tasarruf sağlayarak, kazancınızı artırın...</h2>
+                        <p>WorkofTime ile dilediğiniz yerden, daha az kaynak ve zaman harcayarak saha operasyonlarınızı ve tüm şirket süreçlerinizi hızlı ve doğru bir şekilde yöneterek zamandan tasarruf edin.</p>
+                        <p>Satış operasyonlarınızı ve müşteri ilişkilerinizde kaynak ve maliyetinizi izleyin, yönetici raporlarını kullanarak kazanç sağlayacak hedefler çıkarın.</p>
+                    </div>
+                </div>
+                <!-- End Text -->
+            </div>
+
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- End feat-one -->
+    <!--
+        End Random Features
+        ==================================== -->
+    <!--
+    Start Statistics App
+    ==================================== -->
+    <section id="modules" class="statistic-app">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                            <h2 style="color:white">Ürünler</h2>
+                            <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="all-statis text-center">
+                        <!-- Start Left Photo -->
+                        <!-- End Left Photo -->
+                        <!-- Start Right Statis -->
+                        <div class="col-md-12 col-md-12">
+                            <div class="statis-content">
+                                <div class="row">
+                                    <!-- Start Single Statis -->
+                                    <div class="col-md-12">
+                                        <div class="col-md-4 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                            <div class="single-statis">
+                                                <div class="statis-icon">
+                                                    <i class="icon-users-2"></i>
+                                                </div>
+                                                <div class="statis-block modules-icon">
+                                                    <h1>İnsan Kaynakları Yönetimi</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                            <div class="single-statis">
+                                                <div class="statis-icon">
+                                                    <i class="icon-building-filled"></i>
+                                                </div>
+                                                <div class="statis-block modules-icon">
+                                                    <h1>İşletme Yönetimi</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                            <div class="single-statis">
+                                                <div class="statis-icon">
+                                                    <i class="icon-money-1"></i>
+                                                </div>
+                                                <div class="statis-block modules-icon">
+                                                    <h1>Satış ve Sipariş Yönetimi</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-4 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                            <div class="single-statis">
+                                                <div class="statis-icon">
+                                                    <i class="icon-barcode-1"></i>
+                                                </div>
+                                                <div class="statis-block modules-icon">
+                                                    <h1>Ürün ve Stok İşlemleri</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                            <div class="single-statis">
+                                                <div class="statis-icon">
+                                                    <i class="icon-tools"></i>
+                                                </div>
+                                                <div class="statis-block modules-icon">
+                                                    <h1>Saha Operasyon Yönetimi</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                            <div class="single-statis">
+                                                <div class="statis-icon">
+                                                    <i class="icon-map"></i>
+                                                </div>
+                                                <div class="statis-block modules-icon">
+                                                    <h1>Harita Tabanlı Yönetim</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-4 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                            <div class="single-statis">
+                                                <div class="statis-icon">
+                                                    <i class="icon-spread"></i>
+                                                </div>
+                                                <div class="statis-block modules-icon">
+                                                    <h1>Müşteri İlişkileri Yönetimi (CRM)</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                            <div class="single-statis">
+                                                <div class="statis-icon">
+                                                    <i class="icon-calc"></i>
+                                                </div>
+                                                <div class="statis-block modules-icon">
+                                                    <h1>Muhasebe ve Finans İşlemleri</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                            <div class="single-statis">
+                                                <div class="statis-icon">
+                                                    <i class="icon-basket-4"></i>
+                                                </div>
+                                                <div class="statis-block modules-icon">
+                                                    <h1>Satın Alma Yönetimi</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-4 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                            <div class="single-statis">
+                                                <div class="statis-icon">
+                                                    <i class="icon-tasks-1"></i>
+                                                </div>
+                                                <div class="statis-block modules-icon">
+                                                    <h1>Proje Yönetimi</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                            <div class="single-statis">
+                                                <div class="statis-icon">
+                                                    <i class="icon-briefcase"></i>
+                                                </div>
+                                                <div class="statis-block modules-icon">
+                                                    <h1>Ofis Yönetimi</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                            <div class="single-statis">
+                                                <div class="statis-icon">
+                                                    <i class="icon-chart-pie"></i>
+                                                </div>
+                                                <div class="statis-block modules-icon">
+                                                    <h1>Zengin İçerikli Raporlar</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End row -->
+                                <div class="store-butt btn-stil">
+                                    <a target="_blank" href="@Url.Action("Features", "Home", new {area = string.Empty})" title="Detaylı Özelliklerimiz" style="line-height: 14px;" class="bttn-applora-gradient">
+                                        <i class="fa fa-hand-o-right"></i>
+                                        <span>Özellik Detayları</span>
+
+                                    </a>
+                                </div>
+                                <!-- end statis-content -->
+                            </div>
+                            <!-- End Right Statis -->
+                        </div>
+                        <!-- End all-statis -->
+                    </div>
+                    <!-- End row -->
+                </div>
+                <!-- End container -->
+            </div>
+            <!-- End overlay -->
+        </div>
+    </section>
+    <!-- End statistic-app -->
+    <!--
+    Start Screenshot Section
+    ==================================== -->
+    <section id="screenshots" class="screenshots">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                    <h2>EKRAN GÖRÜNTÜLERİ</h2>
+                    <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+
+                </div>
+            </div>
+        </div>
+        <div id="inSlider1" class="carousel carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators" style="display:none;">
+                <li data-target="#inSlider1" data-slide-to="0" class="active"></li>
+                <li data-target="#inSlider1" data-slide-to="1"></li>
+
+            </ol>
+            <div class="carousel-inner" role="listbox" style="background:white">
+                <div class="item active">
+                    <div class="container">
+                        <div class="col-md-7">
+                            <img src="~/Content/Home/images/Screen/Bildirimler.png" alt="Bildirimler" onclick="openModal();currentSlide(1)" class="hover-shadow laptop-stil laptop-stil">
+                        </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Şirketimin Gündemi</h2>
+                                <p class="font-properties">
+                                    Şirketiniz Gündemini, Şirket Ajandası, Duyuru, Toplantı, Tebrik, Doğum Günleri bildirimlerini yapar,    İzinde olanları, Resmi İzin Günlerini ve Saatlerini duyurur, Projelerin Durumlarını,
+                                    Sunum Bildirimlerini,
+                                    Yayınlamanızı ve Yönetmenizi Sağlar.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7">
+                            <img src="~/Content/Home/images/Screen/Gündem.png" alt="Gündem" onclick="openModal();currentSlide(2)" class="hover-shadow laptop-stil laptop-stil" />
+                        </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Şirketimin Gündemi</h2>
+                                <p class="font-properties">
+                                    Şirketiniz Gündemini, Şirket Ajandası, Duyuru, Toplantı, Tebrik, Doğum Günleri bildirimlerini yapar,    İzinde olanları, Resmi İzin Günlerini ve Saatlerini duyurur, Projelerin Durumlarını,
+                                    Sunum Bildirimlerini,
+                                    Yayınlamanızı ve Yönetmenizi Sağlar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7">
+                            <img src="~/Content/Home/images/Screen/HaritadanEnvanterSorgulama.png" alt="HaritadanEnvanterSorgulama" onclick="openModal();currentSlide(3)" class="hover-shadow laptop-stil" />
+                        </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Envanter Yönetimim</h2>
+                                <p class="font-properties">
+                                    Şirketinize ait tüm envanterleri yaşam döngüsü boyunca yönetebilirsiniz. Gelen Fatura Yönetimini       yapabilir, Fatura bazlı alımları ve ürünleri izleyebilirsiniz.
+                                    Harita Üzerinden Envanter Takibinizi yaparak hangi envanteriniz nerede, hangi deponuzda görebilirsiniz.
+                                    Zimmet İşlemlerinizi standart formlar ile otomatik yöneterek kayıpları sıfıra indirirsiniz.
+                                    Depolarınızı, araçlarınızı, proje bazlı envanterlerinizi izlemenizi sağlar.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/EnvanterListesi.png" alt="Envanter Listesi" onclick="openModal();currentSlide(4)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Envanterleriniz Nerde, Kimde, Ne Durumda ?</h2>
+                                <p class="font-properties">
+                                    Depolarınızda, Partnerlerinizin depolarında, personellerinizde, kargoda, projede, ne kadarı kullanımda, ne kadarı arızalı. Kısacası tüm envanterlerinizin durumlarını tek bir ekrandan anlık izlemenizi sağlar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/Envanter-Yaşam-Döngüsü-(1).png" alt="Envanter Yaşam Döngüsü" onclick="openModal();currentSlide(5)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Envanterlerin Dağıtım ve Taşınma Durumları Haritada</h2>
+                                <p class="font-properties">
+                                    Harita üzerinden envanterlerinizin hareketlerini canlı olarak izleyin. Kim, kime vermiş, nereye vermiş, neden vermiş, hangi projede kullanılmış, projeden geri alınmış mı, servise gitti mi, şuan kargoda mı tüm bu soruların yanıtını harita üzerinden görmenizi sağlar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/EnvanterYonetimi.png" alt="Envanter Yönetimi" onclick="openModal();currentSlide(6)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Envanterinizin Tüm Kayıtlarını Yönetin</h2>
+                                <p class="font-properties">
+                                    Envanterinize karekod üretin, karekod tanımlayın. Özelliklerini, arıza, bakım, servis durumlarını, Tek bir yönetim panelinden, zimmet hareketlerini ve operasyonlarını kolayca yönetmenizi sağlar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/GenelÖzet2.png" alt="Genel Özet2" onclick="openModal();currentSlide(7)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Personel Genel Özeti</h2>
+                                <p class="font-properties">
+                                    Personeliniz platforma girdiğinde kendi ve şirket ile ilgili, bildirimlerini, duyuruları, toplantılarını, aktivitelerini, İşlerini görebilir ve tüm özlük işlemlerini yapmasını sağlar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/GorevlendirmeTalebi.png" alt="Görevlendirme Talebi" onclick="openModal();currentSlide(8)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Görevlendirmeler Kayıt Altında</h2>
+                                <p class="font-properties">
+                                    Proje, satış, görev gibi işlemlerde personelin şirket dışındaki görevlendirmelerini, hiyerarşik yapıda onay mekanizmasına sokarak kayıt altına alır ve Şirketin risklerini ortadan kaldırır. Yöneticinin görevlendirmelerdeki onay süreçlerini işletip, standart formlar ile dosya yönetimini yapmanızı sağlar.
+                                    Hangi projede hangi personel görevlendirilmiş, ne zaman gitmiş ne zaman gelmiş hepsini izlemenize olanak sağlar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/IzinRaporlari.png" alt="İzin Raporları" onclick="openModal();currentSlide(9)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>İzinleri Yönetin, Raporlayın</h2>
+                                <p class="font-properties">
+                                    Şirketin personellerinin izin durumları, bugün kimler izinde, hangi ay ne kadar izin kullanılıyor, izinlerin formlarının yönetimi hepsini tek çatı altında yönetip raporlayabilirsiniz.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/izintalebi.png" alt="İzin Talebi" onclick="openModal();currentSlide(10)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>İzinleriniz Düzende ve Onaylı Artık</h2>
+                                <p class="font-properties">
+                                    Dinamik ve Hiyerarşik yapı sayesinde personelleriniz izin talebinde bulunduğunda önce 1. Yöneticisi sonra 2. Yöneticisi sonra da İnsan kaynaklarının onayına otomatik gider. Böylece izin motive edici bir durumda doğru zamanda yönetim sağlamış olur. Standart imzalı formlarınızın yönetimini sağlar ve dosyalarınız güven içerisinde olur.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/İşletmeDetayiIsletmeBilgileri1.png" alt="İşletme Detayı Bilgileri" onclick="openModal();currentSlide(11)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Cari Yönetimi</h2>
+                                <p class="font-properties">
+                                    İş ortaklarınız, partnerleriniz, alt yüklenicilerinizi, onların çalışanlarını, depolarını, toplantılarınızı yönetmeyi ve izlemeyi sağlar. Birlikte yaptığınız tüm işlemleri kayıt altına alın ve hızlı sorgulamalar ile anında ulaşın. Cariler ile yaptığınız toplantıları, satın alma işlemlerini, teklifleri, hizmet işlemlerini tek bir çatı altında yönetin.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/OrganizasyonSemasiYonetimi.png" alt="Organizasyon Şeması" onclick="openModal();currentSlide(12)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Organizasyon Şeması Yönetimi</h2>
+                                <p class="font-properties">
+                                    Organizasyon Şemanızı dinamik olarak web platformundan yönetebilirsiniz. Departman yönetinimi, kıdem ve hiyerarşi yönetimini kolaylıkla yapıp görüntüleyebilirsiniz. Böylece izinler, görevlendirmeler, proje çalışmaları tüm hiyerarşiyi tek tıkla izleyebilirsiniz.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/OrganizasyonSemasiYonetimi3.png" alt="Organizasyon Şeması 2" onclick="openModal();currentSlide(13)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Organizasyon Şeması Yönetimi</h2>
+                                <p class="font-properties">
+                                    Organizasyon Şemanızı dinamik olarak web platformundan yönetebilirsiniz. Departman yönetinimi, kıdem ve hiyerarşi yönetimini kolaylıkla yapıp görüntüleyebilirsiniz. Böylece izinler, görevlendirmeler, proje çalışmaları tüm hiyerarşiyi tek tıkla izleyebilirsiniz.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/PERSONELARAMA.png" alt="Personel Arama" onclick="openModal();currentSlide(14)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Personellerinizin Tüm Özlük Dosyalarını Yönetin</h2>
+                                <p class="font-properties">
+                                    Personellerinizin Özlük Bilgilerini, Nitalik Bilgilerini, CV'lerini, Sigorta Bilgilerini, Envanterleriniz, İzinlerini, Görevlendirmelerini tek bir ekrandan kaydedip, ulaşın. Tüm dosyalarını güvenli bir şekilde kaydedip standart formlar halinde saklayın, istediğiniz anda ulaşın.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/PersonelYonetimiOzlukBilgileri.png" alt="Personel Yönetim Özlük Bilgileri" onclick="openModal();currentSlide(15)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Personellerinizin Tüm Özlük Dosyalarını Yönetin</h2>
+                                <p class="font-properties">
+                                    Personellerinizin Özlük Bilgilerini, Nitalik Bilgilerini, CV'lerini, Sigorta Bilgilerini, Envanterleriniz, İzinlerini, Görevlendirmelerini tek bir ekrandan kaydedip, ulaşın. Tüm dosyalarını güvenli bir şekilde kaydedip standart formlar halinde saklayın, istediğiniz anda ulaşın.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/PersonelYonetimiOzlukDosyalari.png" alt="Personel Özlük Dosyası" onclick="openModal();currentSlide(16)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Personellerinizin Tüm Özlük Dosyalarını Yönetin</h2>
+                                <p class="font-properties">
+                                    Personellerinizin Özlük Bilgilerini, Nitalik Bilgilerini, CV'lerini, Sigorta Bilgilerini, Envanterleriniz, İzinlerini, Görevlendirmelerini tek bir ekrandan kaydedip, ulaşın. Tüm dosyalarını güvenli bir şekilde kaydedip standart formlar halinde saklayın, istediğiniz anda ulaşın.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/PersonelDegerlendirmeİslemi.png" alt="Personel Değerlendirme İşlemi" onclick="openModal();currentSlide(17)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Personel Performans ve Değerlendirme İşlemleri</h2>
+                                <p class="font-properties">
+                                    Periodik olarak personellerinizin değerlendirme ve performans kayıtlarını yönetin ve raporlayın. Yıllık kıdem artışlarında sorun yaşamayın raporlara göre adaletli ve kaliteli bir sistem oturtun.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/Proje-Raporları.png" alt="Proje Raporları" onclick="openModal();currentSlide(18)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Projeleriniz Ne Durumda Anlık İzleyin</h2>
+                                <p class="font-properties">
+                                    Projelerinizin iş kalemleri ve iş teslim tarihlerini otomatik bilgilendirme yapısı ile, zaman ve risk kayıplarınızı yönetin. Projelerinizin durumlarını gün gün takip edin.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/ProjeDetayiDosyalari.png" alt="Proje Detayı Dosyaları" onclick="openModal();currentSlide(19)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Proje Dosyalarınızı Kontrol Altına Alın</h2>
+                                <p class="font-properties">
+                                    Projelerin tüm dosyalarını güvenli ve düzenli bir şekilde kaydedin. İstediğiniz anda ulaşın. Sürüm yönetimini yapın, paylaşın, değiştirin. Proje dosyalarındaki eksikliklerinizi anında görüp aksiyon almanızı sağlar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/ProjeDetayiGantSemasi.png" alt="Proje Detayı Gant Şeması" onclick="openModal();currentSlide(20)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Proje Gantt Şemanızı Oluşturun</h2>
+                                <p class="font-properties">
+                                    Projenizin iş kalemlerini, hakedişlerini, satın almalarını, iş teslim tarihlerini girin, otomatik bilgilendirmeler alın, hiçbir iş kaleminizi riske atmadan takip edin.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/ProjeDetayiGenelBilgiler.png" alt="Proje Detayı Genel Bilgiler" onclick="openModal();currentSlide(21)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Projem Ne Zaman Bitiyor</h2>
+                                <p class="font-properties">
+                                    Projelerinizin ne zaman başladığını, ne zaman bittiğini, ne zaman bakım, garanti süreçleri başlayacak takip edin. Kime ne zaman proje yaptınız sorgulayın, raporlayın, geçmişe dair projelerinizin tüm detaylarına hemen erişin.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/ProjeDetayiOrgSemasi.png" alt="Proje Detayı Organizasyon Şeması" onclick="openModal();currentSlide(22)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Proje Bazlı Organizasyon Şeması Oluşturun</h2>
+                                <p class="font-properties">
+                                    Projeleriniz içerisinde, genel organizasyon şemanızın dışında projeye dair Matrix organizasyon şeması oluşturun, daha efektif sonuçlar ve motivasyonlar oluşturun. Projelerin zaman ve hiyerarşik sıkıntılarını ortadan kaldırın.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/ProjeDetayiPersoneller.png" alt="Proje Detayı Personeller" onclick="openModal();currentSlide(23)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Proje Bazlı Organizasyon Şeması Oluşturun</h2>
+                                <p class="font-properties">
+                                    Projeleriniz içerisinde, genel organizasyon şemanızın dışında projeye dair Matrix organizasyon şeması oluşturun, daha efektif sonuçlar ve motivasyonlar oluşturun. Projelerin zaman ve hiyerarşik sıkıntılarını ortadan kaldırın.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/ProjeDetayiPuantaj.png" alt="Proje Detayı Puntajı" onclick="openModal();currentSlide(24)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Proje Personel Puantajınızı Çıkarın</h2>
+                                <p class="font-properties">
+                                    Personellerinizin projelerdeki çalışma adam/günlerini, performanslarını, başarılarını kaydedin ve dilediğiniz zaman raporlayın. Proje başarılarına göre personel dizaynını kolaylıkla yapın ve maliyetlerinizi en aza indirin.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="col-md-7"><img src="~/Content/Home/images/Screen/TeklifOnayiBekleyenSatinalmaTalepleri.png" alt="Teklif Onayı Bekleyen Satınalma Talepleri" onclick="openModal();currentSlide(25)" class="hover-shadow laptop-stil" />                            </div>
+                        <div class="col-md-5">
+                            <div class="carousel-caption blank">
+                                <h2>Satın Alma Performansınızı Arttırın</h2>
+                                <p class="font-properties">
+                                    Satın alma giderlerinizi raporlayın,
+                                    işlemlerinizi Yeniden Yapılandırmayı kolaylıkla yapın,
+                                    Şeffaflık ve Tasarrufu aynı anda görün,
+                                    Satın alma personelinizin verimliliğiniz arttırın,
+                                    Tek Tuşla Talepleri yönetin,
+                                    Tekliflerinizi Cep Telefonunuzdan görüntüleyip onaylayın,
+                                    Mükerrer alımların önüne geçin,
+                                    Geçmiş Fiyatlara anında ulaşın,
+                                    Otomatik teklif karşılaştırma ile bırakın sistem size en uygununu seçsin
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content" style="cursor:pointer">
+
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/Bildirimler.png" alt="Bildirimler">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/Gündem.png" alt="Şirket Gündemi">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/HaritadanEnvanterSorgulama.png" alt="Haritadan Envanter Sorgulama">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/EnvanterListesi.png" alt="Envanter Listesi">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">5 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/Envanter-Yaşam-Döngüsü-(1).png" alt="Envanter Yaşam Döngüsü">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">6 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/EnvanterYonetimi.png" alt="Envanter Yönetimi">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">7 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/GenelÖzet1.png" alt="Şirket Genel Özeti">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">8 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/GorevlendirmeTalebi.png" alt="Görevlendirme Talebi">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">9 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/IzinRaporlari.png" alt="İzin Raporları">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">10 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/izintalebi.png" alt="İzin Talebi">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">11 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/İşletmeDetayiIsletmeBilgileri1.png" alt="İşletme Bilgileri">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">12 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/OrganizasyonSemasiYonetimi.png" alt="Organizasyon Şeması Yönetimi">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">13 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/OrganizasyonSemasiYonetimi3.png" alt="Organizasyon Şeması Yönetimi">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">14 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/PERSONELARAMA.png" alt="Personel Arama">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">15 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/PersonelYonetimiOzlukBilgileri.png" alt="Özlük Bilgileri Yönetimi">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">16 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/PersonelYonetimiOzlukDosyalari.png" alt="Özlük Dosyaları Yönetimi">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">17 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/PersonelDegerlendirmeİslemi.png" alt="Personel Değerlendirme Performans 360">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">18 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/Proje-Raporları.png" alt="Proje Raporları">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">19 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/ProjeDetayiDosyalari.png" alt="Proje Dosyaları">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">20 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/ProjeDetayiGantSemasi.png" alt="Proje Gant Şeması">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">21 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/ProjeDetayiGenelBilgiler.png" alt="Proje Bilgileri">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">22 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/ProjeDetayiOrgSemasi.png" alt="Proje Organizasyon Şeması">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">23 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/ProjeDetayiPersoneller.png" alt="Proje Personeli Yönetimi">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">24 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/ProjeDetayiPuantaj.png" alt="Proje Puantaj Yönetimi">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">25 / 25</div>
+                        <img class="img-size" src="~/Content/Home/images/Screen/TeklifOnayiBekleyenSatinalmaTalepleri.png" alt="Satınalma Teklif Yönetimi">
+                    </div>
+
+
+                    <!-- Next/previous controls -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <!-- Caption text -->
+                    <div class="caption-container">
+                        <p class="font-stil" id="caption"></p>
+                    </div>
+
+                    <!-- Thumbnail image controls -->
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/Bildirimler.png" onclick="currentSlide(1)" alt="Şirketimin Gündemi">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/Gündem.png" onclick="currentSlide(2)" alt="Şirketimin Gündemi">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/HaritadanEnvanterSorgulama.png" onclick="currentSlide(3)" alt="Envanter Yönetimim">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/EnvanterListesi.png" onclick="currentSlide(4)" alt="Envanterleriniz Nerde, Kimde, Ne Durumda ?">
+                    </div>
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/Envanter-Yaşam-Döngüsü-(1).png" onclick="currentSlide(5)" alt="Envanterlerin Dağıtım ve Taşınma Durumları Haritada">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/EnvanterYonetimi.png" onclick="currentSlide(6)" alt="Envanterinizin Tüm Kayıtlarını Yönetin">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/GenelÖzet2.png" onclick="currentSlide(7)" alt="Personel Genel Özeti">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/GorevlendirmeTalebi.png" onclick="currentSlide(8)" alt="Görevlendirmeler Kayıt Altında">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/IzinRaporlari.png" onclick="currentSlide(9)" alt="İzinleri Yönetin, Raporlayın">
+                    </div>
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/izintalebi.png" onclick="currentSlide(10)" alt="İzinleriniz Düzende ve Onaylı Artık">
+                    </div>
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/İşletmeDetayiIsletmeBilgileri1.png" onclick="currentSlide(11)" alt="Cari Yönetimi">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/OrganizasyonSemasiYonetimi.png" onclick="currentSlide(12)" alt="Organizasyon Şeması Yönetimi">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/OrganizasyonSemasiYonetimi3.png" onclick="currentSlide(13)" alt="Organizasyon Şeması Yönetimi">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/PERSONELARAMA.png" onclick="currentSlide(14)" alt="Personellerinizin Tüm Özlük Dosyalarını Yönetin">
+                    </div>
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/PersonelYonetimiOzlukBilgileri.png" onclick="currentSlide(15)" alt="Personellerinizin Tüm Özlük Dosyalarını Yönetin">
+                    </div>
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/PersonelYonetimiOzlukDosyalari.png" onclick="currentSlide(16)" alt="Personellerinizin Tüm Özlük Dosyalarını Yönetin">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/PersonelDegerlendirmeİslemi.png" onclick="currentSlide(17)" alt="Personel Performans ve Değerlendirme İşlemleri">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/Proje-Raporları.png" onclick="currentSlide(18)" alt="Projeleriniz Ne Durumda Anlık İzleyin">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/ProjeDetayiDosyalari.png" onclick="currentSlide(19)" alt="Proje Dosyalarınızı Kontrol Altına Alın">
+                    </div>
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/ProjeDetayiGantSemasi.png" onclick="currentSlide(20)" alt="Proje Gantt Şemanızı Oluşturun">
+                    </div>
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/ProjeDetayiGenelBilgiler.png" onclick="currentSlide(21)" alt="Projem Ne Zaman Bitiyor">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/ProjeDetayiOrgSemasi.png" onclick="currentSlide(22)" alt="Proje Bazlı Organizasyon Şeması Oluşturun">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/ProjeDetayiPersoneller.png" onclick="currentSlide(23)" alt="Proje Bazlı Organizasyon Şeması Oluşturun">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/ProjeDetayiPersoneller.png" onclick="currentSlide(24)" alt="Proje Personel Puantajınızı Çıkarın">
+                    </div>
+                    <div class="column">
+                        <img class="demo img-size" src="~/Content/Home/images/Screen/TeklifOnayiBekleyenSatinalmaTalepleri.png" onclick="currentSlide(25)" alt="Satın Alma Performansınızı Arttırın">
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#inSlider1" role="button" data-slide="prev">
+                <span class="fa fa-chevron-circle-left chevron-stil" style="color:black" aria-hidden="true"></span>
+                <span class="sr-only">Geri</span>
+            </a>
+            <a class="right carousel-control" href="#inSlider1" role="button" data-slide="next">
+                <span class="fa fa-chevron-circle-right chevron-stil" style="color:black" aria-hidden="true"></span>
+                <span class="sr-only">İleri</span>
+            </a>
+        </div>
+        <!-- End container -->
+    </section>
+    <!-- End screenshots -->
+    <!--
+        End Screenshot Section
+        ==================================== -->
+    <!--
+    Start Download Section
+    ==================================== -->
+    <section id="application" class="download">
+        <div class="overlay">
+            <div class="container">
+                <!-- Start Section Title -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                            <h2>WORKOFTIME Uygulamasını Deneyin</h2>
+                            <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Section Title -->
+                <div class="download-content">
+                    <div class="text-download wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
+                        <p>WorkOfTime Uygulamasını Denemek İçin Ücretsiz Giriş Yapın</p>
+                    </div>
+                    <!-- Start Store Button -->
+                    <div class="store-butt">
+
+                        <a href="http://demo.workoftime.com" target="_blank" title="Web Uygulamaya Giriş" style="line-height: 14px;" class="bttn-applora-gradient">
+
+
+                            <i class="fa fa-globe"></i>
+                            <span>Web Uygulamaya Giriş</span>
+
+                        </a>
+
+                        <a href="https://play.google.com/store/apps/details?id=com.infoline.intranet" target="_blank" class="bttn-applora-gradient wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
+                            <i class="fa fa-android"></i>
+                            <span>Google Play</span>
+                        </a>
+                        <a href="https://apps.apple.com/tr/app/workoftime/id1500012649?l=tr" target="_blank" id="appstore" class="bttn-applora-gradient wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                            <i class="fa fa-apple"></i>
+                            <span>App Store</span>
+                        </a>
+                    </div>
+                    <!-- End Store Button -->
+                    <!-- Start Image Download -->
+                    <div class="image-download">
+                        <img src="/Content/Home/images/phone3d.png" alt="WorkOfTime Telefon" class="img-responsive">
+                    </div>
+                    <!-- End Image Download -->
+                </div>
+                <!-- End download-content -->
+            </div>
+            <!-- End container -->
+        </div>
+        <!-- end overlay -->
+    </section>
+    <!-- End download -->
+    <!--
+        End Download Section
+        ==================================== -->
+    <section id="price" class="pricingSection">
+        <div class="container">
+            <!-- Start Section Title -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                        <h2>FİYATLANDIRMA</h2>
+                        <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Section Title -->
+            <div class="row">
+                <div class="pricing">
+                    <div class="pricing__switcher switcher">
+                        <div class="switcher__buttons">
+                            <div class="switcher__button switcher__button--enabled">Aylık Ödeme</div>
+                            <div class="switcher__button">Yıllık Ödeme</div>
+                            <div class="switcher__border"></div>
+                        </div>
+                    </div>
+                    <div class="pricing__plan">
+                        <h3 class="pricing__title">Taahhütsüz</h3>
+                        <div class="pricing__values">
+                            <div class="pricing__value pricing__value--show"><span>₺ </span> 179<b>/ aylık</b></div>
+                            <div class="pricing__value pricing__value--hide"><span>₺ </span> 2148<b>/ yıllık</b></div>
+                        </div>
+                        <ul class="pricing__list">
+                            <li><b>1</b> Personel İçin</li>
+                            <li>Güncelleme Desteği</li>
+                            <li>Bulut Hizmeti</li>
+                            <li>7/24 Destek</li>
+                            <li>İlk Veri Girişleri Ücretsiz</li>
+                            <li>Bütün Ürünler Dahil</li>
+                            <li>Fiyatlara %18 KDV Dahil Değildir</li>
+                            <li>Başka Ek Ücret Yok</li>
+                        </ul>
+                        <a class="pricing__signup" href="#contact-us">Bilgi al</a>
+                    </div>
+                    <div class="pricing__plan pricing__plan--popular">
+                        <div class="pricing__badge-bg"></div>
+                        <h3 class="pricing__title">12 Ay Taahhüt ile</h3>
+                        <div class="pricing__values">
+                            <div class="pricing__value pricing__value--show"><span>₺ </span> 169<b>/ aylık</b></div>
+                            <div class="pricing__value pricing__value--hide"><span>₺ </span> 2028<b>/ yıllık</b></div>
+                        </div>
+                        <ul class="pricing__list">
+                            <li><b>1</b> Personel İçin</li>
+                            <li>Güncelleme Desteği</li>
+                            <li>Bulut Hizmeti</li>
+                            <li>7/24 Destek</li>
+                            <li>İlk Veri Girişleri Ücretsiz</li>
+                            <li>Bütün Ürünler Dahil</li>
+                            <li>Fiyatlara %18 KDV Dahil Değildir</li>
+                            <li>Başka Ek Ücret Yok</li>
+                        </ul>
+                        <a class="pricing__signup" href="#contact-us">Bilgi al</a>
+                    </div>
+                    <div class="pricing__plan">
+                        <h3 class="pricing__title">24 ay Taahhüt ile</h3>
+                        <div class="pricing__values">
+                            <div class="pricing__value pricing__value--show"><span>₺ </span> 159<b>/ aylık</b></div>
+                            <div class="pricing__value pricing__value--hide"><span>₺ </span> 1908<b>/ yıllık</b></div>
+                        </div>
+                        <ul class="pricing__list">
+                            <li><b>1</b> Personel İçin</li>
+                            <li>Güncelleme Desteği</li>
+                            <li>Bulut Hizmeti</li>
+                            <li>7/24 Destek</li>
+                            <li>İlk Veri Girişleri Ücretsiz</li>
+                            <li>Bütün Ürünler Dahil</li>
+                            <li>Fiyatlara %18 KDV Dahil Değildir</li>
+                            <li>Başka Ek Ücret Yok</li>
+                        </ul>
+                        <a class="pricing__signup" href="#contact-us">Bilgi al</a>
+                    </div>
+                </div>
+            </div>
+            <!-- End row -->
+        </div>
+
+        <!-- End overlay -->
+    </section>
+
+    <!--
+      Start Statistics App
+      ==================================== -->
+    <section id="statistic-app" class="statistic-app">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="all-statis text-center">
+                        <!-- Start Left Photo -->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="statis-img">
+                                <img src="/Content/Custom/img/phone3d_2.png" alt="WorkOfTime Mobil Uygulama" class="img-responsive wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="1s">
+                                <img src="/Content/Custom/img/phone3d_3.png" alt="WorkOfTime Mobil Uygulama2" class="img-responsive hidden-xs wow fadeInRight" data-wow-delay="0.7s" data-wow-duration="1s">
+                            </div>
+                        </div>
+                        <!-- End Left Photo -->
+                        <!-- Start Right Statis -->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="statis-content">
+                                <div class="row">
+                                    <!-- Start Single Statis -->
+                                    <div class="col-md-6 fix-width-left wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                                        <div class="single-statis">
+                                            <div class="statis-icon">
+                                                <i class="icon-building"></i>
+                                                <div class="curvedarrow"></div>
+                                            </div>
+                                            <div class="statis-block">
+                                                <h4 class="statis-number">75</h4>
+                                                <p>Firma</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Statis -->
+                                    <!-- Start Single Statis -->
+                                    <div class="col-md-6 fix-width-right wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
+                                        <div class="single-statis">
+                                            <div class="statis-icon">
+                                                <i class="icon-users"></i>
+                                                <div class="curvedarrow"></div>
+                                            </div>
+                                            <div class="statis-block">
+                                                <h4 class="statis-number">20900</h4>
+                                                <p>Kullanıcı</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Statis -->
+                                    <!-- Start Single Statis -->
+                                    <div class="col-md-6 fix-width-left wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
+                                        <div class="single-statis statis-reset">
+                                            <div class="statis-icon">
+                                                <i class="icon-star"></i>
+                                                <div class="curvedarrow"></div>
+                                            </div>
+                                            <div class="statis-block">
+                                                <h4 class="statis-number">17</h4>
+                                                <p>Yıllık Tecrübe</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Statis -->
+                                    <!-- Start Single Statis -->
+                                    <div class="col-md-6 fix-width-right wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="1s">
+                                        <div class="single-statis statis-reset">
+                                            <div class="statis-icon">
+                                                <i class="icon-flow-tree"></i>
+                                                <div class="curvedarrow"></div>
+                                            </div>
+                                            <div class="statis-block">
+                                                <h4 class="statis-number">46</h4>
+                                                <p>Ekip Üyesi</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Statis -->
+                                </div>
+                                <!-- End row -->
+                            </div>
+                            <!-- end statis-content -->
+                        </div>
+                        <!-- End Right Statis -->
+                    </div>
+                    <!-- End all-statis -->
+                </div>
+                <!-- End row -->
+            </div>
+            <!-- End container -->
+        </div>
+        <!-- End overlay -->
+    </section>
+    <!-- End statistic-app -->
+    <!--
+        End Statistics App
+        ==================================== -->
+
+    <section id="quality" class="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                        <h2>Kalite Yönetimi</h2>
+                        <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <a href="https://www.infoline-tr.com/About/QualityManagement" target="_blank">
+                        <div class="single-services mb-50">
+                            <div class="services-icon">
+                                <i class="icon-thumbs-up-1"></i>
+                            </div>
+                            <div class="services-content">
+                                <h4>Kalite Yönetimi</h4>
+                                <p>Kalite yönetim politikamızı görmek için tıklayınız...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="https://www.infoline-tr.com/About/Awards" target="_blank">
+                        <div class="single-services mb-50">
+                            <div class="services-icon">
+                                <i class="icon-trophy"></i>
+                            </div>
+                            <div class="services-content">
+                                <h4>Ödüllerimiz</h4>
+                                <p>Almış olduğumuz bir çok ödülün detayına ulaşmak için tıklayınız...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="https://www.infoline-tr.com/About/QualityCertificates" target="_blank">
+                        <div class="single-services mb-50">
+                            <div class="services-icon">
+                                <i class="icon-award-2"></i>
+                            </div>
+                            <div class="services-content">
+                                <h4>Kalite Belgelerimiz</h4>
+                                <p>Kalite Belgelerimizin detaylarını görmek için tıklayınız.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="news" class="blog-slider owl-carousel owl-theme">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+        End Our Blog
+        ==================================== -->
+    <!--
+        Start Contact Us
+        ==================================== -->
+    <section id="contact-us" class="contact-us">
+        <div class="overlay">
+            <div class="container">
+                <!-- Start Section Title -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                            <h2>Bize Ulaşın</h2>
+                            <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Section Title -->
+                <div class="row">
+                    <!-- Start Google Map -->
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
+                        <div class="mobile-place">
+
+                        </div>
+                    </div>
+                    <!-- End Google Map -->
+                    <!-- Start Form & Info -->
+                    <div class="col-md-8">
+                        <div class="row">
+                            <!-- Start Address Info -->
+                            <div class="col-md-3 col-sm-4 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
+                                <div class="single-info">
+                                    <div class="icon-contact">
+                                        <i class="icon-location-7"></i>
+                                    </div>
+                                    <div class="info-text">
+                                        <h4>Merkez Adres</h4>
+                                        <p>Hacettepe Teknokent 6. Ar-Ge No 68  <br />Beytepe / Ankara</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
+                                <div class="single-info">
+                                    <div class="icon-contact">
+                                        <i class="icon-location-7"></i>
+                                    </div>
+                                    <div class="info-text">
+                                        <h4>İstanbul Şube</h4>
+                                        <p>YTÜ Teknopark B2 Blok No:106  <br />Esenler / İstanbul</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- End Address Info -->
+                            <!-- Start Phone Info -->
+                            <div class="col-md-3 col-sm-4 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
+                                <div class="single-info" style=" padding-bottom: 30px">
+                                    <div class="icon-contact">
+                                        <i class="icon-phone"></i>
+                                    </div>
+                                    <div class="info-text">
+                                        <h4>Telefon</h4>
+                                        <p>Destek Hattımız:</p>
+                                        <p><a style="color:white!important" class="btn btn-xs btn-white" href="tel:+90 (850) 535 05 35"><i class="fa fa-phone"></i>  +90 (850) 535 05 35 </a> </p>
+                                        @*<p><a style="color:white!important" class="btn btn-xs btn-white" href="tel:+90 (312) 440 02 50"><i class="fa fa-phone"></i>  +90 (312) 440 02 50 </a> </p>
+                                            <p> <a style="color:white!important" class="btn btn-xs btn-white" href="tel:+90 (212) 212 19 23"><i class="fa fa-phone"></i> +90 (212) 212 19 23 </a></p>*@
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Phone Info -->
+                            <!-- Start E-Mail Info -->
+                            <div class="col-md-3 col-sm-4 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
+                                <div class="single-info" style=" padding-bottom: 30px">
+                                    <div class="icon-contact">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="info-text">
+                                        <h4>E-Posta</h4>
+                                        <p>
+                                            <a style="color:white!important" class="btn btn-xs btn-white" href="mailto:info@workoftime.com"><i class="fa fa-envelope"></i> info@workoftime.com </a>
+
+                                        </p>
+                                        <p>
+                                            <a style="color:white!important" class="btn btn-xs btn-white" href="mailto:info@infoline-tr.com"><i class="fa fa-envelope"></i> info@infoline-tr.com </a>
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End E-Mail Info -->
+                            <!-- Start Contact Form -->
+                            <div class="col-sm-12 wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="1s">
+                                <div class="contact-form">
+                                    <form id="form" action="/Home/ContactMailSend" method="post" class="form-horizontal">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" placeholder="Adınız" class="form-control" name="FullName" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="email" placeholder="E-Posta" class="form-control" name="EmailAddress" required>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input style="color:white !important" type="text" placeholder="Kurum" class="form-control" name="Foundation" required>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <textarea placeholder="Mesajınız" class="form-control" name="Description" required></textarea>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="col-md-5">
+                                                    <div class="form-group">
+                                                        <label class="control-label hide">Captcha</label>
+                                                        @if (Request.Url.ToString().IndexOf("localhost") > -1 == true)
+                                                        {
+                                                            <div style="padding-top:10px;" class="g-recaptcha" data-sitekey="6LfTvMYUAAAAAOPNXLBxr0xO0hTfmv1lPNU9dk4y"></div>
+                                                        }
+                                                        else
+                                                        {
+                                                            <div style="padding-top:10px;" class="g-recaptcha" data-sitekey="6LcivcYUAAAAAFdCaSEhNVl9MfJo32zfw9H7QV6F"></div>
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="butt-send">
+                                                        <button type="submit" class="bttn-applora-gradient" id="contactSend">
+                                                            <i class="fa fa-paper-plane-o"></i>
+                                                            <span>Mesajı Gönder</span>
+                                                        </button>
+                                                    </div>
+                                                </div><br />
+                                                <div class="col-md-3 pull-right">
+                                                    <div class="social-footer text-center wow fadeInUp" data-wow-duration="1s">
+                                                        <a class="social-applora-gradient" href="https://www.facebook.com/infolinebilgiteknolojileri/?__tn__=kC-R&eid=ARBwlOC3qhfvtFadOBPzVeKePpmciVGNb_m8VlvQqz4g56xlkanSGEcuoEylZhPxALe9RPtJUyCRcf5s&hc_ref=ARSWlXuV2I2OMGYlniVlUh_qBEn3c5EhDY5SKAN1bjfrt_Hyb_CXxu_Hpi6xehXt2f8&fref=nf&__xts__[0]=68.ARDBpDFwkc_V90TWSImJJ2X_17Hklt4f0-oDOiC3T87Y_KRhlBN5GGWFSPGcTGC0UakywDEXwEWUhpSahppii4nSx9uGHx2Eav51xeDGySPjZvgVKKMiwGHaC0nv7V2O0nALH1aWDMo-w_zWDbRdrYR3jnKbBeSjCOsT5G7udqIqQ0j2ZZLJ3jg8MR1H3NsgO6f22oXsFAyPUfHrY5OX2BFTpniZlriQjEkh9_NGWRqWvTkzYSpMldQo7yc_PlgfGeJ18vNP5Kd9s0oNP13JfHVa2RP0dRFTfk3xQsIajK-hacBeR68fiGTHGFhrZzxjJpOEfAQyOtUtteg" target="_blank"><i class='fa fa-facebook'></i></a>
+                                                        <a class="social-applora-gradient" href="https://twitter.com/infoline_tr" target="_blank"><i class='fa fa-twitter'></i></a>
+                                                        <a class="social-applora-gradient" href="https://www.linkedin.com/company/infolinetr/" target="_blank"><i class='fa fa-linkedin'></i></a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                            <!-- End Contact Form -->
+                        </div>
+                        <!-- End row -->
+                    </div>
+                    <!-- End Form & Info -->
+                </div>
+                <!-- End row -->
+            </div>
+            <!-- End container -->
+        </div>
+        <!-- End overlay -->
+    </section>
+    <!-- End contact-us -->
+    <!--
+        End Contact Us
+        ==================================== -->
+    <!--
+
+    <!--
+        Start Footer
+        ==================================== -->
+    <style>
+        .footer {
+            padding: 50px 0 !important;
+            background-color: #2b323f !important;
+        }
+    </style>
+    <footer id="footer" class="footer" style="z-index:9999999">
+        <div class="container">
+            <div class="logo-footer wow fadeInUp" data-wow-duration="1s">
+                <a href="">
+                    <img src="/Content/Home/images/workoftimebeyaz.png" alt="WorkofTime Logo" title="WorkofTime">
+                </a>
+            </div>
+            <!-- End Logo Footer -->
+            <!-- Start Social Links -->
+            <div class="social-footer text-center wow fadeInUp" data-wow-duration="1s">
+                <a class="social-applora-gradient" href="https://www.facebook.com/infolinebilgiteknolojileri/?__tn__=kC-R&eid=ARBwlOC3qhfvtFadOBPzVeKePpmciVGNb_m8VlvQqz4g56xlkanSGEcuoEylZhPxALe9RPtJUyCRcf5s&hc_ref=ARSWlXuV2I2OMGYlniVlUh_qBEn3c5EhDY5SKAN1bjfrt_Hyb_CXxu_Hpi6xehXt2f8&fref=nf&__xts__[0]=68.ARDBpDFwkc_V90TWSImJJ2X_17Hklt4f0-oDOiC3T87Y_KRhlBN5GGWFSPGcTGC0UakywDEXwEWUhpSahppii4nSx9uGHx2Eav51xeDGySPjZvgVKKMiwGHaC0nv7V2O0nALH1aWDMo-w_zWDbRdrYR3jnKbBeSjCOsT5G7udqIqQ0j2ZZLJ3jg8MR1H3NsgO6f22oXsFAyPUfHrY5OX2BFTpniZlriQjEkh9_NGWRqWvTkzYSpMldQo7yc_PlgfGeJ18vNP5Kd9s0oNP13JfHVa2RP0dRFTfk3xQsIajK-hacBeR68fiGTHGFhrZzxjJpOEfAQyOtUtteg" target="_blank"><i class='fa fa-facebook'></i></a>
+                <a class="social-applora-gradient" href="https://twitter.com/infoline_tr" target="_blank"><i class='fa fa-twitter'></i></a>
+                <a class="social-applora-gradient" href="https://www.linkedin.com/company/infolinetr/" target="_blank"><i class='fa fa-linkedin'></i></a>
+            </div>
+            <!-- End Social Links -->
+            <!-- Start Copyright -->
+            <div class="copyright text-center wow fadeInUp" data-wow-duration="1s">
+                <p>Copyright © 2021 <a href="http://www.infoline-tr.com" target="_blank">INFOLINE Bilgi Teknolojileri</a> Tüm Hakları Saklıdır.</p>
+            </div>
+            <!-- End Copyright -->
+        </div>
+        <!-- End container -->
+    </footer>
+    <!-- End footer -->
+    <!--
+        End Footer
+        ==================================== -->
+    <!--
+        Start Back To Top
+        ==================================== -->
+    <div id="scroll-top">
+        <i class="fa fa-angle-up fa-2x"></i>
+    </div>
+    <!--
+        End Back To Top
+        ==================================== -->
+    <!--
+        Start Preloader
+        ==================================== -->
+    @*<div id="loading-mask">
+            <div class="loader">
+                <div class="loader-inner"></div>
+                <div class="loader-inner"></div>
+                <div class="loader-inner"></div>
+                <div class="loader-inner"></div>
+                <div class="loader-inner"></div>
+            </div>
+        </div>*@
+    <!--
+        End Preloader
+        ==================================== -->
+    <!--
+            JS Files
+            ==================================== -->
+    <!-- Plugins -->
+
+    <script src="/Content/Home/scripts/plugins/toastr/toastr.min.js"></script>
+    <script src="/Content/Home/scripts/infolinearge.js"></script>
+
+    <script src="/Content/Home/scripts/plugins/custom/custom.js"></script>
+
+    <script src="/Content/Home/scripts/plugins/custom/plugins.js"></script>
+    <script src="/Content/Home/scripts/plugins/custom/particles-lines.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".switcher__button").on('click', function (e) {
+                $(".switcher__button").toggleClass('switcher__button--enabled');
+                $(".pricing__value").removeClass('pricing__value--hidden');
+                $(".pricing__value").toggleClass('pricing__value--show pricing__value--hide');
+            });
+
+
+            var lazy = new LazyLoad();
+            lazy.update();
+
+            $("#selectLanguage").find("a").on("click", function (i, e) {
+                window.localStorage.language = $(this).text();
+                location.reload(true);
+            });
+            $("#selectLanguage").find("strong").text(window.localStorage.language);
+
+            LanguageTranslate($("*"));
+
+            LanguageTranslate($("*"));
+
+            function LanguageTranslate(source) {
+
+                source
+                    .contents()
+                    .each(function () {
+                        if (this.nodeType === 3) {
+                            if (language[this.nodeValue.trim()]) {
+                                if (language[this.nodeValue.trim()][window.localStorage.language]) {
+                                    this.nodeValue = language[this.nodeValue.trim()][window.localStorage.language];
+                                }
+                            }
+                        }
+                    });
+
+                source
+                    .each(function () {
+                        if (this.hasAttribute("placeholder")) {
+                            if (language[this.getAttribute("placeholder").trim()]) {
+                                if (language[this.getAttribute("placeholder").trim()][window.localStorage.language]) {
+                                    this.setAttribute("placeholder", language[this.getAttribute("placeholder").trim()][window.localStorage.language]);
+                                }
+                            }
+                        }
+
+                        if (this.hasAttribute("title")) {
+                            if (language[this.getAttribute("title").trim()]) {
+                                if (language[this.getAttribute("title").trim()][window.localStorage.language]) {
+                                    this.setAttribute("title", language[this.getAttribute("title").trim()][window.localStorage.language]);
+                                }
+                            }
+                        }
+
+                        var _this = $(this);
+                        $.each(_this.data(), function (i, e) {
+
+                            if (i && i == "original-title" && typeof (e) == "string") {
+                                if (language[e.trim()]) {
+                                    if (language[e][window.localStorage.language]) {
+                                        _this.attr("data-" + i, language[e.trim()][window.localStorage.language])
+                                    }
+                                }
+                            }
+                        });
+
+                    });
+
+            }
+        })
+
+            .on('success', 'form#InsertDemo', function (e, i) {
+                if (i.Result) {
+                    window.location.replace("http://demo.workoftime.com");
+                } else {
+                    $('#recap').remove()
+                    $('[data-selector="captcha"]').append($('<div id="recap" sitekey="6LfTvMYUAAAAAOPNXLBxr0xO0hTfmv1lPNU9dk4y" class="g-recaptcha"></div>'));
+                    grecaptcha.render($('#recap')[0], { sitekey: '6LfTvMYUAAAAAOPNXLBxr0xO0hTfmv1lPNU9dk4y' });
+                }
+            })
+
+
+            .on('click', '#contactSend', function (e) {
+                e.preventDefault();
+
+                var _this = $(this);
+                var action = '/Home/ContactMailSend';
+                var method = 'post';
+                var data = $('#form').serializeArray();
+                if ($.Enumerable.From(data).Where(c => c.value == "").Count() > 0) {
+                    MesajWarning("Tüm alanları doldurun veya güvenlik doğrulamasını gerçekleştirin.")
+                    return;
+                }
+
+                var title = _this.attr("data-loadingtitle") ? _this.attr("data-loadingtitle") : "lütfen bekleyiniz";
+                var formData = new FormData();
+                var stringData = $('#form').serializeArray();
+                var result = null;
+
+                $.each(stringData, function (key, input) {
+                    formData.append(input.name, input.value);
+                });
+
+
+                $.ajax({
+                    url: action,
+                    type: method,
+                    data: data,
+                    beforeSend: function () {
+                        $('body').loadingModal({ text: title, animation: 'rotatingPlane', backgroundColor: 'black' });
+                    },
+                    success: function (response) {
+                        feedback(response.FeedBack);
+                        if (response.Result) {
+                            var modal = _this.parents(".modal");
+                            if (modal.length > 0 && typeof _this.attr('data-modal-close') == "undefined") {
+                                modal.modal("hide");
+                            }
+                            $(".k-pager-refresh.k-link").each(function (i, e) {
+                                $(this).trigger("click");
+                            });
+
+                            grecaptcha.reset();
+                        } else {
+                            grecaptcha.reset();
+                        }
+                        _this.trigger("success", response);
+                    },
+                    error: function () {
+                        feedback("SERVER");
+                    },
+                    complete: function (response) {
+                        $('body').loadingModal('destroy');
+                        _this.trigger("complete", response.responseJSON, response.responseText);
+                    }
+                });
+
+
+            })
+
+        var cbpAnimatedHeader = (function () {
+            var docElem = document.documentElement,
+                header = document.querySelector('.navbar-default'),
+                didScroll = false,
+                changeHeaderOn = 200;
+            function init() {
+                window.addEventListener('scroll', function (event) {
+                    if (!didScroll) {
+                        didScroll = true;
+                        setTimeout(scrollPage, 250);
+                    }
+                }, false);
+            }
+            function scrollPage() {
+                var sy = scrollY();
+                if (sy >= changeHeaderOn) {
+                    $(header).addClass('navbar-scroll')
+                }
+                else {
+                    $(header).removeClass('navbar-scroll')
+                }
+                didScroll = false;
+            }
+            function scrollY() {
+                return window.pageYOffset || docElem.scrollTop;
+            }
+            init();
+
+        })();
+
+
+                //$(document).click(function (event) {
+                //    debugger;
+                //    if ($('#myModal').attr('style') == "display: block;") {
+                //        if (!$(event.target).closest(".mySlides").length) {
+                //            return;
+                //            closeModal();
+                //        }
+                //    }
+                //});
+    </script>
+</body>
+</html>

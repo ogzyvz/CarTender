@@ -1,0 +1,222 @@
+﻿@model Infoline.WorkOfTimeManagement.BusinessData.VWSH_User
+@{
+    ViewBag.Title = "Kulllanıcı Kayıt Detayı";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-horizontal" data-selector="modalContainer">
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="type">Kullanıcı Tipi</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.Type_Title, new Dictionary<string, object>()
+            {
+                {"class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="firstname">Ad</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.firstname, new Dictionary<string, object>()
+            {
+                {"class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="lastname">Soyad</label>
+        </div>
+        <div class="col-md-8">
+
+            @Html.TextBoxFor(model => model.lastname, new Dictionary<string, object>()
+            {
+                {"class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="title">Ünvan</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.title, new Dictionary<string, object>()
+            {
+                {"class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="tckimlikno">TC Kimlik No</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.tckimlikno, new Dictionary<string, object>()
+            {
+                {"class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="birthday">Doğum Tarihi</label>
+        </div>
+        <div class="col-md-8">
+            @(Html.Kendo().DatePickerFor(model => model.birthday).HtmlAttributes(new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"readonly","readonly"}
+            }).Value("10/10/1970").Format("dd.MM.yyyy")
+            )
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="loginname">Kullanıcı Adı</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.loginname, new Dictionary<string, object>()
+            {
+                {"class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="email">Eposta Adresi</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.email, new Dictionary<string, object>()
+            {
+                {"class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="password">Şifre</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBox("Şifre", string.Empty, new Dictionary<string, object>()
+            {
+                {"class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="password">Şifre Tekrar</label>
+        </div>
+        <div class="col-md-8">
+            @Html.Password("Şifre Tekrar", string.Empty, new Dictionary<string, object>()
+            {
+                {"class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="phone">Telefon</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.phone, new Dictionary<string, object>()
+            {
+                {"class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="cellphone">Cep Telefonu</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.cellphone, new Dictionary<string, object>()
+            {
+                { "class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="city">Şehir</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.city_Title, new Dictionary<string, object>()
+            {
+                { "class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="town">İlçe</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.town_Title, new Dictionary<string, object>()
+            {
+                { "class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="address">Adres</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextAreaFor(model => model.address, new Dictionary<string, object>()
+            {
+                {"class","form-control"},
+                {"readonly","readonly"}
+            })
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="btn btn-md btn-danger pull-left" data-task="modalClose">Geri</button>
+    </div>
+
+</div>
+

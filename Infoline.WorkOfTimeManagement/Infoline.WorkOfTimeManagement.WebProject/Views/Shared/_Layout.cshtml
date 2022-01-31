@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154212733-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-154212733-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkOfTime | @ViewBag.Title</title>
+
+    <!--Default-->
+    <link href="~/content/themes/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Themes/css/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <link href="~/content/themes/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/content/themes/css/animate.css" rel="stylesheet">
+    <link href="~/content/themes/css/style.css" rel="stylesheet">
+    <link href="~/Content/Themes/css/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/Loading/css/jquery.loadingModal.min.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/Bootstrap-Dialog/dist/css/bootstrap-dialog.min.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/sweetAlert/css/sweetalert.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/Fontello/css/fontello.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/tagify/tagify.css" rel="stylesheet" />
+    <!--Default-->
+    <!--Harita-->
+    <link href="~/Content/Harita/fonts/MapIcon/flaticon.css" rel="stylesheet" />
+    <link href="~/Content/Harita/css/ol.custom.css" rel="stylesheet" />
+    <link href="~/Content/Custom/css/custom.css" rel="stylesheet" />
+    <!--Harita-->
+    <!--Kendo-->
+    <link href="~/Content/Kendo/css/kendo.common-material.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Kendo/css/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Kendo/css/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Kendo/css/kendo.material.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Kendo/css/kendo.dataviz.material.min.css" rel="stylesheet" type="text/css" />
+    <!--Kendo-->
+
+    <link href="~/Content/Custom/fonts/infolineIcon/style.css" rel="stylesheet" />
+    <link href="~/Content/Custom/css/_Layout.css" rel="stylesheet" />
+    <link href="~/Content/SYS_Files/css/InfolineFileUpload.css" rel="stylesheet" />
+
+    @RenderSection("Css", false)
+
+    <!--Default-->
+    <script src="~/content/themes/js/jquery-2.1.1.js"></script>
+    <script src="~/Content/Themes/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="~/content/themes/js/bootstrap.min.js"></script>
+    <script src="~/content/themes/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/content/themes/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/Content/Themes/js/plugins/toastr/toastr.min.js"></script>
+    <script src="~/content/themes/js/inspinia.js"></script>
+    <script src="~/content/themes/js/plugins/pace/pace.min.js"></script>
+    <script src="~/Content/Themes/js/plugins/linq/jquery.linq.min.js"></script>
+    <script src="~/Content/Themes/js/jquery.livequery.min.js"></script>
+    <script src="~/Content/Plugins/Loading/js/jquery.loadingModal.min.js"></script>
+    <script src="~/Content/Plugins/Bootstrap-Dialog/dist/js/bootstrap-dialog.min.js"></script>
+    <script src="~/Content/Plugins/Validator/js/Validator.js"></script>
+    <script src="~/Content/Plugins/sweetAlert/js/sweetalert.min.js"></script>
+    <script src="~/Content/Plugins/tagify/jQuery.tagify.min.js"></script>
+    <script src="~/Content/Plugins/Slugit/jquery.slugit.js"></script>
+    <!--Default-->
+    <!--Kendo-->
+    <script src="~/Content/Kendo/js/jszip.min.js"></script>
+    <script src="~/Content/Kendo/js/kendo.all.min.js"></script>
+    <script src="~/Content/Kendo/js/kendo.aspnetmvc.min.js"></script>
+    <script src="~/Content/Kendo/js/cultures/kendo.culture.tr-TR.min.js"></script>
+    <script src="~/Content/Kendo/js/messages/kendo.messages.tr-TR.min.js"></script>
+    <script src="~/Content/Kendo/js/cultures/kendo.culture.en-US.min.js"></script>
+    <script src="~/Content/Kendo/js/messages/kendo.messages.en-US.min.js"></script>
+    <!--Kendo-->
+    <!--Harita-->
+    <script src="~/content/harita/data/projlist.js"></script>
+    <script src="~/content/harita/js/proj4.js"></script>
+    <script src="~/content/harita/js/turf.min.js"></script>
+    <script src="~/Content/Harita/js/ol.js"></script>
+    <script src="~/Content/Harita/js/ol.extensions.js"></script>
+    <script src="~/Content/Harita/js/ol.custom.js"></script>
+    <script src="~/Content/SYS_Files/js/InfolineFileUpload.js"></script>
+    <!--Harita-->
+    <!--Custom-->
+    <script src="~/Content/Custom/js/master.js"></script>
+    <!--Custom-->
+
+</head>
+<body class="no-skin-config  pace-done">
+
+    <div id="wrapper">
+        @Html.Partial("~/Views/Shared/_LayoutNav.cshtml")
+        <div id="page-wrapper" class="gray-bg">
+
+            @Html.Partial("~/Views/Shared/_LayoutHeader.cshtml")
+            <div class="wrapper wrapper-content clearfix">
+                @RenderBody()
+            </div>
+
+        </div>
+    </div>
+
+    @RenderSection("Javascript", false)
+
+</body>
+</html>
+

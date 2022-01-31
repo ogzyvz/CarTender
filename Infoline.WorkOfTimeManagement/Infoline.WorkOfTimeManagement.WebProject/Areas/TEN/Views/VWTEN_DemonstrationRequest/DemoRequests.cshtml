@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Demo Talepleri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(Html.Akilli()
+    .Grid<Infoline.WorkOfTimeManagement.BusinessData.VWTEN_DemonstrationRequest>("VWTEN_DemonstrationRequest")
+    .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "VWTEN_DemonstrationRequest", new { area = "TEN" })).Sort(a => a.Add(c => c.created).Descending()).PageSize(25))
+    .Columns(x =>
+    {
+        x.Bound(y => y.id).GridSelector(GridSelectorType.Checkbox);
+        x.Bound(y => y.created).Title("İstek Tarihi").Width(120).Format(Extensions.DateFormatFull(true));
+        x.Bound(y => y.Name).Title("Adı Soyadı").Width(120).ClientTemplate("<span> #=Name# #=Surname#</span>");
+        x.Bound(y => y.Surname).Title("Soyadı").Width(120).Hidden(true);
+        x.Bound(y => y.EMail).Title("Mail Adresi").Width(120);
+        x.Bound(y => y.Phone).Title("Telefonu").Width(120);
+        x.Bound(y => y.CompanyName).Title("Şirket Adı").Width(120);
+
+    })
+    .Selectable(x => x.Mode(GridSelectionMode.Multiple))
+    .ToolBar(x =>
+    {
+    }))

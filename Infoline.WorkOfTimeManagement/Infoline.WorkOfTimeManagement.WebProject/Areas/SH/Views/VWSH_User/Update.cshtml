@@ -1,0 +1,298 @@
+﻿@using Infoline.WorkOfTimeManagement.BusinessAccess
+@model Infoline.WorkOfTimeManagement.BusinessData.VWSH_User
+@{
+    ViewBag.Title = "Kullanıcı Kayıt Güncelleme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" data-selector="modalContainer">
+    function GetCityNumber() {
+        return {
+            CityNumber: $('#city').data('kendoDropDownList').dataItem().CityNumber
+        };
+    }
+</script>
+
+
+
+@using (Html.BeginForm("Update", "VWSH_User", FormMethod.Post, new Dictionary<string, object>() {
+    { "class", "form-horizontal" },
+    { "role", "form" },
+    { "data-selector", "modalContainer" },
+    { "data-formType", "Ajax" }
+}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+    @Html.HiddenFor(model => model.idcode)
+
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="AnimalSex">Kullanıcı Durumu</label>
+        </div>
+        <div class="col-md-8 radio">
+            <label class="checkbox-inline">@Html.Kendo().RadioButtonFor(model => model.status).Value(true) <span> Onayla</span></label>
+            <label class="checkbox-inline">@Html.Kendo().RadioButtonFor(model => model.status).Value(EnumSH_UserStatus.OnayBekliyor)<span> Reddet</span></label>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="type">Kullanıcı Tipi</label>
+        </div>
+        <div class="col-md-8">
+            @(Html.Kendo().DropDownListFor(model => model.type).HtmlAttributes(new Dictionary<string, object>()
+                {
+                    {"style", "width:100%"},
+                    {"class", "form-control"},
+                    {"placeholder", "Lütfen kullanıcı tipi seçiniz.."},
+                })
+                .OptionLabel("Lütfen kullanıcı tipi seçiniz..")
+                .DataTextField("Name")
+                .Filter(FilterType.Contains)
+                .DataValueField("Id")
+                .DataSource(s =>
+                {
+                    s.Read(r =>
+                    {
+                        r.Action("GetSH_UserType", "General", new { area = string.Empty });
+                    });
+                }).Validate(Validations.Required)
+            )
+
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="firstname">Ad</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.firstname, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen ad giriniz.."},
+            }).Validate(Validations.TextTurkce(true))
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="lastname">Soyad</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.lastname, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen soyad giriniz"},
+            }).Validate(Validations.TextTurkce(true))
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="title">Ünvan</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.title, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen ünvan giriniz.."},
+            }).Validate(Validations.TextTurkceSpace09(true))
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="tckimlikno">TC Kimlik No</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.tckimlikno, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen TC kimlik no giriniz.."},
+                { "disabled", "disabled" }
+            }).Validate(Validations.TCKimlik)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="birthday">Doğum Tarihi</label>
+        </div>
+        <div class="col-md-8">
+            @(Html.Kendo().DatePickerFor(model => model.birthday).HtmlAttributes(new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen doğum tarihi giriniz.."}
+            }).Format(Extensions.DateFormatShort())
+            .Validate(Validations.Required))
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="loginname">Kullanıcı Adı</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.loginname, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen kullanıcı adı giriniz.."},
+                { "disabled", "disabled" }
+            }).Validate(Validations.TextTurkce(true))
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="email">E-Posta Adresi</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.email, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen eposta adresi giriniz.."},
+            }).Validate(Validations.EMail(true))
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="password">Şifre</label>
+        </div>
+        <div class="col-md-8">
+            @Html.PasswordFor(model => model.password, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen şifrenizi giriniz.."},
+            })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="password">Şifre Tekrar</label>
+        </div>
+        <div class="col-md-8">
+            @Html.Password("rePassword", "", new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen şifrenizi tekrar giriniz.."},
+            }).Validate(Validations.PasswordMatch("#password"))
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="phone">Telefon</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.phone, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen telefon giriniz.."},
+            }).Validate(Validations.TelefonNo(false))
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="cellphone">Cep Telefonu</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.cellphone, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen cep telefonu giriniz.."},
+            }).Validate(Validations.TelefonNo(false))
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="city">Şehir</label>
+        </div>
+        <div class="col-md-8">
+            @(Html.Kendo().DropDownListFor(model => model.city).HtmlAttributes(new Dictionary<string, object>()
+            {
+                {"style", "width:100%"},
+                {"class", "form-control"},
+            })
+            .OptionLabel("Lütfen şehir seçiniz")
+            .Filter(FilterType.Contains)
+            .DataTextField("Name")
+            .DataValueField("Id")
+            .DataSource(s =>
+            {
+                s.Read(r =>
+                {
+                    r.Action("GetUT_City", "General", new { area = string.Empty }); //General controllerının içine datasının oldugu metodu yaz ilk parametreye method ismini ver
+                });
+
+            }).Validate(Validations.Required)
+            )
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="town">İlçe</label>
+        </div>
+        <div class="col-md-8">
+            @(Html.Kendo().DropDownListFor(model => model.town).HtmlAttributes(new Dictionary<string, object>()
+            {
+                {"style", "width:100%"},
+                {"class", "form-control"},
+            })
+            .OptionLabel("Lütfen ilçe seçiniz")
+            .Filter(FilterType.Contains)
+            .DataTextField("Name")
+            .DataValueField("Id")
+            .DataSource(s =>
+            {
+                s.Read(r =>
+                {
+                    r.Action("GetUT_TownByCityNumber", "General", new { area = string.Empty }).Data("GetCityNumber"); //General controllerının içine datasının oldugu metodu yaz ilk parametreye method ismini ver
+                })
+                .ServerFiltering(true);
+            })
+            .CascadeFrom("city")
+            .Validate(Validations.Required)
+            )
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="address">Adres</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextAreaFor(model => model.address, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen adres giriniz.."},
+            }).Validate(Validations.Adres(true))
+        </div>
+    </div>
+
+
+    <div class="buttons">
+        <button class="btn btn-md btn-danger pull-left" data-task="modalClose">Geri</button>
+        <button class="btn btn-md btn-success pull-right" type="submit">Kaydet</button>
+    </div>
+
+}
+

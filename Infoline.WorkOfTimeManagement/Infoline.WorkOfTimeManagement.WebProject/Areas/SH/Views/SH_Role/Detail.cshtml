@@ -1,0 +1,82 @@
+﻿@model Infoline.WorkOfTimeManagement.BusinessData.SH_Role
+@{
+    ViewBag.Title = Model.rolname + " Rol Detayı";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="page-container">
+
+    <div class="tab-posts-box">
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active">
+                <a href="#tab1" data-toggle="tab">
+                    <i class="fa fa-user"></i>
+                    Kullanıcılar
+                </a>
+            </li>
+            <li>
+                <a href="#tab2" data-toggle="tab">
+                    <i class="fa fa-pages"></i>
+                    Sayfa Yetkileri
+                </a>
+            </li>
+           
+
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+
+
+                @(
+
+                    Html.Akilli().Grid <Infoline.WorkOfTimeManagement.BusinessData.VWSH_UserRole > ("VWSH_UserRole")
+                     .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "VWSH_UserRole", new { area = "SH" })).Filter(a => a.Add(b => b.roleid).IsEqualTo(Model.id)).PageSize(25))
+                     .Columns(a =>
+                     {
+                         a.Bound(q => q.id).GridSelector(GridSelectorType.Checkbox);
+                         a.Bound(y => y.created).Title("Kayıt Tarihi").Width(100).Format("{0:" + System.Globalization.DateTimeFormatInfo.CurrentInfo.ShortDatePattern + "}");
+                         a.Bound(y => y.User_Title).Title("Kullanıcı İsmi").Width(100);
+                         a.Bound(y => y.status_Title).Title("Durumu").Width(100);
+                     })
+                     .ToolBar(x =>
+                     {
+                         x.Custom().Text("Ekle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "always" }, { "data-method", "GET" } }).Url(Url.Action("Insert", "VWSH_UserRole", new { area = "SH", roleid = Model.id }));
+                         x.Custom().Text("Düzenle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-method", "GET" } }).Url(Url.Action("Update", "VWSH_UserRole", new { area = "SH" }));
+                         x.Custom().Text("Detay").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-default", "" } }).Url(Url.Action("Detail", "VWSH_UserRole", new { area = "SH" }));
+                         x.Custom().Text("Sil").HtmlAttributes(new Dictionary<string, object>() { { "data-ask", "" } }).Url(Url.Action("Delete", "VWSH_UserRole", new { area = "SH" }));
+                     })
+                )
+
+
+
+            </div>
+            <div class="tab-pane" id="tab2">
+
+
+                @(
+    
+                    Html.Akilli().Grid <Infoline.WorkOfTimeManagement.BusinessData.VWSH_PagesRole > ("VWSH_PagesRole")
+                    .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "VWSH_PagesRole", new { area = "SH" })).Filter(a => a.Add(b => b.roleid).IsEqualTo(Model.id)).PageSize(25))
+                     .Columns(a =>
+                     {
+                         a.Bound(q => q.id).GridSelector(GridSelectorType.Checkbox);
+                         a.Bound(y => y.created).Title("Kayıt Tarihi").Format("{0:" + System.Globalization.DateTimeFormatInfo.CurrentInfo.ShortDatePattern + "}").Width(100);
+                         a.Bound(y => y.Action_Title).Title("Sayfa Linki").Width(100);
+                         a.Bound(y => y.status_Title).Title("Durumu").Width(100);
+                     })
+                     .ToolBar(x =>
+                     {
+                         x.Custom().Text("Ekle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "always" }, { "data-method", "GET" } }).Url(Url.Action("Insert", "VWSH_PagesRole", new { area = "SH", roleid = Model.id }));
+                         x.Custom().Text("Düzenle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-method", "GET" } }).Url(Url.Action("Update", "VWSH_PagesRole", new { area = "SH" }));
+                         x.Custom().Text("Detay").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-default", "" } }).Url(Url.Action("Detail", "VWSH_PagesRole", new { area = "SH" }));
+                         x.Custom().Text("Sil").HtmlAttributes(new Dictionary<string, object>() { { "data-ask", "" } }).Url(Url.Action("Delete", "VWSH_PagesRole", new { area = "SH" }));
+                     })
+                )
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

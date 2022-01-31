@@ -1,0 +1,107 @@
+﻿@model Infoline.WorkOfTimeManagement.BusinessData.SH_Pages
+@{
+    ViewBag.Title = "Kayıt Güncelleme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "SH_Pages", FormMethod.Post, new Dictionary<string, object>() {
+    { "class", "form-horizontal" },
+    { "role", "form" },
+    { "data-selector", "modalContainer" },
+    { "data-formType", "Ajax" }
+}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+    @Html.Hidden("Status", true)
+
+
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="Action">Sayfa Linki</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.Action, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"readonly", "readonly"}
+            })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="Description">Sayfa Açıklama</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.Description, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen sayfa açıklama giriniz.."},
+            }).Validate(Validations.Adres(true))
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="Bread">Site Map Açıklama </label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.Bread, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen site map açıklaması giriniz.."},
+            }).Validate(Validations.Adres(true))
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="userid">Yetki</label>
+        </div>
+        <div class="col-md-8">
+            @(Html.Kendo().MultiSelect().Name("RoleList").HtmlAttributes(new Dictionary<string, object>()
+            {
+                {"style", "width:100%"},
+                {"class", "form-control"},
+            })
+            .Placeholder("Lütfen yetki seçiniz.")
+            .AutoClose(false)
+            .Value((System.Collections.IEnumerable)ViewData["Roles"])
+            .DataTextField("Name")
+            .DataValueField("Id")
+            .DataSource(s =>
+            {
+                s.Read(r =>
+                {
+                    r.Action("GetSH_Role", "General", new { area = string.Empty });
+                })
+                .ServerFiltering(true);
+            }).Validate(Validations.Required)
+            )
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="BreadCrumbStatu">Site Map Durumu</label>
+        </div>
+        <div class="col-md-8 radio">
+            <label class="checkbox-inline">@Html.Kendo().RadioButtonFor(model => model.BreadCrumbStatu).Value(true).Checked(true) <span> Aktif</span></label>
+            <label class="checkbox-inline">@Html.Kendo().RadioButtonFor(model => model.BreadCrumbStatu).Value(false).Checked(false) <span> Pasif</span></label>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="btn btn-md btn-danger pull-left" data-task="modalClose">Geri</button>
+        <button class="btn btn-md btn-success pull-right" type="submit">Kaydet</button>
+    </div>
+
+}
+

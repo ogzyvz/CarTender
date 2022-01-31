@@ -1,0 +1,255 @@
+﻿@model Infoline.WorkOfTimeManagement.BusinessData.TEN_Tenant
+@{
+    ViewBag.Title = "Yeni Kiracı Oluştur";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" data-selector="modalContainer">
+    $(document).on('before:submit', 'form', function (e) {
+        $('[data-role="tagify"]').each(function (c) {
+            var data = $(this).data("tagify");
+            if (data && data.value) {
+                $(this).val(data.value.map(a => a.value).join(","));
+            }
+        });
+    });
+</script>
+
+
+@using (Html.BeginForm("Insert", "TEN_Tenant", FormMethod.Post, new Dictionary<string, object>() {
+    { "class", "form-horizontal" },
+    { "role", "form" },
+    { "data-selector", "modalContainer" },
+    { "data-formType", "Ajax" }
+}))
+{
+
+
+
+
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.id)
+    @Html.HiddenFor(model => model.TenantIsPOC)
+
+    <fieldset>
+        <legend>Kiracı Bilgileri</legend>
+        <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-label label-md" for="TenantName">İsim / Kod</label>
+            </div>
+            <div class="col-md-5">
+                @Html.TextBoxFor(model => model.TenantName, new Dictionary<string, object>()
+                {
+                    {"class", "form-control"},
+                    {"placeholder", "Kiraci İsmi"},
+                }).Validate(Validations.Required)
+            </div>
+            <div class="col-md-3">
+                @Html.TextBoxFor(model => model.TenantCode, new Dictionary<string, object>()
+                {
+                    {"class", "form-control"},
+                    {"placeholder", "Kiraci Kodu"},
+                    {"type","number" },
+                }).Validate(Validations.Required)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-label label-md" for="TenantName">Sözleşme Başlangıç/Bitiş</label>
+            </div>
+            <div class="col-md-4">
+                @Html.Akilli().DatePickerFor(model => model.TenantStartDate).Validate(Validations.Required)
+            </div>
+            <div class="col-md-4">
+                @Html.Akilli().DatePickerFor(model => model.TenantEndDate).Validate(Validations.Required)
+            </div>
+        </div>
+
+    </fieldset>
+
+
+    <fieldset>
+        <legend>Veritabanı Bilgileri</legend>
+
+        <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-label label-md" for="DBCatalog">Katalog</label>
+            </div>
+            <div class="col-md-8">
+                @Html.TextBoxFor(model => model.DBCatalog, new Dictionary<string, object>()
+                {
+                    {"class", "form-control"},
+                    {"placeholder", "Lütfen katalog ismi giriniz.."},
+                }).Validate(Validations.Required)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-label label-md" for="DBIp">Host / Port</label>
+            </div>
+            <div class="col-md-6">
+                @Html.TextBoxFor(model => model.DBIp, new Dictionary<string, object>()
+                {
+                    {"class", "form-control"},
+                    {"placeholder", "Veritabanı Host IP"},
+                }).Validate(Validations.Required)
+            </div>
+            <div class="col-md-2">
+                @Html.TextBoxFor(model => model.DBPort, new Dictionary<string, object>()
+                {
+                    {"class", "form-control"},
+                    {"placeholder", "Port"},
+                    {"type","number" },
+                }).Validate(Validations.Required)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-label label-md" for="DBUser">Kullanıcı / Şifre </label>
+            </div>
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.DBUser, new Dictionary<string, object>()
+                {
+                    {"class", "form-control"},
+                    {"placeholder", "Lütfen database kullanıcısı giriniz.."},
+                }).Validate(Validations.Required)
+            </div>
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.DBPassword, new Dictionary<string, object>()
+                {
+                    {"placeholder", "Lütfen database şifresi giriniz"},
+                    {"type", "password"},
+                }).Validate(Validations.Required)
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Uygulama Alan Adı Bilgileri</legend>
+
+        <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-label label-md" for="WebDomain">Web</label>
+            </div>
+            <div class="col-md-8">
+                @Html.TextBoxFor(model => model.WebDomain, new Dictionary<string, object>()
+                {
+                    {"placeholder", "Web uygulaması alan adları"},
+                    {"data-role","tagify" }
+                })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-label label-md" for="WebDomain">Servis</label>
+            </div>
+            <div class="col-md-8">
+                @Html.TextBoxFor(model => model.ServiceDomain, new Dictionary<string, object>()
+                {
+                    {"placeholder", "Servis uygulaması alan adları"},
+                    {"data-role","tagify" }
+                })
+            </div>
+        </div>
+    </fieldset>
+
+
+    <fieldset>
+        <legend>Mail Gönderim Bilgileri</legend>
+        <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-label label-md" for="WebIp">Host Ip/Port/SSL</label>
+            </div>
+            <div class="col-md-5">
+                @Html.TextBoxFor(model => model.MailHost, new Dictionary<string, object>()
+                {
+                    {"class", "form-control"},
+                    {"placeholder", "Host Ip"},
+                }).Validate(Validations.Required)
+            </div>
+            <div class="col-md-2">
+                @Html.TextBoxFor(model => model.MailPort, new Dictionary<string, object>()
+                {
+                    {"class", "form-control"},
+                    {"placeholder", "Host Port"},
+                    {"type","number" },
+                }).Validate(Validations.Required)
+            </div>
+            <div class="col-md-1" style="padding-top:12px;">
+                @Html.Kendo().CheckBoxFor(model => model.MailSSL.Value).Validate(Validations.Required).Label("SSL")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-label label-md" for="WebDomain">Kullanıcı / Şifre</label>
+            </div>
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.MailUser, new Dictionary<string, object>()
+                {
+                    {"class", "form-control"},
+                    {"placeholder", "Uygulama Domain"},
+                })
+            </div>
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.MailPassword, new Dictionary<string, object>()
+                {
+                    {"class", "form-control"},
+                    {"placeholder", "Uygulama Domain"},
+                })
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Logo/Favicon</legend>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <div class="col-md-12">
+                    @(
+                                Html.Akilli().FileUpload()
+                                .DataTable("TEN_Tenant")
+                                .DataId(Model.id)
+                                .DataKey(x => x.fileGroup == "Logo1").PreviewMode(false)
+                                .Validate(true)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <div class="col-md-12">
+                    @(
+                                Html.Akilli().FileUpload()
+                                .DataTable("TEN_Tenant")
+                                .DataId(Model.id)
+                                .DataKey(x => x.fileGroup == "Logo2").PreviewMode(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <div class="col-md-12">
+                    @(
+                                Html.Akilli().FileUpload()
+                                .DataTable("TEN_Tenant")
+                                .DataId(Model.id)
+                                .DataKey(x => x.fileGroup == "Favicon").PreviewMode(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="buttons">
+        <button class="btn btn-md btn-danger pull-left" data-task="modalClose">Geri</button>
+        <button class="btn btn-md btn-success pull-right" type="submit">Kaydet</button>
+    </div>
+
+}

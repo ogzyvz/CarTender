@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@(Html.Akilli()
+    .Grid<Infoline.WorkOfTimeManagement.BusinessData.VWTEN_DemonstrationRequest>("VWTEN_DemonstrationRequest")
+    .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "VWTEN_DemonstrationRequest", new { area = "TEN" })).PageSize(25))
+    .Columns(x =>
+    {
+        x.Bound(y => y.id).GridSelector(GridSelectorType.Checkbox);
+        x.Bound(y => y.Name).Title("Ad").Width(200);
+        x.Bound(y => y.Surname).Title("Soyad").Width(200);
+        x.Bound(y => y.EMail).Title("Şirket E-postası").Width(200);
+        x.Bound(y => y.Phone).Title("Telefon").Width(200);
+        x.Bound(y => y.CompanyName).Title("Şirket Adı").Width(200);
+    })
+    .Selectable(x => x.Mode(GridSelectionMode.Multiple))
+    .ToolBar(x =>
+    {
+        x.Custom().Text("Ekle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "always" }, { "data-method", "GET" } }).Url(Url.Action("Insert", "VWTEN_DemonstrationRequest", new { area = "TEN" }));
+        x.Custom().Text("Detay").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-default", "" } }).Url(Url.Action("Detail", "VWTEN_DemonstrationRequest", new { area = "TEN" }));
+    }))

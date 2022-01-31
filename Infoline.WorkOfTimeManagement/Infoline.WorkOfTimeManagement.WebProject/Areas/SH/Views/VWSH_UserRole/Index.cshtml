@@ -1,0 +1,41 @@
+﻿@model Infoline.WorkOfTimeManagement.BusinessData.VWSH_UserRolePageReport
+@{
+    ViewBag.Title = "Kullanıcı Rolleri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("yellow").Text("Toplam Kullanıcı Rolü Sayısı").Value(Model.ToplamSayi +" Adet").IconClass("fa fa-users")
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("navy").Text("Aktif Kullanıcı Rolü Sayısı").Value(Model.AktifSayisi +" Adet").IconClass("fa fa-check")
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("blue").Text("Pasif Kullanıcı Rolü Sayısı").Value(Model.PasifSayisi +" Adet").IconClass("fa fa-unlock-alt")
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("red").Text("Son İşlem Tarihi").Value(Model.SonKayitTarihi.ToShortDateString()).IconClass("fa fa-calendar")
+    </div>
+</div>
+
+@(
+
+    Html.Akilli().Grid <Infoline.WorkOfTimeManagement.BusinessData.VWSH_UserRole>("VWSH_UserRole")
+     .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "VWSH_UserRole", new { area = "SH" })).PageSize(25))
+     .Columns(a =>
+     {
+         a.Bound(q => q.id).GridSelector(GridSelectorType.Checkbox);
+         a.Bound(y => y.created).Title("Kayıt Tarihi").Format(Extensions.DateFormatFull(true)).Width(160);
+         a.Bound(y => y.Role_Title).Title("Yetki İsmi");
+         a.Bound(y => y.User_Title).Title("Kullanıcı İsmi").Width(140);
+         a.Bound(y => y.status_Title).Title("Durumu").Width(100);
+     })
+     .ToolBar(x =>
+     {
+         x.Custom().Text("Ekle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "always" }, { "data-method", "GET" } }).Url(Url.Action("Insert", "VWSH_UserRole", new { area = "SH" }));
+         x.Custom().Text("Düzenle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-method", "GET" } }).Url(Url.Action("Update", "VWSH_UserRole", new { area = "SH" }));
+         x.Custom().Text("Detay").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-default", "" } }).Url(Url.Action("Detail", "VWSH_UserRole", new { area = "SH" }));
+         x.Custom().Text("Sil").HtmlAttributes(new Dictionary<string, object>() { { "data-ask", "" } }).Url(Url.Action("Delete", "VWSH_UserRole", new { area = "SH" }));
+     })
+)

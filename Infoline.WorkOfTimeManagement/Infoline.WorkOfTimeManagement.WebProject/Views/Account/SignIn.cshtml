@@ -1,0 +1,126 @@
+﻿@using BotDetect;
+@using BotDetect.Web.Mvc;
+@model Infoline.WorkOfTimeManagement.BusinessData.SH_User
+
+@{
+    ViewBag.Title = "Kullanıcı Girişi";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+@{
+    MvcCaptcha UserControlCaptcha = new MvcCaptcha("UserControlCaptcha");
+    UserControlCaptcha.ImageFormat = ImageFormat.Png;
+    UserControlCaptcha.ImageStyle = ImageStyle.CaughtInTheNet2;
+    UserControlCaptcha.CodeStyle = CodeStyle.Numeric;
+    UserControlCaptcha.CodeLength = 5;
+    UserControlCaptcha.ImageSize = new System.Drawing.Size(91, 22);
+    UserControlCaptcha.ImageStyle = ImageStyle.BlackOverlap;
+    UserControlCaptcha.CustomLightColor = System.Drawing.ColorTranslator.FromHtml("#eeeeee");
+    UserControlCaptcha.CustomDarkColor = System.Drawing.ColorTranslator.FromHtml("#717171");
+}
+
+@section Css{
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        #UserControlCaptcha_ReloadIcon, #UserControlCaptcha_SoundIcon {
+            display: none !important;
+        }
+
+        input {
+            font-size: 11px;
+        }
+    </style>
+}
+
+
+@section Javascript{
+    <script type="text/javascript">
+
+        $(document)
+            .on("ready", function () {
+                $('#UserControlCaptcha_CaptchaImage').parents('a').attr('title', 'Kodu yenilemek için tıklayınız...').attr('onclick', 'UserControlCaptcha.ReloadImage(); this.blur(); return false;').removeAttr('href').attr("tabindex", -1);
+                $('#UserControlCaptcha_CaptchaImage').attr('alt', 'Yenilemek için TIKLAYINIZ').attr("tabindex", -1)
+                $('#UserControlCaptcha_CaptchaDiv').attr('style', 'width: 90px !important; height: 20px !important;').attr("tabindex", -1);
+                $("#BDC_VCID_UserControlCaptcha,#BDC_BackWorkaround_UserControlCaptcha,#UserControlCaptcha_SoundLink,#UserControlCaptcha_ReloadLink").attr("tabindex", -1);
+
+            })
+            .on("complete", "form", function (e, resp) {
+                    if (resp.Result) {
+                        $('body').loadingModal({ text: "Profilinize yönlendiriliyorsunuz.", animation: 'rotatingPlane', backgroundColor: 'black' });
+                    } else {
+                        $("#UserControlCaptcha_CaptchaImage").trigger("click");
+                    }
+            });
+
+    </script>
+}
+
+
+
+@using (Html.BeginForm("SignIn", "Account", FormMethod.Post, new Dictionary<string, object>() {
+    { "role", "form" },
+    { "data-formType", "Ajax" },
+    { "data-loadingtitle" , "Bilgileriniz kontrol ediliyor.Lütfen bekleyiniz." }
+}))
+{
+
+    <div class="form-group">
+        <label class="control-label hide">Kullanıcı Adı</label>
+        <div class="input-group m-b-xs">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            @Html.TextBoxFor(model => model.loginname, new Dictionary<string, object>() {
+                    {"class","form-control"},
+                    {"autocomplete","off"},
+                     {"tabindex","1"},
+                    {"placeholder","Lütfen kullanıcı adınızı giriniz." }
+                })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label hide">Şifre</label>
+        <div class="input-group m-b-xs">
+            <span class="input-group-addon"><i class="fa fa-key"></i></span>
+            @Html.PasswordFor(model => model.password, new Dictionary<string, object>() {
+                    {"class","form-control"},
+                    {"autocomplete","off"},
+                     {"tabindex","2"},
+                    {"placeholder","Lütfen şifrenizi giriniz" }
+                })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label hide">Captcha</label>
+        <div class="input-group m-b-xs">
+            <span class="input-group-addon padv5">@Html.Captcha(UserControlCaptcha)</span>
+            @Html.TextBox("CaptchaCode", "", new Dictionary<string, object>() {
+                {"class","form-control"},
+                {"autocomplete","off"},
+                 {"tabindex","3"},
+                {"placeholder","Resimdeki karakterleri giriniz."}
+            })
+            @Html.Hidden("Request", ViewData["Request"])
+        </div>
+    </div>
+
+    <div class="form-group clearfix">
+        <div class="col-md-6">
+            @*<label class="control-label" for=""></label>*@
+            <label class="checkbox-inline pull-left">@Html.Kendo().CheckBox().Name("rememberMe").Checked(ViewBag.Check != null) Beni Hatırla</label>
+        </div>
+        <div class="col-md-6" style="padding-left:40px;">
+            @*<label class="checkbox-inline">@Html.Kendo().CheckBox().Name("rememberMe").Checked(ViewBag.Check != null) Beni Hatırla</label>*@
+            <a href="@Url.Action("ForgotPassword", "Account", new {area=string.Empty })" class="pull-right">Şifremi Unuttum</a>
+        </div>
+    </div>
+
+    <div class="form-group clearfix">
+        <button type="submit" class="btn btn-primary btn-md pull-right" id="SignIn">Oturum Aç</button>
+    </div>
+
+    <div class="form-group">
+        <a href="@Url.Action("SignUp", "Account")" id="SignUp" class="btn btn-danger btn-block btn-md">Kayıt Ol</a>
+    </div>
+
+}

@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infoline.WorkOfTimeManagement.BusinessAccess", "Infoline.WorkOfTimeManagement\Infoline.WorkOfTimeManagement.BusinessAccess\Infoline.WorkOfTimeManagement.BusinessAccess.csproj", "{086A362B-2A09-4E4E-A0BD-F253F173365D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infoline.WorkOfTimeManagement.BusinessData", "Infoline.WorkOfTimeManagement\Infoline.WorkOfTimeManagement.BusinessData\Infoline.WorkOfTimeManagement.BusinessData.csproj", "{D4C5ADCB-6C8B-4C48-972B-5C919C6BACF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infoline.WorkOfTimeManagement.WebProject", "Infoline.WorkOfTimeManagement\Infoline.WorkOfTimeManagement.WebProject\Infoline.WorkOfTimeManagement.WebProject.csproj", "{A1CD6A12-4473-4E72-98F3-6E8943D326D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infoline.WorkOfTimeManagement.WebService", "Infoline.WorkOfTimeManagement\Infoline.WorkOfTimeManagement.WebService\Infoline.WorkOfTimeManagement.WebService.csproj", "{0895DA23-2ACA-4598-8B50-9B8D39DBEA42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{79306426-0DE7-491D-86AA-08DB7BD73CA9}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Items\config.xml = Solution Items\config.xml
+		Solution Items\GeoAPI.dll = Solution Items\GeoAPI.dll
+		Solution Items\Infoline.Framework.dll = Solution Items\Infoline.Framework.dll
+		Solution Items\Kendo.Mvc.dll = Solution Items\Kendo.Mvc.dll
+		Solution Items\Microsoft.SqlServer.Types.dll = Solution Items\Microsoft.SqlServer.Types.dll
+		Solution Items\NetTopologySuite.dll = Solution Items\NetTopologySuite.dll
+		Solution Items\Newtonsoft.Json.dll = Solution Items\Newtonsoft.Json.dll
+		Solution Items\Npgsql.dll = Solution Items\Npgsql.dll
+		Solution Items\ProjNet.dll = Solution Items\ProjNet.dll
+		Solution Items\QRCoder.dll = Solution Items\QRCoder.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{086A362B-2A09-4E4E-A0BD-F253F173365D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086A362B-2A09-4E4E-A0BD-F253F173365D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086A362B-2A09-4E4E-A0BD-F253F173365D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086A362B-2A09-4E4E-A0BD-F253F173365D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C5ADCB-6C8B-4C48-972B-5C919C6BACF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C5ADCB-6C8B-4C48-972B-5C919C6BACF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C5ADCB-6C8B-4C48-972B-5C919C6BACF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C5ADCB-6C8B-4C48-972B-5C919C6BACF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1CD6A12-4473-4E72-98F3-6E8943D326D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1CD6A12-4473-4E72-98F3-6E8943D326D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1CD6A12-4473-4E72-98F3-6E8943D326D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1CD6A12-4473-4E72-98F3-6E8943D326D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0895DA23-2ACA-4598-8B50-9B8D39DBEA42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0895DA23-2ACA-4598-8B50-9B8D39DBEA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0895DA23-2ACA-4598-8B50-9B8D39DBEA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0895DA23-2ACA-4598-8B50-9B8D39DBEA42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {149ED101-5D16-43BA-8A49-497D9FAAD0E2}
+	EndGlobalSection
+EndGlobal
