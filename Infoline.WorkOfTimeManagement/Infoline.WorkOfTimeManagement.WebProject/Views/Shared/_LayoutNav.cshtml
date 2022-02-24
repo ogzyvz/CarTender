@@ -54,7 +54,7 @@
                 <a href="#" data-toggle="tooltip" title="Kiracı İşlemleri" data-placement="right"><i class="fa fa-folder"></i> <span class="nav-label">Demo İşlemleri</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     @*<li><a href="@Url.Action("Insert","TEN_Tenant",new {area="TEN",isPOC = true })">Yeni Demo Ekle</a></li>
-                    <li><a href="@Url.Action("IndexPOC","TEN_Tenant",new {area="TEN" })">Demo Listesi</a></li>*@
+                <li><a href="@Url.Action("IndexPOC","TEN_Tenant",new {area="TEN" })">Demo Listesi</a></li>*@
                     <li><a href="@Url.Action("DemoRequests","VWTEN_DemonstrationRequest",new {area="TEN" })">Demo Talepleri</a></li>
                 </ul>
             </li>
@@ -67,6 +67,10 @@
                     <li><a href="@Url.Action("Index","VWSH_User",new {area="SH" })">Kullanıcı İşlemleri</a></li>
                     <li><a href="@Url.Action("Index","SH_Role",new {area="SH" })">Rol İşlemleri</a></li>
                 </ul>
+            </li>
+
+            <li>
+                <a href="@Url.Action("Index","VWSYS_Version",new {area="SYS"})" data-toggle="tooltip" title="VERSİYON YÖNETİMİ" data-placement="right"><i class="fa fa-bar-chart"></i> <span class="nav-label">Versiyon Yönetimi</span></a>
             </li>
 
 

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DatabaseObjects\SYS_Email.cs" />
     <Compile Include="DatabaseObjects\SYS_Files.cs" />
+    <Compile Include="DatabaseObjects\SYS_Version.cs" />
     <Compile Include="DatabaseObjects\TEN_DemonstrationRequest.cs" />
     <Compile Include="DatabaseObjects\TEN_Tenant.cs" />
     <Compile Include="DatabaseObjects\VWSYS_Email.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="DatabaseObjects\VWSYS_TablesColumns.cs" />
     <Compile Include="DatabaseObjects\VWSYS_TablesIndexes.cs" />
     <Compile Include="DatabaseObjects\VWSYS_TablesRelations.cs" />
+    <Compile Include="DatabaseObjects\VWSYS_Version.cs" />
     <Compile Include="DatabaseObjects\VWTEN_DemonstrationRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

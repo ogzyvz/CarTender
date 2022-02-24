@@ -171,6 +171,7 @@
   </ItemGroup>-->
   <ItemGroup>
     <Compile Include="Areas\SYS\Controllers\LanguageController.cs" />
+    <Compile Include="Areas\SYS\Controllers\VWSYS_VersionController.cs" />
     <Compile Include="Areas\SYS\SYSAreaRegistration.cs" />
     <Compile Include="Areas\TEN\Controllers\TEN_TenantController.cs" />
     <Compile Include="Areas\TEN\Controllers\VWTEN_DemonstrationRequestController.cs" />
@@ -492,6 +493,10 @@
     <Content Include="Areas\SYS\Views\Language\Insert.cshtml" />
     <Content Include="Areas\SYS\Views\Language\Update.cshtml" />
     <Content Include="Areas\TEN\Views\VWTEN_DemonstrationRequest\DemoRequests.cshtml" />
+    <Content Include="Areas\SYS\Views\VWSYS_Version\Index.cshtml" />
+    <Content Include="Areas\SYS\Views\VWSYS_Version\Detail.cshtml" />
+    <Content Include="Areas\SYS\Views\VWSYS_Version\Insert.cshtml" />
+    <Content Include="Areas\SYS\Views\VWSYS_Version\Update.cshtml" />
     <None Include="Content\Home\scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Content\Home\scripts\jquery-2.1.1.js" />
     <Content Include="Content\Home\scripts\jquery-2.1.1.min.js" />

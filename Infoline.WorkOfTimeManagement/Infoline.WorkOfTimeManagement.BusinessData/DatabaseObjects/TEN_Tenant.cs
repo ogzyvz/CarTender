@@ -33,5 +33,6 @@ namespace Infoline.WorkOfTimeManagement.BusinessData
         public string Logo { get; set;}
         public string LogoOther { get; set;}
         public string Favicon { get; set;}
+        public bool? hasUser { get; set;}
     }
 }

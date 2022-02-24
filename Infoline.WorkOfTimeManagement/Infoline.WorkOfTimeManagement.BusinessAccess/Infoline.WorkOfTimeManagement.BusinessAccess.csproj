@@ -62,6 +62,7 @@
     <Compile Include="App_Data\SqlServerTypes\Loader.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBSYS_Email.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBSYS_Files.cs" />
+    <Compile Include="DatabaseFunctions\AutoGenerate\DBSYS_Version.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBTEN_DemonstrationRequest.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBTEN_Tenant.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBVWSH_PagesRolePageReport.cs" />
@@ -74,9 +75,11 @@
     <Compile Include="DatabaseFunctions\AutoGenerate\DBVWSYS_TablesColumns.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBVWSYS_TablesIndexes.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBVWSYS_TablesRelations.cs" />
+    <Compile Include="DatabaseFunctions\AutoGenerate\DBVWSYS_Version.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBVWTEN_DemonstrationRequest.cs" />
     <Compile Include="DatabaseFunctions\Specific\DBINV_CompanyPerson.cs" />
     <Compile Include="DatabaseFunctions\Specific\DBCMP_Company.cs" />
+    <Compile Include="DatabaseFunctions\Specific\DBVWSYS_Version.cs" />
     <Compile Include="DatabaseFunctions\Specific\TEN_DemonstrationRequest.cs" />
     <Compile Include="Models\BusinessExtensions.cs" />
     <Compile Include="Models\Email.cs" />

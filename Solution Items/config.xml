@@ -3,12 +3,12 @@
   <connection>
     <server>46.221.52.221</server>
     <userName>developer</userName>
-    <password>eoaNGvGI8y6m7e56kgPzJQ==</password>
-    <database>IntranetManagement</database>
+    <password>qquYs84vJaBe9fKsCRdg/Fu3AwaRCGbbORwho+9NKe8=</password>
+   <database>IntranetManagement</database>
   </connection>
 
   <webPages>
-    <!--<page area="SYS" table="Language" view="Language" />-->
+    <!--<page area="SYS" table="SYS_Version" view="VWSYS_Version" />-->
   </webPages>
   <extensionVersion>1.0.0</extensionVersion>
 </config>

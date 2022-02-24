@@ -376,7 +376,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         {
             return View();
         }
-        [AllowEveryone]
+      
         public string Execute()
         {
             var searchPages = new SearchPages().Run();
