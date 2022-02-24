@@ -65,16 +65,14 @@
             <div class="content">
                 <h3 class="header">
                     <a href="@Url.Action("Index","Home",new {area="" })">
-                     @*<img src="~/Content/Custom/img/infolinelogo.png" class="logo" />*@
-                        <img src="~/Content/Home/images/workoftime.png" class="logo" />
+                        <img src="~/Content/Custom/img/infolinelogo.png" class="logo" />
                     </a>
-                    @*<br />*@
-                    @*<strong>WorkOfTime </strong>*@
-                    <br /> ( @ViewBag.Title )
+                    <br />
+                    <strong> INFOLINE Extension </strong><br /> ( @ViewBag.Title )
                 </h3>
                 @RenderBody()
                 <p class="text-center copyright">
-                    WorkOfTime  <br> © @DateTime.Now.Year Tüm hakları Saklıdır.
+                    Infoline Bilgi Teknolojileri  <br> © @DateTime.Now.Year Tüm hakları Saklıdır.
                 </p>
             </div>
         </div>
