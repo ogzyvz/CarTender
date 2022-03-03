@@ -5,39 +5,16 @@
 
 <script type="text/javascript">
 
+
     function setBoolInTurkish(data) {
         if (data) return "Evet";
         return "Hayır";
     };
-    function escapeHtml(text) {
-        return text
-            .replaceAll('&lt;p&gt;', '')
-            .replaceAll('&lt;/p&gt;\r\n', '')
-            .replaceAll('&lt;strong&gt;', '')
-            .replaceAll('&lt;/strong&gt;','')
-            .replaceAll('&lt;ul&gt;','')
-            .replaceAll('&lt;/ul&gt;','')
-            .replaceAll('&lt;/li&gt;','')
-            .replaceAll('&lt;li&gt;','')
-            .replaceAll('&lt;em&gt;','')
-            .replaceAll('&lt;/em&gt;','')
+ 
+    function ChangeHtml(data) {
+        var y = $("<div/>").html(data).text();
+        return y;  
 
-    }
-
-    function raws(data) {
-        debugger;
-        var s = data;
-        var t = escapeHtml(s);
-        var l = Cevir(t);
-        return l;
-
-    };
-
-
-
-
-    function Cevir(t) {
-        return t.replaceAll('&amp;ouml;', 'ö').replaceAll('&amp;uuml;', 'ü').replaceAll('&amp;rdquo;', '"').replaceAll('&amp;ldquo;', '"').replaceAll('&amp;gt;', '>').replaceAll('&amp;quot;', '"').replaceAll('&amp;ccedil;', 'ç').replaceAll('&amp;Uuml;', 'Ü').replaceAll('&amp;Ouml;', 'Ö').replaceAll('&amp;Ccedil;', 'Ç').replaceAll('&amp;lt;', '<').replaceAll('&amp;#39;', "'").replaceAll('&amp;nbsp;', '').replaceAll('&amp;amp;', '&').replaceAll('&amp;pound;', '£');
     };
 
 
@@ -45,7 +22,7 @@
         .on("ready", function () {
             $('[data-task="pdf"]').addClass('hide');
             $('[data-task="excel"]').addClass('hide');
-
+            
         })
 </script>
 
@@ -57,7 +34,9 @@
     {
         x.Bound(y => y.id).GridSelector(GridSelectorType.Checkbox);
         x.Bound(y => y.versionNumber).Title("Versiyon Numarası").Width(180);
-       x.Bound(y => y.versionChange).Title("Versiyon Değişiklikleri").Encoded(false).ClientTemplate("#=raws(data.versionChange)#").Width(600);
+        x.Bound(y => y.versionChange).Title("Versiyon Değişiklikleri").Encoded(true).ClientTemplate("#=ChangeHtml(data.versionChange)#").Width(600);
+       
+
         x.Bound(y => y.isActive).Title("Aktif Versiyon mu?").ClientTemplate("#=setBoolInTurkish(data.isActive)#").Width(180);
     })
     .Selectable(x => x.Mode(GridSelectionMode.Multiple))
