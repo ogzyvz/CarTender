@@ -11,23 +11,36 @@
     };
     function escapeHtml(text) {
         return text
-            .replace('&lt;p&gt;', '')
-            .replace('&lt;/p&gt;\r\n','');
+            .replaceAll('&lt;p&gt;', '')
+            .replaceAll('&lt;/p&gt;\r\n', '')
+            .replaceAll('&lt;strong&gt;', '')
+            .replaceAll('&lt;/strong&gt;','')
+            .replaceAll('&lt;ul&gt;','')
+            .replaceAll('&lt;/ul&gt;','')
+            .replaceAll('&lt;/li&gt;','')
+            .replaceAll('&lt;li&gt;','')
+            .replaceAll('&lt;em&gt;','')
+            .replaceAll('&lt;/em&gt;','')
+
     }
 
     function raws(data) {
-        var s = data;     
-        var t = escapeHtml(s);    
+        debugger;
+        var s = data;
+        var t = escapeHtml(s);
         var l = Cevir(t);
         return l;
 
     };
 
+
+
+
     function Cevir(t) {
-        return t.replaceAll('&amp;ouml;', 'ö').replaceAll('&amp;uuml;', 'ü').replaceAll('&amp;rdquo;', '"').replaceAll('&amp;ldquo;', '"').replaceAll('&amp;gt;', '>').replaceAll('&amp;quot;', '"').replaceAll('&amp;ccedil;', 'ç').replaceAll('&amp;Uuml;', 'Ü').replaceAll('&amp;Ouml;', 'Ö').replaceAll('&amp;Ccedil;', 'Ç').replaceAll('&amp;lt;', '<').replaceAll('&amp;#39;', "'").replaceAll('&amp;nbsp;', '').replaceAll('&amp;amp;', '&').replaceAll('&amp;pound;', '£');    
+        return t.replaceAll('&amp;ouml;', 'ö').replaceAll('&amp;uuml;', 'ü').replaceAll('&amp;rdquo;', '"').replaceAll('&amp;ldquo;', '"').replaceAll('&amp;gt;', '>').replaceAll('&amp;quot;', '"').replaceAll('&amp;ccedil;', 'ç').replaceAll('&amp;Uuml;', 'Ü').replaceAll('&amp;Ouml;', 'Ö').replaceAll('&amp;Ccedil;', 'Ç').replaceAll('&amp;lt;', '<').replaceAll('&amp;#39;', "'").replaceAll('&amp;nbsp;', '').replaceAll('&amp;amp;', '&').replaceAll('&amp;pound;', '£');
     };
 
-    
+
     $(document)
         .on("ready", function () {
             $('[data-task="pdf"]').addClass('hide');
