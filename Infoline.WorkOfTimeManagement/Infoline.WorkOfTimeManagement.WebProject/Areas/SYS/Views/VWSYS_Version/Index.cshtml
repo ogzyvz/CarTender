@@ -5,7 +5,6 @@
 
 <script type="text/javascript">
 
-
     function setBoolInTurkish(data) {
         if (data) return "Evet";
         return "Hayır";
@@ -17,29 +16,22 @@
     }
 
     function raws(data) {
-        var s = data;
-        
-        var t = escapeHtml(s);
-       
+        var s = data;     
+        var t = escapeHtml(s);    
         var l = Cevir(t);
-      
-
         return l;
 
     };
 
     function Cevir(t) {
-        return t.replaceAll('&amp;ouml;', 'ö').replaceAll('&amp;uuml;', 'ü').replaceAll('&amp;rdquo;', '"').replaceAll('&amp;ldquo;', '"').replaceAll('&amp;gt;', '>').replaceAll('&amp;quot;', '"').replaceAll('&amp;ccedil;', 'ç').replaceAll('&amp;Uuml;', 'Ü').replaceAll('&amp;Ouml;', 'Ö').replaceAll('&amp;Ccedil;', 'Ç').replaceAll('&amp;lt;', '<').replaceAll('&amp;#39;', "'").replaceAll('&amp;nbsp;', '').replaceAll('&amp;amp;', '&').replaceAll('&amp;pound;', '£');
-            
+        return t.replaceAll('&amp;ouml;', 'ö').replaceAll('&amp;uuml;', 'ü').replaceAll('&amp;rdquo;', '"').replaceAll('&amp;ldquo;', '"').replaceAll('&amp;gt;', '>').replaceAll('&amp;quot;', '"').replaceAll('&amp;ccedil;', 'ç').replaceAll('&amp;Uuml;', 'Ü').replaceAll('&amp;Ouml;', 'Ö').replaceAll('&amp;Ccedil;', 'Ç').replaceAll('&amp;lt;', '<').replaceAll('&amp;#39;', "'").replaceAll('&amp;nbsp;', '').replaceAll('&amp;amp;', '&').replaceAll('&amp;pound;', '£');    
     };
 
     
     $(document)
         .on("ready", function () {
-
             $('[data-task="pdf"]').addClass('hide');
             $('[data-task="excel"]').addClass('hide');
-
 
         })
 </script>
