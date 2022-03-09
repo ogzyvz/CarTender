@@ -786,10 +786,6 @@
     <Content Include="Areas\TEN\Views\_ViewStart.cshtml" />
     <Content Include="Areas\TEN\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\SYS\Views\Web.config" />
-    <Content Include="Areas\SYS\Views\Language\Index.cshtml" />
-    <Content Include="Areas\SYS\Views\Language\Detail.cshtml" />
-    <Content Include="Areas\SYS\Views\Language\Insert.cshtml" />
-    <Content Include="Areas\SYS\Views\Language\Update.cshtml" />
     <Content Include="Areas\TEN\Views\VWTEN_DemonstrationRequest\DemoRequests.cshtml" />
     <Content Include="Areas\SYS\Views\VWSYS_Version\Index.cshtml" />
     <Content Include="Areas\SYS\Views\VWSYS_Version\Detail.cshtml" />
@@ -1395,8 +1391,7 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Language\Sources\-Error-InternalServer.json" />
-    <Content Include="Language\Sources\global.json" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1421,7 +1416,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\SH\Models\" />
+    <Folder Include="Areas\SYS\Views\Language\" />
     <Folder Include="Language\Recovery\" />
+    <Folder Include="Language\Sources\" />
     <Folder Include="Views\Files\" />
   </ItemGroup>
   <ItemGroup>
