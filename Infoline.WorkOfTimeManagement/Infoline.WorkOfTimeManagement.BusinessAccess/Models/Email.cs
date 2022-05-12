@@ -16,8 +16,8 @@ namespace Infoline.WorkOfTimeManagement.BusinessAccess
 {
     public class Sender
     {
-        private SmtpClient _smtpClient = new System.Net.Mail.SmtpClient();
-        public MailMessage _mailMessage = new System.Net.Mail.MailMessage();
+        private SmtpClient _smtpClient = new SmtpClient();
+        public MailMessage _mailMessage = new MailMessage();
         private string _username { get; set; }
         private string _password { get; set; }
         private bool _isBodyHtml { get; set; }
@@ -68,6 +68,7 @@ namespace Infoline.WorkOfTimeManagement.BusinessAccess
 
         private void _send(string email, string title, string[] cc = null, string[] files = null, string[] bcc = null)
         {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 
             var result = new ResultStatus();
             _mailMessage.Body = _content;
@@ -251,7 +252,7 @@ namespace Infoline.WorkOfTimeManagement.BusinessAccess
     public class Email
     {
         private string _username { get; set; } = "noreply@workoftime.com";
-        private string _password { get; set; } = "Paz01220";
+        private string _password { get; set; } = "zaq1-2Wsx!9";
         private string _host { get; set; } = "smtp.office365.com";
         private int _port { get; set; } = 587;
         private bool _enableSSL { get; set; } = true;
