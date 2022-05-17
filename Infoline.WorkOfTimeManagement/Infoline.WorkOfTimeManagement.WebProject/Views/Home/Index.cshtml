@@ -1,400 +1,466 @@
 ﻿@{
-	Layout = "~/Views/Shared/_HomeLayout.cshtml";
-	ViewBag.Title = "Ana Sayfa";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Ana Sayfa";
 }
 
-
-
 <style>
-	.banner-style-13 .content-box h1 {
-		color: #164192;
-	}
+    /*Section 1*/
+    #play:before {
+        color: #960000;
+    }
 
-		.banner-style-13 .content-box h1 span {
-			color: #009de1;
-			text-transform: lowercase;
-		}
+    .banner-style-four .content-box .btn-box .video-btn {
+        background-color: #960000;
+    }
 
-	#content_block_16 .content-box .download-btn a:nth-child(1) {
-		background-color: #164192;
-	}
+    .ff0000 {
+        color: #ff0000;
+        font-size: 50px;
+        font-weight: 700;
+    }
 
-	#content_block_16 .content-box .download-btn a:nth-child(2) {
-		background-color: #009de1;
-	}
+    .sec-title p:after {
+        position: absolute;
+        content: '';
+        background: #777777;
+        width: 45px;
+        height: 4px;
+        left: 0px;
+        bottom: 0px;
+        transition: all 500ms ease;
+        -webkit-mask-image: linear-gradient(-75deg, rgba(244,55,55,0.6) 50%, #f43737 50%, rgba(0,0,0,1) 70%);
+        -webkit-mask-size: 200%;
+        animation: shine 2s infinite;
+    }
 
-	/*Hoverlar iptal oluyor*/
-	#content_block_16 .content-box .download-btn a:hover i {
-		color: #222;
-	}
+    .sec-title p:before {
+        position: absolute;
+        content: '';
+        background: #cccccc;
+        width: 130px;
+        height: 2px;
+        left: 0px;
+        bottom: 0px;
+    }
 
-	#content_block_16 .content-box .download-btn a:hover {
-		background: #fff;
-		color: #1f3c79;
-		box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-	}
+    .sec-title {
+        margin-bottom: 15%;
+    }
 
-	.content-box .text {
-		line-height: 1.5;
-	}
+    .content-box p {
+        color: #9d9d9d;
+        font-size: 20px;
+        margin-top: 7%;
+        margin-bottom: 5%;
+    }
 
-	.sec-title h2 {
-		font-weight: 800;
-		font-size: 50px;
-	}
+    #content_block_34 .content-box .list-item li:before {
+        font-size: 22px;
+        color: #ff0000
+    }
 
-	.single-item .inner-box .text {
-		line-height: normal;
-	}
+    #content_block_34 .content-box .list-item li {
+        font-size: 20px;
+    }
 
-	.enterprise-section .single-item .inner-box h3 {
-		color: #164192;
-		font-weight: 800;
-		font-size: 20px;
-	}
 
-	.enterprise-section .sec-title {
-		width: 70%;
-		margin: auto;
-		margin-bottom: 76px;
-	}
+    #content_block_05 .content-box .download-btn a {
+        font-size: 24px
+    }
 
-	.inner-box h3 a {
-		font-weight: 700;
-	}
+        #content_block_05 .content-box .download-btn a span {
+            font-size: 17px
+        }
 
-	.banner-style-13 .anim-icons .icon-2 {
-		background-image: -webkit-linear-gradient(0deg, #0390d6 0%, #144b9a 100%);
-		width: 145px;
-		height: 145px;
-		top: 60px;
-		right: 60px;
-		border-radius: 50%;
-		-webkit-animation: zoom-fade 5s infinite linear;
-		animation: zoom-fade 5s infinite linear;
-	}
-	/*style 496 ve responsive 3625 color ayarlamaları*/
-	/*Responsive son satır*/
+        #content_block_05 .content-box .download-btn a:hover {
+            background: #fff;
+            color: #ff0000;
+            box-shadow: 0 5px 25px rgb(0 0 0 / 50%);
+        }
 
+            #content_block_05 .content-box .download-btn a:hover i {
+                color: #ff0000;
+            }
+
+    .fa-circle:before {
+        font-size: 25px;
+    }
+
+    #content_block_05 .content-box .sec-title h2:after {
+        background: #ff0000;
+    }
+
+    .designe-process-three .sec-title h2 {
+        color: #ff0000;
+        font-size: 50px;
+        font-weight: 700;
+    }
+
+    .designe-process-three .owl-nav .owl-next:hover, .designe-process-three .owl-nav .owl-prev {
+        background: #ff0000;
+        color: white;
+    }
+
+    .designe-process-three .owl-nav .owl-next:hover, .designe-process-three .owl-nav .owl-next {
+        background: #ff0000;
+        color: white;
+    }
+
+        .designe-process-three .owl-nav .owl-next:hover, .designe-process-three .owl-nav .owl-prev:hover {
+            background: white;
+            color: #ff0000;
+        }
+
+        .designe-process-three .owl-nav .owl-next:hover, .designe-process-three .owl-nav .owl-next:hover {
+            background: white;
+            color: #ff0000;
+        }
+
+    .designe-process-three .inner-content .single-item .inner-box h3 a {
+        font-weight: 600;
+        font-size: 25px;
+    }
+
+    .single-item .inner-box .text {
+        color: #3c8f7c;
+        font-size: 16px;
+    }
+
+    .video-section .bg-column:before {
+        background: rgba(255, 0, 0, 0.8);
+    }
+
+    #content_block_04 .content-box .sec-title h2 {
+        color: #ff0000;
+        font-weight: 700;
+        font-size: 40px
+    }
+
+    .flaticon-play-button:before {
+        color: #ffffff;
+    }
+
+    .theme-btn-two {
+        background-color: #ff0000;
+        color:white;
+    }
+    .subscribe-style-two {
+        background-color: #f5f5f5;
+    }
+    .text {
+        color: #9d9d9d;
+        font-size: 20px;
+    }
+    .inner-box{
+        height:450px;
+    }
 </style>
 
-<section class="banner-style-13">
-	<div class="image-shap wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms" style="background-image: url(/Content/Custom/Template/Images/Homepage/shap-9.png);"></div>
-	<div class="anim-icons">
-		<div class="icon icon-1"></div>
-		<div class="icon icon-2"></div>
-	</div>
-	<div class="image-layer" style="background-image: url(/Content/Custom/Template/Images/Homepage/banner-bg-5.png);"></div>
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg-6 col-md-12 col-sm-12 content-column">
-				<div class="content-box">
-					<h1 style="font-weight:800;line-height:55px;font-size: 49px;">
-						Dilediğiniz yerden
-						tüm ofis süreçlerinizi <br />
-						<span style="font-weight:800;font-size:70px">Yönetin</span>
-					</h1>
-					<div class="text" style="color: #9f9f9f;line-height:normal;font-size:20px">
-						Dijital ofis yönetimi ile, çalışanlarınızla etkileşim
-						içinde kalarak, şirketinizi dijitale taşıyabilirsiniz
-					</div>
-					<div class="mail-box">
-						<div class="btn-box"><a href="/Home/Demo" class="theme-btn">Demo Talebi<i class="fas fa-angle-right" style="background-color: #009de1"></i></a></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 col-md-12 col-sm-12 image-column">
-				<div class="image-box  js-tilt">
-					<figure class="image clearfix wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms"><img src="/Content/Custom/Template/Images/Homepage/illustration-20.png" alt=""></figure>
-				</div>
-			</div>
-		</div>
-	</div>
+
+<section class="banner-style-four" style="background-image: url(../../Content/Themes2/images/icons/banner-bg-3.png);">
+    <div class="pattern-bg" style="background-image: url(../../Content/Themes2/images/icons/pattern-5.png);"></div>
+    <div class="anim-icons">
+        <div class="icon icon-1"><img src="images/icons/anim-icon-1.png" alt=""></div>
+        <div class="icon icon-2 rotate-me"><img src="~/Content/Themes2/images/icons/anim-icon-2.png" alt=""></div>
+        <div class="icon icon-3 rotate-me"><img src="~/Content/Themes2/images/icons/anim-icon-3.png" alt=""></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div class="content-box wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <h1>
+                        Tüm iş süreçlerinizi
+                        uçtan uca
+                        kolayca yönetin
+                    </h1>
+                    <div class="text" style="font-size: 20px;">
+                        Yönetmesi güç hale gelen işletme kaynaklarınızı, WorkOfTime
+                        ayrıcalığı ile kolayca yönetebilir ve raporlayabilirsiniz.
+                    </div>
+                    <div class="btn-box">
+                        <a href="#" class="link-btn">Demo Talebi<i class="fas fa-angle-double-right"></i></a>
+                        <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" style="" class="lightbox-image video-btn" data-caption="">Tanıtım Video<i class="flaticon-play-button" id="play"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div class="image-box">
+                    <div class="layer-bg" style="background-image: url(../../Content/Themes2/images/icons/leaf-1.png);"></div>
+                    <figure class="image clearfix float-bob-y"><img src="~/Content/Themes2/images/resource/illustration-6.png" alt=""></figure>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="download-apps">
-	<div class="anim-icons">
-		<div class="icon icon-1"><img src="~/Content/Themes2/images/icons/anim-icon-4.png" alt="Shape1" title="Shape1"></div>
-		<div class="icon icon-2 rotate-me"><img src="~/Content/Themes2/images/icons/anim-icon-5.png" alt="Shape2" title="Shape2"></div>
-		<div class="icon icon-3"><img src="~/Content/Themes2/images/icons/anim-icon-4.png" alt="Shape3" title="Shape3"></div>
-		<div class="icon icon-4 rotate-me"><img src="~/Content/Themes2/images/icons/anim-icon-6.png" alt="Shape4" title="Shape4"></div>
-	</div>
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg-6 col-md-12 col-sm-12 image-column">
-				<div id="image_block_16">
-					<div class="image-box">
-						<div class="bg-layer  wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms" style="background-image: url(/Content/Custom/Template/Images/Homepage/image-shap-6.png);"></div>
-						<figure class="image image-1 wow slideInLeft" data-wow-delay="300ms" data-wow-duration="1500ms"><img src="~/Content/Custom/Template/Images/Homepage/phone-9.png" alt=""></figure>
-						<figure class="image image-2 wow slideInLeft" data-wow-delay="600ms" data-wow-duration="1500ms"><img src="/Content/Custom/Template/Images/Homepage/phone-10.png" alt=""></figure>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 col-md-12 col-sm-12 content-column">
-				<div id="content_block_16">
-					<div class="content-box wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-						<div class="sec-title">
-							<h2 style="color: #164192; font-weight: 800;">
-								Kolay Kurulum
-								<br />
-								<span style="color: #009de1; font-weight: 800;">Kolay Kullanım</span>
-							</h2>
-						</div>
-						<div class="text" style="line-height: 25px;font-size:20px">
-							Web ve Mobil Uygulaması ile MobilOfisiniz’e her zaman
-							her yerden ulaşabilirsiniz. MobilOfisiniz ile özgürce
-							çalışmanın keyfine varın
-						</div>
-						<div class="download-btn">
-							<a href="https://play.google.com/store/apps/details?id=com.infoline.mobilofisiniz&gl=TR" target="_blank" class="google-play-btn" @*style="background-color: #009de1*@>
-								<i class="fab fa-android"></i>
-								Google Play
+<section class="feature-style-11">
+    <div class="container">
 
-								<span>Üzerinden İndirin</span>
-							</a>
-							<a href="https://apps.apple.com/app/id1604534619" target="_blank" class="app-store-btn">
-								<i class="fab fa-apple"></i>
-								App Store
+        <div class="inner-content">
+            <div class="inner-box">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-12 col-sm-12 image-column">
+                        <div id="image_block_34">
+                            <div class="image-box wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/images/icons/pattern-15.png);"></div>
+                                <figure class="image clearfix js-tilt"><img src="~/Content/Themes2/images/resource/illustration-21.png" alt=""></figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12 col-sm-12 content-column">
+                        <div id="content_block_34">
+                            <div class="content-box wow fadeInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <h2 class="ff0000">
+                                    Zamanımızın <br />
+                                    iş yapış şekli
+                                </h2>
+                                <div class="sec-title">
+                                    <p>
 
-								<span>Üzerinden İndirin</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                    </p>
+                                </div>
+                                <p>
+                                    WorkofTime ile dilediğiniz yerden, daha az kaynak ve
+                                    zaman harcayarak saha operasyonlarınızı ve tüm şirket
+                                    süreçlerinizi hızlı ve doğru bir şekilde yöneterek
+                                    zamandan tasarruf edin.
+                                </p>
+                                <ul class="list-item clearfix">
+                                    <li>Personel izinleri, görevlendirmeleri, seyahat işlemleri,</li>
+                                    <li>Şirket duyuruları, haberleri, etkinlikleri</li>
+                                    <li>Ve şirketinize ait tüm bildirimler ...</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
+<section class="download-section elements">
+    <div class="bg-layer wow slideInLeft animated" style="background-image: url(../../Content/Themes2/images/icons/shap-3.png);"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div id="content_block_05">
+                    <div class="content-box wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="sec-title" style="margin-bottom:0px;">
+                            <h2 style="margin-bottom:25px;">
+                                WorkOfTime ile
+                                herşey çok pratik
+                            </h2>
+                        </div>
+                        <div class="text">
+                            Şirket süreçlerinizi daha kolay işletmek, iş yükünden
+                            kurtulmak ve zaman tasarrufu sağlamak için "Zamanın
+                            Yeni İş Yapış Şekli" WorkOfTime'a geçin.
+                        </div>
 
-<section class="enterprise-section">
-	<div class="container">
-		<div class="sec-title center">
-			<h2 style="color: #164192;">
-				Intranet ve IK Yönetiminde
-				<br />
-				<span style="color: #009de1;">Dijital Ortam</span>
-			</h2>
-			<p style="font-size:19px">
-				MobilOfisiniz bir İK (HR-İnsan Kaynakları) ve İNTRANET (Şirket Portali)
-				yazılımıdır. Şirket personellerinin yönetimi ve şirket içi etkileşimi arttıran bir
-				Web ve Mobil tabanlı bir uygulamadır.<br />Bulut yada Kendi sunucularınızda (on-prem) hizmet verebilir.
-			</p>
-		</div>
+                        <div class="download-btn" style="margin-bottom:5%;">
+                            <a href="#" class="app-store-btn">
+                                <i class="fa-solid fa-earth-africa"></i>
+                                <span>Web Uygulaması</span>
+                                Desktop
+                            </a>
+                        </div>
 
-		<div class="row">
-			<div class="col-lg-6 col-md-6 col-sm-12 single-column">
-				<div class="single-item wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
-					<div class="inner-box">
-						<figure class="image-box wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms"><img src="~/Content/Custom/Template/Images/Homepage/Hr-illustration.png" alt="İnsan Kaynakları Yönetimi" title="İnsan Kaynakları Yönetimi"></figure>
-						<h3>İnsan Kaynaklarınızı Yönetin</h3>
-						<div class="text">
-							Tüm IK süreçlerinizi eksiksiz olarak dijital
-							ortamda takip edin.
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-12 single-column">
-				<div class="single-item wow fadeInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
-					<div class="inner-box">
-						<figure class="image-box wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms"><img src="~/Content/Custom/Template/Images/Homepage/intranet-illustration.png" alt="Intranet Portalı" title="Intranet Portalı"></figure>
-						<h3>Intranet Portalı</h3>
-						<div class="text">
-							Personel ile etkileşim için tüm
-							intranet süreçlerinizi yönetin.
-							<br /><br /><br />
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-12 single-column">
-				<div class="single-item wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-					<div class="inner-box">
-						<figure class="image-box wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms"><img src="~/Content/Custom/Template/Images/Homepage/socialcompany-illustration.png" alt="Sosyal Şirket Ağı" title="Sosyal Şirket Ağı"></figure>
-						<h3>Sosyal Şirket Ağı</h3>
-						<div class="text">
-							Personellerinize şirket içi sosyal ağınızı
-							açın. Günlük paylaşımları, başarıları,
-							yorumları ile şirket içi sinerjinizi arttırın.
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-12 single-column">
-				<div class="single-item wow fadeInRight" data-wow-delay="300ms" data-wow-duration="1500ms">
-					<div class="inner-box">
-						<figure class="image-box wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms"><img src="~/Content/Custom/Template/Images/Homepage/contact-illustration.png" alt="İletişim Bilgileri" title="İletişim Bilgileri"></figure>
-						<h3>İletişiminizi Arttırın</h3>
-						<div class="text">
-							Personelleriniz ile şirket içerisinde
-							iletişim ağını güçlendirin.
-							<br /><br /><br />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                        <div class="download-btn">
+                            <a href="#" class="app-store-btn">
+                                <i class="fas fa-circle"></i>
+                                <span>Download on the</span>
+                                App Store
+                            </a>
+                            <a href="#" class="google-play-btn">
+                                <i class="fas fa-circle"></i>
+                                <span>Get on it</span>
+                                Google Play
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div id="iamge_block_04">
+                    <div class="image-box">
+                        <figure class="image image-1 wow slideInUp" data-wow-delay="300ms" data-wow-duration="1500ms"><img src="~/Content/Themes2/images/resource/phone-4.png" alt=""></figure>
+                        <figure class="image image-2 wow slideInUp" data-wow-delay="600ms" data-wow-duration="1500ms"><img src="~/Content/Themes2/images/resource/phone-5.png" alt=""></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
 </section>
 
-
-<section class="project-inquiry">
-	<div class="image-layer" style="background-image: url(/Content/Custom/Template/Images/Homepage/pattern-7.png);"></div>
-	<div class="container">
-		<div class="image-inner">
-			<div class="image-box clearfix">
-				<figure class="image image-1 wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms"><img src="~/Content/Custom/Template/Images/Homepage/dashbord-21.png" alt="Dashboard21" title="Dashboard21"></figure>
-				<figure class="image image-2 wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms"><img src="~/Content/Custom/Template/Images/Homepage/phone-11.png" alt="Iphone-11" title="Iphone-11"></figure>
-			</div>
-		</div>
-		<div class="content-inner">
-			<div class="row">
-				<div class="col-lg-4 col-md-12 col-sm-12 content-column">
-					<div class="content-box">
-						<div class="top-content">
-							<div class="sec-title"><h2>Uygulama Özellikleri</h2></div>
-							<div class="text" style="color: #c1c2c3; font-size:20px;">
-								Mobil Ofisiniz sayesinde dilediğiniz yerden,
-								istediğiniz zaman, arzu ettiğiniz şekilde çalışın.
-								Özgürce çalışmanın keyfine varın.
-							</div>
-							<div class="btn-box"><a href="/Home/Feautures" class="theme-btn">daha fazla<i class="fas fa-angle-right" style="background-color: #009de1"></i></a></div>
-						</div>
-						<div class="lower-content">
-							<div class="single-item js-tilt">
-								<div class="inner-box" style="background-color: #fbb713;">
-									<div class="icon-box"><img src="~/Content/Custom/Template/Images/Homepage/intranet-yonetimi.png" alt="Intranet Yönetimi" title="Intranet Yönetimi" /></div>
-									<h3><a href="#">Sosyal Etkileşim</a></h3>
-									<div class="text">
-										Çalışanlarınız ile daima
-										etkileşim halinde kalın.
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-8 col-md-12 col-sm-12 inner-column">
-					<div class="inner-content">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-sm-12 single-column">
-								<div class="single-item js-tilt">
-									<div class="inner-box" style="background-color: #91bf1f;">
-										<div class="icon-box"><img src="~/Content/Custom/Template/Images/Homepage/dijital-ofis-yonetimi.png" alt="Dijital Ofis Yönetimi" title="Dijital Ofis Yönetimi" /></div>
-										<h3><a href="#">Dijital Ofis Yönetimi</a></h3>
-										<div class="text">
-											Şirketiniz ve çalışanlarınız ile ilgili
-											tüm süreçlerinizi dijital olarak
-											yönetin…
-										</div>
-									</div>
-								</div>
-								<div class="single-item js-tilt">
-									<div class="inner-box" style="background-color: #e74e1b ">
-										<div class="icon-box"><img src="~/Content/Custom/Template/Images/Homepage/sosyal-etkilesim.png" alt="Sosyal Etkileşim" title="Sosyal Etkileşim" /></div>
-										<h3><a href="#">Intranet Yönetimi</a></h3>
-										<div class="text">
-											Duyuru, etkinlik, anket, eğitim
-											yönetimi işlemlerinizi
-											gerçekleştirebilirsiniz.
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-sm-12 single-column">
-								<div class="single-item js-tilt">
-									<div class="inner-box" style="background-color: #009de1;">
-										<div class="icon-box"><img src="~/Content/Custom/Template/Images/Homepage/calisan-yonetimi.png" alt="Çalışan Yönetimi" title="Çalışan Yönetimi" /></div>
-										<h3><a href="#">Çalışan Yönetimi</a></h3>
-										<div class="text">
-											Çalışanlarınıza ait İnsan
-											Kaynakları ile ilgili tüm süreçleri
-											yönetebilirsiniz.
-										</div>
-									</div>
-								</div>
-								<div class="single-item js-tilt">
-									<div class="inner-box" style="background-color: #164192;">
-										<div class="icon-box"><img src="~/Content/Custom/Template/Images/Homepage/entegrasyonlar.png" alt="Entegrasyonlar" title="Entegrasyonlar" /></div>
-										<h3><a href="#">Entegrasyonlar</a></h3>
-										<div class="text">
-											SGK, İŞKUR, SAP ve diğer kurum
-											içi uygulamalar ile
-											entegrasyonlar.
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<section class="designe-process-three">
+    <div class="container">
+        <div class="sec-title" style="margin-bottom: 0px;">
+            <h2>
+                Zamanımızın <br />iş yapış şekli
+            </h2>
+        </div>
+        <div class="inner-content">
+            <div class="four-item-carousel owl-carousel owl-theme owl-dots-none">
+                <div class="single-item">
+                    <div class="inner-box">
+                        <h3><a href="#" style="color: #fcc101">IK Yönetimi</a></h3>
+                        <div class="text">
+                            Özlük, izin, masraf, avans, maaş,
+                            performans ve tüm IK süreçlerini
+                            <strong>yönet ve takip et</strong>
+                        </div>
+                        <figure class="image-box"><img src="~/Content/Themes2/images/resource/vactor-image-5.png" alt=""></figure>
+                    </div>
+                </div>
+                <div class="single-item">
+                    <div class="inner-box">
+                        <h3><a href="#" style="color: #4d87db ">Saha Yönetimi</a></h3>
+                        <div class="text">
+                            Saha personellerini ve tüm
+                            saha operasyonlarını
+                            <strong>anlık izle ve raporla</strong>
+                        </div>
+                        <figure class="image-box"><img src="~/Content/Themes2/images/resource/vactor-image-6.png" alt=""></figure>
+                    </div>
+                </div>
+                <div class="single-item">
+                    <div class="inner-box">
+                        <h3><a href="#" style="color: #3c8f7c ">CRM Yönetimi</a></h3>
+                        <div class="text">
+                            Satış ve siparişlerini
+                            kontrol altına alarak
+                            <strong>hedeflerini takip et</strong>
+                        </div>
+                        <figure class="image-box"><img src="~/Content/Themes2/images/resource/vactor-image-7.png" alt=""></figure>
+                    </div>
+                </div>
+                <div class="single-item">
+                    <div class="inner-box">
+                        <h3><a href="#" style="color:#be9157"> Envanter Yönetimi </a></h3>
+                        <div class="text">
+                            Depolarınızı ve stoklarınızı kontrol
+                            altına alıp, tüm stok işlemlerinizi
+                            <strong>mobilden yönet</strong>
+                        </div>
+                        <figure class="image-box"><img src="~/Content/Themes2/images/resource/vactor-image-8.png" alt=""></figure>
+                    </div>
+                </div>
+                <div class="single-item">
+                    <div class="inner-box">
+                        <h3><a href="#" style="color: #f18ba0 ">Destek Masası</a></h3>
+                        <div class="text">
+                            Müşretilerin yardım ve
+                            destek taleplerini
+                            <strong>çözüme ulaştır</strong>
+                        </div>
+                        <figure class="image-box"><img src="~/Content/Themes2/images/resource/vactor-image-8.png" alt=""></figure>
+                    </div>
+                </div>
+                <div class="single-item">
+                    <div class="inner-box">
+                        <h3><a href="#" style="color: #505aba ">Proje Yönetimi</a></h3>
+                        <div class="text">
+                            Projelerindeki görevleri, satın
+                            almaları, proje dosyalarını, SLA ve
+                            <strong>hakedişlerini yönet</strong>
+                        </div>
+                        <figure class="image-box"><img src="~/Content/Themes2/images/resource/vactor-image-8.png" alt=""></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="video-style-two">
-	<div class="vector-image">
-		<figure class="image image-1"><img src="~/Content/Custom/Template/Images/Homepage/vactor.jpg" alt="Vektör" title="Vektör"></figure>
-	</div>
-	<div class="container">
-		<div class="sec-title center">
-			<h2 style="color:#009de1; font-weight:800;font-size:40px">Mobil <span style="color: #164192">SEN</span> Özgürsün</h2>
-			<p style="color: #164192;font-weight:500;font-size:22px;">Mesafeleri MobilOfisiniz ile yakınlaştırın</p>
-		</div>
-		<div class="video-inner">
-			<a href="https://www.youtube.com/watch?v=TBVJCTBdrz0" class="lightbox-image video-btn" data-caption=""><i class="flaticon-play-button"></i></a>
-		</div>
-	</div>
+<section class="video-section elements">
+    <div class="bg-column" style="background-image: url(https://media.istockphoto.com/photos/istanbul-views-picture-id903934818?s=612x612);"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 video-column">
+                <div class="video-inner">
+                    <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption="">
+                        <i class="flaticon-play-button"></i>
+                        <span class="ripple"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div id="content_block_04">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            <h2>
+                                Verimlilik ve
+                                performansınızı arttırın
+                            </h2>
+                        </div>
+                        <div class="text">
+                            İşletmenizde maliyetleriniz mi arttı, şirket içi süreçleri
+                            yönetirken zorlanıyor musunuz, karmaşık yazılımlardan
+                            sonuç alamıyor musunuz?
+                            <strong>
+                                Sorularınızın cevaplarını WorkOfTime
+                                ürünümüzde topladık.
+                            </strong>
+                        </div>
+                        <div class="btn-box"><a href="#" class="theme-btn-two" style="background-color: #ff0000;">Videoyu İzle</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="subscribe-style-two elements" style="margin-bottom: -100px; background-color: #0b70bb; height:600px; z-index:997">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-7 col-md-12 col-sm-12 content-column">
-				<div id="content_block_18">
-					<div class="content-box">
-						<div class="sec-title">
-							<h2 style="font-weight:800">
-								MobilOfisiniz ile
-								Hemen Tanışın ..
-							</h2>
-						</div>
-						<div class="text" style="font-size:20px">
-							Mobil Ofisiniz sayesinde dilediğiniz yerden,
-							istediğiniz zaman, arzu ettiğiniz şekilde çalışın.
-							Özgürce çalışmanın keyfine varın.
-						</div>
-						<a class="theme-btn-two" href="/Home/Demo" style="background-color: #fff; color: #009de1;font-weight:700;">Demo Talep Et</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-5 col-md-12 col-sm-12 image-column">
-				<div id="image_block_18">
-					<div class="image-box wow slideInRight animated" data-wow-delay="00ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: slideInRight;">
-						<figure class="image float-bob-y"><img id="res" src="~/Content/Custom/Template/Images/Homepage/subscribe-2.png" alt=""></figure>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<section class="subscribe-style-two elements">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 col-sm-12 content-column">
+                <div id="content_block_18">
+                    <div class="content-box">
+                        <div class="sec-title" style="margin-bottom:20px;">
+                            <h2 style="color: #ff0000;font-size:40px;font-weight:700;margin-bottom:20px">
+                                WorkOfTime ile <br />
+                                hemen tanışın ...
+                            </h2>
+                        </div>
+                        <div class="text" style=" color: #9d9d9d; font-size: 20px;">
+                            WorkofTime ile dilediğiniz yerden, daha az kaynak ve
+                            zaman harcayarak saha operasyonlarınızı ve tüm şirket
+                            süreçlerinizi hızlı ve doğru bir şekilde yöneterek
+                            zamandan tasarruf edin.
+                        </div>
+                        <a href="#" class="theme-btn-two">Demo Talep Et</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 col-sm-12 image-column">
+                <div id="image_block_18">
+                    <div class="image-box wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <figure class="image float-bob-y"><img src="images/resource/subscribe-2.png" alt=""></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
 
 <section class="clients-style-four style-five" style="margin-bottom:-90px; z-index:998">
-	<div class="image-layer" style="background-image: url(/Content/Custom/Template/Images/Homepage/layer-image-7.png)"></div>
-	<div class="container">
-		<div class="clients-carousel owl-carousel owl-theme owl-dots-none">
-			<figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/akaotomotiv.png" alt="Aka Otomotiv" title="Aka Otomotiv"></a></figure>
-			<figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/brightstar.png" alt="BrightStar" title="BrightStar"></a></figure>
-			<figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/arena.png" alt="Arena" title="Arena"></a></figure>
-			<figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/callAy.png" alt="CallAy" title="CallAy"></a></figure>
-			<figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/iics.png" alt="IICS" title="IICS"></a></figure>
-			<figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/m-tod.png" alt="M-Tod" title="M-Tod"></a></figure>
-			<figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/paynet.png" alt="Paynet" title="Paynet"></a></figure>
-			<figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/fenerbahce-universitesi.png" alt="Fenerbahçe Üniversitesi" title="Fenerbahçe Üniversitesi"></a></figure>
-		</div>
-	</div>
+    <div class="image-layer" style="background-image: url(/Content/Custom/Template/Images/Homepage/layer-image-7.png)"></div>
+    <div class="container">
+        <div class="clients-carousel owl-carousel owl-theme owl-dots-none">
+            <figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/akaotomotiv.png" alt="Aka Otomotiv" title="Aka Otomotiv"></a></figure>
+            <figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/brightstar.png" alt="BrightStar" title="BrightStar"></a></figure>
+            <figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/arena.png" alt="Arena" title="Arena"></a></figure>
+            <figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/callAy.png" alt="CallAy" title="CallAy"></a></figure>
+            <figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/iics.png" alt="IICS" title="IICS"></a></figure>
+            <figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/m-tod.png" alt="M-Tod" title="M-Tod"></a></figure>
+            <figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/paynet.png" alt="Paynet" title="Paynet"></a></figure>
+            <figure class="image-box"><a><img src="~/Content/Custom/Template/Images/References/fenerbahce-universitesi.png" alt="Fenerbahçe Üniversitesi" title="Fenerbahçe Üniversitesi"></a></figure>
+        </div>
+    </div>
 </section>
 
 <!-- main-js -->
