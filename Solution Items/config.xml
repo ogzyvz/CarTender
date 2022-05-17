@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
   <connection>
-    <server>46.221.52.221</server>
+    <server>46.221.52.222</server>
     <userName>developer</userName>
     <password>qquYs84vJaBe9fKsCRdg/Fu3AwaRCGbbORwho+9NKe8=</password>
-   <database>IntranetManagement</database>
+    <database>WorkOfTimeManagement</database>
   </connection>
 
   <webPages>

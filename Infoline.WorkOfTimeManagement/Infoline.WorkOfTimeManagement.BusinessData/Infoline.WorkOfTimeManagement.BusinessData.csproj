@@ -41,11 +41,17 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseObjects\HDM_Category.cs" />
+    <Compile Include="DatabaseObjects\HDM_Faq.cs" />
+    <Compile Include="DatabaseObjects\HDM_Question.cs" />
     <Compile Include="DatabaseObjects\SYS_Email.cs" />
     <Compile Include="DatabaseObjects\SYS_Files.cs" />
     <Compile Include="DatabaseObjects\SYS_Version.cs" />
     <Compile Include="DatabaseObjects\TEN_DemonstrationRequest.cs" />
     <Compile Include="DatabaseObjects\TEN_Tenant.cs" />
+    <Compile Include="DatabaseObjects\VWHDM_Category.cs" />
+    <Compile Include="DatabaseObjects\VWHDM_Faq.cs" />
+    <Compile Include="DatabaseObjects\VWHDM_Question.cs" />
     <Compile Include="DatabaseObjects\VWSYS_Email.cs" />
     <Compile Include="DatabaseObjects\VWSYS_Files.cs" />
     <Compile Include="DatabaseObjects\VWSYS_Tables.cs" />

@@ -14,56 +14,56 @@ namespace Infoline.WorkOfTimeManagement.BusinessAccess
     partial class WorkOfTimeManagementDatabase
     {
         /// <summary>
-        /// VWSYS_TablesColumns tablosundan tüm kayıtları çeken fonksiyondur
+        /// VWHDM_Category tablosundan tüm kayıtları çeken fonksiyondur
         /// </summary>
         /// <param name="tran">Mevcut dışında farklı bir transection kullanılacak ise bu parametreye gönderilir.</param>
-        /// <returns>VWSYS_TablesColumns dizi objesini geri döndürür.</returns>
-        public VWSYS_TablesColumns[] GetVWSYS_TablesColumns(DbTransaction tran = null)
+        /// <returns>VWHDM_Category dizi objesini geri döndürür.</returns>
+        public VWHDM_Category[] GetVWHDM_Category(DbTransaction tran = null)
         {
             using (var db = GetDB(tran))
             {
-                return db.Table<VWSYS_TablesColumns>().Execute().ToArray();
+                return db.Table<VWHDM_Category>().OrderByDesc(a => a.created).Execute().ToArray();
             }
         }
 
         /// <summary>
-        /// VWSYS_TablesColumns tablosundan simpleQuery objesi filtresi sonucunda gelen kayıtları çeken fonksiyondur. Sayfa giridnde kullanılmaktadır.
+        /// VWHDM_Category tablosundan simpleQuery objesi filtresi sonucunda gelen kayıtları çeken fonksiyondur. Sayfa giridnde kullanılmaktadır.
         /// </summary>
         /// <param name="simpleQuery">Filtre parametreleri olarak obje doldurularak gönderilir.</param>
         /// <param name="tran">Mevcut dışında farklı bir transection kullanılacak ise bu parametreye gönderilir.</param>
-         /// <returns>Filtre Sonucu VWSYS_TablesColumns dizi objesini geri döndürür.</returns>
-        public VWSYS_TablesColumns[] GetVWSYS_TablesColumns(SimpleQuery simpleQuery, DbTransaction tran = null)
+         /// <returns>Filtre Sonucu VWHDM_Category dizi objesini geri döndürür.</returns>
+        public VWHDM_Category[] GetVWHDM_Category(SimpleQuery simpleQuery, DbTransaction tran = null)
         {
             using (var db = GetDB(tran))
             {
 
-                return db.Table<VWSYS_TablesColumns>().ExecuteSimpleQuery(simpleQuery).ToArray();
+                return db.Table<VWHDM_Category>().ExecuteSimpleQuery(simpleQuery).ToArray();
             }
         }
         /// <summary>
-        /// VWSYS_TablesColumns tablosundan BEXP Objesi filtresi sonucunda gelen kayıtların toplam adedini veren fonksiyondur.
+        /// VWHDM_Category tablosundan BEXP Objesi filtresi sonucunda gelen kayıtların toplam adedini veren fonksiyondur.
         /// </summary>
         /// <param name="conditionExpression">Filtre parametreleri olarak obje doldurularak gönderilir.</param>
         /// <returns>Filtre Sonucu Tablo adedini döndürür, sayı(int) olarak.</returns>
-        public int GetVWSYS_TablesColumnsCount(BEXP conditionExpression)
+        public int GetVWHDM_CategoryCount(BEXP conditionExpression)
         {
             using (var db = GetDB())
             {
-                return db.Table("VWSYS_TablesColumns").Where(conditionExpression).Count();
+                return db.Table("VWHDM_Category").Where(conditionExpression).Count();
             }
         }
         /// <summary>
-        /// VWSYS_TablesColumns tablosundan, id si gönderilen kaydın bilgilerini döndüren fonksiyondur.
+        /// VWHDM_Category tablosundan, id si gönderilen kaydın bilgilerini döndüren fonksiyondur.
         /// </summary>
-        /// <param name="id">VWSYS_TablesColumns tablo id'si verilir.</param>
+        /// <param name="id">VWHDM_Category tablo id'si verilir.</param>
         /// <param name="tran">Mevcut dışında farklı bir transection kullanılacak ise bu parametreye gönderilir.</param>
-        /// <returns>Filtre Sonucu VWSYS_TablesColumns Objesini geri döndürür.</returns>
-        public VWSYS_TablesColumns GetVWSYS_TablesColumnsById(Guid id, DbTransaction tran = null)
+        /// <returns>Filtre Sonucu VWHDM_Category Objesini geri döndürür.</returns>
+        public VWHDM_Category GetVWHDM_CategoryById(Guid id, DbTransaction tran = null)
         {
             using (var db = GetDB(tran))
 
             {
-                return db.Table<VWSYS_TablesColumns>().Where(a => a.id == id).Execute().FirstOrDefault();
+                return db.Table<VWHDM_Category>().Where(a => a.id == id).Execute().FirstOrDefault();
             }
         }
 

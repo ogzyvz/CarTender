@@ -7,5 +7,6 @@ namespace Infoline.WorkOfTimeManagement.BusinessData
     {
         public Guid? userid { get; set;}
         public Guid? roleid { get; set;}
+        public bool? status { get; set;}
     }
 }

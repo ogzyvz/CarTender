@@ -60,11 +60,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Data\SqlServerTypes\Loader.cs" />
+    <Compile Include="DatabaseFunctions\AutoGenerate\DBHDM_Category.cs" />
+    <Compile Include="DatabaseFunctions\AutoGenerate\DBHDM_Faq.cs" />
+    <Compile Include="DatabaseFunctions\AutoGenerate\DBHDM_Question.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBSYS_Email.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBSYS_Files.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBSYS_Version.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBTEN_DemonstrationRequest.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBTEN_Tenant.cs" />
+    <Compile Include="DatabaseFunctions\AutoGenerate\DBVWHDM_Category.cs" />
+    <Compile Include="DatabaseFunctions\AutoGenerate\DBVWHDM_Faq.cs" />
+    <Compile Include="DatabaseFunctions\AutoGenerate\DBVWHDM_Question.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBVWSH_PagesRolePageReport.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBVWSH_RolePageReport.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBVWSH_UserPageReport.cs" />
