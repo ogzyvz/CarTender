@@ -24,7 +24,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SH.Controllers
         {
             var condition = KendoToExpression.Convert(request);
             request.Page = 1;
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var data = db.GetSH_Pages(condition).RemoveGeographies().ToDataSourceResult(request);
             data.Total = db.GetSH_PagesCount(condition.Filter);
             return Json(data, JsonRequestBehavior.AllowGet);
@@ -33,14 +33,14 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SH.Controllers
 
         public ActionResult Detail(Guid id)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var data = db.GetSH_PagesById(id);
             return View(data);
         }
 
         public ActionResult Update(Guid id)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var data = db.GetSH_PagesById(id);
             ViewBag.Roles = db.GetSH_PagesRoleByActionId(data.id).Where(a => a.status == true).OrderBy(a => a.created).Select(c => c.roleid);
 
@@ -51,7 +51,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SH.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public JsonResult Update(SH_Pages item, string[] RoleList)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var userStatus = (PageSecurity)Session["userStatus"];
             var feedback = new FeedBack();
 
@@ -91,7 +91,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SH.Controllers
         [HttpPost]
         public JsonResult Delete(string[] id)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var feedback = new FeedBack();
 
             var item = id.Select(a => new SH_Pages { id = new Guid(a) });

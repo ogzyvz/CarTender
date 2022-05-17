@@ -127,7 +127,7 @@ namespace Infoline.WorkOfTimeManagement.BusinessAccess
 
 
 
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             db.InsertSYS_Email(new SYS_Email
             {
                 id = Guid.NewGuid(),

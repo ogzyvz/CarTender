@@ -22,7 +22,7 @@ namespace Infoline.WorkOfTimeManagement.BusinessAccess
         Pasif = 0
     }
 
-    partial class IntranetManagementDatabase
+    partial class WorkOfTimeManagementDatabase
     {
 
         public SH_UserRole[] GetSH_UserRoleByRoleId(Guid roleid)

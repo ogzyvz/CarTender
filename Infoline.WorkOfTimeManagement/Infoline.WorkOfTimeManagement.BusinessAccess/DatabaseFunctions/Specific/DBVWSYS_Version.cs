@@ -14,7 +14,7 @@ namespace Infoline.WorkOfTimeManagement.BusinessAccess
 {
 
 
-    partial class IntranetManagementDatabase
+    partial class WorkOfTimeManagementDatabase
     {
 
         public VWSYS_Version GetVWSYS_VersionExistByVersionNumber(string versionNumber, DbTransaction tran = null)

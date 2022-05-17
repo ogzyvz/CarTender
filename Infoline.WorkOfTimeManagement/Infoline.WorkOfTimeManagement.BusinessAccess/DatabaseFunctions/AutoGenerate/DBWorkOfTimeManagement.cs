@@ -11,12 +11,12 @@ using Infoline.WorkOfTimeManagement.BusinessData;
 
 namespace Infoline.WorkOfTimeManagement.BusinessAccess
 {
-    public partial class IntranetManagementDatabase
+    public partial class WorkOfTimeManagementDatabase
     {
         public string ConnectionString { get; private set; }
         public DatabaseType DatabaseType { get; private set; }
 
-        public IntranetManagementDatabase()
+        public WorkOfTimeManagementDatabase()
         {
             if (System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnection"] != null)
                 this.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
@@ -27,7 +27,7 @@ namespace Infoline.WorkOfTimeManagement.BusinessAccess
 
         }
 
-        public IntranetManagementDatabase(string conn)
+        public WorkOfTimeManagementDatabase(string conn)
         {
             this.ConnectionString = conn;
         }

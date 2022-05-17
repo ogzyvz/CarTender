@@ -24,7 +24,7 @@ namespace Infoline.WorkOfTimeManagement.BusinessAccess
     }
 
 
-    partial class IntranetManagementDatabase
+    partial class WorkOfTimeManagementDatabase
     {
 
 

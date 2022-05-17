@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Infoline.WorkOfTimeManagement.BusinessAccess
 {
-    partial class IntranetManagementDatabase
+    partial class WorkOfTimeManagementDatabase
     {
 
         public ResultStatus InsertINV_CompanyPerson(INV_CompanyPerson item, DbTransaction tran = null)

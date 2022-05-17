@@ -135,7 +135,7 @@ namespace Infoline.WorkOfTimeManagement.Business.Security
                 var ticketid = context.Request.Params["ticketid"];
                 if (ticketid != null)
                 {
-                    var db = new IntranetManagementDatabase();
+                    var db = new WorkOfTimeManagementDatabase();
                     var user = db.GetSH_UserByTicketid(new Guid(ticketid));
                     RenderResponse(context, user);
                 }

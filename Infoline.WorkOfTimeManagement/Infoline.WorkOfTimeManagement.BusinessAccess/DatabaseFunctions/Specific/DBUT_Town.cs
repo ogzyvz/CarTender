@@ -11,7 +11,7 @@ using Infoline.WorkOfTimeManagement.BusinessData;
 
 namespace Infoline.WorkOfTimeManagement.BusinessAccess
 {
-    partial class IntranetManagementDatabase
+    partial class WorkOfTimeManagementDatabase
     {
 
         public UT_Town[] GetUT_TownCustomByCityNumber(int CityNumber, DbTransaction tran = null)

@@ -19,7 +19,7 @@ namespace Infoline.WorkOfTimeManagement.BusinessAccess
         public string extension { get; set; }
     }
 
-    partial class IntranetManagementDatabase
+    partial class WorkOfTimeManagementDatabase
     {
         //public ResultStatus InsertSA_DemoDemandDemo(Guid createdby,DbTransaction tran = null)
         //{

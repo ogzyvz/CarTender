@@ -11,7 +11,7 @@ using Infoline.WorkOfTimeManagement.BusinessData;
 
 namespace Infoline.WorkOfTimeManagement.BusinessAccess
 {
-    partial class IntranetManagementDatabase
+    partial class WorkOfTimeManagementDatabase
     {
 
         public VWSH_UserPageReport GetSH_VWSH_UserPageReportSummary(DbTransaction tran = null)

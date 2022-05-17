@@ -108,7 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseFunctions\AutoGenerate\DBInfolineDatabase.cs" />
-    <Compile Include="DatabaseFunctions\AutoGenerate\DBIntranetManagement.cs" />
+    <Compile Include="DatabaseFunctions\AutoGenerate\DBWorkOfTimeManagement.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBSH_Pages.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBSH_PagesRole.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBSH_Role.cs" />

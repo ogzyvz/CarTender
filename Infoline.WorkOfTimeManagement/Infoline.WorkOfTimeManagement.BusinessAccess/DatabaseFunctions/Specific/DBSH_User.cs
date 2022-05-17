@@ -34,7 +34,7 @@ namespace Infoline.WorkOfTimeManagement.BusinessAccess
     }
 
 
-    partial class IntranetManagementDatabase
+    partial class WorkOfTimeManagementDatabase
     {
 
         public SH_User[] GetSH_UserByStatus(EnumSH_UserStatus status, DbTransaction tran = null)

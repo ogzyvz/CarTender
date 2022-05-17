@@ -11,7 +11,7 @@ using Infoline.WorkOfTimeManagement.BusinessData;
 
 namespace Infoline.WorkOfTimeManagement.BusinessAccess
 {
-    partial class IntranetManagementDatabase
+    partial class WorkOfTimeManagementDatabase
     {
         public SH_Pages[] GetSH_PagesByAction(string Action, DbTransaction tran = null)
         {

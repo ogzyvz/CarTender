@@ -30,7 +30,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         public ActionResult LanguageInsert()
         {
 
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var model = new Dictionary<string, string>();
             var data = new LanguageSearch().GetAllPages()
                 .Where(a => System.IO.File.Exists(Server.MapPath(String.Concat((string.IsNullOrEmpty(a.Area) ? "~" : "~/Areas/" + a.Area), "/Views/", a.Controller, "/", a.Action, ".cshtml"))))

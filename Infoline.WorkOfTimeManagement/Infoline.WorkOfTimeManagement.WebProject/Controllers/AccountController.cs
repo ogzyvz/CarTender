@@ -27,7 +27,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
             var user = new SH_User();
             var ticketid = Session["ticketid"];
             var userStatus = Session["userStatus"];
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
 
             if (ticketid != null && userStatus != null)
             {
@@ -71,7 +71,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
                 }, JsonRequestBehavior.AllowGet);
             }
 
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var ticketId = Session["ticketid"];
             var userStatus = Session["userStatus"];
             var username = sh_user.loginname.ToString().Trim();
@@ -115,7 +115,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         {
             if (Session["ticketid"] != null)
             {
-                var db = new IntranetManagementDatabase();
+                var db = new WorkOfTimeManagementDatabase();
                 db.UpdateSH_Ticket(new SH_Ticket { id = new Guid(Session["ticketid"].ToString()), endtime = DateTime.Now });
                 Session.Remove("ticketid");
                 Session.Remove("userStatus");
@@ -135,7 +135,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         [AllowEveryone, HttpPost, ValidateAntiForgeryToken, CaptchaValidation("CaptchaCode2", "UserControlCaptcha2", "Hatalı Giriş")]
         public JsonResult SignUp(SH_User item)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var feedback = new FeedBack();
             MvcCaptcha.ResetCaptcha("UserControlCaptcha2");
 
@@ -235,7 +235,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
             var email = form["FRPemail"];
 
 
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var feedback = new FeedBack();
 
             var userm = db.GetSH_UserByLoginName(loginName);
@@ -286,7 +286,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         [AllowEveryone]
         public JsonResult ValidateLoginName(string loginname)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var res = db.GetSH_UserByLoginName(loginname);
             var jsonRes = new ResultStatus
             {
@@ -300,7 +300,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         [AllowEveryone]
         public JsonResult ValidateEmail(string email)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var res = db.GetSH_UserInfoByEmail(email);
             var jsonRes = new ResultStatus
             {
@@ -314,7 +314,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         [AllowEveryone]
         public JsonResult ValidateTc(string tckimlikno)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
 
             if (System.Configuration.ConfigurationManager.AppSettings["MernisKontrol"] != null)
             {
@@ -342,7 +342,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         [AllowEveryone]
         public ActionResult Profile()
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var userStatus = (PageSecurity)Session["userStatus"];
 
             var kullanici = db.GetSHUserById(userStatus.user.id);

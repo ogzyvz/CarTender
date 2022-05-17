@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Infoline.WorkOfTimeManagement.BusinessAccess
 {
-    partial class IntranetManagementDatabase
+    partial class WorkOfTimeManagementDatabase
     {
         public ResultStatus InsertCMP_Company(CMP_Company item, DbTransaction tran = null)
         {

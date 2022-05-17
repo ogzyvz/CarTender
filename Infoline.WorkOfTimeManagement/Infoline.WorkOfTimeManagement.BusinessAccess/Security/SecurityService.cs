@@ -24,7 +24,7 @@ namespace Infoline.WorkOfTimeManagement.Business.Security
             _tickettimer.Change(Timeout.Infinite, Timeout.Infinite);
             try
             {
-                using (var db = new IntranetManagementDatabase().GetDB())
+                using (var db = new WorkOfTimeManagementDatabase().GetDB())
                 {
                     db.Table<SH_Ticket>().Where(a => a.endtime < DateTime.Now);
                     //db.ExecuteNonQuery("delete  from SH_Ticket  where endtime < {0}", DateTime.Now);
@@ -42,7 +42,7 @@ namespace Infoline.WorkOfTimeManagement.Business.Security
 
         public LoginResult Login(string loginname, string password, Guid deviceId, string IPAddress)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var user = db.GetSH_UserByLoginName(loginname);
             if (user != null)
             {
@@ -72,7 +72,7 @@ namespace Infoline.WorkOfTimeManagement.Business.Security
 
         private SH_Ticket TicketIsLiveControlByUserid(Guid userId)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             using (var d = db.GetDB())
             {
                 var ticketObject = d.Table<SH_Ticket>().Where(a => a.userid == userId && a.endtime <= DateTime.Now).OrderByDesc(a => a.createtime).Take(1).Execute().FirstOrDefault();
@@ -107,7 +107,7 @@ namespace Infoline.WorkOfTimeManagement.Business.Security
 
         public void SaveTicket(CallContext ctx)
         {
-            using (var db = new IntranetManagementDatabase().GetDB())
+            using (var db = new WorkOfTimeManagementDatabase().GetDB())
             {
                 db.ExecuteInsert(new SH_Ticket { id = ctx.TicketId, userid = ctx.UserId, endtime = DateTime.Now.AddMinutes(TicketLife) });
             }
@@ -115,7 +115,7 @@ namespace Infoline.WorkOfTimeManagement.Business.Security
 
         public CallContext LoadTicket(Guid id)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             using (var d = db.GetDB())
             {
                 var ctx = d.Table<SH_Ticket>().Where(a => a.id == id).Execute().FirstOrDefault();
@@ -137,7 +137,7 @@ namespace Infoline.WorkOfTimeManagement.Business.Security
 
         public void DeleteTicket(Guid id)
         {
-            using (var db = new IntranetManagementDatabase().GetDB())
+            using (var db = new WorkOfTimeManagementDatabase().GetDB())
             {
                 db.Table<SH_Ticket>().Delete(a => a.id == id);
             }

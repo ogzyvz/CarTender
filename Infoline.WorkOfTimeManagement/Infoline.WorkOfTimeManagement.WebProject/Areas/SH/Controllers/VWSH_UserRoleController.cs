@@ -15,7 +15,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SH.Controllers
     {
         public ActionResult Index()
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var data = db.GetSH_UserRolePageReportSummary() ?? new VWSH_UserRolePageReport();
             return View(data);
         }
@@ -25,7 +25,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SH.Controllers
         {
             var condition = KendoToExpression.Convert(request);
             request.Page = 1;
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var data = db.GetVWSH_UserRole(condition).RemoveGeographies().ToDataSourceResult(request);
             data.Total = db.GetVWSH_UserRoleCount(condition.Filter);
             return Json(data, JsonRequestBehavior.AllowGet);
@@ -35,7 +35,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SH.Controllers
 
         public ActionResult Detail(Guid id)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var data = db.GetVWSH_UserRoleById(id);
             return View(data);
         }
@@ -57,7 +57,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SH.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public JsonResult Insert(SH_UserRole item, string[] UserIdList)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var userStatus = (PageSecurity)Session["userStatus"];
             var feedback = new FeedBack();
 
@@ -111,7 +111,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SH.Controllers
 
         public ActionResult Update(Guid id)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var data = db.GetVWSH_UserRoleById(id);
             return View(data);
         }
@@ -120,7 +120,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SH.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public JsonResult Update(SH_UserRole item)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var userStatus = (PageSecurity)Session["userStatus"];
             var feedback = new FeedBack();
 
@@ -141,7 +141,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SH.Controllers
         [HttpPost]
         public JsonResult Delete(string[] id)
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var feedback = new FeedBack();
 
             var item = id.Select(a => new SH_UserRole { id = new Guid(a) });

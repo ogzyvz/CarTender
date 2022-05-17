@@ -9,7 +9,7 @@ using Infoline;
 
 namespace Infoline.WorkOfTimeManagement.BusinessAccess
 {
-    public partial class IntranetManagementDatabase
+    public partial class WorkOfTimeManagementDatabase
     {
         public SH_User GetUserInfoByUserName(string userName)
         {

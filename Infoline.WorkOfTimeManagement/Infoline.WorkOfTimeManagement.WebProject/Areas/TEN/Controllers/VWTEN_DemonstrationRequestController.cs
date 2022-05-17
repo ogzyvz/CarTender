@@ -34,7 +34,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.TEN.Controllers
 		    request.Filters = new FilterDescriptor[0];
 		    request.Sorts = new SortDescriptor[0];
 		    request.Page = 1;
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var data = db.GetVWTEN_DemonstrationRequest(condition).RemoveGeographies().ToDataSourceResult(request);
 		    data.Total = db.GetVWTEN_DemonstrationRequestCount(condition.Filter);
 		    return Content(Infoline.Helper.Json.Serialize(data), "application/json");
@@ -45,7 +45,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.TEN.Controllers
 		{
 		    var condition = KendoToExpression.Convert(request);
 
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var data = db.GetVWTEN_DemonstrationRequest(condition);
 		    return Content(Infoline.Helper.Json.Serialize(data), "application/json");
 		}
@@ -53,7 +53,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.TEN.Controllers
 
 		public ActionResult Detail(Guid id)
 		{
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var data = db.GetVWTEN_DemonstrationRequestById(id);
 		    return View(data);
 		}
@@ -105,13 +105,13 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.TEN.Controllers
             }
 
 
-            var baseDb = new IntranetManagementDatabase(); 
+            var baseDb = new WorkOfTimeManagementDatabase(); 
             var ConnectionString = "Data Source=.;Initial Catalog=WorkOfTime1199;User ID=sa;Password=c2SSsCM9Y3HZVU";
 
 #if DEBUG
             ConnectionString = "Data Source=10.100.0.222;Initial Catalog=WorkOfTime1199;User ID=sa;Password=c2SSsCM9Y3HZVU";
 #endif
-            var db = new IntranetManagementDatabase(ConnectionString);
+            var db = new WorkOfTimeManagementDatabase(ConnectionString);
             var userMail = baseDb.GetTEN_DemonstrationRequestByMail(item.EMail);
 			if (userMail!=null)
 			{
@@ -179,7 +179,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.TEN.Controllers
 
 		public ActionResult Update(Guid id)
 		{
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var data = db.GetVWTEN_DemonstrationRequestById(id);
 		    return View(data);
 		}
@@ -188,7 +188,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.TEN.Controllers
 		[HttpPost, ValidateAntiForgeryToken]
 		public JsonResult Update(TEN_DemonstrationRequest item)
 		{
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var userStatus = (PageSecurity)Session["userStatus"];
 		    var feedback = new FeedBack();
 		
@@ -209,7 +209,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.TEN.Controllers
 		[HttpPost]
 		public JsonResult Delete(string[] id)
 		{
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var feedback = new FeedBack();
 		
 		    var item = id.Select(a => new TEN_DemonstrationRequest { id = new Guid(a) });

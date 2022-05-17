@@ -28,7 +28,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SYS.Controllers
 		    request.Filters = new FilterDescriptor[0];
 		    request.Sorts = new SortDescriptor[0];
 		    request.Page = 1;
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var data = db.GetVWSYS_Version(condition).RemoveGeographies().ToDataSourceResult(request);
 		    data.Total = db.GetVWSYS_VersionCount(condition.Filter);
 		    return Content(Infoline.Helper.Json.Serialize(data), "application/json");
@@ -39,7 +39,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SYS.Controllers
 		{
 		    var condition = KendoToExpression.Convert(request);
 
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var data = db.GetVWSYS_Version(condition);
 		    return Content(Infoline.Helper.Json.Serialize(data), "application/json");
 		}
@@ -47,7 +47,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SYS.Controllers
 
 		public ActionResult Detail(Guid id)
 		{
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var data = db.GetVWSYS_VersionById(id);
 		    return View(data);
 		}
@@ -63,7 +63,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SYS.Controllers
 		[HttpPost, ValidateAntiForgeryToken]
 		public JsonResult Insert(SYS_Version item)
 		{
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var userStatus = (PageSecurity)Session["userStatus"];
 		    var feedback = new FeedBack();
 
@@ -121,7 +121,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SYS.Controllers
 
 		public ActionResult Update(Guid id)
 		{
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var data = db.GetVWSYS_VersionById(id);
 		    return View(data);
 		}
@@ -130,7 +130,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SYS.Controllers
 		[HttpPost, ValidateAntiForgeryToken]
 		public JsonResult Update(SYS_Version item)
 		{
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var userStatus = (PageSecurity)Session["userStatus"];
 		    var feedback = new FeedBack();
 
@@ -189,7 +189,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SYS.Controllers
 		[HttpPost]
 		public JsonResult Delete(string[] id)
 		{
-		    var db = new IntranetManagementDatabase();
+		    var db = new WorkOfTimeManagementDatabase();
 		    var feedback = new FeedBack();
 		
 		    var item = id.Select(a => new SYS_Version { id = new Guid(a) });

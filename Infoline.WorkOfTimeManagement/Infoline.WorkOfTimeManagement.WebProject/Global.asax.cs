@@ -38,7 +38,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject
 
         public bool CheckDebugStart()
         {
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
             var result = db.Login("infoline", "Se2105");
 
             if (result.LoginResult == LoginResult.OK)
@@ -65,7 +65,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject
         {
             if (Session["ticketid"] != null)
             {
-                var db = new IntranetManagementDatabase();
+                var db = new WorkOfTimeManagementDatabase();
                 db.UpdateSH_Ticket(new SH_Ticket { id = new Guid(Session["ticketid"].ToString()), endtime = DateTime.Now });
                 Session.Remove("userStatus");
                 Session.Remove("ticketid");

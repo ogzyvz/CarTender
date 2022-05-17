@@ -149,7 +149,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.SYS.Controllers
         {
 
             Guid? id = null;
-            var db = new IntranetManagementDatabase();
+            var db = new WorkOfTimeManagementDatabase();
 
             try
             {
