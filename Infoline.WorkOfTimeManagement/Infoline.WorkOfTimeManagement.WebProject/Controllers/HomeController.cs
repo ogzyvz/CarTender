@@ -27,9 +27,22 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         {
             return View();
         }
-        
+        [AllowEveryone]
+        public ActionResult ScreenShots()
+        {
+            return View();
+        }
         [AllowEveryone]
         public ActionResult AskToUs()
+        {
+            return View();
+        }
+        [AllowEveryone]
+        public ActionResult Demo()
+        {
+            return View();
+        }
+        public ActionResult References()
         {
             return View();
         }

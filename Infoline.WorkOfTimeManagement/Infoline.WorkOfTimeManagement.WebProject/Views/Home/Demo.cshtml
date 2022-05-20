@@ -1,0 +1,165 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Ana Sayfa";
+}
+
+<style>
+    .info-column {
+        margin-bottom: 15px;
+        height: 370px;
+        margin: 10px
+    }
+
+    .single-info-box {
+        text-align: center;
+        padding-top: 7%;
+    }
+
+    figure {
+        margin: revert;
+    }
+
+    .single-info-box h2 {
+        padding-top: 4%;
+        color: #ff0000;
+        font-size: 35px;
+        font-weight: 600;
+    }
+
+    .single-info-box .text {
+        padding-top: 2%;
+    }
+
+    @@media (min-width: 992px) {
+        .col-lg-4 {
+            max-width: 31.333333%;
+        }
+    }
+</style>
+
+<section class="page-title" style="background-image: url(../../Content/Themes2/images/background/pagetitle-bg.png);">
+    <div class="anim-icons">
+        <div class="icon icon-1"><img src="images/icons/anim-icon-17.png" alt=""></div>
+        <div class="icon icon-2 rotate-me"><img src="images/icons/anim-icon-18.png" alt=""></div>
+        <div class="icon icon-3 rotate-me"><img src="images/icons/anim-icon-19.png" alt=""></div>
+        <div class="icon icon-4"></div>
+    </div>
+    <div class="container">
+        <div class="content-box clearfix">
+            <div class="title-box pull-left">
+                <h1>Demo Talebi</h1>
+                <ul class="bread-crumb ">
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li>Demo Talebi</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <br /><br />
+    <br /><br /><br /><br />
+</section>
+
+
+<section class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 info-column" style="box-shadow: 0px 1px 11px 9px #f4f4f4;border-radius: 25px;">
+                <div class="single-info-box">
+                    <figure class="icon-box"><img src="/Content/Custom/Template/Images/Demo/info-icon-1.png" alt=""></figure>
+                    <h2>Telefon</h2>
+                    <div class="text">
+                        Ankara Merkez Ofis
+                        +90 312 440 02 50<br>
+                        İstanbul Ar-Ge Ofis
+                        +90 212 212 19 23
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 info-column" style="box-shadow: 0px 1px 11px 9px #f4f4f4;border-radius: 25px;">
+                <div class="single-info-box">
+                    <figure class="icon-box"><img src="/Content/Custom/Template/Images/Demo/info-icon-1.png" alt=""></figure>
+                    <h2>E-Mail</h2>
+                    <div class="text" style="padding-top:8%;">
+                        <a href="mailto:info@infoline-tr.com" style="text-decoration:none;">info@infoline-tr.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 info-column" style="box-shadow: 0px 1px 11px 9px #f4f4f4;border-radius: 25px;">
+                <div class="single-info-box">
+                    <figure class="icon-box"><img src="/Content/Custom/Template/Images/Demo/info-icon-1.png" alt=""></figure>
+                    <h2>Adres</h2>
+                    <div class="text">
+                        Merkez: Hacettepe Teknokent
+                        6. Arge C Blok / Ankara <br />
+                        Ar-Ge: Yıldız Teknik Üniversitesi
+                        Teknopark B2 Blok / İstanbul
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:15%;">
+            <div class="contact-form-area container">
+                <div class="sec-title center" style="margin-bottom: 60px;">
+                    <h2 style="color: #ff0000; font-weight: 700; font-size: 50px;margin-bottom: 15px; ">Demo Talebi</h2>
+
+                    <div class="section-title center">
+                        Infoline'ın size özel olarak sunduğu çözümlerden faydalanmak için
+                        hemen formu doldurun, sizinle iletişime geçelim!
+                    </div>
+                </div>
+
+                <div class="form-inner">
+                    <form method="post" action="/Products/DemoMailSend" id="form" class="default-form">
+                        <input name="__RequestVerificationToken" type="hidden" value="56pyqgWBL7OAZXI0HLXPvpxl_V9hFQ1fF9aqQpbcjEUYNEAL7vbYEUFY2ovWuopW1FEiEX7SP_B1qmVAMQdqOGAl1Q287gpOaUJaxiQuIdw1">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-12 column">
+                                <div class="form-group">
+                                    <input type="text" name="username" placeholder="Adınız Soyadınız" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 column">
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email Adresiniz" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 column">
+                                <div class="form-group">
+                                    <input type="text" name="company" placeholder="Firmanızın Adı" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 column">
+                                <div class="form-group">
+                                    <input type="text" name="phone" placeholder="Telefon Numaranız  ->  0555 555 55 55" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                <div class="form-group">
+                                    <textarea name="message" placeholder="Mesajınız..."></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                    <div style="padding-top:10px;" class="g-recaptcha" data-sitekey="6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW&amp;co=aHR0cDovL21vYmlsb2Zpc2luaXouY29tOjgw&amp;hl=tr&amp;v=M-QqaF9xk6BpjLH22uHZRhXt&amp;size=normal&amp;cb=vgh2d5w92xxe" width="304" height="78" role="presentation" name="a-awmbb8neywgz" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+                                    <br>
+                                </div>
+
+                                <div class="form-group message-btn centred">
+                                    <button type="submit" class="theme-btn-two" name="submit-form" id="demoSend" style="background-color: #ff0000; font-weight: 700; font-size: 22px">Hemen Başvur</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+
