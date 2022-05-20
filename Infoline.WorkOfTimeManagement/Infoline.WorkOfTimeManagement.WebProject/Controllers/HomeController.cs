@@ -27,6 +27,13 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         {
             return View();
         }
+        
+        [AllowEveryone]
+        public ActionResult AskToUs()
+        {
+            return View();
+        }
+
         public ActionResult LanguageInsert()
         {
 

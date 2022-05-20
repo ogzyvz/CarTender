@@ -1,470 +1,325 @@
-﻿<html lang="tr">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="WorkOfTime - Özellikler">
-    <meta name='keywords' content='İnsan Kaynakları, Satış ve Sipariş Yönetimi, Satın Alma Yönetimi, Ürün ve Stok İşlemleri, Proje Yönetimi, Saha Görev Yönetimi, Muhasebe ve Finans, Ofis Yönetimi, Sistem Yönetimi, Harita Bazlı Raporlar' />
-    <meta name="author" content="Infoline Bilgi Teknolojileri">
-    <title>WorkOfTime - Özellikler</title>
-    <!-- Mobile Specific Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff">
-    <!--
-            Google Font
-            ================================================== -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <!--
-            CSS Files
-            ================================================== -->
-    <!-- Plugins -->
-    <link href="~/Content/Home/content/plugins/custom/plugins.css" rel="stylesheet" />
-    <!-- Main Style -->
-    <link href="~/Content/Home/content/plugins/custom/style.css" rel="stylesheet" />
-    <link href="~/Content/Custom/css/features.css" rel="stylesheet" />
-    <!-- Modernizer Script for old Browsers -->
-    <script src="~/Content/Custom/js/lightbox.js"></script>
-    <script src='/Content/Home/scripts/plugins/custom/modernizr-2.6.2.min.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    @*<script src="~/Content/Custom/js/master.js"></script>*@
-    <link href="/Content/Home/content/plugins/toastr/toastr.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/Content/Home/content/plugins/openlayermap/ol.css" type="text/css">
-    <link href="/Content/Home/content/plugins/openlayermap/olCustom.css" rel="stylesheet">
-    <link href="/Content/Home/content/plugins/openlayermap/geocoder.css" rel="stylesheet">
-    @*<link href="~/Content/Harita/fonts/MapIcon/flaticon.css" rel="stylesheet" />*@
-    <link href="~/Content/Plugins/Fontello/css/fontello.css" rel="stylesheet" />
+﻿@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Ana Sayfa";
+}
 
-    @*<link href="~/Content/Themes/css/bootstrap.min.css" rel="stylesheet">*@
+<style>
+    .page-title .content-box .bread-crumb li {
+        font-size: 25px;
+    }
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129054355-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+    .page-title .content-box .title-box h1 {
+        font-weight: 700;
+        font-size: 50px;
+    }
 
-        gtag('config', 'UA-129054355-1');
-    </script>
-</head>
-<body>
-    @*<template english>
-            <a href="{{origin}}{{goHome}}?clang=en-us" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i> EN<b class="caret"></b></a>
-        </template>
-        <template turkish>
-            <a href="{{origin}}{{goHome}}?clang=tr-tr" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i> TR<b class="caret"></b></a>
-        </template>*@
-    <template one-new>
-        <!-- Start Single Post -->
-        <div class="item">
-            <div class="one-post">
-                <div class="post-img">
-                    <a href="">
-                        <img src="$: image :$" alt="Fatih Projesi Tablet dağıtımı" class="img-responsive">
-                    </a>
-                </div>
-                <div class="post-text">
-                    <div class="title-text">
-                        <a href="" class="title-post">$: pagetitle :$</a>
-                        <div class="post-details">
-                            <a href=""><i class="fa fa-folder-open"></i> Genel</a>
-                            <a href=""><i class="fa fa-calendar-o"></i> $: publishedon :$</a>
-                        </div>
-                    </div>
-                    <div class="post-concept">
-                        <p>$: content :$</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </template>
-    <!--
-        Start Header
-        ==================================== -->
-    @*{{>scriptscore}}*@
-    <header id="home" class="home bg-image waves">
-        <div class="overlay">
-            <div id="particles-js"></div>
-            <!-- Start Navigation Bar -->
-            <nav class="navbar navbar-default nav-sec navbar-fixed-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-menu-3" style="color: white;font-size: 24px;padding-right: 10px"></span>
-                        </button>
-                        <a class="navbar-brand" href="" title="WorkOfTime"><img src="/Content/Home/images/workoftimebeyaz.png" alt="WorkOfTime Logo"></a>
-                    </div>
-                    <!-- / navbar-header -->
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/Home/Index#whatis"><span>NEDİR</span></a></li>
-                            <li><a href="/Home/Index#modules"><span>ÜRÜNLER</span></a></li>
-                            <li><a href="/Home/Index#screenshots"><span>EKRAN GÖRÜNTÜLERİ</span></a></li>
-                            <li><a href="/Home/Index#application"><span>UYGULAMA</span></a></li>
-                            <li><a href="/Home/Index#price"><span>FİYATLAR</span></a></li>
-                            @*<li><a href="#blog"><span>HABERLER</span></a></li>*@
-                            <li><a href="/Home/Index#quality"><span>KALİTE</span></a></li>
-                            <li><a href="/Home/Index#contact-us"><span>İLETİŞİM</span></a></li>
-                            @*<li class="dropdown" id="language">
-                                    <a class="dropdown-toggle closeClick" data-toggle="dropdown"><i class="fa fa-globe"></i> TR<b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="closeClick" href="{{origin}}{{goHome}}?clang=en-us">EN</a></li>
-                                    </ul>
-                                </li>*@
-                        </ul>
-                    </div>
-                    <!-- end nav-collapse -->
-                </div>
-                <!-- end container -->
-            </nav>
-            <!-- End Navigation Bar -->
-            <div class="container">
-                <div class="row">
-                </div>
-            </div>
-            <!-- End Container -->
-        </div>
-        <!-- End Overlay -->
-    </header>
-    <!-- End Header -->
-    <!--
-        End Header
-        ==================================== -->
+    .service-block-three .inner-box h3 {
+        color: #ff0000;
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .service-block-three .inner-box .text {
+        color: #9d9d9d;
+        font-size: 20px;
+    }
+
+    .flaticon-play-button:before {
+        color: #9d9d9d;
+        font-size: 30px;
+    }
 
 
-    <section id="myfeatures" class="section white-bg">
-        <div class="container">
-            <div class="col-md-12">
-            </div>
-            <div class="row clearfix">
-                <h1 class="features-title"><span class="display-block text-light features-title">DETAYLI ÖZELLİKLERİMİZ</span> </h1>
-                <span class="title-underline wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s"><i class="fa fa-circle"></i></span>
-                <div style="padding-top:30px">
-                    <div class="col-md-3 hidden-xs no-padding vertical-center">
-                        <img src="~/Content/Home/images/myfeatures/ik.png" style="width:262px;" class="img-responsive" />
-                    </div>
-                </div>
-                <div class="col-md-8 col-md-offset-1">
-                    <div class="font-size-40">
-                        <h2 class="text-left" style="text-align:left !important;"><span class="display-block text-light">İnsan Kaynakları</span> </h2>
-                    </div>
-                    <ul class="wp-questions-list" style="list-style: none;">
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>İnteraktif Organizasyon Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Departman Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>İzin İşleri Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>İzin Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>İzin Tanımları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Resimli Personel Görüntüleme ve Sorgulama</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Personel Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Özlük Dosyaları Arşiv Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Islak İmzalı Dosya Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Kimlik Bilgileri Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Personel Nitelik Bilgileri Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Personel Sigorta Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Görevlendirme Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Görevlendirme/Seyahat Talep Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Personel Yoğunluk Takibi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Personel Değerlendirme</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Personel Envanteri/Zimmet Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Maaş ve Kademe Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Performans Değerlendirme Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>CV Havuzu Yönetim</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>İş Sağlığı Güvenliği Dosyaları Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i>Personel Yemek Kartı ve Personel Banka Hesap Bilgileri Tutulabilir.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="navy-line"></div>
-            <div class="row clearfix">
-                <div class="col-md-8">
-                    <div class="font-size-40">
-                        <h2 class="text-left" style="text-align:left !important;"><span class="display-block text-light">Satış ve Sipariş Yönetimi</span> </h2>
-                    </div>
-                    <ul class="wp-questions-list" style="list-style: none;">
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Dinamik Teklif</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Teklif Şablon Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Tekliften Siparişe Dönüşüm</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Siparişten Faturaya Dönüşüm</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Sipariş Rezerve YÖnetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Stok - İrsaliye - Depo Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Giden İrsaliyeler Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Satış Faturaları Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Ürün Stok Sorgulama</li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-md-offset-1 hidden-xs no-padding vertical-center">
-                    <img src="~/Content/Home/images/myfeatures/satissiparis.png" style="width:262px;" class="img-responsive" />
-                </div>
-            </div>
-            <div class="navy-line"></div>
-            <div class="row clearfix">
-                <div class="col-md-3 hidden-xs no-padding vertical-center">
-                    <img src="~/Content/Home/images/myfeatures/satinalmayonetimi.png" style="width:262px;" class="img-responsive" />
-                </div>
-                <div class="col-md-8 col-md-offset-1">
-                    <div class="font-size-40">
-                        <h2 class="text-left" style="text-align:left !important;"><span class="display-block text-light">Satın Alma Yönetimi</span> </h2>
-                    </div>
-                    <ul class="wp-questions-list" style="list-style: none;">
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Satın Alma Talepleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Satın Alma Talep Onayları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Tedarikçi Yönetimi ve Takibi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Satın Alma Talepleri Onayları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Hızlı Fiyat Araştırma</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Teklif Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Teklif Onaylama</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Satın Alma İş Akışı İzleme</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Satın Alma Takibi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> En Ucuz Ürün İzleme</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Depodaki Ürünler ile Talep Kontrolleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Detaylı Teklif Sorgulama</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Satın Alma Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Satın Alma Fatura İşlemleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Satın Alma Siparişi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> İş Akışı Onay Sistemi</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="navy-line"></div>
-            <div class="row clearfix">
-                <div class="col-md-8">
-                    <div class="font-size-40">
-                        <h2 class="text-left" style="text-align:left !important;"><span class="display-block text-light">Ürün ve Stok İşlemleri</span> </h2>
-                    </div>
-                    <ul class="wp-questions-list" style="list-style: none;">
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Envanter, Varlık, Demirbaş Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Envanter Yaşam Döngüsü İzleme</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Harita Üzerinden Envanter Takibi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Karekod ve Barkod Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Stok Hareketleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Zimmet Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Tedarikçi ve Tedarik Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Ürün Fiyat Yönetimleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Kategori Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Fatura Bazlı Demirbaş İzleme</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Depo Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Depo Varlıkları İzleme</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Raf Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Dağıtım Takibi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Son Kullanım Takibi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Marka Model ve Malzeme Kalemi Yönetimi</li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-md-offset-1 hidden-xs no-padding vertical-center">
-                    <img src="~/Content/Home/images/myfeatures/envanter.png" style="width:262px;" class="img-responsive" />
-                </div>
-            </div>
-            <div class="navy-line"></div>
-            <div class="row clearfix">
-                <div class="col-md-3 hidden-xs no-padding vertical-center">
-                    <img src="~/Content/Home/images/myfeatures/projeyonetimi.png" style="width:262px;" class="img-responsive" />
-                </div>
-                <div class="col-md-8 col-md-offset-1">
-                    <div class="font-size-40">
-                        <h2 class="text-left" style="text-align:left !important;"><span class="display-block text-light">Proje Yönetimi</span> </h2>
-                    </div>
-                    <ul class="wp-questions-list" style="list-style: none;">
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Proje Durum Raporlama</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Tubitak\Teknokent\Kosgeb Projeleri Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Proje Dosyaları Takibi ve Arşiv Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Projenin Faturalarının Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Proje Zaman Planlama ve Proje Durumu İzleme</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Proje Satın Alma Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Proje İş Kalemleri ve Gantt Chart Takibi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Proje Personel Organizasyon Şeması Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Proje Personeli Puantaj Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Proje Maliyeti İzleme ve Raporlama</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Proje Envanteri Takibi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Proje Personeli Görevlendirme Takibi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> İş Kalemleri Otomatik Bilgilendirme</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="navy-line"></div>
-            <div class="row clearfix">
-                <div class="col-md-8">
-                    <div class="font-size-40">
-                        <h2 class="text-left" style="text-align:left !important;"><span class="display-block text-light">Saha Görev Yönetimi</span> </h2>
-                    </div>
-                    <ul class="wp-questions-list" style="list-style: none;">
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Arıza, Bakım, Kalibrasyon Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Keşif, Montaj, Kurulum Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Parça Değişikliği Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Karekodlu İşlem Bildirimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Lokasyon Bazlı İş Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Mobil Form Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Rut Planlama</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Anlık İş Bildirimleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Bakımı Yaklaşanlar</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Garanti Bitenler</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> SLA Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Gün Başı Planı</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Gün Sonu Özeti</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Saha Görev Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Vaka Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Harita Tabanlı Yönetim</li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-md-offset-1 hidden-xs no-padding vertical-center">
-                    <img src="~/Content/Home/images/myfeatures/sahagorevyonetimi.png" style="width:262px;" class="img-responsive" />
-                </div>
-            </div>
-            <div class="navy-line"></div>
-            <div class="row clearfix">
-                <div class="col-md-3 hidden-xs no-padding vertical-center">
-                    <img src="~/Content/Home/images/myfeatures/muhasebefinans.png" style="width:262px;" class="img-responsive" />
-                </div>
-                <div class="col-md-8 col-md-offset-1">
-                    <div class="font-size-40">
-                        <h2 class="text-left" style="text-align:left !important;"><span class="display-block text-light">Muhasebe ve Finans</span> </h2>
-                    </div>
-                    <ul class="wp-questions-list" style="list-style: none;">
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Finans İşlemleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Gelirler</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Giderler</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Kasalar</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Personel Maaş Ödemeleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Personel Harcırah Ödemeleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Personel Masraf Ödemeleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Finansal Raporlar</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Cariler</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="navy-line"></div>
-            <div class="col-md-8">
-                <div class="font-size-40">
-                    <h2 class="text-left" style="text-align:left !important;"><span class="display-block text-light">Ofis Yönetimi</span> </h2>
-                </div>
-                <ul class="wp-questions-list" style="list-style: none;">
-                    <li><i class="fa fa-check text-red" aria-hidden="true"></i> Aktivitelerim</li>
-                    <li><i class="fa fa-check text-red" aria-hidden="true"></i> Şirket Gündemi</li>
-                    <li><i class="fa fa-check text-red" aria-hidden="true"></i> Organizasyon Şeması</li>
-                    <li><i class="fa fa-check text-red" aria-hidden="true"></i> İletişim Rehberi</li>
-                    <li><i class="fa fa-check text-red" aria-hidden="true"></i> Şirket Dosyaları</li>
-                    <li><i class="fa fa-check text-red" aria-hidden="true"></i> Şirket Yönetmelikleri</li>
-                    <li><i class="fa fa-check text-red" aria-hidden="true"></i> Şirket Evrakları</li>
-                    <li><i class="fa fa-check text-red" aria-hidden="true"></i> Şirket El Kitapları</li>
-                    <li><i class="fa fa-check text-red" aria-hidden="true"></i> Şirket Çalışma Saatleri Yönetimi</li>
-                    <li><i class="fa fa-check text-red" aria-hidden="true"></i> Vardiya Planı</li>
-                    <li><i class="fa fa-check text-red" aria-hidden="true"></i> Mailing</li>
+    .service-block-three .inner-box .link-btn a {
+        position: relative;
+        display: inline-block;
+        width: 75px;
+        height: 73px;
+        line-height: 51px;
+        border: 3px solid #9d9d9d;
+        background: transparent;
+        font-size: 60px;
+        color: #fff;
+        text-align: center;
+        border-radius: 50%;
+        padding-left: 6px;
+    }
+
+        .service-block-three .inner-box .link-btn a:hover {
+            background: #ff0000;
+            border: none;
+        }
+
+            .service-block-three .inner-box .link-btn a:hover .flaticon-play-button:before {
+                color: white;
+            }
+    .free-estimate .inner-box h2 {
+        color: #5a5a5b;
+        font-size:50px;
+        font-weight:700;
+    }
+    .theme-btn-two {
+        background: #ff0000;
+        font-size:25px;
+        width:250px;
+    }
+</style>
+
+<section class="page-title" style="background-image: url(../../Content/Themes2/images/background/pagetitle-bg.png);">
+    <div class="anim-icons">
+        <div class="icon icon-1"><img src="images/icons/anim-icon-17.png" alt=""></div>
+        <div class="icon icon-2 rotate-me"><img src="images/icons/anim-icon-18.png" alt=""></div>
+        <div class="icon icon-3 rotate-me"><img src="images/icons/anim-icon-19.png" alt=""></div>
+        <div class="icon icon-4"></div>
+    </div>
+    <div class="container">
+        <div class="content-box clearfix">
+            <div class="title-box pull-left">
+                <h1>Uygulama Özellikleri</h1>
+                <ul class="bread-crumb ">
+                    <li>Özellikler</li>
+                    <li><a href="index.html">Uygulama Özellikleri</a></li>
                 </ul>
             </div>
-            <div class="row clearfix">
-                <div class="col-md-3 col-md-offset-1 hidden-xs no-padding vertical-center">
-                    <img src="~/Content/Home/images/myfeatures/ofisyonetimi.png" style="width:262px;" class="img-responsive" />
-                </div>
-            </div>
-            <div class="navy-line"></div>
-            <div class="row clearfix">
-                <div class="col-md-3 hidden-xs no-padding vertical-center">
-                    <img src="~/Content/Home/images/myfeatures/sistemyonetimi.png" style="width:262px;" class="img-responsive" />
-                </div>
-                <div class="col-md-8 col-md-offset-1">
-                    <div class="font-size-40">
-                        <h2 class="text-left" style="text-align:left !important;"><span class="display-block text-light">Sistem Yönetimi</span> </h2>
-                    </div>
-                    <ul class="wp-questions-list" style="list-style: none;">
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Birim Tanımları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Para Birimleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Lokasyonlar(Ülke/İl/İlçe)</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Sektörler</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Saha Form Tanımları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Departman Tanımları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> İzin Tanımları/Tipleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Resmi İzin Günleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Ürünler</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Randevu Durumları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Potansiyel Aşamaları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Rakip Firmalar</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Kanallar</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Sistem Yönetimi</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Kullanıcı Havuzu</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Personel Tipi İşlemleri</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Rol Yönetimi</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="navy-line"></div>
-            <div class="row clearfix">
-                <div class="col-md-8">
-                    <div class="font-size-40">
-                        <h2 class="text-left" style="text-align:left !important;"><span class="display-block text-light">Harita Bazlı Raporlar</span> </h2>
-                    </div>
-                    <ul class="wp-questions-list" style="list-style: none;">
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Proje Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Satınalma Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Fatura Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Şirket Saha Görev Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> İşletme (Cari) Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Kullanıcı Oturum Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> İK Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Personel Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> İzin Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Görevlendirme Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> CRM Raporları</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Aylık Hedef Raporu</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Personel Aylık Hedef Raporu</li>
-                        <li><i class="fa fa-check text-red" aria-hidden="true"></i> Personel CRM Özet</li>
-                    </ul>
-                </div>
 
-                <div class="col-md-3 col-md-offset-1 hidden-xs no-padding vertical-center">
-                    <img src="~/Content/Home/images/myfeatures/raporlar.png" style="width:262px;" class="img-responsive" />
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <footer id="footer" class="footer" style="z-index:9999999">
-        <div class="container">
-
-            <div class="logo-footer wow fadeInUp" data-wow-duration="1s">
-                <a href="">
-                    <img src="/Content/Home/images/workoftimebeyaz.png" alt="WorkofTime" title="WorkofTime">
-                </a>
-            </div>
-            <div class="social-footer text-center wow fadeInUp" data-wow-duration="1s">
-                <a class="social-applora-gradient" href="https://www.facebook.com/infolinebilgiteknolojileri/?__tn__=kC-R&eid=ARBwlOC3qhfvtFadOBPzVeKePpmciVGNb_m8VlvQqz4g56xlkanSGEcuoEylZhPxALe9RPtJUyCRcf5s&hc_ref=ARSWlXuV2I2OMGYlniVlUh_qBEn3c5EhDY5SKAN1bjfrt_Hyb_CXxu_Hpi6xehXt2f8&fref=nf&__xts__[0]=68.ARDBpDFwkc_V90TWSImJJ2X_17Hklt4f0-oDOiC3T87Y_KRhlBN5GGWFSPGcTGC0UakywDEXwEWUhpSahppii4nSx9uGHx2Eav51xeDGySPjZvgVKKMiwGHaC0nv7V2O0nALH1aWDMo-w_zWDbRdrYR3jnKbBeSjCOsT5G7udqIqQ0j2ZZLJ3jg8MR1H3NsgO6f22oXsFAyPUfHrY5OX2BFTpniZlriQjEkh9_NGWRqWvTkzYSpMldQo7yc_PlgfGeJ18vNP5Kd9s0oNP13JfHVa2RP0dRFTfk3xQsIajK-hacBeR68fiGTHGFhrZzxjJpOEfAQyOtUtteg" target="_blank"><i class='fa fa-facebook' style="padding: 10px 10px 10px 8px;"></i></a>
-                <a class="social-applora-gradient" href="https://twitter.com/infoline_tr" target="_blank"><i class='fa fa-twitter' style="padding: 10px 10px 10px 8px;"></i></a>
-                <a class="social-applora-gradient" href="https://www.linkedin.com/company/infolinetr/" target="_blank"><i class='fa fa-linkedin' style="padding: 10px 10px 10px 8px;"></i></a>
-            </div>
-            <div class="copyright text-center wow fadeInUp" data-wow-duration="1s">
-                <p>Copyright © 2020 <a href="http://www.infoline-tr.com">INFOLINE Bilgi Teknolojileri</a>. Tüm Hakları Saklıdır.</p>
-            </div>
-        </div>
-    </footer>
-    <div id="scroll-top">
-        <i class="fa fa-angle-up fa-2x icon-stil"></i>
-    </div>
-    <!--
-        End Back To Top
-        ==================================== -->
-    <!--
-        Start Preloader
-        ==================================== -->
-    <div id="loading-mask">
-        <div class="loader">
-            <div class="loader-inner"></div>
-            <div class="loader-inner"></div>
-            <div class="loader-inner"></div>
-            <div class="loader-inner"></div>
-            <div class="loader-inner"></div>
         </div>
     </div>
-    <!-- Plugins -->
-    <script src="/Content/Home/scripts/plugins/openlayermap/ol.js"></script>
-    <script src="/Content/Home/scripts/plugins/openlayermap/openlayer-map-helpers.js"></script>
-    <script src="/Content/Home/scripts/plugins/openlayermap/openlayer-map-geocoder.js"></script>
-    <script src="/Content/Home/scripts/plugins/custom/plugins.js"></script>
-    <script src="/Content/Home/scripts/plugins/validate/jquery.validate.min.js"></script>
-    <script src="/Content/Home/scripts/plugins/toastr/toastr.min.js"></script>
-    <script src="/Content/Home/scripts/infolinearge.js"></script>
-    <!-- Particles Run -->
-    <script src="/Content/Home/scripts/plugins/custom/particles-lines.js"></script>
-    <!-- Google Map js -->
-    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS3RyoeN47FKPcn21s6XzWZUwEtLHn-xQ"></script>-->
-    <!-- Custom JS -->
-    <script src="/Content/Home/scripts/plugins/custom/custom.js"></script>
-</body>
-</html>
+    <br /><br />
+    <br /><br /><br /><br />
+</section>
+
+
+<section class="service-style-three">
+    <div class="image-layer wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms" style="background-image: url(images/icons/shap-12.png);"></div>
+    <div class="container">
+        <div class="inner-container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                    <div class="sec-title">
+                        <h2 style="color:red;font-weight:600">
+                            WorkOfTime’ın sunduğu
+                            özellikleri keşfedin ...
+                        </h2>
+                    </div>
+                    <div class="service-block-three wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/images/icons/icon-bg-3.png);"></div>
+                                <i class="flaticon-profit-1"></i>
+                            </div>
+                            <h3>IK Yönetimi</h3>
+                            <div class="text">Increase web traffic with pay-per click and retargeting advertising for your web pages.</div>
+                            <div class="link-btn">
+                                <a href="#">
+                                    <i class="flaticon-play-button"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-block-three wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/../../Content/Themes2/images/icons/icon-bg-3.png);"></div>
+                                <i class="flaticon-checkout"></i>
+                            </div>
+                            <h3>Ürün ve Stok</h3>
+                            <div class="text">Business to business (B2B) or business to consumer (B2C) we have the experience you need to cater to your online consumers.</div>
+                            <div class="link-btn">
+                                <a href="#">
+                                    <i class="flaticon-play-button"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-block-three wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/../../Content/Themes2/images/icons/icon-bg-3.png);"></div>
+                                <i class="flaticon-checkout"></i>
+                            </div>
+                            <h3>Muhasebe ve Finans</h3>
+                            <div class="text">Business to business (B2B) or business to consumer (B2C) we have the experience you need to cater to your online consumers.</div>
+                            <div class="link-btn">
+                                <a href="#">
+                                    <i class="flaticon-play-button"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-block-three wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/../../Content/Themes2/images/icons/icon-bg-3.png);"></div>
+                                <i class="flaticon-checkout"></i>
+                            </div>
+                            <h3>Harita Bazlı Raporlar</h3>
+                            <div class="text">Business to business (B2B) or business to consumer (B2C) we have the experience you need to cater to your online consumers.</div>
+                            <div class="link-btn">
+                                <a href="#">
+                                    <i class="flaticon-play-button"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                    <div class="service-block-three wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/../../Content/Themes2/images/icons/icon-bg-3.png);"></div>
+                                <i class="flaticon-mail"></i>
+                            </div>
+                            <h3>Satış & Sipariş</h3>
+                            <div class="text">Use customers’ preferences to engage in strategic conversations and build brand loyalty.</div>
+                            <div class="link-btn">
+                                <a href="#">
+                                    <i class="flaticon-play-button"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-block-three wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/../../Content/Themes2/images/icons/icon-bg-3.png);"></div>
+                                <i class="flaticon-checkout"></i>
+                            </div>
+                            <h3>Proje Yönetimi</h3>
+                            <div class="text">Business to business (B2B) or business to consumer (B2C) we have the experience you need to cater to your online consumers.</div>
+                            <div class="link-btn">
+                                <a href="#">
+                                    <i class="flaticon-play-button"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-block-three wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/../../Content/Themes2/images/icons/icon-bg-3.png);"></div>
+                                <i class="flaticon-mail"></i>
+                            </div>
+                            <h3>Ofis Yönetimi</h3>
+                            <div class="text">Use customers’ preferences to engage in strategic conversations and build brand loyalty.</div>
+                            <div class="link-btn">
+                                <a href="#">
+                                    <i class="flaticon-play-button"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-block-three wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/../../Content/Themes2/images/icons/icon-bg-3.png);"></div>
+                                <i class="flaticon-checkout"></i>
+                            </div>
+                            <h3>Lorem Ipsum</h3>
+                            <div class="text">Business to business (B2B) or business to consumer (B2C) we have the experience you need to cater to your online consumers.</div>
+                            <div class="link-btn">
+                                <a href="#">
+                                    <i class="flaticon-play-button"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                    <div class="service-block-three wow fadeInUp" data-wow-delay="900ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/images/icons/icon-bg-3.png);"></div>
+                                <i class="flaticon-startup"></i>
+                            </div>
+                            <h3>SEO & Backlinks.</h3>
+                            <div class="text">Grow and continually improve your website’s visibility and ranking with organic search.</div>
+                            <div class="link-btn">
+                                <a href="#">
+                                    <i class="flaticon-play-button"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-block-three wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/images/icons/icon-bg-3.png);"></div>
+                                <i class="flaticon-server"></i>
+                            </div>
+                            <h3>Hosting & Email</h3>
+                            <div class="text">Reliable website hosting with professional grade email services. We can even manage your domain names for you!</div>
+                            <div class="link-btn">
+                                <a href="#">
+                                    <i class="flaticon-play-button"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-block-three wow fadeInUp" data-wow-delay="900ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/images/icons/icon-bg-3.png);"></div>
+                                <i class="flaticon-startup"></i>
+                            </div>
+                            <h3>SEO & Backlinks.</h3>
+                            <div class="text">Grow and continually improve your website’s visibility and ranking with organic search.</div>
+                            <div class="link-btn">
+                                <a href="#">
+                                    <i class="flaticon-play-button"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-block-three wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <div class="bg-layer" style="background-image: url(../../Content/Themes2/images/icons/icon-bg-3.png);"></div>
+                                <i class="flaticon-server"></i>
+                            </div>
+                            <h3>Hosting & Email</h3>
+                            <div class="text">Reliable website hosting with professional grade email services. We can even manage your domain names for you!</div>
+                            <div class="link-btn">
+                                <a href="#">
+                                    <i class="flaticon-play-button"></i>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="free-estimate">
+    <div class="image-layer" style="background-image: url(../../Content/Themes2/images/icons/estimate-bg.png);"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1 inner-column">
+                <div class="inner-box clearfix">
+                    <div class="text pull-left">
+                        <h2>
+                            Daha detaylı bilgi
+
+                            <br />almak için
+                        </h2>
+                    </div>
+                    <div class="btn-box pull-right"><a href="#" class="theme-btn-two">Bize Yazın</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
