@@ -1,7 +1,262 @@
-﻿
-@{
-    ViewBag.Title = "References";
+﻿@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Ana Sayfa";
 }
 
-<h2>References</h2>
+<style>
+    .portfolio-block-one .image-box {
+        background: #ffffff;
+        transition: all 500ms ease;
+    }
 
+        .portfolio-block-one .image-box:hover {
+            background: #ff0000;
+            opacity: 0.7;
+            transition: all 500ms ease;
+            border-radius:10px;
+        }
+
+        .portfolio-block-one .image-box .content-box h3 {
+            position: relative;
+            font-size: 34px;
+            font-weight: 600;
+            line-height: 30px;
+            margin-bottom: 0px;
+            text-transform: uppercase;
+        }
+
+        .portfolio-block-one .image-box .content-box .title {
+            position: relative;
+            padding-top: 5px;
+            font-size: 28px;
+            line-height: 28px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+    .free-estimate .inner-box h2 {
+        color: #5a5a5b;
+        font-size: 50px;
+        font-weight: 700;
+    }
+    .free-estimate .inner-box .btn-box .theme-btn-two {
+        font-size: 28px;
+        font-weight: 700;
+        width: 100%;
+    }
+    .theme-btn-two {
+        background: #ff0000;
+    }
+
+</style>
+
+
+
+<section class="page-title" style="background-image: url(/Content/Custom/Template/Images/Features/pagetitle-bg.png);">
+    <div class="anim-icons">
+        <div class="icon icon-1"><img src="~/Content/Themes2/images/icons/anim-icon-17.png" alt="Square Shape" title="Square Shape"></div>
+        <div class="icon icon-2 rotate-me"><img src="~/Content/Themes2/images/icons/anim-icon-18.png" alt="X Shape" title="X Shape"></div>
+        <div class="icon icon-3 rotate-me"><img src="~/Content/Themes2/images/icons/anim-icon-19.png" alt="Triangle Shape" title="Triangle Shape"></div>
+    </div>
+    <div class="container">
+        <div class="content-box clearfix">
+            <div class="title-box pull-left">
+                <h1>Referanslar</h1>
+                <ul class="bread-crumb pull-right">
+                    <li><a href="Home/">Ana Sayfa</a></li>
+                    <li>Referanslar</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="portfolio-section">
+    <div class="large-container">
+        <div class="sortable-masonry">
+
+            <div class="items-container row clearfix">
+                <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all graphic design branding">
+                    <div class="portfolio-block-one">
+                        <div class="image-box">
+                            <figure class="image"><img src="~/Content/Custom/Template/Images/References/paynet.png" alt=""></figure>
+                            <div class="content-box">
+                                <div class="inner">
+
+                                    <h3>120</h3>
+                                    <div class="title">Kullanıcı</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all graphic branding">
+                    <div class="portfolio-block-one">
+                        <div class="image-box">
+                            <figure class="image"><img src="~/Content/Custom/Template/Images/References/arena.png" alt=""></figure>
+                            <div class="content-box">
+                                <div class="inner">
+
+                                    <h3>345</h3>
+                                    <div class="title">Kullanıcı</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all design">
+                    <div class="portfolio-block-one">
+                        <div class="image-box">
+                            <figure class="image"><img src="~/Content/Custom/Template/Images/References/brightstar.png" alt=""></figure>
+                            <div class="content-box">
+                                <div class="inner">
+                                    <h3>210</h3>
+                                    <div class="title">Kullanıcı</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all graphic design branding">
+                    <div class="portfolio-block-one">
+                        <div class="image-box">
+                            <figure class="image"><img src="~/Content/Custom/Template/Images/References/türktelekom.png" alt=""></figure>
+                            <div class="content-box">
+                                <div class="inner">
+
+                                    <h3>450</h3>
+                                    <div class="title">Kullanıcı</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>               <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all branding">
+                    <div class="portfolio-block-one">
+                        <div class="image-box">
+                            <figure class="image"><img src="~/Content/Custom/Template/Images/References/akaotomotiv.png" alt=""></figure>
+                            <div class="content-box">
+                                <div class="inner">
+
+                                    <h3>1230</h3>
+                                    <div class="title">Kullanıcı</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all graphic design branding">
+                    <div class="portfolio-block-one">
+                        <div class="image-box">
+                            <figure class="image"><img src="~/Content/Custom/Template/Images/References/m-tod.png" alt=""></figure>
+                            <div class="content-box">
+                                <div class="inner">
+
+                                    <h3>45</h3>
+                                    <div class="title">Kullanıcı</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>          <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all design graphic">
+                    <div class="portfolio-block-one">
+                        <div class="image-box">
+                            <figure class="image"><img src="~/Content/Custom/Template/Images/References/iics.png" alt=""></figure>
+                            <div class="content-box">
+                                <div class="inner">
+
+                                    <h3>240</h3>
+                                    <div class="title">Kullanıcı</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all branding">
+                    <div class="portfolio-block-one">
+                        <div class="image-box">
+                            <figure class="image"><img src="~/Content/Custom/Template/Images/References/fenerbahce-universitesi.png" alt=""></figure>
+                            <div class="content-box">
+                                <div class="inner">
+
+                                    <h3>360</h3>
+                                    <div class="title">Kullanıcı</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all graphic design branding">
+                    <div class="portfolio-block-one">
+                        <div class="image-box">
+                            <figure class="image"><img src="~/Content/Custom/Template/Images/References/teb.png" alt=""></figure>
+                            <div class="content-box">
+                                <div class="inner">
+
+                                    <h3>270</h3>
+                                    <div class="title">Kullanıcı</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all graphic design branding">
+                    <div class="portfolio-block-one">
+                        <div class="image-box">
+                            <figure class="image"><img src="~/Content/Custom/Template/Images/References/callAy.png" alt=""></figure>
+                            <div class="content-box">
+                                <div class="inner">
+
+                                    <h3>410</h3>
+                                    <div class="title">Kullanıcı</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>         <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all graphic design branding">
+                    <div class="portfolio-block-one">
+                        <div class="image-box">
+                            <figure class="image"><img src="~/Content/Custom/Template/Images/References/turkcell.png" alt=""></figure>
+                            <div class="content-box">
+                                <div class="inner">
+
+                                    <h3>610</h3>
+                                    <div class="title">Kullanıcı</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="free-estimate">
+    <div class="image-layer" style="background-image: url(../../Content/Themes2/images/icons/estimate-bg.png);"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1 inner-column">
+                <div class="inner-box clearfix">
+                    <div class="text pull-left">
+                        <h2>
+                            WorkOfTime ile <br />
+                            hemen tanışın ...
+                        </h2>
+                    </div>
+                    <div class="btn-box pull-right"><a href="#" class="theme-btn-two">Demo talep et</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -42,6 +42,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         {
             return View();
         }
+        [AllowEveryone]
         public ActionResult References()
         {
             return View();
