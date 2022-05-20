@@ -23,7 +23,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         }
 
         [AllowEveryone]
-        public ActionResult Features()
+        public ActionResult Feautures()
         {
             return View();
         }

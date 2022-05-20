@@ -2201,7 +2201,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Home\Features.cshtml" />
+    <Content Include="Views\Home\Feautures.cshtml" />
     <Content Include="Views\Shared\_LayoutDemo.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\ProtectionOfPersonel.cshtml" />
