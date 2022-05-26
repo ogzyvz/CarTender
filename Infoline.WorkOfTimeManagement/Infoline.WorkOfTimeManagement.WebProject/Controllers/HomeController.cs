@@ -18,7 +18,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         //Demo Talebinde captcha ayarı
         //Demo Talep json result
         //Soru kısmı 
-        //
+        //screen shot görüntülerin arka planı
 
         [AllowEveryone]
         public ActionResult Index()
@@ -199,7 +199,11 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         {
             return View();
         }
-
+        [AllowEveryone]
+        public ActionResult PrivacyPolicy()
+        {
+            return View();
+        }
 
     }
 
