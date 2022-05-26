@@ -578,23 +578,75 @@
     <Content Include="Content\Custom\Template\Images\References\türktelekom.png" />
     <Content Include="Content\Custom\Template\Images\References\veribox-technology.png" />
     <Content Include="Content\Custom\Template\Images\References\vodafone.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\dahsboard-yonetimi-ekran-goruntu.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\dashboard-yonetimi-mobil.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\harita-bazli-raporlar-ekran-goruntu.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\harita-bazli-raporlar-mobil.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\ik-yonetimi-ekran-goruntu.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\ik-yonetimi-mobil.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\muhasebe-finans-yonetimi-ekran-goruntu.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\muhasebe-finans-yonetimi-mobil.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\ofis-yonetimi-ekran-goruntu.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\ofis-yonetimi-mobil.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\satis-siparis-yonetimi-ekran-goruntu.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\satis-siparis-yonetimi-mobil.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\screenshots-header.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\sistem-yonetimi-ekran-goruntu.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\sistem-yonetimi-mobil.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\urun-stok-yonetimi-ekran-goruntu.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\urun-stok-yonetimi-mobil.png" />
+    <Content Include="Content\Custom\Template\Images\ScreenShots\dahsboard-yonetimi-ekran-goruntu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\dashboard-yonetimi-mobil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\harita-bazli-raporlar-ekran-goruntu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\harita-bazli-raporlar-mobil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\ik-yonetimi-ekran-goruntu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\ik-yonetimi-mobil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\muhasebe-finans-yonetimi-ekran-goruntu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\muhasebe-finans-yonetimi-mobil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\ofis-yonetimi-ekran-goruntu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\ofis-yonetimi-mobil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\proje-yonetimi-ekran-goruntu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\proje-yonetimi-mobil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\saha-gorev-yonetimi-ekran-goruntu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\saha-gorev-yonetimi-mobil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\satinalma-yonetimi-ekran-goruntu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\satinalma-yonetimi-mobil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\satis-siparis-yonetimi-ekran-goruntu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\satis-siparis-yonetimi-mobil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\screenshots-header.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\sistem-yonetimi-ekran-goruntu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\sistem-yonetimi-mobil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\urun-stok-yonetimi-ekran-goruntu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\urun-stok-yonetimi-mobil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Custom\Template\Images\wot-loading.gif" />
     <Content Include="Content\Home\content\animate.css" />
     <Content Include="Content\Home\content\bootstrap.css" />
