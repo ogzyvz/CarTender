@@ -1294,7 +1294,7 @@ div#mCSB_1_container {
     .sticky-header .main-menu .navigation > li.current > a,
     .sticky-header .main-menu .navigation > li:hover > a {
         background: #fff;
-        color: #134f9fff !important;
+        color: #ff0101 !important;
     }
 
 .sticky-header .logo-box {
