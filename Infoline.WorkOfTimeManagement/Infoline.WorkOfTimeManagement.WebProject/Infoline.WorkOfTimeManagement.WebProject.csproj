@@ -508,6 +508,7 @@
     <Content Include="Content\Custom\Template\Images\Demo\e-mail.png" />
     <Content Include="Content\Custom\Template\Images\Demo\location.png" />
     <Content Include="Content\Custom\Template\Images\Demo\phone.png" />
+    <Content Include="Content\Custom\Template\Images\favicon.ico" />
     <Content Include="Content\Custom\Template\Images\Features\dashboard-yonetimi.png" />
     <Content Include="Content\Custom\Template\Images\Features\features-header.png" />
     <Content Include="Content\Custom\Template\Images\Features\harita-bazli-raporlar.png" />
@@ -594,6 +595,7 @@
     <Content Include="Content\Custom\Template\Images\ScreenShots\sistem-yonetimi-mobil.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\urun-stok-yonetimi-ekran-goruntu.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\urun-stok-yonetimi-mobil.png" />
+    <Content Include="Content\Custom\Template\Images\wot-loading.gif" />
     <Content Include="Content\Home\content\animate.css" />
     <Content Include="Content\Home\content\bootstrap.css" />
     <Content Include="Content\Home\content\bootstrap.min.css" />
