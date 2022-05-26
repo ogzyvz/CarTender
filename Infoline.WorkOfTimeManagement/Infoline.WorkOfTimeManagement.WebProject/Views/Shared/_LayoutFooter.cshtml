@@ -2,17 +2,37 @@
     .main-footer.style-six .footer-top {
         padding-bottom: 12px
     }
+    .main-footer.style-six .about-widget .download-btn a {
+    background-color:transparent;
+    }
+    .main-footer.style-six .footer-top:before {
+        content:none;
+    }
+    .main-footer.style-six .footer-top{
+        padding-bottom:150px;
+    }
+    .main-footer.style-six .copyright {
+        margin-top:50px;
+    }
+    @@media only screen and (max-width: 767px) {
+        .main-footer.style-five {
+            background-color: #ff0000;
+        }
+    }
 </style>
 
 <footer class="main-footer style-five style-six" style="z-index:999">
-    <div class="image-layer" style="background-image: url(/Content/Custom/Template/Images/Footer/footer-bg.png);"></div>
+    <div class="image-layer" style="background-image: url(/Content/Custom/Template/Images/Homepage/footer/footer-bg.png); "></div>
     <div class="container">
         <div class="footer-top">
             <div class="widget-section">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                         <div class="about-widget footer-widget">
-                            <figure class="footer-logo"><a href="index.html"><img src="/Content/Themes2/images/mobil-ofisiniz-logo1.png" height="150" width="150" alt=""></a></figure>
+                            <figure class="footer-logo">
+                                <a href="index.html"><img src="~/Content/Custom/Template/Images/Homepage/footer/wot-logo.png" height="130" width="130" alt="" style="margin-right:5px"></a>
+                                <a href="index.html"><img src="~/Content/Custom/Template/Images/Homepage/footer/infoline-logo.png" height="130" width="130" alt=""></a>
+                            </figure>
                             <div class="text">
                                 Çalışan yönetimi ve şirket yönetimi ile
                                 ilgili süreçlerin, dijital olarak
@@ -107,6 +127,6 @@
         </div>
 
     </div>
-    @*background: rgb(240 5 5 / 50%)*@;
-    <div style="font-size:20px; background-color: rgb(214 35 35 / 50%);" class="copyright">&copy; 2022 <a href="https://www.infoline-tr.com/">Infoline Bilgi Teknolojileri Tic. A.Ş.</a>. Tüm hakları saklıdır.</div>
+    @*background: rgb(240 5 5 / 50%)*@
+    <div style="font-size:20px; background-color:transparent;" class="copyright">&copy; 2022 <a href="https://www.infoline-tr.com/">Infoline Bilgi Teknolojileri Tic. A.Ş.</a>. Tüm hakları saklıdır.</div>
 </footer>

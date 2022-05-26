@@ -3,6 +3,8 @@
     ViewBag.Title = "Ana Sayfa";
 }
 
+
+
 <style>
     .info-column {
         margin-bottom: 15px;
@@ -14,9 +16,11 @@
         text-align: center;
         padding-top: 7%;
     }
+
     .icon-box {
         margin: revert;
     }
+
     .single-info-box h2 {
         padding-top: 4%;
         color: #ff0000;
@@ -33,14 +37,17 @@
             max-width: 31.333333%;
         }
     }
+
+    .text {
+        color: #9d9d9d
+    }
 </style>
 
-<section class="page-title" style="background-image: url(../../Content/Themes2/images/background/pagetitle-bg.png);">
+<section class="page-title" style="background-image: url(../../Content/Custom/Template/Images/Demo/headerimg/demo-header.png);">
     <div class="anim-icons">
-        <div class="icon icon-1"><img src="images/icons/anim-icon-17.png" alt=""></div>
-        <div class="icon icon-2 rotate-me"><img src="images/icons/anim-icon-18.png" alt=""></div>
-        <div class="icon icon-3 rotate-me"><img src="images/icons/anim-icon-19.png" alt=""></div>
-        <div class="icon icon-4"></div>
+        <div class="icon icon-1"><img src="~/Content/Custom/Template/Images/Homepage/div01/anim-icon-2.png" alt=""></div>
+        <div class="icon icon-2 rotate-me"><img src="~/Content/Custom/Template/Images/Homepage/div01/anim-icon-2.png" alt=""></div>
+        <div class="icon icon-3 rotate-me"><img src="~/Content/Custom/Template/Images/Homepage/div01/anim-icon-2.png" alt=""></div>
     </div>
     <div class="container">
         <div class="content-box clearfix">
@@ -54,8 +61,6 @@
 
         </div>
     </div>
-    <br /><br />
-    <br /><br /><br /><br />
 </section>
 
 
@@ -64,7 +69,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12 info-column test" style="box-shadow: 0px 1px 11px 9px #f4f4f4;border-radius: 25px;">
                 <div class="single-info-box">
-                    <figure class="icon-box"><img src="/Content/Custom/Template/Images/Demo/info-icon-1.png" alt=""></figure>
+                    <figure class="icon-box"><img src="~/Content/Custom/Template/Images/Demo/div01/phone.png" alt=""></figure>
                     <h2>Telefon</h2>
                     <div class="text">
                         Ankara Merkez Ofis
@@ -77,7 +82,7 @@
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 info-column test" style="box-shadow: 0px 1px 11px 9px #f4f4f4;border-radius: 25px;">
                 <div class="single-info-box">
-                    <figure class="icon-box"><img src="/Content/Custom/Template/Images/Demo/info-icon-1.png" alt=""></figure>
+                    <figure class="icon-box"><img src="~/Content/Custom/Template/Images/Demo/div01/e-mail.png" alt=""></figure>
                     <h2>E-Mail</h2>
                     <div class="text" style="padding-top:8%;">
                         <a href="mailto:info@infoline-tr.com" style="text-decoration:none;">info@infoline-tr.com</a>
@@ -86,7 +91,7 @@
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 info-column test" style="box-shadow: 0px 1px 11px 9px #f4f4f4;border-radius: 25px;">
                 <div class="single-info-box">
-                    <figure class="icon-box"><img src="/Content/Custom/Template/Images/Demo/info-icon-1.png" alt=""></figure>
+                    <figure class="icon-box"><img src="~/Content/Custom/Template/Images/Demo/div01/location.png" alt=""></figure>
                     <h2>Adres</h2>
                     <div class="text">
                         Merkez: Hacettepe Teknokent
@@ -111,7 +116,7 @@
                 </div>
 
                 <div class="form-inner">
-                    <form method="post" action="/Products/DemoMailSend" id="form" class="default-form">
+                    <form method="post" action="/Home/ContactMailSend" id="form" class="default-form">
                         <input name="__RequestVerificationToken" type="hidden" value="56pyqgWBL7OAZXI0HLXPvpxl_V9hFQ1fF9aqQpbcjEUYNEAL7vbYEUFY2ovWuopW1FEiEX7SP_B1qmVAMQdqOGAl1Q287gpOaUJaxiQuIdw1">
                         <div class="row">
                             <div class="col-lg-6 col-md-12 col-sm-12 column">
@@ -161,6 +166,110 @@
 
 
 
+<script src='https://www.google.com/recaptcha/api.js' data-selector="modalContainer"></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".switcher__button").on('click', function (e) {
+            $(".switcher__button").toggleClass('switcher__button--enabled');
+            $(".pricing__value").removeClass('pricing__value--hidden');
+            $(".pricing__value").toggleClass('pricing__value--show pricing__value--hide');
+        });
+
+    })
+        .on('success', 'form#InsertDemo', function (e, i) {
+            if (i.Result) {
+                window.location.replace("https://mobilofisiniz.com");
+            } else {
+                $('#recap').remove()
+                $('[data-selector="captcha"]').append($('<div id="recap" sitekey="6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW" class="g-recaptcha"></div>'));
+                grecaptcha.render($('#recap')[0], { sitekey: '6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW' });
+
+                //Canlı
+                //6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW
+
+                //Local
+                //6LfK5FcfAAAAAOYqYy2nMrhlYIAWqIeRON8tbwux
+
+                //Corporate
+                //6LftHU4fAAAAAOXBZElx0u9Uxtr-jJoK1mzuDWzu
+            }
+        })
+        .on('click', '#demoSend', function (e) {
+            e.preventDefault();
+
+            var _this = $(this);
+            var action = '/Home/ContactMailSend';
+            var method = 'post';
+            var data = $('#form').serializeArray();
+            //if ($.Enumerable.From(data).Where(c => c.value == "").Count() > 0) {
+            //    MesajWarning("Tüm alanları doldurun veya güvenlik doğrulamasını gerçekleştirin.")
+            //    return;
+            //}
+
+
+            data.push({ name: 'type', value: $("input[name='type']:checked").val() });
+
+            var title = _this.attr("data-loadingtitle") ? _this.attr("data-loadingtitle") : "lütfen bekleyiniz";
+            var formData = new FormData();
+            var stringData = $('#form').serializeArray();
+            var result = null;
+
+            $.each(stringData, function (key, input) {
+                formData.append(input.name, input.value);
+            });
+
+            $.ajax({
+                url: action,
+                type: method,
+                data: data,
+                beforeSend: function () {
+                    //$('body').loadingModal({ text: title, animation: 'rotatingPlane', backgroundColor: 'black' });
+                    //$('.preloader').show('fade');
+                },
+                success: function (response) {
+                    feedback(response.FeedBack);
+                    if (response.Result) {
+                        var modal = _this.parents(".modal");
+                        if (modal.length > 0 && typeof _this.attr('data-modal-close') == "undefined") {
+                            modal.modal("hide");
+                        }
+                        $(".k-pager-refresh.k-link").each(function (i, e) {
+                            $(this).trigger("click");
+                        });
+
+                        grecaptcha.reset();
+                    } else {
+                        grecaptcha.reset();
+                    }
+                    _this.trigger("success", response);
+                },
+                error: function () {
+                    feedback("SERVER");
+                },
+                complete: function (response) {
+                    //$('body').loadingModal('destroy');
+                    //$('.preloader').show('fade');
+                    _this.trigger("complete", response.responseJSON, response.responseText);
+                }
+            });
+
+
+        })
+
+    function popup(mylink, windowname) {
+        if (!window.focus)
+            return true;
+        var href;
+        if (typeof (mylink) == 'string')
+            href = mylink;
+        else
+            href = mylink.href;
+        window.open(href, windowname, 'width=1800,height=1000,scrollbars=yes');
+        return false;
+    }
+
+</script>
 
 <script src="~/Content/Themes2/js/script.js"></script>
 <script src="~/Content/Themes2/js/tilt.jquery.js"></script>

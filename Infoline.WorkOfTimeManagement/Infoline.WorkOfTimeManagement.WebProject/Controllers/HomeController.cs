@@ -15,10 +15,15 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
 {
     public class HomeController : Controller
     {
+        //Demo Talebinde captcha ayarı
+        //Demo Talep json result
+        //Soru kısmı 
+        //
 
         [AllowEveryone]
         public ActionResult Index()
         {
+
             return View();
         }
 
@@ -36,6 +41,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         public ActionResult AskToUs()
         {
             return View();
+            
         }
         [AllowEveryone]
         public ActionResult Demo()
@@ -126,7 +132,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
             }
 
 
-            var control = IsValid(data.EmailAddress);
+            var control = IsValid(data.email);
             if (!control)
             {
                 return Json(new ResultStatusUI
@@ -136,10 +142,10 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
                 }, JsonRequestBehavior.AllowGet);
             }
 
-            var mesaj = "<p><strong>Merhaba " + data.FullName + " tarafından mesaj gönderilmiştir.</strong></p>" +
-                            "<p>Email : " + data.EmailAddress + "</p>" +
-                            "<p>Kurum : " + data.Foundation + "</p>" +
-                            "<p>Mesaj : " + data.Description + "</p>";
+            var mesaj = "<p><strong>Merhaba " + data.username + " tarafından mesaj gönderilmiştir.</strong></p>" +
+                            "<p>Email : " + data.email + "</p>" +
+                            "<p>Kurum : " + data.company + "</p>" +
+                            "<p>Mesaj : " + data.message + "</p>";
 
             var mesajUser = "<p><strong>Merhaba ,</strong></p>" +
                             "<p>WorkOfTime üzerinden göndermiş olduğunuz mesajınızı aldık.Konuyla ilgili en kısa sürede iletişime geçeceğiz.</p>" +
@@ -151,12 +157,13 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
 
 
             new Email().Template("Template1", "bos.png", "WorkOfTime İletişim Mesajınız Hakkında", mesajUser)
-          .Send(data.EmailAddress, string.Format("{0} | {1}", "WorkOfTime", "WorkOfTime İletişim Mesajı"), true);
+          .Send(data.email, string.Format("{0} | {1}", "WorkOfTime", "WorkOfTime İletişim Mesajı"), true);
 
-            return Json(new ResultStatusUI {
+            return Json(new ResultStatusUI
+            {
                 Result = true,
                 FeedBack = new FeedBack().Success("Mesaj gönderme işleminiz başarılı.")
-            },JsonRequestBehavior.AllowGet);
+            }, JsonRequestBehavior.AllowGet);
         }
 
         [AllowEveryone]
@@ -198,10 +205,11 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
 
     public class ContactClass
     {
-        public string FullName { get; set; }
-        public string EmailAddress { get; set; }
-        public string Foundation { get; set; }
-        public string Description { get; set; }
+        public string username { get; set; }
+        public string email { get; set; }
+        public string company { get; set; }
+        public string phone { get; set; }
+        public string message { get; set; }
     }
 
 
