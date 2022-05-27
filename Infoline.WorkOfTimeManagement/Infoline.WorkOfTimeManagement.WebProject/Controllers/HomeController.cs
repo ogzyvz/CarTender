@@ -107,21 +107,22 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         }
 
 
-        [AllowEveryone]
+        [AllowEveryone,HttpPost, ValidateAntiForgeryToken]
         public JsonResult ContactMailSend(ContactClass data)
         {
 
             var response = Request["g-recaptcha-response"];
-            string secretKey = "6LcivcYUAAAAAF5xycwy0CQmsWsPjk03CfejG7W0";
+            string secretKey = "6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8";
 
-#if DEBUG
-            secretKey = "6LfT   vMYUAAAAAItF5EGxTDCDG8KsZklLmLWx_4Tx";
-#endif
+
+            // Site Anahtarı => 6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS
+
+            //  Secret Key => 6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8    
+
             var client = new WebClient();
             var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
             var obj = JObject.Parse(result);
             var status = (bool)obj.SelectToken("success");
-
             if (!status)
             {
                 return Json(new ResultStatusUI
@@ -132,13 +133,28 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
             }
 
 
-            var control = IsValid(data.email);
-            if (!control)
+            if (string.IsNullOrEmpty(data.username) && string.IsNullOrEmpty(data.company) && string.IsNullOrEmpty(data.message))
+            {
+                return Json(new ResultStatusUI
+                {
+                    Result = false,
+                    FeedBack = new FeedBack().Warning("Lütfen Boş alan Bırakmayınız")
+                }, JsonRequestBehavior.AllowGet);
+            }
+            if (!IsValid(data.email))
             {
                 return Json(new ResultStatusUI
                 {
                     Result = false,
                     FeedBack = new FeedBack().Warning("Email adresi yanlış")
+                }, JsonRequestBehavior.AllowGet);
+            }
+            if (!IsValidPhone(data.phone.ToString()))
+            {
+                return Json(new ResultStatusUI
+                {
+                    Result = false,
+                    FeedBack = new FeedBack().Warning("Telefon numaranız yanlış (0555 555 55 55)")
                 }, JsonRequestBehavior.AllowGet);
             }
 
@@ -162,7 +178,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
             return Json(new ResultStatusUI
             {
                 Result = true,
-                FeedBack = new FeedBack().Success("Mesaj gönderme işleminiz başarılı.")
+                FeedBack = new FeedBack().Success("Demo talebiniz başarıyla gerçekleşti.", false, Url.Action("Demo", "Home", string.Empty))
             }, JsonRequestBehavior.AllowGet);
         }
 
@@ -171,6 +187,29 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         {
             return View();
         }
+
+
+
+        [AllowEveryone]
+        [PageDescription("Kullanıcı Sözleşmesi", PageSecurityLevel.Dusuk)]
+        public ActionResult UserAgreement()
+        {
+            return View();
+        }
+
+        [AllowEveryone]
+        [PageDescription("Kişisel Verilerin Korunması ve İşlenmesi Politikası", PageSecurityLevel.Dusuk)]
+        public ActionResult ProtectionOfPersonel()
+        {
+            return View();
+        }
+        
+        [AllowEveryone]
+        public ActionResult PrivacyPolicy()
+        {
+            return View();
+        }
+
 
         public bool IsValid(string emailaddress)
         {
@@ -186,25 +225,22 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
             }
         }
 
-        [AllowEveryone]
-        [PageDescription("Kullanıcı Sözleşmesi", PageSecurityLevel.Dusuk)]
-        public ActionResult UserAgreement()
+        public bool IsValidPhone(string phone)
         {
-            return View();
-        }
+            try
+            {
+                phone = phone.Replace(" ", "");
+                phone = phone.Replace("(", "");
+                phone = phone.Replace(")", "");
 
-        [AllowEveryone]
-        [PageDescription("Kişisel Verilerin Korunması ve İşlenmesi Politikası", PageSecurityLevel.Dusuk)]
-        public ActionResult ProtectionOfPersonel()
-        {
-            return View();
+                var result = Convert.ToUInt64(phone);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
-        [AllowEveryone]
-        public ActionResult PrivacyPolicy()
-        {
-            return View();
-        }
-
     }
 
     public class ContactClass

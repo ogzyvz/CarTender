@@ -41,6 +41,10 @@
     .text {
         color: #9d9d9d
     }
+
+    .main-menu .navbar-collapse :first-child {
+        background-color:white;
+    }
 </style>
 
 <section class="page-title" style="background-image: url(../../Content/Custom/Template/Images/Demo/demo-header.png);">
@@ -117,6 +121,7 @@
 
                 <div class="form-inner">
                     <form method="post" action="/Home/ContactMailSend" id="form" class="default-form">
+                        @Html.AntiForgeryToken()
                         <input name="__RequestVerificationToken" type="hidden" value="56pyqgWBL7OAZXI0HLXPvpxl_V9hFQ1fF9aqQpbcjEUYNEAL7vbYEUFY2ovWuopW1FEiEX7SP_B1qmVAMQdqOGAl1Q287gpOaUJaxiQuIdw1">
                         <div class="row">
                             <div class="col-lg-6 col-md-12 col-sm-12 column">
@@ -146,7 +151,7 @@
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 column">
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                    <div style="padding-top:10px;" class="g-recaptcha" data-sitekey="6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW&amp;co=aHR0cDovL21vYmlsb2Zpc2luaXouY29tOjgw&amp;hl=tr&amp;v=M-QqaF9xk6BpjLH22uHZRhXt&amp;size=normal&amp;cb=vgh2d5w92xxe" width="304" height="78" role="presentation" name="a-awmbb8neywgz" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+                                    <div style="padding-top:10px;" class="g-recaptcha" data-sitekey="6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS"></div>
                                     <br>
                                 </div>
 
@@ -168,6 +173,9 @@
 
 <script src='https://www.google.com/recaptcha/api.js' data-selector="modalContainer"></script>
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+
+
+
 <script type="text/javascript">
     $(document).ready(function () {
         $(".switcher__button").on('click', function (e) {
@@ -182,24 +190,17 @@
                 window.location.replace("https://mobilofisiniz.com");
             } else {
                 $('#recap').remove()
-                $('[data-selector="captcha"]').append($('<div id="recap" sitekey="6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW" class="g-recaptcha"></div>'));
-                grecaptcha.render($('#recap')[0], { sitekey: '6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW' });
+                $('[data-selector="captcha"]').append($('<div id="recap" sitekey="6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS" class="g-recaptcha"></div>'));
+                grecaptcha.render($('#recap')[0], { sitekey: '6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS' });
 
-                //Canlı
-                //6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW
-
-                //Local
-                //6LfK5FcfAAAAAOYqYy2nMrhlYIAWqIeRON8tbwux
-
-                //Corporate
-                //6LftHU4fAAAAAOXBZElx0u9Uxtr-jJoK1mzuDWzu
+                //6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS
             }
         })
         .on('click', '#demoSend', function (e) {
             e.preventDefault();
 
             var _this = $(this);
-            var action = '/Home/ContactMailSend';
+            var action = '/Home/DemoMailSend';
             var method = 'post';
             var data = $('#form').serializeArray();
             //if ($.Enumerable.From(data).Where(c => c.value == "").Count() > 0) {
@@ -271,6 +272,7 @@
 
 </script>
 
+
 <script src="~/Content/Themes2/js/script.js"></script>
 <script src="~/Content/Themes2/js/tilt.jquery.js"></script>
 <script src="~/Content/Themes2/js/jquery.js"></script>
@@ -282,3 +284,6 @@
 <script src="~/Content/Themes2/js/appear.js"></script>
 <script src="~/Content/Themes2/js/scrollbar.js"></script>
 <script src="~/Content/Themes2/js/jquery.paroller.min.js"></script>
+<script src="~/Content/Themes2/js/script.js"></script>
+<script src="~/Content/Custom/js/master.js"></script>
+

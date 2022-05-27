@@ -641,6 +641,8 @@
     <Content Include="Content\Custom\Template\Images\ScreenShots\sistem-yonetimi-mobil.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\splashBgLeft.png" />
+    <Content Include="Content\Custom\Template\Images\ScreenShots\splashBgRight.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\urun-stok-yonetimi-ekran-goruntu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
