@@ -1,6 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
-    ViewBag.Title = "Ana Sayfa";
+    ViewBag.Title = "Bize Sorun";
 }
 
 <style>
@@ -53,8 +53,8 @@
             <div class="title-box pull-left">
                 <h1>Uygulama Özellikleri</h1>
                 <ul class="bread-crumb ">
-                    <li>Ana Sayfa</li>
-                    <li><a href="index.html">Bize Sorun</a></li>
+                    <li><a href="/Home/Index">Ana Sayfa</a></li>
+                    <li>Bize Sorun</li>
                 </ul>
             </div>
 
@@ -74,7 +74,7 @@
                             <div class="icon-box">
                                 <img src="~/Content/Custom/Template/Images/AsktoUs/destek-icon.png" alt="Alternate Text" />
                             </div>
-                            <h4><a href="#">Destek</a></h4>
+                            <h4><a href="/Home/AskToUs">Destek</a></h4>
                             <div class="text">
                                 Müşterilere satış sonrası ihtiyaç
                                 duyulan bakım ve destek
@@ -102,7 +102,7 @@
                             <div class="icon-box">
                                 <img src="~/Content/Custom/Template/Images/AsktoUs/basvur-icon.png" alt="Alternate Text" />
                             </div>
-                            <h4><a href="#">Şimdi Başvur</a></h4>
+                            <h4><a href="/Home/Demo">Şimdi Başvur</a></h4>
                             <div class="text">
                                 WorkOfTime’ın sunduğu tüm
                                 özellikeri keşfet ve WorkOfTime
@@ -128,7 +128,7 @@
                             hemen tanışın ...
                         </h2>
                     </div>
-                    <div class="btn-box pull-right"><a href="#" class="theme-btn-two">Demo Talep Et</a></div>
+                    <div class="btn-box pull-right"><a href="/Home/Demo" class="theme-btn-two">Demo Talep Et</a></div>
                 </div>
             </div>
         </div>
