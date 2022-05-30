@@ -120,9 +120,8 @@
                 </div>
 
                 <div class="form-inner">
-                    <form method="post" action="/Home/ContactMailSend" id="form" class="default-form">
+                    <form method="post" id="form" class="default-form">
                         @Html.AntiForgeryToken()
-                        <input name="__RequestVerificationToken" type="hidden" value="56pyqgWBL7OAZXI0HLXPvpxl_V9hFQ1fF9aqQpbcjEUYNEAL7vbYEUFY2ovWuopW1FEiEX7SP_B1qmVAMQdqOGAl1Q287gpOaUJaxiQuIdw1">
                         <div class="row">
                             <div class="col-lg-6 col-md-12 col-sm-12 column">
                                 <div class="form-group">
@@ -170,11 +169,54 @@
 </section>
 
 
+<script src="/Content/Custom/js/master.js"></script>
+
+<script src="/Content/Themes/js/jquery-2.1.1.js"></script>
+<script src="/Content/Themes/js/jquery-ui-1.10.4.min.js"></script>
+<script src="/Content/Themes/js/bootstrap.min.js"></script>
+<script src="~/Content/Themes/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="~/Content/Themes/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="~/Content/Themes/js/plugins/toastr/toastr.min.js"></script>
+<script src="~/Content/Themes/js/plugins/pace/pace.min.js"></script>
+<script src="~/Content/Themes/js/plugins/linq/jquery.linq.min.js"></script>
+<script src="~/Content/Themes/js/jquery.livequery.min.js"></script>
+<script src="~/Content/Plugins/Loading/js/jquery.loadingModal.min.js"></script>
+<script src="~/Content/Plugins/Bootstrap-Dialog/dist/js/bootstrap-dialog.min.js"></script>
+<script src="~/Content/Plugins/Validator/js/Validator.js"></script>
+<script src="~/Content/Themes/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="~/Content/Plugins/tagify/jQuery.tagify.min.js"></script>
+<script src="~/Content/Plugins/Slugit/jquery.slugit.js"></script>
+<script src="~/Content/Custom/js/lightbox.js"></script>
+<script src="~/Content/Home/scripts/plugins/custom/modernizr-2.6.2.min.js"></script>
+
+
+<!--  Theme2  -->
+<!--Js-->
+<script src="~/Content/Themes2/js/script.js"></script>
+<script src="~/Content/Themes2/js/appear.js"></script>
+<script src="~/Content/Themes2/js/bootstrap.min.js"></script>
+<script src="~/Content/Themes2/js/bxslider.js"></script>
+<script src="~/Content/Themes2/js/circle-progress.js"></script>
+<script src="~/Content/Themes2/js/countdown.js"></script>
+<script src="~/Content/Themes2/js/isotope.js"></script>
+
+<script src="~/Content/Themes2/js/jquery-ui.js"></script>
+<script src="~/Content/Themes2/js/jquery.countTo.js"></script>
+<script src="/Content/Themes2/js/jquery.js"></script>
+<script src="~/Content/Themes2/js/jquery.paroller.min.js"></script>
+<script src="~/Content/Themes2/js/map-helper.js"></script>
+<script src="~/Content/Themes2/js/nav-tool.js"></script>
+<script src="~/Content/Themes2/js/owl.js"></script>
+<script src="~/Content/Themes2/js/popper.min.js"></script>
+<script src="~/Content/Themes2/js/jquery.fancybox.js"></script>
+<script src="~/Content/Themes2/js/scrollbar.js"></script>
+<script src="~/Content/Themes2/js/validation.js"></script>
+<script src="~/Content/Themes2/js/tilt.jquery.js"></script>
+<script src="~/Content/Themes2/js/wow.js"></script>
+
 
 <script src='https://www.google.com/recaptcha/api.js' data-selector="modalContainer"></script>
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-
-
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async="" defer=""></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -190,10 +232,17 @@
                 window.location.replace("https://mobilofisiniz.com");
             } else {
                 $('#recap').remove()
-                $('[data-selector="captcha"]').append($('<div id="recap" sitekey="6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS" class="g-recaptcha"></div>'));
-                grecaptcha.render($('#recap')[0], { sitekey: '6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS' });
+                $('[data-selector="captcha"]').append($('<div id="recap" sitekey="6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW" class="g-recaptcha"></div>'));
+                grecaptcha.render($('#recap')[0], { sitekey: '6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW' });
 
-                //6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS
+                //Canlı
+                //6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW
+
+                //Local
+                //6LfK5FcfAAAAAOYqYy2nMrhlYIAWqIeRON8tbwux
+
+                //Corporate
+                //6LftHU4fAAAAAOXBZElx0u9Uxtr-jJoK1mzuDWzu
             }
         })
         .on('click', '#demoSend', function (e) {
@@ -271,18 +320,3 @@
     }
 
 </script>
-
-<script src="~/Content/Custom/js/master.js"></script>
-
-
-<script src="~/Content/Themes2/js/script.js"></script>
-<script src="~/Content/Themes2/js/tilt.jquery.js"></script>
-<script src="~/Content/Themes2/js/jquery.js"></script>
-<script src="~/Content/Themes2/js/popper.min.js"></script>
-<script src="~/Content/Themes2/js/bootstrap.min.js"></script>
-<script src="~/Content/Themes2/js/owl.js"></script>
-<script src="~/Content/Themes2/js/wow.js"></script>
-<script src="~/Content/Themes2/js/validation.js"></script>
-<script src="~/Content/Themes2/js/appear.js"></script>
-<script src="~/Content/Themes2/js/scrollbar.js"></script>
-<script src="~/Content/Themes2/js/jquery.paroller.min.js"></script>

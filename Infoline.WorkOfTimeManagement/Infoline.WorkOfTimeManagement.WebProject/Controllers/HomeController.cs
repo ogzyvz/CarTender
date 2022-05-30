@@ -108,7 +108,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
 
 
         [AllowEveryone,HttpPost, ValidateAntiForgeryToken]
-        public JsonResult ContactMailSend(ContactClass data)
+        public JsonResult DemoMailSend(ContactClass data)
         {
 
             var response = Request["g-recaptcha-response"];
