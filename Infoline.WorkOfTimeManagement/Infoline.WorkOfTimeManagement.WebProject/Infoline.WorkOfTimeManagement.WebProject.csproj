@@ -2238,9 +2238,9 @@
     <Content Include="Views\Shared\_AccountLayoutNav.cshtml" />
     <Content Include="Views\Home\AskToUs.cshtml" />
     <Content Include="Views\Home\ScreenShots.cshtml" />
-    <Content Include="Views\Home\Demo.cshtml" />
     <Content Include="Views\Home\References.cshtml" />
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Home\Demo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

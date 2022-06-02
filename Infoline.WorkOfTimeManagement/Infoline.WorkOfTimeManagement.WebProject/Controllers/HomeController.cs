@@ -115,6 +115,9 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
                 }, JsonRequestBehavior.AllowGet);
             }
 
+
+            db.InsertHDM_Question(entitiy);
+
             return Json(new ResultStatusUI
             {
                 Result = true,
@@ -228,7 +231,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
                     FeedBack = new FeedBack().Warning("Email adresi yanlış")
                 }, JsonRequestBehavior.AllowGet);
             }
-            if (!IsValidPhone(data.phone.ToString()))
+            if (!IsValidPhone(data.phone))
             {
                 return Json(new ResultStatusUI
                 {
@@ -306,6 +309,10 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
 
         public bool IsValidPhone(string phone)
         {
+            if (phone == null)
+            {
+                return false;
+            }
             try
             {
                 phone = phone.Replace(" ", "");
