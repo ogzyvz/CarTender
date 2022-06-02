@@ -1,7 +1,10 @@
-﻿@{
+﻿@model Infoline.WorkOfTimeManagement.WebProject.Controllers.CategoryListModel
+@{
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
     ViewBag.Title = "Bize Sorun";
 }
+
+
 
 <style>
     .service-block-two .inner-box:before {
@@ -39,6 +42,19 @@
         font-weight: 700;
         width: 100%;
     }
+
+    .sec-title h2 {
+        color: #ff0000;
+        font-weight: 700;
+    }
+
+    .modall-header {
+        background-color: #ff0000;
+    }
+
+    .modall-footer {
+        background-color: #ff0000;
+    }
 </style>
 
 <section class="page-title" style="background-image: url(../../Content/Custom/Template/Images/AsktoUs/asktous-header.png);">
@@ -70,11 +86,11 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12 service-block">
                     <div class="service-block-two wow fadeInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
+                        <div class="inner-box" id="modall-btn" style="cursor:pointer;">
                             <div class="icon-box">
                                 <img src="~/Content/Custom/Template/Images/AsktoUs/destek-icon.png" alt="Alternate Text" />
                             </div>
-                            <h4><a href="/Home/AskToUs">Destek</a></h4>
+                            <h4>Destek</h4>
                             <div class="text">
                                 Müşterilere satış sonrası ihtiyaç
                                 duyulan bakım ve destek
@@ -116,6 +132,94 @@
     </div>
 </section>
 
+<section class="faq-section">
+    <div class="container">
+        <div class="sec-title"><h2>Sıkça Sorulan Sorular</h2><br /></div>
+        <div class="row">
+            <div class="col-lg-4 col-md-12 col-sm-12 sidebar-column">
+                <div class="faq-sidebar">
+                    <h3>Yardım</h3>
+                    <div class="online-purchase"></div>
+                    <ul class="list-item">
+                        @{
+                            for (int i = 0; i < Model.categories.Count(); i++)
+                            {
+                                var id = "n" + (i + 1).ToString();
+                                <li id="@id" style="cursor:pointer;padding:5px;border-radius:5px;">@Model.categories[i].name</li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12 col-sm-12 content-column">
+                @{
+                    for (int i = 0; i < Model.categories.Count(); i++)
+                    {
+                        var id = "c" + (i + 1).ToString();
+                        var display = "";
+
+                        if (i != 0)
+                        {
+                            display = "display:none".ToString();
+                        }
+
+                        <div class="faq-content" id="@id" style="@display">
+
+                            <div class="sec-title"><h2>@Model.categories[i].name</h2></div>
+                            <ul class="accordion-box">
+                                @{
+                                    foreach (var item in Model.faqs)
+                                    {
+                                        if (item.categoryId_Title == Model.categories[i].name)
+                                        {
+
+                                            <li class="accordion block">
+                                                <div class="acc-btn">
+                                                    <div class="icon-outer"><i class="fas fa-plus"></i></div>
+                                                    <h4>@item.name</h4>
+                                                </div>
+                                                <div class="acc-content">
+
+                                                    <div class="content">
+                                                        @{
+                                                            if (item.videoUrl != null && item.videoUrl.Contains("embed"))
+                                                            {
+                                                                <iframe width="100%" height="415" src="@item.videoUrl" loading="lazy"
+                                                                        title="YouTube video player"
+                                                                        frameborder="0" rel="0" ;
+                                                                        allow="accelerometer;
+                                                                        autoplay;
+                                                                        clipboard-write;
+                                                                        encrypted-media;
+                                                                        gyroscope;
+                                                                        picture-in-picture"
+                                                                        allowfullscreen></iframe>
+                                                            }
+                                                        }
+
+                                                        <div class="text" style="word-wrap:break-word">
+                                                            @item.content
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </li>
+
+                                        }
+
+                                    }
+                                }
+                            </ul>
+                        </div>
+
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="free-estimate">
     <div class="image-layer" style="background-image: url(../../Content/Themes2/images/icons/estimate-bg.png);"></div>
     <div class="container">
@@ -137,6 +241,363 @@
 
 
 
+
+@using (Html.BeginForm("AskToUs", "Home", FormMethod.Post, new Dictionary<string, object>() {
+    { "class", "form-horizontal" },
+    { "role", "form" },
+    { "data-selector", "modalContainer" },
+    { "data-formType", "Ajax" },
+    {"id","form"}
+    }))
+{
+    @Html.AntiForgeryToken();
+    <div id="my-modall" style="z-index: 1000;overflow: hidden;" class="modall my-modall">
+        <div class="modall-content" style="margin:auto;margin-top:4%">
+            <div class="modall-header">
+                <span class="close">&times;</span>
+                <div class="bootstrap-dialog-title">Soru Sor</div>
+            </div>
+
+            <div class="modall-body">
+                <div class="form-group col-md-12">
+                    <label>Yardım</label>
+                    <br />
+                    <div>
+                        @Html.DropDownList("faqId", null, "Lütfen Soru Seçiniz", new { name = "faqId", @class = "form-control", style = "height:40px;" })
+                    </div>
+
+
+                </div>
+                <div class="form-group col-md-12">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <div class="form-group">
+                                <label>İsim Soyisim</label>
+                                @Html.TextBox("fullName", null, new Dictionary<string, object>
+                                 {
+                                     {"class","form-control kapatss"},
+                                     {"type","text"},
+                                     {"placeholder","Lütfen İsim Soyisim giriniz.."}
+
+                                 }).Validate(Validations.Required)
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                @Html.TextBox("email", null, new Dictionary<string, object>
+                               {
+                                   {"class","form-control kapatss"},
+                                   {"type","emial"},
+                                   {"placeholder","Lütfen Mailinizi giriniz.."}
+
+                               }).Validate(Validations.Required)
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <div class="form-group">
+                                <label>Şirket İsmi</label>
+                                @Html.TextBox("companyName", null, new Dictionary<string, object>
+                                 {
+                                     {"class","form-control kapatss"},
+                                     {"type","text"},
+                                     {"placeholder","Lütfen Şirket İsminizi giriniz.."}
+
+                                 }).Validate(Validations.Required)
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <div class="form-group">
+                                <label>Telefon Numarası</label>
+                                @Html.TextBox("phone", null, new Dictionary<string, object>
+                               {
+                                   {"class","form-control kapatss"},
+                                   {"type","text"},
+                                   {"placeholder","Lütfen Telefon Numaranızı giriniz.."}
+
+                               }).Validate(Validations.Required)
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Sorunuz</label>
+                    @Html.TextArea("content", null, new Dictionary<string, object>
+                                {
+                                    {"class","form-control kapatss"},
+                                    {"cols","20" },
+                                    {"rows","2" },
+                                    {"type","text"},
+                                    {"placeholder","Lütfen sorunuzu sorunuz.."},
+                                    {"style","height: 140px;"},
+                                }).Validate(Validations.Required)
+                </div>
+
+                <div style="padding-top:10px;" class="g-recaptcha" data-sitekey="6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS"></div>
+                <br />
+
+            </div>
+
+            <div class="modall-footer">
+                <a class="btn btn-md btn-danger pull-left vazgec" style="color:white;">Vazgeç</a>
+                <button class="btn btn-md btn-success float-right gönder" disabled id="gönder" type="submit">Gönder</button>
+            </div>
+
+        </div>
+    </div>
+}
+
+
+
+<script src='https://www.google.com/recaptcha/api.js' data-selector="modalContainer"></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+
+<script>
+    let n = [];
+    let c = [];
+    let kapat = document.getElementsByClassName('faq-content');
+
+    for (let i = 1; i < kapat.length + 1; i++) {
+        n.push(document.getElementById('n' + i))
+        c.push(document.getElementById('c' + i))
+    }
+
+
+    for (let i = 0; i < n.length; i++) {
+        n[i].addEventListener('click', function () {
+            for (let j = 0; j < kapat.length; j++) {
+                kapat[j].style.display = "none";
+            }
+            for (var k = 0; k < n.length; k++) {
+                if (i != k) {
+
+                    n[k].style.backgroundColor = "";
+                    n[k].style.color = "";
+
+                }
+                n[i].style.backgroundColor = "#ff0000";
+                n[i].style.color = "white";
+
+
+            }
+            c[i].style.display = "";
+
+        });
+    }
+
+
+</script>
+
+<!--Modal Js-->
+<script>
+
+    /////////////////////////////// MODAL
+    // Get DOM Elements
+    const modall = document.querySelector('#my-modall');
+
+    const modallBtn = document.querySelectorAll('#modall-btn');
+
+    const closeBtn = document.querySelector('.close');
+    const closeBtn2 = document.querySelector('.vazgec');
+
+    const faq = document.querySelector("#faqId");
+    const cat = document.querySelector("#categoriName");
+
+    // Events
+    modallBtn.forEach(item => {
+        item.addEventListener('click', function () {
+            modall.style.display = 'block';
+        });
+    });
+
+
+    closeBtn.addEventListener('click', closemodall);
+    closeBtn2.addEventListener('click', closemodall2);
+
+
+
+    function closemodall() {
+        modall.style.display = 'none';
+    }
+    function closemodall2() {
+        modall.style.display = 'none';
+    }
+    function closemodall3() {
+        modall.style.display = 'none';
+    }
+
+
+    // Close If Outside Click
+
+</script>
+<!--Modal Js-->
+<!--Modal metin uzunlugu  -->
+<script>
+
+    ////////////////////////////BUTTON Aktivleme
+    //const input = document.getElementById('gönder');
+    //const textarea = document.getElementsByTagName('textarea').item(0);
+    //textarea.addEventListener('keyup', function () {
+
+    //    let datas = this.value.toUpperCase();
+    //    if (datas.length <= 0) {
+    //        input.disabled = true;
+    //    }
+    //    else {
+    //        input.disabled = false;
+    //    }
+    //});
+    ///////////////////////// Modal Kapanma engelleme
+
+    const input = document.getElementById('gönder');
+    const boslar = document.getElementsByClassName("kapatss");
+
+    for (var i = 0; i < boslar.length; i++) {
+        boslar[i].addEventListener('keyup', function () {
+            console.log(boslar[0].value.length);
+            console.log(boslar[1].value.length);
+            console.log(boslar[2].value.length);
+            console.log("-----------------");
+
+            if (boslar[0].value.length < 3 || boslar[1].value.length < 2 || boslar[2].value.length < 1) {
+                input.disabled = true;
+            }
+            else {
+                input.disabled = false;
+            }
+        });
+    }
+
+</script>
+
+@* Vide Kapatma *@
+<script>
+
+    const bloklar = document.getElementsByClassName("accordion block");
+    const videolar = document.getElementsByTagName("iframe");
+
+    for (let i = 0; i < bloklar.length; i++) {
+        bloklar[i].addEventListener("click", function () {
+            for (var j = 0; j < videolar.length; j++) {
+                if (videolar[j].src[videolar[j].src.length - 1] != "-") {
+                    videolar[j].src += '-';
+                }
+            }
+
+            var a = videolar[i].src.slice(0, -1);
+            videolar[i].src = a;
+
+        })
+    }
+</script>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".switcher__button").on('click', function (e) {
+            $(".switcher__button").toggleClass('switcher__button--enabled');
+            $(".pricing__value").removeClass('pricing__value--hidden');
+            $(".pricing__value").toggleClass('pricing__value--show pricing__value--hide');
+        });
+
+    })
+        .on('success', 'form#InsertDemo', function (e, i) {
+            if (i.Result) {
+                window.location.replace("https://mobilofisiniz.com");
+            } else {
+                $('#recap').remove()
+                $('[data-selector="captcha"]').append($('<div id="recap" sitekey="6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS" class="g-recaptcha"></div>'));
+                grecaptcha.render($('#recap')[0], { sitekey: '6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS' });
+
+                //Canlı
+                //6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW
+
+                //Local
+                //6LfK5FcfAAAAAOYqYy2nMrhlYIAWqIeRON8tbwux
+
+                //Corporate
+                //6LftHU4fAAAAAOXBZElx0u9Uxtr-jJoK1mzuDWzu
+            }
+        })
+        .on('click', '#gönder', function (e) {
+            e.preventDefault();
+
+            var _this = $(this);
+            var action = '/Home/AskToUs';
+            var method = 'post';
+            var data = $('#form').serializeArray();
+
+            data.push({ name: 'type', value: $("input[name='type']:checked").val() });
+
+            var title = _this.attr("data-loadingtitle") ? _this.attr("data-loadingtitle") : "lütfen bekleyiniz";
+            var formData = new FormData();
+            var stringData = $('#form').serializeArray();
+            var result = null;
+
+            $.each(stringData, function (key, input) {
+                formData.append(input.name, input.value);
+            });
+
+            $.ajax({
+                url: action,
+                type: method,
+                data: data,
+                beforeSend: function () {
+                },
+                success: function (response) {
+                    feedback(response.FeedBack);
+                    if (response.Result) {
+                        var modal = _this.parents(".modal");
+                        if (modal.length > 0 && typeof _this.attr('data-modal-close') == "undefined") {
+                            modal.modal("hide");
+                        }
+                        $(".k-pager-refresh.k-link").each(function (i, e) {
+                            $(this).trigger("click");
+                        });
+
+                        grecaptcha.reset();
+                    } else {
+                        grecaptcha.reset();
+                    }
+                    _this.trigger("success", response);
+                },
+                error: function () {
+                    feedback("SERVER");
+                },
+                complete: function (response) {
+                    //$('body').loadingModal('destroy');
+                    //$('.preloader').show('fade');
+                    _this.trigger("complete", response.responseJSON, response.responseText);
+                }
+            });
+
+
+        })
+
+    function popup(mylink, windowname) {
+        if (!window.focus)
+            return true;
+        var href;
+        if (typeof (mylink) == 'string')
+            href = mylink;
+        else
+            href = mylink.href;
+        window.open(href, windowname, 'width=1800,height=1000,scrollbars=yes');
+        return false;
+    }
+
+</script>
+
+
+
 <script src="~/Content/Themes2/js/script.js"></script>
 <script src="~/Content/Themes2/js/tilt.jquery.js"></script>
 <script src="~/Content/Themes2/js/jquery.js"></script>
@@ -148,3 +609,7 @@
 <script src="~/Content/Themes2/js/appear.js"></script>
 <script src="~/Content/Themes2/js/scrollbar.js"></script>
 <script src="~/Content/Themes2/js/jquery.paroller.min.js"></script>
+
+
+<script src="/Content/Custom/js/master.js"></script>
+<script src="~/Content/Themes/js/plugins/toastr/toastr.min.js"></script>

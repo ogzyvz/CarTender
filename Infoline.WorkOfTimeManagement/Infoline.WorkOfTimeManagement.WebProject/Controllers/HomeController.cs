@@ -40,9 +40,88 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         [AllowEveryone]
         public ActionResult AskToUs()
         {
-            return View();
+            var db = new WorkOfTimeManagementDatabase();
+            var categories = db.GetVWHDM_Category().Reverse().ToArray();
+            var faqs = db.GetVWHDM_Faq();
+            var quest = new VWHDM_Question { id = Guid.NewGuid() };
+
+            //var a = CategoriSırala();
+
+            var data = new CategoryListModel
+            {
+                categories = categories,
+                faqs = faqs,
+            };
+            ViewBag.faqId = new SelectList(faqs, "id", "name");
             
+
+            return View(data);
+
         }
+        
+        [AllowEveryone,HttpPost]
+        public ActionResult AskToUs(VWHDM_Question data)
+        {
+            var db = new WorkOfTimeManagementDatabase();
+            data.created = DateTime.Now;
+
+            if (data.faqId_Title == null)
+            {
+                data.faqId_Title = "Soru Seçilmemiştir";
+            }
+
+            if (data.faqId != null)
+            {
+                var faqName = db.GetHDM_FaqById((Guid)data.faqId).name;
+                data.faqId_Title = faqName;
+            }
+
+            var entitiy = new HDM_Question()
+            {
+                content = data.content,
+                companyName = data.companyName,
+                email = data.email,
+                faqId = data.faqId,
+                fullName = data.fullName,
+                phone = data.phone,
+                userId = data.userId,
+                id = data.id
+            };
+            
+            if (string.IsNullOrEmpty(data.fullName) && string.IsNullOrEmpty(data.companyName) && string.IsNullOrEmpty(data.content))
+            {
+                return Json(new ResultStatusUI
+                {
+                    Result = false,
+                    FeedBack = new FeedBack().Warning("Lütfen Boş alan Bırakmayınız")
+                }, JsonRequestBehavior.AllowGet);
+            }
+            
+            if (!IsValid(data.email))
+            {
+                return Json(new ResultStatusUI
+                {
+                    Result = false,
+                    FeedBack = new FeedBack().Warning("Email adresi yanlış")
+                }, JsonRequestBehavior.AllowGet);
+            }
+
+            if (!IsValidPhone(data.phone.ToString()))
+            {
+                return Json(new ResultStatusUI
+                {
+                    Result = false,
+                    FeedBack = new FeedBack().Warning("Telefon numaranız yanlış (0555 555 55 55)")
+                }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new ResultStatusUI
+            {
+                Result = true,
+                FeedBack = new FeedBack().Success("Soru talebiniz başarıyla gerçekleşti.", false, Url.Action("AskToUs", "Home", string.Empty))
+            }, JsonRequestBehavior.AllowGet);
+        }
+
         [AllowEveryone]
         public ActionResult Demo()
         {
@@ -252,5 +331,9 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         public string message { get; set; }
     }
 
-
+    public class CategoryListModel
+    {
+        public VWHDM_Category[] categories { get; set; }
+        public VWHDM_Faq[] faqs { get; set; }
+    }
 }
