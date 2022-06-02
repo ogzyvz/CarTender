@@ -87,7 +87,29 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
                 userId = data.userId,
                 id = data.id
             };
-            
+
+
+            var response = Request["g-recaptcha-response"];
+            string secretKey = "6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8";
+
+
+            // Site Anahtarı => 6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS
+
+            //  Secret Key => 6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8    
+
+            var client = new WebClient();
+            var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
+            var obj = JObject.Parse(result);
+            var status = (bool)obj.SelectToken("success");
+            if (!status)
+            {
+                return Json(new ResultStatusUI
+                {
+                    Result = false,
+                    FeedBack = new FeedBack().Warning("Lütfen güvenlik doğrulamasını yapınız.")
+                }, JsonRequestBehavior.AllowGet);
+            }
+
             if (string.IsNullOrEmpty(data.fullName) && string.IsNullOrEmpty(data.companyName) && string.IsNullOrEmpty(data.content))
             {
                 return Json(new ResultStatusUI
