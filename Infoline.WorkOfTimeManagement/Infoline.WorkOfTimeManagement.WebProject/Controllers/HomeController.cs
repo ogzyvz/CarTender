@@ -93,9 +93,13 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
             string secretKey = "6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8";
 
 
-            // Site Anahtarı => 6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS
 
-            //  Secret Key => 6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8    
+            //  Local Secret Key => 6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8    
+
+            // Corporate Secret Key => 6LcCq2wgAAAAAMjJOXBHU2H3BUgBm8MIOXX_LI5F
+
+            // Canlı Secret Key => 
+
 
             var client = new WebClient();
             var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));

@@ -365,7 +365,7 @@ img {
     }
 
     .theme-btn-two:hover {
-        color: #134f9fff;
+        color: #000;
         background: #fff;
         box-shadow: 0 0 15px rgba(69, 39, 164, 0.5);
     }
@@ -5036,8 +5036,8 @@ div#mCSB_1_container {
     }
 
         .banner-style-four .content-box .btn-box .video-btn:hover {
-            background: #fff;
-            color: #0188e7;
+            background: #000;
+            color: #fff;
         }
 
         .banner-style-four .content-box .btn-box .video-btn i {
@@ -5056,7 +5056,7 @@ div#mCSB_1_container {
         }
 
         .banner-style-four .content-box .btn-box .video-btn:hover i {
-            background: #0188e7;
+            background: #fff;
             color: #fff;
         }
 
@@ -5084,7 +5084,7 @@ div#mCSB_1_container {
             width: 100%;
             height: 100%;
             opacity: 0;
-            background-color: #0188e7;
+            background-color: #000;
             -webkit-transition: all 0.4s;
             -moz-transition: all 0.4s;
             -o-transition: all 0.4s;
@@ -5101,8 +5101,8 @@ div#mCSB_1_container {
         }
 
         .banner-style-four .content-box .btn-box .link-btn:hover {
-            background: #0188e7;
-            border-color: #0188e7;
+            background: #000;
+            border-color: #000;
         }
 
         .banner-style-four .content-box .btn-box .link-btn i {
@@ -11793,7 +11793,7 @@ div#mCSB_1_container {
 
 .feature-style-11 {
     position: relative;
-    padding: 175px 0px 100px 0px;
+    padding: 175px 0px 180px 0px;
 }
 
     .feature-style-11 .sec-title.center h2 {
@@ -15354,7 +15354,7 @@ div#mCSB_1_container {
 
         .main-footer.style-six .about-widget .download-btn a:hover {
             background: #fff;
-            color: #134f9fff;
+            color: #000;
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
         }
 

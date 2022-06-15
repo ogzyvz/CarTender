@@ -16,21 +16,21 @@
         text-align: center;
         padding-top: 7%;
     }
-
+        /*
     .icon-box {
         margin: revert;
-    }
+    }*/
 
-    .single-info-box h2 {
-        padding-top: 4%;
-        color: #ff0000;
-        font-size: 35px;
-        font-weight: 600;
-    }
+        .single-info-box h2 {
+            padding-top: 4%;
+            color: #ff0000;
+            font-size: 35px;
+            font-weight: 600;
+        }
 
-    .single-info-box .text {
-        padding-top: 2%;
-    }
+        .single-info-box .text {
+            padding-top: 2%;
+        }
 
     @@media (min-width: 992px) {
         .test {
@@ -41,17 +41,13 @@
     .text {
         color: #9d9d9d
     }
-
-    /*    #test1 {
-        display:none;
-    }*/
 </style>
 
 <section class="page-title" style="background-image: url(../../Content/Custom/Template/Images/Demo/demo-header.png);">
     <div class="anim-icons">
-        <div class="icon icon-1"><img src="~/Content/Custom/Template/Images/Homepage/anim-icon-2.png" alt=""></div>
-        <div class="icon icon-2 rotate-me"><img src="~/Content/Custom/Template/Images/Homepage/anim-icon-2.png" alt=""></div>
-        <div class="icon icon-3 rotate-me"><img src="~/Content/Custom/Template/Images/Homepage/anim-icon-2.png" alt=""></div>
+        <div class="icon icon-1"><img src="~/Content/Themes2/images/icons/anim-icon-17.png" alt="anim-icon-17" title="anim-icon-17"></div>
+        <div class="icon icon-2 rotate-me"><img src="~/Content/Themes2/images/icons/anim-icon-18.png" alt="anim-icon-18" title="anim-icon-18"></div>
+        <div class="icon icon-3 rotate-me"><img src="~/Content/Themes2/images/icons/anim-icon-19.png" alt="anim-icon-19" title="anim-icon-19"></div>
     </div>
     <div class="container">
         <div class="content-box clearfix">
@@ -89,6 +85,9 @@
                     <figure class="icon-box"><img src="~/Content/Custom/Template/Images/Demo/e-mail.png" alt=""></figure>
                     <h2>E-Mail</h2>
                     <div class="text" style="padding-top:8%;">
+                        <a href="mailto:destek@workoftime.com" style="text-decoration:none;">destek@workoftime.com</a>
+                    </div>
+                    <div class="text" style="padding-top:1%;">
                         <a href="mailto:info@infoline-tr.com" style="text-decoration:none;">info@infoline-tr.com</a>
                     </div>
                 </div>
@@ -169,10 +168,6 @@
 </section>
 
 
-
-<script src="/Content/Custom/js/master.js"></script>
-<script src="~/Content/Themes/js/plugins/toastr/toastr.min.js"></script>
-
 <script src='https://www.google.com/recaptcha/api.js' data-selector="modalContainer"></script>
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async="" defer=""></script>
 
@@ -190,17 +185,17 @@
                 window.location.replace("https://mobilofisiniz.com");
             } else {
                 $('#recap').remove()
-                $('[data-selector="captcha"]').append($('<div id="recap" sitekey="6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW" class="g-recaptcha"></div>'));
-                grecaptcha.render($('#recap')[0], { sitekey: '6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW' });
+                $('[data-selector="captcha"]').append($('<div id="recap" sitekey="6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS" class="g-recaptcha"></div>'));
+                grecaptcha.render($('#recap')[0], { sitekey: '6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS' });
 
                 //Canlı
                 //6LcApE8fAAAAAHoUKnEA9ZkCiC82iZ_jq9PkP0PW
 
                 //Local
-                //6LfK5FcfAAAAAOYqYy2nMrhlYIAWqIeRON8tbwux
+                //6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS
 
                 //Corporate
-                //6LftHU4fAAAAAOXBZElx0u9Uxtr-jJoK1mzuDWzu
+                //6LcCq2wgAAAAALtyB_Ffl7AZcHmt6R0WYSe6EneS
             }
         })
         .on('click', '#demoSend', function (e) {
@@ -279,6 +274,7 @@
 
 </script>
 
+<script src="~/Content/Themes/js/plugins/toastr/toastr.min.js"></script>
 
 <script src="~/Content/Themes2/js/script.js"></script>
 <script src="~/Content/Themes2/js/tilt.jquery.js"></script>
