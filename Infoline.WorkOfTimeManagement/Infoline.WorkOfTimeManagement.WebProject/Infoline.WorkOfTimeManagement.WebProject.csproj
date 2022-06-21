@@ -498,6 +498,7 @@
     <Content Include="Content\Custom\js\language.js" />
     <Content Include="Content\Custom\js\lazyload.min.js" />
     <Content Include="Content\Custom\js\lightbox.js" />
+    <Content Include="Content\Custom\js\feedback.js" />
     <Content Include="Content\Custom\js\popup.js" />
     <Content Include="Content\Custom\js\tagmanager.js" />
     <Content Include="Content\Custom\Template\Images\AsktoUs\asktous-header.png" />
@@ -516,6 +517,9 @@
     <Content Include="Content\Custom\Template\Images\Features\insan-kaynaklari-yonetimi.png" />
     <Content Include="Content\Custom\Template\Images\Features\muhasebe-finans-yonetimi.png" />
     <Content Include="Content\Custom\Template\Images\Features\ofis-yonetimi.png" />
+    <Content Include="Content\Custom\Template\Images\Features\003-qr-code-1.png" />
+    <Content Include="Content\Custom\Template\Images\Features\004-warehouse.png" />
+    <Content Include="Content\Custom\Template\Images\Features\009-signature.png" />
     <Content Include="Content\Custom\Template\Images\Features\proje-yonetimi.png" />
     <Content Include="Content\Custom\Template\Images\Features\saha-gorev-yonetimi.png" />
     <Content Include="Content\Custom\Template\Images\Features\satinalma-yonetimi.png" />
@@ -546,6 +550,7 @@
     <Content Include="Content\Custom\Template\Images\Homepage\paynet.png" />
     <Content Include="Content\Custom\Template\Images\Homepage\phone-4.png" />
     <Content Include="Content\Custom\Template\Images\Homepage\phone-5.png" />
+    <Content Include="Content\Custom\Template\Images\Homepage\saha-gorev-yonetimi.png" />
     <Content Include="Content\Custom\Template\Images\Homepage\shap-3.png" />
     <Content Include="Content\Custom\Template\Images\Homepage\subscribe-2.png" />
     <Content Include="Content\Custom\Template\Images\Homepage\teb.png" />
@@ -968,6 +973,7 @@
     <Content Include="Content\Custom\js\ckeditor\plugins\scayt\README.md" />
     <Content Include="Content\Custom\js\ckeditor\README.md" />
     <Content Include="Content\Custom\js\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="Content\Custom\data\KVKK-BasvuruFormu.pdf" />
     <None Include="Content\Home\scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Content\Home\scripts\jquery-2.1.1.js" />
     <Content Include="Content\Home\scripts\jquery-2.1.1.min.js" />
@@ -2243,6 +2249,7 @@
     <Content Include="Views\Home\References.cshtml" />
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
     <Content Include="Views\Home\Demo.cshtml" />
+    <Content Include="Views\Home\Pricing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

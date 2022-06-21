@@ -156,8 +156,15 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         {
             return View();
         }
+
         [AllowEveryone]
         public ActionResult References()
+        {
+            return View();
+        }
+
+        [AllowEveryone]
+        public ActionResult Pricing()
         {
             return View();
         }

@@ -1,4 +1,4 @@
-
+﻿
 /* Css For Appway */
 
 /************ TABLE OF CONTENTS ***************
@@ -256,8 +256,8 @@ img {
     padding: 12px 80px 12px 40px;
     background: transparent;
     line-height: 26px;
-    color: #134f9fff;
-    border: 1px solid #134f9fff;
+    color: #670000;
+    border: 1px solid #ff0000;
     font-weight: 500;
     border-radius: 30px;
     text-transform: capitalize;
@@ -278,7 +278,7 @@ img {
         height: 100%;
         width: 100%;
         content: "";
-        background-color: #134f9fff;
+        background-color: #aa0000;
         border-radius: 30px;
         -webkit-transform: scale(0, 1);
         -ms-transform: scale(0, 1);
@@ -331,7 +331,7 @@ img {
     font-size: 16px;
     font-weight: 500;
     color: #fff;
-    background: #134f9fff;
+    background: #ff0000;
     border-radius: 30px;
     text-align: center;
     padding: 10px 30px;
@@ -700,10 +700,10 @@ img {
                 -ms-transition: all 500ms ease;
                 -o-transition: all 500ms ease;
                 transition: all 500ms ease;
-                /*D�zenleme Murat*/
+                /*Düzenleme Murat*/
                 font-weight: 600;
                 font-size: 20px;
-                /*D�zenleme */
+                /*Düzenleme */
             }
 
                 .main-menu .navigation > li > a:hover {
@@ -2084,7 +2084,7 @@ div#mCSB_1_container {
         width: 90px;
         content: "";
         border-radius: 30px;
-        border: 1px solid #134f9fff;
+        border: 1px solid #ff0000;
     }
 
     .pricing-section .tab-btn-box .tab-btns li {
@@ -2096,7 +2096,7 @@ div#mCSB_1_container {
         font-size: 16px;
         line-height: 40px;
         font-weight: 500;
-        color: #134f9fff;
+        color: #000;
         cursor: pointer;
         transition: all 500ms ease;
     }
@@ -2108,7 +2108,7 @@ div#mCSB_1_container {
         }
 
         .pricing-section .tab-btn-box .tab-btns li.active-btn:before {
-            right: 15px;
+            right: 3px;
         }
 
         .pricing-section .tab-btn-box .tab-btns li:before {
@@ -2116,7 +2116,7 @@ div#mCSB_1_container {
             top: 5px;
             height: 30px;
             width: 30px;
-            background-color: #134f9fff;
+            background-color: #bc0000;
             border-radius: 30px;
             content: "";
             right: -37px;
@@ -2163,20 +2163,20 @@ div#mCSB_1_container {
     font-size: 48px;
     line-height: 55px;
     font-weight: 700;
-    color: #134f9fff;
-    background: #f1edff;
+    color: #000000;
+    background: #e8e8e8;
     padding: 22px 15px 6px 15px;
     transition: all 500ms ease;
 }
 
 .pricing-block-one:hover .pricing-table .table-header .price {
-    background: #134f9fff;
+    background: #ff0000;
     color: #fff;
 }
 
 .pricing-block-one .pricing-table .table-header .price:before {
     position: absolute;
-    content: "$";
+    content: "₺";
     font-size: 24px;
     line-height: 30px;
     font-weight: 500;
@@ -2227,7 +2227,7 @@ div#mCSB_1_container {
             font-family: 'Font Awesome 5 Free';
             font-size: 16px;
             font-weight: 700;
-            color: #134f9fff;
+            color: #ff0000;
             left: 0px;
             top: 0px;
         }
