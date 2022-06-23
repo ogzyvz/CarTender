@@ -510,9 +510,10 @@
     <Content Include="Content\Custom\Template\Images\Demo\location.png" />
     <Content Include="Content\Custom\Template\Images\Demo\phone.png" />
     <Content Include="Content\Custom\Template\Images\favicon.ico" />
-    <Content Include="Content\Custom\Template\Images\Features\dashboard-yonetimi.png" />
+    <Content Include="Content\Custom\Template\Images\Features\dashboard-management.png" />
     <Content Include="Content\Custom\Template\Images\Features\features-header.png" />
-    <Content Include="Content\Custom\Template\Images\Features\harita-bazli-raporlar.png" />
+    <Content Include="Content\Custom\Template\Images\Features\dashboard-yonetimi.png" />
+    <Content Include="Content\Custom\Template\Images\Features\harita-bazlı-rapor.png" />
     <Content Include="Content\Custom\Template\Images\Features\icon-bg.png" />
     <Content Include="Content\Custom\Template\Images\Features\insan-kaynaklari-yonetimi.png" />
     <Content Include="Content\Custom\Template\Images\Features\muhasebe-finans-yonetimi.png" />
@@ -585,6 +586,8 @@
     <Content Include="Content\Custom\Template\Images\References\türktelekom.png" />
     <Content Include="Content\Custom\Template\Images\References\veribox-technology.png" />
     <Content Include="Content\Custom\Template\Images\References\vodafone.png" />
+    <Content Include="Content\Custom\Template\Images\ScreenShots\CRM-Haritasi.png" />
+    <Content Include="Content\Custom\Template\Images\ScreenShots\CRM-Mobil.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\dahsboard-yonetimi-ekran-goruntu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -603,6 +606,7 @@
     <Content Include="Content\Custom\Template\Images\ScreenShots\ik-yonetimi-mobil.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\Mobil-NFC.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\muhasebe-finans-yonetimi-ekran-goruntu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -627,6 +631,7 @@
     <Content Include="Content\Custom\Template\Images\ScreenShots\saha-gorev-yonetimi-mobil.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\Saha-Raporu.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\satinalma-yonetimi-ekran-goruntu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
