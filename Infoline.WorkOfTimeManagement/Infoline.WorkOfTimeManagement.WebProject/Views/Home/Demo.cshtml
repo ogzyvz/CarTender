@@ -104,63 +104,63 @@
                 </div>
             </div>
         </div>
+        <section  class="faq-section" id="demoTalebi">
+            <div class="row">
+                <div class="contact-form-area container">
+                    <div class="sec-title center" style="margin-bottom: 60px;">
+                        <h2 style="color: #ff0000; font-weight: 700; font-size: 50px;margin-bottom: 15px; ">Demo Talebi</h2>
 
-        <div class="row" style="margin-top:15%;">
-            <div class="contact-form-area container">
-                <div class="sec-title center" style="margin-bottom: 60px;">
-                    <h2 style="color: #ff0000; font-weight: 700; font-size: 50px;margin-bottom: 15px; ">Demo Talebi</h2>
+                        <div class="section-title center">
+                            WorkOfTime'ın size özel olarak sunduğu çözümlerden faydalanmak için
+                            hemen formu doldurun, sizinle iletişime geçelim!
+                        </div>
+                    </div>
 
-                    <div class="section-title center">
-                        WorkOfTime'ın size özel olarak sunduğu çözümlerden faydalanmak için
-                        hemen formu doldurun, sizinle iletişime geçelim!
+                    <div class="form-inner">
+                        <form method="post" id="form" class="default-form">
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 col-sm-12 column">
+                                    <div class="form-group">
+                                        <input type="text" name="username" placeholder="Adınız Soyadınız" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 column">
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="Email Adresiniz" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 column">
+                                    <div class="form-group">
+                                        <input type="text" name="company" placeholder="Firmanızın Adı" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 column">
+                                    <div class="form-group">
+                                        <input type="text" name="phone" placeholder="Telefon Numaranız  ->  0555 555 55 55" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                    <div class="form-group">
+                                        <textarea name="message" placeholder="Mesajınız..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                        <div style="padding-top:10px;" class="g-recaptcha" data-sitekey="6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS"></div>
+                                        <br>
+                                    </div>
+
+                                    <div class="form-group message-btn centred">
+                                        <button type="submit" class="theme-btn-two" name="submit-form" id="demoSend" style="background-color: #ff0000; font-weight: 700; font-size: 22px">Hemen Başvur</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-
-                <div class="form-inner">
-                    <form method="post" id="form" class="default-form">
-                        @Html.AntiForgeryToken()
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12 col-sm-12 column">
-                                <div class="form-group">
-                                    <input type="text" name="username" placeholder="Adınız Soyadınız" required="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 column">
-                                <div class="form-group">
-                                    <input type="email" name="email" placeholder="Email Adresiniz" required="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 column">
-                                <div class="form-group">
-                                    <input type="text" name="company" placeholder="Firmanızın Adı" required="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 column">
-                                <div class="form-group">
-                                    <input type="text" name="phone" placeholder="Telefon Numaranız  ->  0555 555 55 55" required="">
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 column">
-                                <div class="form-group">
-                                    <textarea name="message" placeholder="Mesajınız..."></textarea>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 column">
-                                <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                    <div style="padding-top:10px;" class="g-recaptcha" data-sitekey="6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS"></div>
-                                    <br>
-                                </div>
-
-                                <div class="form-group message-btn centred">
-                                    <button type="submit" class="theme-btn-two" name="submit-form" id="demoSend" style="background-color: #ff0000; font-weight: 700; font-size: 22px">Hemen Başvur</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
-        </div>
-
+        </section>
 
     </div>
 </section>
