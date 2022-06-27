@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Kategoriler";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+
+@(Html.Akilli()
+    .Grid<Infoline.WorkOfTimeManagement.BusinessData.VWHDM_Category>("VWHDM_Category")
+    .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "VWHDM_Category", new { area = "HDM" })).PageSize(25))
+    .Columns(x =>
+    {
+        x.Bound(y => y.id).GridSelector(GridSelectorType.Checkbox);
+        x.Bound(y => y.name).Title("Kategori Adı").Width(180);
+        x.Bound(y => y.changedby_title).Title("Düzenleme İşlemi Yapan").Width(180);
+    })
+    .Selectable(x => x.Mode(GridSelectionMode.Multiple))
+    .ToolBar(x =>
+    {
+        x.Custom().Text("Ekle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "always" }, { "data-method", "GET" } }).Url(Url.Action("Insert", "VWHDM_Category", new { area = "HDM" }));
+        x.Custom().Text("Düzenle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-method", "GET" } }).Url(Url.Action("Update", "VWHDM_Category", new { area = "HDM" }));
+        x.Custom().Text("Detay").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-default", "" } }).Url(Url.Action("Detail", "VWHDM_Category", new { area = "HDM" }));
+        x.Custom().Text("SİL").HtmlAttributes(new Dictionary<string, object>() { { "data-ask", "" } }).Url(Url.Action("Delete", "VWHDM_Category", new { area = "HDM" }));
+    }))

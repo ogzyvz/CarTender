@@ -170,6 +170,9 @@
     <Content Include="Libs\Kendo.Mvc.dll" />
   </ItemGroup>-->
   <ItemGroup>
+    <Compile Include="Areas\HDM\Controllers\VWHDM_CategoryController.cs" />
+    <Compile Include="Areas\HDM\Controllers\VWHDM_FaqController.cs" />
+    <Compile Include="Areas\HDM\Controllers\VWHDM_QuestionController.cs" />
     <Compile Include="Areas\SYS\Controllers\LanguageController.cs" />
     <Compile Include="Areas\SYS\Controllers\VWSYS_VersionController.cs" />
     <Compile Include="Areas\SYS\SYSAreaRegistration.cs" />
@@ -979,6 +982,18 @@
     <Content Include="Content\Custom\js\ckeditor\README.md" />
     <Content Include="Content\Custom\js\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Content\Custom\data\KVKK-BasvuruFormu.pdf" />
+    <Content Include="Areas\HDM\Views\VWHDM_Category\Index.cshtml" />
+    <Content Include="Areas\HDM\Views\VWHDM_Category\Detail.cshtml" />
+    <Content Include="Areas\HDM\Views\VWHDM_Category\Insert.cshtml" />
+    <Content Include="Areas\HDM\Views\VWHDM_Category\Update.cshtml" />
+    <Content Include="Areas\HDM\Views\VWHDM_Faq\Index.cshtml" />
+    <Content Include="Areas\HDM\Views\VWHDM_Faq\Detail.cshtml" />
+    <Content Include="Areas\HDM\Views\VWHDM_Faq\Insert.cshtml" />
+    <Content Include="Areas\HDM\Views\VWHDM_Faq\Update.cshtml" />
+    <Content Include="Areas\HDM\Views\VWHDM_Question\Index.cshtml" />
+    <Content Include="Areas\HDM\Views\VWHDM_Question\Detail.cshtml" />
+    <Content Include="Areas\HDM\Views\VWHDM_Question\Insert.cshtml" />
+    <Content Include="Areas\HDM\Views\VWHDM_Question\Update.cshtml" />
     <None Include="Content\Home\scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Content\Home\scripts\jquery-2.1.1.js" />
     <Content Include="Content\Home\scripts\jquery-2.1.1.min.js" />

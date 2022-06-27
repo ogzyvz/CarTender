@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Data\SqlServerTypes\Loader.cs" />
+    <Compile Include="Business\VMHDM_CategoryModel.cs" />
+    <Compile Include="Business\VMHDM_FaqModel.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBHDM_Category.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBHDM_Faq.cs" />
     <Compile Include="DatabaseFunctions\AutoGenerate\DBHDM_Question.cs" />
@@ -85,6 +87,8 @@
     <Compile Include="DatabaseFunctions\AutoGenerate\DBVWTEN_DemonstrationRequest.cs" />
     <Compile Include="DatabaseFunctions\Specific\DBINV_CompanyPerson.cs" />
     <Compile Include="DatabaseFunctions\Specific\DBCMP_Company.cs" />
+    <Compile Include="DatabaseFunctions\Specific\DBVWHDM_Faq.cs" />
+    <Compile Include="DatabaseFunctions\Specific\DBVWHDM_Question.cs" />
     <Compile Include="DatabaseFunctions\Specific\DBVWSYS_Version.cs" />
     <Compile Include="DatabaseFunctions\Specific\TEN_DemonstrationRequest.cs" />
     <Compile Include="Models\BusinessExtensions.cs" />

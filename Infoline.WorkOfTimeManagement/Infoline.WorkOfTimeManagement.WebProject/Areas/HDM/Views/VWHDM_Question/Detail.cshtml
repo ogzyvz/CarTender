@@ -1,0 +1,80 @@
+﻿@model Infoline.WorkOfTimeManagement.BusinessData.VWHDM_Question
+@{
+    ViewBag.Title = "Kayıt Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-horizontal" data-selector="modalContainer">
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="fullName">İsim</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.fullName, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"readonly", "readonly"}
+            })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="email">Email</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.email, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"readonly", "readonly"}
+            })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="phone">Telefon</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.phone, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"readonly", "readonly"}
+            })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="content">Açıklama</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.content, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"readonly", "readonly"}
+            })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="companyName">Şirket Adı</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.companyName, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"readonly", "readonly"}
+            })
+        </div>
+    </div>
+
+
+
+    <div class="buttons">
+        <button class="btn btn-md btn-danger pull-left" data-task="modalClose">Geri</button>
+    </div>
+
+</div>

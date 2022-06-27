@@ -1,0 +1,71 @@
+﻿@model Infoline.WorkOfTimeManagement.BusinessData.VWHDM_Faq
+@{
+    ViewBag.Title = "Kayıt Güncelleme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "VWHDM_Faq", FormMethod.Post, new Dictionary<string, object>() {
+    { "class", "form-horizontal" },
+    { "role", "form" },
+    { "data-selector", "modalContainer" },
+    { "data-formType", "Ajax" }
+}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="name">Soru/İçerik</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.name, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen Soru/İçerik Giriniz.."},
+            }).Validate(Validations.Required)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="content">İçerik</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.content, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen Açıklama Giriniz.."},
+            })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="categoryId">Kategori</label>
+        </div>
+        <div class="col-md-8">
+            @(Html.Akilli()
+              .DropDownListFor(model => model.categoryId)
+              .OptionLabel("Lütfen Kategori Seçiniz..")
+              .DataTextField("name")
+              .DataValueField("id")
+              .Action(b => b.Action("DataSourceDropDown", "VWHDM_Category", new { area = "HDM" }))
+              .Sort(x => x.Add("name").Ascending())
+              .Validate(Validations.Required)
+              .Execute()
+            )
+
+        </div>
+    </div>
+
+
+    <div class="buttons">
+        <button class="btn btn-md btn-danger pull-left" data-task="modalClose">Geri</button>
+        <button class="btn btn-md btn-success pull-right" type="submit">Kaydet</button>
+    </div>
+
+}

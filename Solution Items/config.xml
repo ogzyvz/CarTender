@@ -8,7 +8,8 @@
   </connection>
 
   <webPages>
-    <!--<page area="SYS" table="SYS_Version" view="VWSYS_Version" />-->
+    <!--<page area="HDM" table="HDM_Category" view="VWHDM_Category" />-->
+
   </webPages>
   <extensionVersion>1.0.0</extensionVersion>
 </config>

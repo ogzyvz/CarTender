@@ -1,0 +1,25 @@
+﻿@model Infoline.WorkOfTimeManagement.BusinessData.VWHDM_Category
+@{
+    ViewBag.Title = "Kayıt Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-horizontal" data-selector="modalContainer">
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="name">Kategori Adı</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.name, new Dictionary<string, object>() 
+            {
+                {"class", "form-control"},
+                {"readonly", "readonly"}
+            })
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="btn btn-md btn-danger pull-left" data-task="modalClose">Geri</button>
+    </div>
+
+</div>
