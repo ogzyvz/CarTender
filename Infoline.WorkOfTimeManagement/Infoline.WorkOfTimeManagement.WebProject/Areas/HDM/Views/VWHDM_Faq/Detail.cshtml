@@ -24,7 +24,7 @@
             <label class="control-label label-md" for="content">Açıklama</label>
         </div>
         <div class="col-md-8">
-            @Html.TextBoxFor(model => model.content, new Dictionary<string, object>() 
+            @Html.TextAreaFor(model => model.content, new Dictionary<string, object>() 
             {
                 {"class", "form-control"},
                 {"readonly", "readonly"}

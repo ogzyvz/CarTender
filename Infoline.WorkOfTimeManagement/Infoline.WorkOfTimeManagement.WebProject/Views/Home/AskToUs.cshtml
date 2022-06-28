@@ -152,7 +152,8 @@
 
                             <ul class="accordion-box">
                                 @{
-                                    foreach (var item in Model.faqs)
+                                    foreach (var item in Model.faqs.OrderBy(c => c.created))
+
                                     {
                                         if (item.categoryId_Title == Model.categories[i].name)
                                         {
@@ -173,14 +174,11 @@
 
                                                 </div>
                                             </li>
-
                                         }
-
                                     }
                                 }
                             </ul>
                         </div>
-
                     }
                 }
 
@@ -207,125 +205,6 @@
         </div>
     </div>
 </section>
-
-
-
-
-@using (Html.BeginForm("AskToUs", "Home", FormMethod.Post, new Dictionary<string, object>() {
-    { "class", "form-horizontal" },
-    { "role", "form" },
-    { "data-selector", "modalContainer" },
-    { "data-formType", "Ajax" },
-    {"id","form"}
-    }))
-{
-    @Html.AntiForgeryToken();
-    <div id="my-modall" style="z-index: 1000;overflow: hidden;" class="modall my-modall">
-        <div class="modall-content" style="margin:auto;margin-top:4%">
-            <div class="modall-header">
-                <span class="close">&times;</span>
-                <div class="bootstrap-dialog-title">Soru Sor</div>
-            </div>
-
-            <div class="modall-body">
-                <div class="form-group col-md-12">
-                    <label>Yardım</label>
-                    <br />
-                    <div>
-                        @Html.DropDownList("faqId", null, "Lütfen Soru Seçiniz", new { name = "faqId", @class = "form-control", style = "height:40px;" })
-                    </div>
-
-
-                </div>
-                <div class="form-group col-md-12">
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <div class="form-group">
-                                <label>İsim Soyisim</label>
-                                @Html.TextBox("fullName", null, new Dictionary<string, object>
-                                 {
-                                     {"class","form-control kapatss"},
-                                     {"type","text"},
-                                     {"placeholder","Lütfen İsim Soyisim giriniz.."}
-
-                                 }).Validate(Validations.Required)
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <div class="form-group">
-                                <label>E-mail</label>
-                                @Html.TextBox("email", null, new Dictionary<string, object>
-                               {
-                                   {"class","form-control kapatss"},
-                                   {"type","emial"},
-                                   {"placeholder","Lütfen Mailinizi giriniz.."}
-
-                               }).Validate(Validations.Required)
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <div class="form-group">
-                                <label>Şirket İsmi</label>
-                                @Html.TextBox("companyName", null, new Dictionary<string, object>
-                                 {
-                                     {"class","form-control kapatss"},
-                                     {"type","text"},
-                                     {"placeholder","Lütfen Şirket İsminizi giriniz.."}
-
-                                 }).Validate(Validations.Required)
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <div class="form-group">
-                                <label>Telefon Numarası</label>
-                                @Html.TextBox("phone", null, new Dictionary<string, object>
-                               {
-                                   {"class","form-control kapatss"},
-                                   {"type","text"},
-                                   {"placeholder","Lütfen Telefon Numaranızı giriniz.."}
-
-                               }).Validate(Validations.Required)
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group col-md-12">
-                    <label>Sorunuz</label>
-                    @Html.TextArea("content", null, new Dictionary<string, object>
-                                {
-                                    {"class","form-control kapatss"},
-                                    {"cols","20" },
-                                    {"rows","2" },
-                                    {"type","text"},
-                                    {"placeholder","Lütfen sorunuzu sorunuz.."},
-                                    {"style","height: 140px;"},
-                                }).Validate(Validations.Required)
-                </div>
-
-                <div style="padding-top:10px;" class="g-recaptcha" data-sitekey="6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS"></div>
-                <br />
-
-            </div>
-
-            <div class="modall-footer">
-                <a class="btn btn-md btn-danger pull-left vazgec" style="color:white;">Vazgeç</a>
-                <button class="btn btn-md btn-success float-right gönder" disabled id="gönder" type="submit">Gönder</button>
-            </div>
-
-        </div>
-    </div>
-}
-
-
-
-<script src='https://www.google.com/recaptcha/api.js' data-selector="modalContainer"></script>
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
 
 

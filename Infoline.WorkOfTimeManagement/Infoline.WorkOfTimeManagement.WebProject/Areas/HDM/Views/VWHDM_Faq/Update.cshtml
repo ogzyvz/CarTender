@@ -16,32 +16,6 @@
     @Html.HiddenFor(model => model.id)
 
 
-    <div class="form-group">
-        <div class="col-md-4">
-            <label class="control-label label-md" for="name">Soru/İçerik</label>
-        </div>
-        <div class="col-md-8">
-            @Html.TextBoxFor(model => model.name, new Dictionary<string, object>()
-            {
-                {"class", "form-control"},
-                {"placeholder", "Lütfen Soru/İçerik Giriniz.."},
-            }).Validate(Validations.Required)
-        </div>
-    </div>
-
-
-    <div class="form-group">
-        <div class="col-md-4">
-            <label class="control-label label-md" for="content">İçerik</label>
-        </div>
-        <div class="col-md-8">
-            @Html.TextBoxFor(model => model.content, new Dictionary<string, object>()
-            {
-                {"class", "form-control"},
-                {"placeholder", "Lütfen Açıklama Giriniz.."},
-            })
-        </div>
-    </div>
 
     <div class="form-group">
         <div class="col-md-4">
@@ -59,6 +33,33 @@
               .Execute()
             )
 
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="name">Soru/İçerik</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.name, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen Soru/İçerik Giriniz.."},
+            }).Validate(Validations.Required)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="content">Açıklama</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextAreaFor(model => model.content, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen Açıklama Giriniz.."},
+            })
         </div>
     </div>
 
