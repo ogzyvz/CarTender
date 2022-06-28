@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using Infoline.Framework.Database;
 
 namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 {

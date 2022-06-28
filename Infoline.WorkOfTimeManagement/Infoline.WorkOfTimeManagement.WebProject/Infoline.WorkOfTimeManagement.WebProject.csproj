@@ -173,6 +173,7 @@
     <Compile Include="Areas\HDM\Controllers\VWHDM_CategoryController.cs" />
     <Compile Include="Areas\HDM\Controllers\VWHDM_FaqController.cs" />
     <Compile Include="Areas\HDM\Controllers\VWHDM_QuestionController.cs" />
+    <Compile Include="Areas\HDM\HDMAreaRegistration.cs" />
     <Compile Include="Areas\SYS\Controllers\LanguageController.cs" />
     <Compile Include="Areas\SYS\Controllers\VWSYS_VersionController.cs" />
     <Compile Include="Areas\SYS\SYSAreaRegistration.cs" />
@@ -994,6 +995,7 @@
     <Content Include="Areas\HDM\Views\VWHDM_Question\Detail.cshtml" />
     <Content Include="Areas\HDM\Views\VWHDM_Question\Insert.cshtml" />
     <Content Include="Areas\HDM\Views\VWHDM_Question\Update.cshtml" />
+    <Content Include="Areas\HDM\Views\Web.config" />
     <None Include="Content\Home\scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Content\Home\scripts\jquery-2.1.1.js" />
     <Content Include="Content\Home\scripts\jquery-2.1.1.min.js" />
