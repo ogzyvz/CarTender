@@ -625,6 +625,7 @@
     <Content Include="Content\Custom\Template\Images\ScreenShots\ofis-yonetimi-mobil.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Custom\Template\Images\ScreenShots\Planlanmis_Bakim.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\proje-yonetimi-ekran-goruntu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -637,7 +638,7 @@
     <Content Include="Content\Custom\Template\Images\ScreenShots\saha-gorev-yonetimi-mobil.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Custom\Template\Images\ScreenShots\Saha-Raporu.png" />
+    <Content Include="Content\Custom\Template\Images\ScreenShots\Toplanti-Raporu.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\satinalma-yonetimi-ekran-goruntu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -661,7 +662,6 @@
     </Content>
     <Content Include="Content\Custom\Template\Images\ScreenShots\splashBgLeft.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\splashBgRight.png" />
-    <Content Include="Content\Custom\Template\Images\ScreenShots\Toplanti_Raporu.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\urun-stok-yonetimi-ekran-goruntu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
