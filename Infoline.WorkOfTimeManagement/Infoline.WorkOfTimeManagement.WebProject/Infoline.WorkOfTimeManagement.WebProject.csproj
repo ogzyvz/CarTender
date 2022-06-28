@@ -611,6 +611,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Custom\Template\Images\ScreenShots\Mobil-NFC.png" />
+    <Content Include="Content\Custom\Template\Images\ScreenShots\Mobil_Toplanti_Raporu.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\muhasebe-finans-yonetimi-ekran-goruntu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -659,6 +660,7 @@
     </Content>
     <Content Include="Content\Custom\Template\Images\ScreenShots\splashBgLeft.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\splashBgRight.png" />
+    <Content Include="Content\Custom\Template\Images\ScreenShots\Toplanti_Raporu.png" />
     <Content Include="Content\Custom\Template\Images\ScreenShots\urun-stok-yonetimi-ekran-goruntu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
