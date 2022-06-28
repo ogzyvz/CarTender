@@ -2481,15 +2481,16 @@ div#mCSB_1_container {
 
     #content_block_05 .content-box .download-btn a {
         position: relative;
+        width: 177px;
         display: inline-block;
         font-size: 20px;
-        line-height: 21px;
+        line-height: 27px;
         font-weight: 500;
         color: #fff;
         background: transparent;
         border: 2px solid #fff;
         border-radius: 10px;
-        padding: 12px 21px 12px 80px;
+        padding: 12px 21px 12px 30px;
     }
 
         #content_block_05 .content-box .download-btn a:hover {
@@ -2506,7 +2507,7 @@ div#mCSB_1_container {
 
         #content_block_05 .content-box .download-btn a i {
             position: absolute;
-            left: 30px;
+            left: 10px;
             top: 14px;
             font-size: 36px;
             color: #fff;
@@ -2518,13 +2519,16 @@ div#mCSB_1_container {
         }
 
     #content_block_05 .content-box .download-btn .app-store-btn {
-        margin-right: 37px;
+        margin-right: 10px;
+    }
+    #content_block_05 .content-box .download-btn .google-play-btn {
+        margin-right: 10px;
     }
 
 #iamge_block_04 .image-box {
     position: relative;
     min-height: 595px;
-    margin: 120px -55px 0px 30px;
+    margin: 134px -55px 0px 30px;
 }
 
     #iamge_block_04 .image-box .image-1 {
