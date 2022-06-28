@@ -6,13 +6,12 @@
 
 @(Html.Akilli()
     .Grid<Infoline.WorkOfTimeManagement.BusinessData.VWHDM_Faq>("VWHDM_Faq")
-    .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "VWHDM_Faq", new { area = "HDM" })).PageSize(25))
+    .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "VWHDM_Faq", new { area = "HDM" })).Sort(a => a.Add(c => c.created)).PageSize(25))
     .Columns(x =>
     {
         x.Bound(y => y.id).GridSelector(GridSelectorType.Checkbox);
-        x.Bound(y => y.name).Title("Soru/İçerik").Width(180);
+        x.Bound(y => y.name).Title("Soru/İçerik").Width(120);
         x.Bound(y => y.content).Title("Açıklama").Width(250);
-        x.Bound(y => y.categoryId_Title).Title("Bağlı Kategori").Width(180);
     })
     .Selectable(x => x.Mode(GridSelectionMode.Multiple))
     .ToolBar(x =>

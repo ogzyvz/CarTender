@@ -16,7 +16,6 @@
     @Html.HiddenFor(model => model.id)
 
 
-
     <div class="form-group">
         <div class="col-md-4">
             <label class="control-label label-md" for="categoryId">Kategori</label>
@@ -32,7 +31,6 @@
               .Validate(Validations.Required)
               .Execute()
             )
-
         </div>
     </div>
 
@@ -45,7 +43,7 @@
             {
                 {"class", "form-control"},
                 {"placeholder", "Lütfen Soru/İçerik Giriniz.."},
-            }).Validate(Validations.Required)
+            }).Validate(Validations.TextEveryone(true))
         </div>
     </div>
 
@@ -59,7 +57,7 @@
             {
                 {"class", "form-control"},
                 {"placeholder", "Lütfen Açıklama Giriniz.."},
-            })
+            }).Validate(Validations.TextEveryone(true))
         </div>
     </div>
     <div class="buttons">

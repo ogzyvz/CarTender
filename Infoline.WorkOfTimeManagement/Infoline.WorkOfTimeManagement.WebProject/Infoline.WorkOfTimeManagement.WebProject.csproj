@@ -509,6 +509,7 @@
     <Content Include="Content\Custom\Template\Images\AsktoUs\basvur-icon.png" />
     <Content Include="Content\Custom\Template\Images\AsktoUs\destek-icon.png" />
     <Content Include="Content\Custom\Template\Images\AsktoUs\kılavuz-icon.png" />
+    <Content Include="Content\Custom\Template\Images\AsktoUs\Support_Channel.png" />
     <Content Include="Content\Custom\Template\Images\Demo\demo-header.png" />
     <Content Include="Content\Custom\Template\Images\Demo\e-mail.png" />
     <Content Include="Content\Custom\Template\Images\Demo\location.png" />

@@ -45,7 +45,7 @@
             {
                 {"class", "form-control"},
                 {"placeholder", "Lütfen Soru/İçerik Giriniz.."},
-            }).Validate(Validations.Required)
+            }).Validate(Validations.TextEveryone(true))
         </div>
     </div>
 
@@ -59,7 +59,7 @@
             {
                 {"class", "form-control"},
                 {"placeholder", "Lütfen Açıklama Giriniz.."},
-            })
+            }).Validate(Validations.TextEveryone(true))
         </div>
     </div>
 
