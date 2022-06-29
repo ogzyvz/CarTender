@@ -4804,7 +4804,7 @@ div#mCSB_1_container {
     position: relative;
     display: block;
     overflow: hidden;
-    background: #134f9fff;
+    background: #000;
     padding: 41px 15px 45px 15px;
     border-radius: 30px;
     transition: all 500ms ease;
@@ -4815,7 +4815,7 @@ div#mCSB_1_container {
         width: 100%;
         left: -115px;
         top: 40px;
-        background: #134f9fff;
+        background: #000;
         color: #fff;
         font-size: 14px;
         line-height: 24px;
@@ -4908,23 +4908,22 @@ div#mCSB_1_container {
 .pricing-block-two .pricing-table .table-footer a {
     position: relative;
     display: inline-block;
-    background: #111;
+    background: #fff;
     font-size: 16px;
-    color: #fff;
+    color: #000;
     text-align: center;
     padding: 10px 40px;
     border-radius: 30px;
 }
-
-.pricing-block-two:hover .pricing-table .table-header .title,
-.pricing-block-two:hover .pricing-table .table-header .price,
-.pricing-block-two:hover .pricing-table .table-header .price:before {
-    color: #111;
-}
+    .pricing-block-two:hover .pricing-table .table-header .title,
+    .pricing-block-two:hover .pricing-table .table-header .price,
+    .pricing-block-two:hover .pricing-table .table-header .price:before {
+        color: #fff;
+    }
 
 .pricing-block-two:hover .pricing-table .table-header .text,
 .pricing-block-two:hover .pricing-table .table-content li {
-    color: #777;
+    color: #fff;
 }
 
 .pricing-block-two:hover .pricing-table .table-footer a {
@@ -5536,7 +5535,7 @@ div#mCSB_1_container {
     }
 
         .pricing-style-three .tab .pricing-block-two:first-child .pricing-table {
-            background: #fff;
+            background: #f00;
             margin: -30px 0px;
             padding: 71px 15px 75px 15px;
             box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
@@ -5549,12 +5548,12 @@ div#mCSB_1_container {
             .pricing-style-three .tab .pricing-block-two:first-child .pricing-table .table-header .title,
             .pricing-style-three .tab .pricing-block-two:first-child .pricing-table .table-header .price,
             .pricing-style-three .tab .pricing-block-two:first-child .pricing-table .table-header .price:before {
-                color: #111;
+                color: #fff;
             }
 
             .pricing-style-three .tab .pricing-block-two:first-child .pricing-table .table-header .text,
             .pricing-style-three .tab .pricing-block-two:first-child .pricing-table .table-content li {
-                color: #777;
+                color: #fff;
             }
 
     .pricing-style-three .tab .pricing-block-two:last-child {
