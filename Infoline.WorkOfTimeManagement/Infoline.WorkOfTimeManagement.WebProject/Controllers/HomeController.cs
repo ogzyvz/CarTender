@@ -223,12 +223,13 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         {
 
             var response = Request["g-recaptcha-response"];
-            string secretKey = "6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8";
+            string secretKey = "6Le1-7AgAAAAACXnc9yE73kyLXyHdCHzgjvz5nVB";
 
 
-            // Site Anahtarı => 6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS
+            // Site Anahtarı => 6Le1-7AgAAAAAOH7ljmphPx4oxpc7jilaGq1IjJE
 
-            //  Secret Key => 6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8    
+            //  Secret Key => 6Le1-7AgAAAAACXnc9yE73kyLXyHdCHzgjvz5nVB
+
 
             var client = new WebClient();
             var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
