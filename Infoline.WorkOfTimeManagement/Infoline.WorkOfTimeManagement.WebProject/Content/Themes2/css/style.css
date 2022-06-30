@@ -438,7 +438,7 @@ img {
     background-position: center center;
     background-repeat: no-repeat;
     background-image: url('../../Custom/Template/Images/wot-loading.gif');
-    /*background-image: url('../images/mobil-ofisiniz-logo1.png');*/
+    background-image: url('../images/mobil-ofisiniz-logo1.png');
 }
 
 .scroll-top {

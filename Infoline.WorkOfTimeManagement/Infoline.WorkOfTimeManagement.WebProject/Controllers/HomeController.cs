@@ -85,7 +85,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
 
 
             var response = Request["g-recaptcha-response"];
-            string secretKey = "6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8";
+            string secretKey = "6Le1-7AgAAAAACXnc9yE73kyLXyHdCHzgjvz5nVB";
 
 
 
@@ -93,7 +93,8 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
 
             // Corporate Secret Key => 6LcCq2wgAAAAAMjJOXBHU2H3BUgBm8MIOXX_LI5F
 
-            // Canlı Secret Key => 6LcivcYUAAAAAF5xycwy0CQmsWsPjk03CfejG7W0
+            // Canlı Secret Key => 6Le1-7AgAAAAACXnc9yE73kyLXyHdCHzgjvz5nVB
+
 
 
             var client = new WebClient();

@@ -1019,6 +1019,7 @@
     <Content Include="Areas\HDM\Views\VWHDM_Question\Insert.cshtml" />
     <Content Include="Areas\HDM\Views\VWHDM_Question\Update.cshtml" />
     <Content Include="Areas\HDM\Views\Web.config" />
+    <Content Include="Content\Custom\data\preloader.json" />
     <None Include="Content\Home\scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Content\Home\scripts\jquery-2.1.1.js" />
     <Content Include="Content\Home\scripts\jquery-2.1.1.min.js" />

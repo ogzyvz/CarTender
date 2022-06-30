@@ -86,8 +86,16 @@
     <script src="~/Content/Custom/js/master.js"></script>
     <!--Custom-->
 
+    @*@{
+        var text = "https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js";
+    }
+    <script src="@text"></script>*@
+
+
 </head>
 <body class="no-skin-config  pace-done">
+    @*<lottie-player class="preloader" src="~/Content/Custom/data/preloader.json" background="transparent" speed="2" loop autoplay></lottie-player>*@
+    <div id="preloader"></div>
 
     <div id="wrapper">
         @Html.Partial("~/Views/Shared/_AccountLayoutNav.cshtml")
