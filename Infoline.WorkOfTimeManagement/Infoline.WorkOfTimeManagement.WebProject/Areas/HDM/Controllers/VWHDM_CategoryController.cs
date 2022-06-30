@@ -14,14 +14,10 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 {
 	public class VWHDM_CategoryController : Controller
 	{
-
-		[AllowEveryone]
 		public ActionResult Index()
 		{
 			return View();
 		}
-
-		[AllowEveryone]
 
 		public ContentResult DataSource([DataSourceRequest] DataSourceRequest request)
 		{
@@ -36,9 +32,6 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 			data.Total = db.GetVWHDM_CategoryCount(condition.Filter);
 			return Content(Infoline.Helper.Json.Serialize(data), "application/json");
 		}
-
-		[AllowEveryone]
-
 		public ContentResult DataSourceDropDown([DataSourceRequest] DataSourceRequest request)
 		{
 			var condition = KendoToExpression.Convert(request);
@@ -48,21 +41,16 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 			return Content(Infoline.Helper.Json.Serialize(data), "application/json");
 		}
 
-		[AllowEveryone]
-
 		public ActionResult Detail(VMHDM_CategoryModel data)
 		{
 			return View(data.Load());
 		}
-
-		[AllowEveryone]
 
 		public ActionResult Insert(VMHDM_CategoryModel data)
 		{
 			return View(data.Load());
 		}
 
-		[AllowEveryone]
 		[HttpPost, ValidateAntiForgeryToken]
 		public JsonResult Insert(VMHDM_CategoryModel model, bool? isPost)
 		{
@@ -76,14 +64,10 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 			}, JsonRequestBehavior.AllowGet);
 		}
 
-		[AllowEveryone]
-
 		public ActionResult Update(VMHDM_CategoryModel data)
 		{
 			return View(data.Load());
 		}
-
-		[AllowEveryone]
 
 		[HttpPost, ValidateAntiForgeryToken]
 		public JsonResult Update(VMHDM_CategoryModel data, bool? isPost)
@@ -97,9 +81,6 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 				FeedBack = rs.result ? feedback.Success(rs.message) : feedback.Warning("Kaza ve olay eğitimi güncelleme işlemi başarısız. Mesaj : " + rs.message)
 			}, JsonRequestBehavior.AllowGet);
 		}
-
-
-		[AllowEveryone]
 
 		[HttpPost]
 		public JsonResult Delete(string[] id) //VMHDM_CategoryModel data yazdıgımda idyi neden alamıyorum

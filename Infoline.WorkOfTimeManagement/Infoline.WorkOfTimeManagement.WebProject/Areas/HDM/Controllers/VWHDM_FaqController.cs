@@ -13,14 +13,11 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 {
 	public class VWHDM_FaqController : Controller
 	{
-		[AllowEveryone]
 		public ActionResult Index()
 		{
 			return View();
 		}
 
-
-		[AllowEveryone]
 		public ContentResult DataSource([DataSourceRequest] DataSourceRequest request)
 		{
 
@@ -38,9 +35,6 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 			return Content(Infoline.Helper.Json.Serialize(data), "application/json");
 		}
 
-
-
-		[AllowEveryone]
 		public ContentResult DataSourceDropDown([DataSourceRequest] DataSourceRequest request)
 		{
 			var condition = KendoToExpression.Convert(request);
@@ -50,25 +44,16 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 			return Content(Infoline.Helper.Json.Serialize(data), "application/json");
 		}
 
-
-
-		[AllowEveryone]
 		public ActionResult Detail(VMHDM_FaqModel data)
 		{
 			return View(data.Load());
 		}
 
-
-
-		[AllowEveryone]
 		public ActionResult Insert(VMHDM_FaqModel data)
 		{
 			return View(data.Load());
 		}
 
-
-
-		[AllowEveryone]
 		[HttpPost, ValidateAntiForgeryToken]
 		public JsonResult Insert(VMHDM_FaqModel item, bool? a)
 		{
@@ -83,9 +68,6 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 
 		}
 
-
-
-		[AllowEveryone]
 		public ActionResult Update(/*Guid id*/VMHDM_FaqModel data)
 		{
 			//    var db = new InfolineHRManagementDatabase();
@@ -94,9 +76,6 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 			return View(data.Load());
 		}
 
-
-
-		[AllowEveryone]
 		[HttpPost, ValidateAntiForgeryToken]
 		public JsonResult Update(VMHDM_FaqModel data, bool? a)
 		{
@@ -111,9 +90,6 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 
 		}
 
-
-
-		[AllowEveryone]
 		[HttpPost]
 		public JsonResult Delete(string[] id)
 		{

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infoline Extension | @ViewBag.Title</title>
+
+    <!--Default-->
+    <link href="~/content/themes/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Themes/css/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <link href="~/content/themes/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/content/themes/css/animate.css" rel="stylesheet">
+    <link href="~/content/themes/css/style.css" rel="stylesheet">
+    <link href="~/Content/Themes/css/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/Loading/css/jquery.loadingModal.min.css" rel="stylesheet" />
+    <link href="~/Content/Custom/css/custom.css" rel="stylesheet" />
+    <link href="~/Content/Custom/css/account.css" rel="stylesheet" />
+    <!--Harita-->
+
+    @RenderSection("Css", false)
+
+
+    <!--Default-->
+    <script src="~/content/themes/js/jquery-2.1.1.js"></script>
+    <script src="~/Content/Themes/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="~/content/themes/js/bootstrap.min.js"></script>
+    <script src="~/content/themes/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/content/themes/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/content/themes/js/inspinia.js"></script>
+    <script src="~/content/themes/js/plugins/pace/pace.min.js"></script>
+    <script src="~/Content/Themes/js/plugins/linq/jquery.linq.min.js"></script>
+    <script src="~/Content/Plugins/Loading/js/jquery.loadingModal.min.js"></script>
+    <script src="~/Content/Themes/js/jquery.livequery.min.js"></script>
+    <script src="~/Content/Themes/js/plugins/toastr/toastr.min.js"></script>
+    <script src="~/Content/Plugins/Validator/js/Validator.js"></script>
+    <script src="~/Content/Custom/js/master.js"></script>
+    <!--Default-->
+
+
+    <script src="~/Content/Kendo/js/jszip.min.js"></script>
+    <script src="~/Content/Kendo/js/kendo.all.min.js"></script>
+    <script src="~/Content/Kendo/js/kendo.aspnetmvc.min.js"></script>
+    <script src="~/Content/Kendo/js/messages/kendo.messages.en-US.min.js"></script>
+    <script src="~/Content/Kendo/js/messages/kendo.messages.tr-TR.min.js"></script>
+    <script src="~/Content/Kendo/js/cultures/kendo.culture.tr-TR.min.js"></script>
+    <script src="~/Content/Kendo/js/cultures/kendo.culture.en-US.min.js"></script>
+    <style type="text/css">
+        #layout {
+            background: url(/Content/Custom/img/satellite-communication-gps.jpg) !important;
+            background-size: cover !important;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div class="container-fluids">
+        <div class="col-lg-9 col-md-7 col-sm-6 hidden-xs" id="layout">
+
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-6 col-xs-12" id="login">
+            <div class="content">
+                <h3 class="header">
+                    <a href="@Url.Action("Index","Home",new {area="" })">
+                        <img src="~/Content/Custom/img/infolinelogo.png" class="logo" />
+                    </a>
+                    <br />
+                    <strong> INFOLINE Extension </strong><br /> ( @ViewBag.Title )
+                </h3>
+                @RenderBody()
+                <p class="text-center copyright">
+                    Infoline Bilgi Teknolojileri  <br> © @DateTime.Now.Year Tüm hakları Saklıdır.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("Javascript", false)
+
+</body>
+</html>

@@ -973,7 +973,6 @@
     <Content Include="Areas\TEN\Views\VWTEN_DemonstrationRequest\Detail.cshtml" />
     <Content Include="Areas\TEN\Views\VWTEN_DemonstrationRequest\Insert.cshtml" />
     <Content Include="Areas\TEN\Views\VWTEN_DemonstrationRequest\Update.cshtml" />
-    <Content Include="Areas\TEN\Views\_ViewStart.cshtml" />
     <Content Include="Areas\TEN\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\SYS\Views\Web.config" />
     <Content Include="Areas\TEN\Views\VWTEN_DemonstrationRequest\DemoRequests.cshtml" />
@@ -2296,6 +2295,7 @@
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
     <Content Include="Views\Home\Demo.cshtml" />
     <Content Include="Views\Home\Pricing.cshtml" />
+    <Content Include="Views\Shared\_SignInLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

@@ -13,7 +13,6 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 {
 	public class VWHDM_QuestionController : Controller
 	{
-		[AllowEveryone]
 		public ActionResult Index()
 		{
 			var db = new WorkOfTimeManagementDatabase();
@@ -24,7 +23,6 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 			return View();
 		}
 
-		[AllowEveryone]
 		public ContentResult DataSource([DataSourceRequest] DataSourceRequest request)
 		{
 			var condition = KendoToExpression.Convert(request);
@@ -39,7 +37,6 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 			return Content(Infoline.Helper.Json.Serialize(data), "application/json");
 		}
 
-		[AllowEveryone]
 		public ContentResult DataSourceDropDown([DataSourceRequest] DataSourceRequest request)
 		{
 			var condition = KendoToExpression.Convert(request);
@@ -49,7 +46,6 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 			return Content(Infoline.Helper.Json.Serialize(data), "application/json");
 		}
 
-		[AllowEveryone]
 		public ActionResult Detail(Guid id)
 		{
 			var db = new WorkOfTimeManagementDatabase();
@@ -57,7 +53,6 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 			return View(data);
 		}
 
-		[AllowEveryone]
 		public ActionResult Insert()
 		{
 			var data = new VWHDM_Question { id = Guid.NewGuid() };
@@ -65,7 +60,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 		}
 
 
-		[HttpPost, ValidateAntiForgeryToken, AllowEveryone]
+		[HttpPost, ValidateAntiForgeryToken]
 		public JsonResult Insert(HDM_Question item)
 		{
 			var db = new WorkOfTimeManagementDatabase();
@@ -83,7 +78,6 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 			return Json(result, JsonRequestBehavior.AllowGet);
 		}
 
-		[AllowEveryone]
 		public ActionResult Update(Guid id)
 		{
 			var db = new WorkOfTimeManagementDatabase();
@@ -92,7 +86,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 		}
 
 
-		[HttpPost, ValidateAntiForgeryToken, AllowEveryone]
+		[HttpPost, ValidateAntiForgeryToken]
 		public JsonResult Update(HDM_Question item)
 		{
 			var db = new WorkOfTimeManagementDatabase();
@@ -113,7 +107,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.HDM.Controllers
 		}
 
 
-		[HttpPost, AllowEveryone]
+		[HttpPost]
 		public JsonResult Delete(string[] id)
 		{
 			var db = new WorkOfTimeManagementDatabase();
