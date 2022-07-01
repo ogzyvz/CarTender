@@ -272,7 +272,8 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
 
             var mesaj = "<p><strong>Merhaba " + data.username + " tarafından mesaj gönderilmiştir.</strong></p>" +
                             "<p>Email : " + data.email + "</p>" +
-                            "<p>Kurum : " + data.company + "</p>" +
+                            "<p>Kurum : " + data.phone + "</p>" +
+                            "<p>Mesaj : " + data.company + "</p>" +
                             "<p>Mesaj : " + data.message + "</p>";
 
             var mesajUser = "<p><strong>Merhaba ,</strong></p>" +
