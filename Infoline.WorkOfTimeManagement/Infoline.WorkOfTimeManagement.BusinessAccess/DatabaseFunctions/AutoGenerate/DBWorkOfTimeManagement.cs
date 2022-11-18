@@ -22,7 +22,7 @@ namespace Infoline.WorkOfTimeManagement.BusinessAccess
                 this.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
 
 #if DEBUG
-            ConnectionString = "Data Source=46.221.52.222;Initial Catalog=WorkOfTimeManagement;User ID=developer;Password=InfDev!!**38493--";
+            ConnectionString = "Data Source=10.100.0.232;Initial Catalog=WorkOfTimeManagement;User ID=developer;Password=DevInfo2011Line.";
 #endif
 
         }

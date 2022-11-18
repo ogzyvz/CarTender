@@ -85,7 +85,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
 
 
             var response = Request["g-recaptcha-response"];
-            string secretKey = "6Le1-7AgAAAAACXnc9yE73kyLXyHdCHzgjvz5nVB";
+            string secretKey = "6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8";
 
 
 
@@ -223,7 +223,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
         {
 
             var response = Request["g-recaptcha-response"];
-            string secretKey = "6Le1-7AgAAAAACXnc9yE73kyLXyHdCHzgjvz5nVB";
+            string secretKey = "6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8";
 
 
             // Site Anahtarı => 6Le1-7AgAAAAAOH7ljmphPx4oxpc7jilaGq1IjJE

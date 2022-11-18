@@ -85,11 +85,9 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Areas.TEN.Controllers
             var feedback = new FeedBack();
 
             var response = Request["g-recaptcha-response"];
-            string secretKey = "6LcivcYUAAAAAF5xycwy0CQmsWsPjk03CfejG7W0";
+            string secretKey = "6LfZ8IUbAAAAALzYo9O1EnbY__jI-x9U_sjliIw8";
 
-#if DEBUG
-            secretKey = "6LfTvMYUAAAAAItF5EGxTDCDG8KsZklLmLWx_4Tx";
-#endif
+
             var client = new WebClient();
             var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
             var obj = JObject.Parse(result);
