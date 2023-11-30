@@ -282,7 +282,7 @@ namespace Infoline.WorkOfTimeManagement.WebProject.Controllers
 
 
             new Email().Template("Template1", "bos.png", "WorkOfTime İletişim Mesajı", mesaj)
-            .Send("info@workoftime.com", string.Format("{0} | {1}", "WorkOfTime", "WorkOfTime İletişim Mesajı"), true);
+            .Send("info@infoline-tr.com", string.Format("{0} | {1}", "WorkOfTime", "WorkOfTime İletişim Mesajı"), true);
 
 
             new Email().Template("Template1", "bos.png", "WorkOfTime İletişim Mesajınız Hakkında", mesajUser)
