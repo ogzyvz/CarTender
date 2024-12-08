@@ -1,0 +1,114 @@
+.modall-btn {
+    /*    margin-bottom: 2%;
+    margin-top:2%;*/
+    background-color: #546cd5;
+    /*padding: 1em 2em;*/
+    padding-bottom: 6%;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    height: auto;
+    margin: auto;
+    margin-top: 1%;
+    margin-left: 61%;
+    padding-bottom: 0.6%;
+    white-space: normal;
+    width: 39%;
+    /*    margin-left:65%;*/
+}
+
+
+.modall {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modall-content {
+    margin: 10% auto;
+    width: 60%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modallopen;
+    animation-duration: var(--modall-duration);
+}
+
+.modall-header h2,
+.modall-footer h3 {
+    margin: 0;
+}
+
+.modall-header {
+    background: var(--modall-color);
+    padding: 15px;
+    font-size: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modall-body {
+    padding: 10px 20px;
+    background: #fff;
+}
+
+.modall-footer {
+    background: var(--modall-color);
+    padding: 10px;
+    background-color: #007bff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height:60px;
+}
+
+.close {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+    color: #fff;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+@keyframes modallopen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media(max-width:968px) {
+
+    .modall-content {
+        width: 80%;
+    }
+    .modall-btn {
+        margin: auto;
+        margin-top: 1%;
+        padding-bottom: 8%;
+        height: 0px;
+        white-space: nowrap;
+        width:auto;
+    }
+}
+/*@media(max-width:600px) {
+    #modall-btn {
+        padding-bottom: 12%;
+        background-color:red;
+    }
+}*/

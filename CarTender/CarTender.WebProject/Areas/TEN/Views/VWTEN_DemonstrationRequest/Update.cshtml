@@ -1,0 +1,122 @@
+﻿@model CarTender.BusinessData.VWTEN_DemonstrationRequest
+@{
+    ViewBag.Title = "Kayıt Güncelleme";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+@using(Html.BeginForm("Update", "VWTEN_DemonstrationRequest", FormMethod.Post, new Dictionary<string, object>() {  
+    { "class", "form-horizontal" },
+    { "role", "form" },
+    { "data-selector", "modalContainer" },
+    { "data-formType", "Ajax" }
+}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="Name">Name</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.Name, new Dictionary<string, object>() 
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen Name Girin.."},
+            }).Validate(Validations.Required)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="Surname">Surname</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.Surname, new Dictionary<string, object>() 
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen Surname Girin.."},
+            }).Validate(Validations.Required)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="EMail">EMail</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.EMail, new Dictionary<string, object>() 
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen EMail Girin.."},
+            }).Validate(Validations.Required)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="Phone">Phone</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.Phone, new Dictionary<string, object>() 
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen Phone Girin.."},
+            }).Validate(Validations.Required)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="CompanyName">CompanyName</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.CompanyName, new Dictionary<string, object>() 
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen CompanyName Girin.."},
+            }).Validate(Validations.Required)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="createdby_Title">createdby_Title</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.createdby_Title, new Dictionary<string, object>() 
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen createdby_Title Girin.."},
+            }).Validate(Validations.Required)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="changedby_Title">changedby_Title</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.changedby_Title, new Dictionary<string, object>() 
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen changedby_Title Girin.."},
+            }).Validate(Validations.Required)
+        </div>
+    </div>
+
+
+    <div class="buttons">
+        <button class="btn btn-md btn-danger pull-left" data-task="modalClose">Geri</button>
+        <button class="btn btn-md btn-success pull-right" type="submit">Kaydet</button>
+    </div>
+
+}

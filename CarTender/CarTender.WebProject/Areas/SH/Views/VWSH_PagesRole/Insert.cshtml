@@ -1,0 +1,93 @@
+﻿@model CarTender.BusinessData.VWSH_PagesRole
+@{
+    ViewBag.Title = "Sayfa Yetkisi Ekleme";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+@using(Html.BeginForm("Insert", "VWSH_PagesRole", FormMethod.Post, new Dictionary<string, object>() {  
+    { "class", "form-horizontal" },
+    { "role", "form" },
+    { "data-selector", "modalContainer" },
+    { "data-formType", "Ajax" }
+}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+
+
+    <div class="form-group @(Model.roleid == null ? "" : "hide")">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="roleid">Yetki</label>
+        </div>
+        <div class="col-md-8">
+            @(Html.Kendo().DropDownListFor(model => model.roleid).HtmlAttributes(new Dictionary<string, object>()
+                {
+                    {"style", "width:100%"},
+                    {"class", "form-control"},
+                })
+                .OptionLabel("Lütfen yetki seçiniz")
+                .Filter(FilterType.Contains)
+                .DataTextField("Name")
+                .DataValueField("Id")
+                .DataSource(s =>
+                {
+                    s.Read(r =>
+                    {
+                        r.Action("GetSH_Role", "General", new { area = string.Empty }); //General controllerının içine datasının oldugu metodu yaz ilk parametreye method ismini ver
+                    });
+                }).Validate(Validations.Required)
+            )
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="ActionIdList">Sayfa</label>
+        </div>
+        <div class="col-md-8">
+            @(Html.Kendo().MultiSelect().Name("ActionIdList").HtmlAttributes(new Dictionary<string, object>()
+            {
+                {"style", "width:100%"},
+                {"class", "form-control"},
+                {"placeholder","" }
+            })
+            .Placeholder("Lütfen sayfa seçiniz.")
+            .Filter(FilterType.Contains)
+            .DataTextField("Name")
+            .AutoClose(false)
+            .DataValueField("Id")
+            .DataSource(s =>
+            {
+                s.Read(r =>
+                {
+                    r.Action("GetSH_Pages", "General", new { area = string.Empty });
+                });
+            })
+            .AutoBind(false)
+            .Validate(Validations.Required)
+            )
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="status">Yetki Durumu</label>
+        </div>
+        <div class="col-md-8 radio">
+            <label class="checkbox-inline">@Html.Kendo().RadioButtonFor(model => model.status).Value(true).Checked(true) <span> Aktif</span></label>
+            <label class="checkbox-inline">@Html.Kendo().RadioButtonFor(model => model.status).Value(false).Checked(false) <span> Pasif</span></label>
+        </div>
+    </div>
+
+
+
+    <div class="buttons">
+        <button class="btn btn-md btn-danger pull-left" data-task="modalClose">Geri</button>
+        <button class="btn btn-md btn-success pull-right" type="submit">Kaydet</button>
+    </div>
+
+}
+

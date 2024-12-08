@@ -1,0 +1,96 @@
+﻿@using CarTender.BusinessAccess
+@model CarTender.BusinessData.VWSH_UserRole
+@{
+    ViewBag.Title = "Kayıt Ekleme";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Insert", "VWSH_UserRole", FormMethod.Post, new Dictionary<string, object>() {
+    { "class", "form-horizontal" },
+    { "role", "form" },
+    { "data-selector", "modalContainer" },
+    { "data-formType", "Ajax" }
+}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+
+
+    <div class="form-group @(Model.roleid==null ? "" : "hide")">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="roleid">Yetki</label>
+        </div>
+        <div class="col-md-8">
+            @(Html.Kendo().DropDownListFor(model => model.roleid).HtmlAttributes(new Dictionary<string, object>()
+                    {
+                        {"style", "width:100%"},
+                        {"class", "form-control"},
+                        {"required", "required"}
+                    })
+                    .OptionLabel("Lütfen yetki seçiniz")
+                    .Filter(FilterType.Contains)
+                    .DataTextField("Name")
+                    .DataValueField("Id")
+                    .DataSource(s =>
+                    {
+                        s.Read(r =>
+                        {
+                            r.Action("GetSH_Role", "General", new { area = string.Empty }); //General controllerının içine datasının oldugu metodu yaz ilk parametreye method ismini ver
+                        });
+                    }).Validate(Validations.Required)
+            )
+        </div>
+    </div>
+
+
+        <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-label label-md" for="userid">Kullanıcı</label>
+            </div>
+            <div class="col-md-8">
+                @(Html.Kendo().MultiSelect().Name("UserIdList").HtmlAttributes(new Dictionary<string, object>()
+            {
+                {"style", "width:100%"},
+                {"class", "form-control"},
+                {"required", "required"},
+                {"placeholder","" }
+            })
+            .Placeholder("Lütfen kullanıcı seçiniz.")
+            .Filter(FilterType.Contains)
+            .DataTextField("Name")
+            .AutoClose(false)
+            .DataValueField("Id")
+            .DataSource(s =>
+            {
+                s.Read(r =>
+                {
+                    r.Action("GetSH_UserByStatus", "General", new { area = string.Empty, status = (int)EnumSH_UserStatus.Onaylanmis });
+                });
+            })
+            .AutoBind(false)
+            .Validate(Validations.Required)
+                )
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-label label-md" for="AnimalSex">Yetki Durumu</label>
+            </div>
+            <div class="col-md-8 radio">
+                <label class="checkbox-inline">@Html.Kendo().RadioButtonFor(model => model.status).Value(Convert.ToBoolean(EnumSH_UserRoleStatus.Aktif)).Checked(true) <span> Aktif</span></label>
+                <label class="checkbox-inline">@Html.Kendo().RadioButtonFor(model => model.status).Value(Convert.ToBoolean(EnumSH_UserRoleStatus.Pasif)).Checked(false) <span> Pasif</span></label>
+            </div>
+        </div>
+
+
+        <div class="buttons">
+            <button class="btn btn-md btn-danger pull-left" data-task="modalClose">Geri</button>
+            <button class="btn btn-md btn-success pull-right" type="submit">Kaydet</button>
+        </div>
+
+}
+

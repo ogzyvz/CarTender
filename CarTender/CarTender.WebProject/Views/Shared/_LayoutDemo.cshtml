@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+
+    <!--Default-->
+    <link href="~/content/themes/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Themes/css/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <link href="~/content/themes/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/content/themes/css/animate.css" rel="stylesheet">
+    <link href="~/Content/Themes/css/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/content/themes/css/style.css" rel="stylesheet">
+    <link href="~/Content/Plugins/Loading/css/jquery.loadingModal.min.css" rel="stylesheet" />
+    <link href="~/Content/Custom/css/custom.css" rel="stylesheet" />
+    <link href="~/Content/Custom/css/account.css" rel="stylesheet" />
+    <!--Harita-->
+
+    @RenderSection("Css", false)
+
+
+    <!--Default-->
+    <script src="~/content/themes/js/jquery-2.1.1.js"></script>
+    <script src="~/Content/Themes/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="~/content/themes/js/bootstrap.min.js"></script>
+    <script src="~/content/themes/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/content/themes/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/content/themes/js/inspinia.js"></script>
+    <script src="~/content/themes/js/plugins/pace/pace.min.js"></script>
+    <script src="~/Content/Themes/js/plugins/linq/jquery.linq.min.js"></script>
+    <script src="~/Content/Plugins/Loading/js/jquery.loadingModal.min.js"></script>
+    <script src="~/Content/Themes/js/jquery.livequery.min.js"></script>
+    <script src="~/Content/Themes/js/plugins/toastr/toastr.min.js"></script>
+    <script src="~/Content/Plugins/Validator/js/Validator.js"></script>
+    <script type="text/javascript" src="~/Content/Custom/js/language.js"></script>
+    @*<script src="~/Content/Custom/js/master.js"></script>*@
+    <!--Default-->
+
+
+    <script src="~/Content/Kendo/js/jszip.min.js"></script>
+    <script src="~/Content/Kendo/js/kendo.all.min.js"></script>
+    <script src="~/Content/Kendo/js/kendo.aspnetmvc.min.js"></script>
+    <script src="~/Content/Kendo/js/messages/kendo.messages.en-US.min.js"></script>
+    <script src="~/Content/Kendo/js/messages/kendo.messages.tr-TR.min.js"></script>
+    <script src="~/Content/Kendo/js/cultures/kendo.culture.tr-TR.min.js"></script>
+    <script src="~/Content/Kendo/js/cultures/kendo.culture.en-US.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            if (window.localStorage["language"] == "TR") {
+                kendo.culture("tr-TR");
+            } else if (window.localStorage["language"] == "ENG") {
+                kendo.culture("en-US");
+            }
+            else if (window.localStorage["language"] == "RU") {
+                kendo.culture("ru-RU");
+            }
+
+        });
+
+    </script>
+
+
+    <style type="text/css">
+        .credit {
+            position: absolute;
+            z-index: 99;
+            background-color: rgba(215, 22, 53, 0.85);
+            color: white;
+            padding: 28px;
+            font-size: 21px;
+            margin-top: 42px;
+        }
+
+        .carousel-caption {
+            bottom: 42px;
+            right: 1%;
+            left: 52%;
+        }
+
+            .carousel-caption p {
+                font-size: 15px;
+                color: white;
+            }
+
+        .text-carousel {
+            background-color: rgba(0, 0, 0, 0.50);
+        }
+
+        .carousel-caption {
+            padding-left: 20px;
+            padding-right: 20px;
+            right: 0px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div class="container-fluids">
+        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12" id="login">
+            <div class="content">
+                <h3 class="header">
+                    <a href="@Url.Action("Index","Home",new {area="" })">
+                        <img src="~/Content/Custom/img/infolinelogo.png" class="logo" />
+                    </a>
+                    <br />
+                    <strong> INFOLINE | WORK OF TIME </strong><br /> @ViewBag.Title
+                </h3>
+                @RenderBody()
+                <p class="text-center copyright">
+                    Infoline | Work Of Time  <br> © 2020 Tüm hakları Saklıdır.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("Javascript", false)
+
+</body>
+</html>

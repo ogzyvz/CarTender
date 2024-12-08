@@ -1,0 +1,513 @@
+﻿
+@import url(http://fonts.googleapis.com/css?family=Rambla:400,400italic,700,700italic);
+
+
+.minimalize-styl-1 {
+    /*position: absolute;*/
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index:9999 !important;
+}
+
+.navbar-default .sidebar-collapse {
+    padding-bottom:100px;
+}
+
+.nav-second-level li a {
+    padding: 7px 10px 7px 10px;
+    padding-left: 48px;
+}
+
+body.mini-navbar .navbar-static-side {
+    width: 70px;
+    position: fixed;
+    text-align: center;
+}
+
+
+
+
+form {
+    padding: 30px;
+    background: #fff;
+}
+
+.panel-content form {
+    padding: 0px !important;
+}
+
+.help-block {
+    margin: 0 !important;
+}
+
+    .help-block ul {
+        padding: 10px 0;
+        margin: 0 !important;
+    }
+
+.modal-body form {
+    padding: 0px !important;
+}
+
+.buttons:after {
+    clear: both;
+}
+
+
+.k-grid-excel, .k-grid-pdf {
+    float: right;
+}
+
+.checkbox-inline {
+    padding: 5px 0 0 20px !important;
+}
+
+/*.k-radio-label {
+    margin-top: -10px !important;
+    top:5px;
+}*/
+
+.k-radio:checked + .k-radio-label:after {
+    background-color: #1c84c6;
+}
+
+.k-radio-label {
+    background-color: #1c84c6;
+    border-radius: 50%;
+    margin-bottom: 5px !important;
+}
+
+    .k-radio-label:hover {
+        background-color: #1c84c6;
+        font-size: 25px !important;
+    }
+
+    .k-radio-label:active {
+        box-shadow: none !important;
+    }
+
+    .k-radio-label:before {
+        width: 20px !important;
+        height: 20px !important;
+        border: 3px solid #1c84c6;
+    }
+
+.k-radio:checked + .k-radio-label:after {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+
+
+
+
+.form-control {
+    border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+    padding: 20px 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    background: #fff !important;
+    border: 1px #ccc solid;
+}
+
+select.form-control {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 15px !important;
+}
+
+/*select.form-control option {
+        height: 20px !important;
+        line-height: 20px !important;
+    }*/
+
+.k-datepicker input, .k-datetimepicker input {
+    cursor: default !important;
+}
+
+
+.form-control.k-widget {
+    height: auto !important;
+    width: 100%;
+    border: 1px #ccd solid !important;
+}
+
+    .form-control.k-widget input {
+        border: none;
+    }
+
+.form-control .k-dropdown-wrap, .form-control .k-picker-wrap, .form-control .k-multiselect-wrap {
+    border: 0 !important;
+    box-shadow: none !important;
+    -webkit-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+    padding: 3px 0 !important;
+}
+
+.form-control .k-state-default {
+    background: #fff !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    -webkit-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+    padding: 3px 0 !important;
+}
+
+.form-control:focus {
+    border: 1px solid #3fb206;
+}
+
+
+
+.k-widget.k-colorpicker {
+    width: 100%;
+    border-radius: 0 !important;
+}
+
+.k-colorpicker .k-select {
+    display: none !important;
+}
+
+.k-widget.k-colorpicker .k-picker-wrap {
+    padding: 8px 10px 10px 10px;
+    height: 22px;
+}
+
+    .k-widget.k-colorpicker .k-picker-wrap .k-selected-color {
+        height: 18px;
+        cursor: pointer;
+        width: calc(100%);
+    }
+
+    .k-widget.k-colorpicker .k-picker-wrap.k-state-border-down {
+        border-bottom-width: 1px;
+    }
+
+
+
+input[data-toggle="ImageInput"] {
+    background-repeat: no-repeat !important;
+    background-position: center right !important;
+    background-position-x: 8px !important;
+    background-size: 30px 30px !important;
+}
+
+
+ul.ImageInputList {
+    width: 100%;
+    height: 200px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px #ccc solid;
+    padding: 0 !important;
+}
+
+    ul.ImageInputList li {
+        width: 38px;
+        height: 38px;
+        margin: 5px;
+        float: left;
+        list-style: none;
+        border: 1px #ccc solid;
+        cursor: pointer;
+    }
+
+        ul.ImageInputList li:hover {
+            background: #ccc;
+        }
+
+        ul.ImageInputList li img {
+            width: 34px;
+            heighT: 34px;
+            margin: 2px;
+        }
+
+/*.control-label {
+    padding: 10px 0 !important;
+}*/
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 12px;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    font-size: 12px;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    font-size: 12px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    font-size: 12px;
+}
+
+.list-unstyled {
+    font-size: 13px !important;
+}
+
+.buttons {
+    padding: 40px 0;
+}
+
+.bootstrap-dialog.type-info .modal-header {
+    background-color: #3343a4 !important;
+}
+
+
+.tab-posts-box .nav.nav-tabs li {
+    width: auto;
+}
+
+    .tab-posts-box .nav.nav-tabs li a {
+        padding: 10px 15px;
+    }
+
+.tab-posts-box .tab-content {
+    border: 1px #ccc solid;
+    border-top: none;
+    padding: 20px;
+}
+
+    .tab-posts-box .tab-content .tab-pane {
+        padding: 0 !important;
+    }
+
+.nav.nav-tabs .active a, .nav.nav-tabs li a:active, .nav.nav-tabs li a:focus {
+    background: #fff;
+    border-bottom-color: #fff;
+}
+
+.tab-content {
+    background: #fff;
+}
+
+
+
+
+
+.widget-container {
+    margin: 0 auto 30px auto;
+    width: 100%;
+    border-radius: 4px;
+    font: 14px/22px "Rambla", Arial, sans-serif;
+    color: #4a5a67;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    max-height: 365px !important;
+    overflow: hidden;
+}
+
+.widget-content {
+    width: 100%;
+    background: #e8eaec;
+    display: block;
+}
+
+.widget-container.clearfix .widget-content {
+    float: right;
+    width: 40%;
+}
+
+
+
+.widget-container .widget-title i {
+    font-size: 45px;
+    float: left;
+    margin-right: 15px;
+    line-height: 92px;
+}
+
+.widget-container a:hover {
+    text-decoration: none;
+}
+
+.widget-container hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #D4D5CF;
+    margin-top: 20px;
+}
+
+
+.widget-title, .widget-body, .votes {
+    padding: 0 18px;
+}
+
+.widget-title {
+    background: #1483c6;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    color: white;
+    height: 92px;
+    overflow: hidden;
+    position: relative;
+}
+
+    .widget-title a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .widget-title span {
+        display: block;
+        padding-left: 78px;
+        position: absolute;
+        padding-right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+.widget-body {
+    padding-top: 20px;
+    color: #4a5a67;
+    /*background-color: #FFFFD8;*/
+}
+
+    .widget-body .name1 {
+        font-size: 28px;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .widget-body .name2 {
+        padding-top: 5px;
+        font-size: 18px;
+        height: 54px;
+        overflow: hidden;
+    }
+
+    .widget-body .prep-time, .widget-body .calories {
+        color: #b14026;
+    }
+
+    .widget-body .prep-time {
+        padding-top: 20px;
+    }
+
+
+    .widget-body .calories {
+        padding-top: 5px;
+    }
+
+
+.widget-footer {
+    color: #ec6744;
+    padding: 20px;
+    padding-top: 0px;
+}
+
+    .widget-footer .rating {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .widget-footer img {
+        position: absolute;
+        bottom: 29px;
+        right: 39px;
+    }
+
+    .widget-footer i {
+        float: left;
+        font-size: 40px;
+        margin-right: 15px;
+    }
+
+.page-heading {
+    padding: 0;
+}
+
+.breadcrumb {
+    padding: 26px 20px;
+}
+
+
+
+.table > thead > tr > th {
+    padding: 14px 8px !important;
+}
+
+.table {
+    border-top: 1px #ddd solid;
+}
+
+
+form fieldset {
+    border: 1px #cfcfcf solid !important;
+    padding: 0px 25px 0px 25px !important;
+    margin: 0 0 40px 0 !important;
+    -webkit-box-shadow: 0px 0px 0px 0px #000;
+    box-shadow: 0px 0px 0px 0px #000;
+    border-radius: 0px;
+}
+
+
+
+    form fieldset legend {
+        font-size: 16px !important;
+        font-weight: bold !important;
+        text-align: left !important;
+        width: auto;
+        padding: 0 10px;
+        border-bottom: none;
+        color: #000;
+        margin-left: 30px;
+    }
+
+.mb0 {
+    margin-bottom: 0px !important;
+}
+
+
+
+
+/**Kendo Multi Select Temizle Start*/
+.k-autocomplete > .k-i-close, .k-multiselect > .k-multiselect-wrap > .k-i-close {
+    right: 10px;
+}
+
+.k-multiselect > .k-multiselect-wrap > .k-i-close {
+    top: 10px;
+}
+
+.k-autocomplete > .k-i-close, .k-combobox > .k-dropdown-wrap > .k-i-close, .k-multiselect > .k-multiselect-wrap > .k-i-close {
+    font-size: 100%;
+    display: none;
+    position: absolute;
+    right: 34px;
+    cursor: pointer;
+}
+
+.k-autocomplete > .k-i-all, .k-combobox > .k-dropdown-wrap > .k-i-all, .k-multiselect > .k-multiselect-wrap > .k-i-all {
+    display: none;
+    position: absolute;
+    right: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    top: 9px;
+}
+
+.k-multiselect :hover > .k-i-all {
+    display: block !important;
+}
+
+.k-multiselect :hover > .k-i-close {
+    display: block !important;
+}
+/**Kendo Multi Select Temizle Finsh*/

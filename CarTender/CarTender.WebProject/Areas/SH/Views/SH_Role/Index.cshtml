@@ -1,0 +1,39 @@
+﻿@model CarTender.BusinessData.VWSH_RolePageReport
+@{
+    ViewBag.Title = "Rol Tanımlama";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("yellow").Text("Toplam Rol Sayısı").Value(Model.ToplamSayi +" Adet").IconClass("fa fa-tasks")
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("navy").Text("En Çok Kullanılan Rol").Value(Model.EnFazlaRolSayisi).IconClass("fa fa-user-plus")
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("blue").Text("En Az Kullanılan Rol").Value(Model.EnAzRolSayisi).IconClass("fa fa-user")
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("red").Text("Son Kaydedilen Rol Tarihi").Value(Model.SonKayitTarihi.ToShortDateString()).IconClass("fa fa-calendar")
+    </div>
+</div>
+
+@(
+
+    Html.Akilli().Grid <CarTender.BusinessData.SH_Role > ("SH_Role")
+     .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "SH_Role", new { area = "SH" })).PageSize(25))
+     .Columns(a =>
+     {
+         a.Bound(q => q.id).GridSelector(GridSelectorType.Checkbox);
+         a.Bound(y => y.created).Title("Kayıt Tarihi").Format(Extensions.DateFormatShort(true)).Width(160);
+         a.Bound(y => y.rolname).Title("Rol İsmi");
+     })
+     .ToolBar(x =>
+     {
+         x.Custom().Text("Ekle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "always" }, { "data-method", "GET" } }).Url(Url.Action("Insert", "SH_Role", new { area = "SH" }));
+         x.Custom().Text("Düzenle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-method", "GET" } }).Url(Url.Action("Update", "SH_Role", new { area = "SH" }));
+         x.Custom().Text("Detay").HtmlAttributes(new Dictionary<string, object>() { { "data-modal", "false" },{ "data-show", "single" }, { "data-default", "" } }).Url(Url.Action("Detail", "SH_Role", new { area = "SH" }));
+         x.Custom().Text("Sil").HtmlAttributes(new Dictionary<string, object>() { { "data-ask", "" } }).Url(Url.Action("Delete", "SH_Role", new { area = "SH" }));
+     })
+)

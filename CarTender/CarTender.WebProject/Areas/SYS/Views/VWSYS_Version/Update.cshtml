@@ -1,0 +1,68 @@
+﻿@model CarTender.BusinessData.VWSYS_Version
+@{
+    ViewBag.Title = "Kayıt Güncelleme";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "VWSYS_Version", FormMethod.Post, new Dictionary<string, object>() {
+    { "class", "form-horizontal" },
+    { "role", "form" },
+    { "data-selector", "modalContainer" },
+    { "data-formType", "Ajax" }
+}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md req" for="versionNumber">Versiyon Numarası</label>
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.versionNumber, new Dictionary<string, object>()
+            {
+                {"class", "form-control"},
+                {"placeholder", "Lütfen versiyon numarası Giriniz.."},
+            }).Validate(Validations.TextEveryone(true))
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="versionChange">Versiyon Değişiklikleri</label>
+        </div>
+        <div class="col-md-8">
+
+            @Html.HiddenFor(a => a.versionChange)
+            @Html.TextArea("versionChangeElement", HttpUtility.HtmlDecode(Model.versionChange))
+            <script type="text/javascript" data-selector="modalContainer">
+                var editor = CKEDITOR.replace('versionChangeElement', {
+                    language: 'tr',
+                    height: 250,
+                    htmlEncodeOutput: true
+                });
+
+                editor.on('instanceReady', function () { $("#versionChange").val(new Option(editor.getData()).innerHTML); });
+                editor.on('change', function () { $("#versionChange").val(new Option(editor.getData()).innerHTML); });
+            </script>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            <label class="control-label label-md" for="isActive">Aktif Versiyon mu?</label>
+        </div>
+        <div class="col-md-8">
+            @(Html.Kendo().CheckBoxFor(a=>a.isActive))
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="btn btn-md btn-danger pull-left" data-task="modalClose">Geri</button>
+        <button class="btn btn-md btn-success pull-right" type="submit">Kaydet</button>
+    </div>
+
+}

@@ -1,0 +1,285 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Demo Talebi";
+}
+
+<style>
+    .info-column {
+        margin-bottom: 15px;
+        height: 370px;
+        margin: 10px
+    }
+
+    .single-info-box {
+        text-align: center;
+        padding-top: 7%;
+    }
+        /*
+    .icon-box {
+        margin: revert;
+    }*/
+
+        .single-info-box h2 {
+            padding-top: 4%;
+            color: #ff0000;
+            font-size: 35px;
+            font-weight: 600;
+        }
+
+        .single-info-box .text {
+            padding-top: 2%;
+        }
+
+    @@media (min-width: 992px) {
+        .test {
+            max-width: 31.333333%;
+        }
+    }
+
+    .text {
+        color: #9d9d9d
+    }
+</style>
+
+<section class="page-title" style="background-image: url(../../Content/Custom/Template/Images/Demo/demo-header.png);">
+    <div class="anim-icons">
+        <div class="icon icon-1"><img src="~/Content/Themes2/images/icons/anim-icon-17.png" alt="anim-icon-17" title="anim-icon-17"></div>
+        <div class="icon icon-2 rotate-me"><img src="~/Content/Themes2/images/icons/anim-icon-18.png" alt="anim-icon-18" title="anim-icon-18"></div>
+        <div class="icon icon-3 rotate-me"><img src="~/Content/Themes2/images/icons/anim-icon-19.png" alt="anim-icon-19" title="anim-icon-19"></div>
+    </div>
+    <div class="container">
+        <div class="content-box clearfix">
+            <div class="title-box pull-left">
+                <h1>Demo Talebi</h1>
+                <ul class="bread-crumb ">
+                    <li><a href="Index/Home">Ana Sayfa</a></li>
+                    <li>Demo Talebi</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 info-column test" style="box-shadow: 0px 1px 11px 9px #f4f4f4;border-radius: 25px;">
+                <div class="single-info-box">
+                    <figure class="icon-box"><img src="~/Content/Custom/Template/Images/Demo/phone.png" alt=""></figure>
+                    <h2>Telefon</h2>
+                    <div class="text">
+                        Ankara Merkez Ofis
+                        +90 312 440 02 50<br>
+                        İstanbul Ar-Ge Ofis
+                        +90 212 212 19 23
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 info-column test" style="box-shadow: 0px 1px 11px 9px #f4f4f4;border-radius: 25px;">
+                <div class="single-info-box">
+                    <figure class="icon-box"><img src="~/Content/Custom/Template/Images/Demo/e-mail.png" alt=""></figure>
+                    <h2>E-Mail</h2>
+                    <div class="text" style="padding-top:8%;">
+                        <a href="mailto:destek@workoftime.com" style="text-decoration:none;">destek@workoftime.com</a>
+                    </div>
+                    <div class="text" style="padding-top:1%;">
+                        <a href="mailto:info@infoline-tr.com" style="text-decoration:none;">info@infoline-tr.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 info-column test" style="box-shadow: 0px 1px 11px 9px #f4f4f4;border-radius: 25px;">
+                <div class="single-info-box">
+                    <figure class="icon-box"><img src="~/Content/Custom/Template/Images/Demo/location.png" alt=""></figure>
+                    <h2>Adres</h2>
+                    <div class="text">
+                        Merkez Ofis: Arp Kule İş Merkezi<br />
+                        Etimesgut\Ankara<br />
+                        Ar-Ge: Yıldız Teknik Üniversitesi
+                        Teknopark B2 Blok / İstanbul
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <section  class="faq-section" id="demoTalebi">
+            <div class="row">
+                <div class="contact-form-area container">
+                    <div class="sec-title center" style="margin-bottom: 60px;">
+                        <h2 style="color: #ff0000; font-weight: 700; font-size: 50px;margin-bottom: 15px; ">Demo Talebi</h2>
+
+                        <div class="section-title center">
+                            WorkOfTime'ın size özel olarak sunduğu çözümlerden faydalanmak için
+                            hemen formu doldurun, sizinle iletişime geçelim!
+                        </div>
+                    </div>
+
+                    <div class="form-inner">
+                        <form method="post" id="form" class="default-form">
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 col-sm-12 column">
+                                    <div class="form-group">
+                                        <input type="text" name="username" placeholder="Adınız Soyadınız" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 column">
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="Email Adresiniz" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 column">
+                                    <div class="form-group">
+                                        <input type="text" name="company" placeholder="Firmanızın Adı" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 column">
+                                    <div class="form-group">
+                                        <input type="text" name="phone" placeholder="Telefon Numaranız  ->  0555 555 55 55" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                    <div class="form-group">
+                                        <textarea name="message" placeholder="Mesajınız..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                        <div style="padding-top:10px;" class="g-recaptcha" data-sitekey="6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS"></div>
+                                        <br>
+                                    </div>
+
+                                    <div class="form-group message-btn centred">
+                                        <button type="submit" class="theme-btn-two" name="submit-form" id="demoSend" style="background-color: #ff0000; font-weight: 700; font-size: 22px">Hemen Başvur</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</section>
+
+
+<script src='https://www.google.com/recaptcha/api.js' data-selector="modalContainer"></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async="" defer=""></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".switcher__button").on('click', function (e) {
+            $(".switcher__button").toggleClass('switcher__button--enabled');
+            $(".pricing__value").removeClass('pricing__value--hidden');
+            $(".pricing__value").toggleClass('pricing__value--show pricing__value--hide');
+        });
+
+    })
+        .on('success', 'form#InsertDemo', function (e, i) {
+            if (i.Result) {
+                window.location.replace("https://workoftime.com");
+            } else {
+                $('#recap').remove()
+                $('[data-selector="captcha"]').append($('<div id="recap" sitekey="6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS" class="g-recaptcha"></div>'));
+                grecaptcha.render($('#recap')[0], { sitekey: '6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS' });
+
+                //Canlı
+                //6Le1-7AgAAAAAOH7ljmphPx4oxpc7jilaGq1IjJE
+
+                //Local
+                //6LfZ8IUbAAAAALAtrjJt_e4Q93nzLEDHUh6o1rYS
+
+                //Corporate
+                //6LcCq2wgAAAAALtyB_Ffl7AZcHmt6R0WYSe6EneS
+            }
+        })
+        .on('click', '#demoSend', function (e) {
+            e.preventDefault();
+
+            var _this = $(this);
+            var action = '/Home/DemoMailSend';
+            var method = 'post';
+            var data = $('#form').serializeArray();
+            //if ($.Enumerable.From(data).Where(c => c.value == "").Count() > 0) {
+            //    MesajWarning("Tüm alanları doldurun veya güvenlik doğrulamasını gerçekleştirin.")
+            //    return;
+            //}
+
+
+            data.push({ name: 'type', value: $("input[name='type']:checked").val() });
+
+            var title = _this.attr("data-loadingtitle") ? _this.attr("data-loadingtitle") : "lütfen bekleyiniz";
+            var formData = new FormData();
+            var stringData = $('#form').serializeArray();
+            var result = null;
+
+            $.each(stringData, function (key, input) {
+                formData.append(input.name, input.value);
+            });
+
+            $.ajax({
+                url: action,
+                type: method,
+                data: data,
+                beforeSend: function () {
+                    //$('body').loadingModal({ text: title, animation: 'rotatingPlane', backgroundColor: 'black' });
+                    //$('.preloader').show('fade');
+                },
+                success: function (response) {
+                    feedback(response.FeedBack);
+                    if (response.Result) {
+                        var modal = _this.parents(".modal");
+                        if (modal.length > 0 && typeof _this.attr('data-modal-close') == "undefined") {
+                            modal.modal("hide");
+                        }
+                        $(".k-pager-refresh.k-link").each(function (i, e) {
+                            $(this).trigger("click");
+                        });
+
+                        grecaptcha.reset();
+                    } else {
+                        grecaptcha.reset();
+                    }
+                    _this.trigger("success", response);
+                },
+                error: function () {
+                    feedback("SERVER");
+                },
+                complete: function (response) {
+                    //$('body').loadingModal('destroy');
+                    //$('.preloader').show('fade');
+                    _this.trigger("complete", response.responseJSON, response.responseText);
+                }
+            });
+
+
+        })
+
+    function popup(mylink, windowname) {
+        if (!window.focus)
+            return true;
+        var href;
+        if (typeof (mylink) == 'string')
+            href = mylink;
+        else
+            href = mylink.href;
+        window.open(href, windowname, 'width=1800,height=1000,scrollbars=yes');
+        return false;
+    }
+
+</script>
+
+<script src="~/Content/Themes/js/plugins/toastr/toastr.min.js"></script>
+
+<script src="~/Content/Themes2/js/script.js"></script>
+<script src="~/Content/Themes2/js/tilt.jquery.js"></script>
+<script src="~/Content/Themes2/js/jquery.js"></script>
+<script src="~/Content/Themes2/js/owl.js"></script>
+<script src="~/Content/Themes2/js/wow.js"></script>
+<script src="~/Content/Themes2/js/validation.js"></script>
+<script src="~/Content/Themes2/js/appear.js"></script>
+<script src="~/Content/Themes2/js/scrollbar.js"></script>
+<script src="~/Content/Themes2/js/jquery.paroller.min.js"></script>

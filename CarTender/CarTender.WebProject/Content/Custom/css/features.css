@@ -1,0 +1,78 @@
+﻿#home {
+    height: 27% !important;
+}
+
+.features-title {
+    font-weight: 700;
+    text-align: center;
+    color: #00426f;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 37px;
+}
+
+.footer {
+    margin-top: 80px;
+    padding: 50px 0 !important;
+    background-color: #00426f !important;
+}
+
+.icon-stil {
+    padding: 10px 10px 10px 8px;
+}
+
+
+.title-underline {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: auto;
+    position: relative;
+    z-index: 3;
+}
+
+    .title-underline:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 127px;
+        height: 2px;
+        border-radius: 50%;
+        background: -webkit-linear-gradient(-45deg, rgba(0, 152, 255, 0.9), rgba(0, 100, 167, 0.9));
+        background: -moz-linear-gradient(-45deg, rgba(0, 152, 255, 0.9), rgba(0, 100, 167, 0.9));
+        background: -o-linear-gradient(-45deg, rgba(0, 152, 255, 0.9), rgba(0, 100, 167, 0.9));
+        background: linear-gradient(-45deg, rgba(0, 152, 255, 0.9), rgba(0, 100, 167, 0.9));
+        top: 9px;
+        left: -58px;
+        z-index: -1;
+    }
+
+    .title-underline:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 162px;
+        height: 2px;
+        border-radius: 50%;
+        background: -webkit-linear-gradient(-45deg, rgba(0, 152, 255, 0.9), rgba(0, 100, 167, 0.9));
+        background: -moz-linear-gradient(-45deg, rgba(0, 152, 255, 0.9), rgba(0, 100, 167, 0.9));
+        background: -o-linear-gradient(-45deg, rgba(0, 152, 255, 0.9), rgba(0, 100, 167, 0.9));
+        background: linear-gradient(-45deg, rgba(0, 152, 255, 0.9), rgba(0, 100, 167, 0.9));
+        top: 11px;
+        right: -75px;
+        z-index: -1;
+    }
+
+    .title-underline i {
+        background: -webkit-linear-gradient(-45deg, rgba(0, 152, 255, 0.9), rgba(0, 100, 167, 0.9));
+        background: -moz-linear-gradient(-45deg, rgba(0, 152, 255, 0.9), rgba(0, 100, 167, 0.9));
+        background: -o-linear-gradient(-45deg, rgba(0, 152, 255, 0.9), rgba(0, 100, 167, 0.9));
+        background: linear-gradient(-45deg, rgba(0, 152, 255, 0.9), rgba(0, 100, 167, 0.9));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding-top: 4px;
+    }
+
+
+
+        

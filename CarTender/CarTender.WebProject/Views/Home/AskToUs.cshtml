@@ -1,0 +1,231 @@
+﻿@model CarTender.WebProject.Controllers.CategoryListModel
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Bize Sorun";
+}
+
+
+
+<style>
+    .service-block-two .inner-box:before {
+        background-image: linear-gradient(0deg, #940000 0%, #ff0000 100%);
+    }
+
+    .service-block-two .inner-box {
+        height: 370px;
+    }
+
+        .service-block-two .inner-box h4 a {
+            color: #ff0000;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .service-block-two .inner-box .text {
+            font-size: 18px;
+        }
+
+    .free-estimate .inner-box h2 {
+        color: #5a5a5b;
+        font-size: 50px;
+        font-weight: 700;
+    }
+
+    .theme-btn-two {
+        background: #ff0000;
+        font-size: 25px;
+        width: 250px;
+    }
+
+    .free-estimate .inner-box .btn-box .theme-btn-two {
+        font-size: 28px;
+        font-weight: 700;
+        width: 100%;
+    }
+
+    .sec-title h2 {
+        color: #ff0000;
+        font-weight: 700;
+    }
+
+    .modall-header {
+        background-color: #ff0000;
+    }
+
+    .modall-footer {
+        background-color: #ff0000;
+    }
+
+</style>
+
+<section class="page-title" style="background-image: url(../../Content/Custom/Template/Images/AsktoUs/asktous-header.png);">
+    <div class="anim-icons">
+        <div class="icon icon-1"><img src="~/Content/Themes2/images/icons/anim-icon-17.png" alt="anim-icon-17" title="anim-icon-17"></div>
+        <div class="icon icon-2 rotate-me"><img src="~/Content/Themes2/images/icons/anim-icon-18.png" alt="anim-icon-18" title="anim-icon-18"></div>
+        <div class="icon icon-3 rotate-me"><img src="~/Content/Themes2/images/icons/anim-icon-19.png" alt="anim-icon-19" title="anim-icon-19"></div>
+    </div>
+    <div class="container">
+        <div class="content-box clearfix">
+            <div class="title-box pull-left">
+                <h1>Bize Sorun</h1>
+                <ul class="bread-crumb ">
+                    <li><a href="/Home/Index">Ana Sayfa</a></li>
+                    <li>Bize Sorun</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <br /><br />
+    <br /><br /><br /><br />
+</section>
+
+<section class="service-style-two elements centred">
+    <div class="container">
+        <div class="inner-content">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-two wow fadeInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box" id="modall-btn">
+                            <div class="icon-box">
+                                <img src="~/Content/Custom/Template/Images/AsktoUs/destek-icon.png" alt="Destek Icon" title="Destek Icon" />
+                            </div>
+                            <h4><a>Destek</a> </h4>
+                            <div class="text">
+                                Müşterilerimize satış sonrasında eğitim, veri giriş desteği, kullanım desteği gibi konularda destek hizmetleri sunmaktayız..
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-two wow fadeInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box" id="modall-btn">
+                            <div class="icon-box">
+                                <img src="~/Content/Custom/Template/Images/AsktoUs/Support_Channel.png" alt="Destek Icon" title="Destek Icon" />
+                            </div>
+                            <h4><a>Destek Kanallarımız</a> </h4>
+                            <div class="text">destek@workoftime.com</div>
+                            <div class="text">support@workoftime.com</div>
+                            <div class="text">
+                                +90 212 212 19 23<br />
+                                +90 312 440 02 50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-two wow fadeInRight animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <img src="~/Content/Custom/Template/Images/AsktoUs/basvur-icon.png" alt="Başvur Icon" title="Başvur Icon" />
+                            </div>
+                            <h4><a href="/Home/Demo#demoTalebi">Şimdi Başvur</a></h4>
+                            <div class="text">
+                                WorkOfTime’ın sunduğu tüm
+                                özellikeri keşfet ve WorkOfTime
+                                ailesine katıl
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="SikcaSorulanSorular" class="faq-section">
+    <div class="container">
+        <div class="sec-title"><h2>Sıkça Sorulan Sorular</h2><br /></div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 content-column">
+                @{
+                    for (int i = 0; i < Model.categories.Count(); i++)
+                    {
+                        var id = "c" + (i + 1).ToString();
+                        var display = "";
+
+                        if (i != 0)
+                        {
+                            display = "display:none".ToString();
+                        }
+
+                        <div class="faq-content" id="@id" style="@display">
+
+                            <ul class="accordion-box">
+                                @{
+                                    foreach (var item in Model.faqs.OrderBy(c => c.created))
+
+                                    {
+                                        if (item.categoryId_Title == Model.categories[i].name)
+                                        {
+
+                                            <li class="accordion block">
+                                                <div class="acc-btn">
+                                                    <div class="icon-outer"><i class="fas fa-plus"></i></div>
+                                                    <h4 style="color: #ff0000 !important">@item.name</h4>
+                                                </div>
+                                                <div class="acc-content">
+
+                                                    <div class="content">
+                                         
+                                                        <div class="text" style="word-wrap:break-word">
+                                                            @item.content
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="free-estimate">
+    <div class="image-layer" style="background-image: url(../../Content/Themes2/images/icons/estimate-bg.png);"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1 inner-column">
+                <div class="inner-box clearfix">
+                    <div class="text pull-left">
+                        <h2>
+                            WorkOfTime ile <br />
+                            hemen tanışın ...
+                        </h2>
+                    </div>
+                    <div class="btn-box pull-right"><a href="/Home/Demo" class="theme-btn-two">Demo Talep Et</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<script src="~/Content/Themes2/js/script.js"></script>
+<script src="~/Content/Themes2/js/tilt.jquery.js"></script>
+<script src="~/Content/Themes2/js/jquery.js"></script>
+<script src="~/Content/Themes2/js/popper.min.js"></script>
+<script src="~/Content/Themes2/js/bootstrap.min.js"></script>
+<script src="~/Content/Themes2/js/owl.js"></script>
+<script src="~/Content/Themes2/js/wow.js"></script>
+<script src="~/Content/Themes2/js/validation.js"></script>
+<script src="~/Content/Themes2/js/appear.js"></script>
+<script src="~/Content/Themes2/js/scrollbar.js"></script>
+<script src="~/Content/Themes2/js/jquery.paroller.min.js"></script>
+
+
+<script src="~/Content/Themes/js/plugins/toastr/toastr.min.js"></script>

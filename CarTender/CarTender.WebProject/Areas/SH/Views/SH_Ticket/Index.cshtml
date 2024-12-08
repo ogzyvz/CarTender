@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Kullanıcı Giriş - Çıkış Havuzu";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+@(
+    Html.Akilli().Grid<CarTender.BusinessData.VWSH_Ticket>("VWSH_Ticket")
+    .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "SH_Ticket", new { area = "SH" })).PageSize(25))
+    .Columns(a =>
+    {
+        a.Bound(q => q.id).GridSelector(GridSelectorType.Checkbox);
+        a.Bound(y => y.user_Title).Title("Kullanıcı").Width(300);
+        a.Bound(y => y.createtime).Title("createtime").Width(100).Format(Extensions.DateFormatFull(true));
+        a.Bound(y => y.endtime).Title("endtime").Width(100).Format(Extensions.DateFormatFull(true));
+        a.Bound(y => y.IP).Title("IP").Width(100);
+    })
+    .ToolBar(x =>
+    {
+        //x.Custom().Text("Ekle").HtmlAttributes(new Dictionary<string, object>() { { "data-task", "Insert" }, { "data-modal", "true" }, { "data-target", Url.Action("Insert", "SH_Ticket", new { area = "SH" }) } }).Url("#");
+        //x.Custom().Text("Düzenle").HtmlAttributes(new Dictionary<string, object>() { { "data-task", "Update" }, { "data-modal", "true" }, { "data-target", Url.Action("Update", "SH_Ticket", new { area = "SH" }) } }).Url("#");
+        x.Custom().Text("Detay").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-default", "" } }).Url(Url.Action("Detail", "SH_Ticket", new { area = "SH" }));
+        //x.Custom().Text("Sil").HtmlAttributes(new Dictionary<string, object>() { { "data-task", "Delete" }, { "data-modal", "true" }, { "data-target", Url.Action("Delete", "SH_Ticket", new { area = "SH" }) } }).Url("#");
+
+
+    })
+)

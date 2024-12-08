@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Soru/İçerik İşlemleri";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}   
+
+
+@(Html.Akilli()
+    .Grid<CarTender.BusinessData.VWHDM_Faq>("VWHDM_Faq")
+    .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "VWHDM_Faq", new { area = "HDM" })).Sort(a => a.Add(c => c.created)).PageSize(25))
+    .Columns(x =>
+    {
+        x.Bound(y => y.id).GridSelector(GridSelectorType.Checkbox);
+        x.Bound(y => y.name).Title("Soru/İçerik").Width(120);
+        x.Bound(y => y.content).Title("Açıklama").Width(250);
+    })
+    .Selectable(x => x.Mode(GridSelectionMode.Multiple))
+    .ToolBar(x =>
+    {
+        x.Custom().Text("Ekle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "always" }, { "data-method", "GET" } }).Url(Url.Action("Insert", "VWHDM_Faq", new { area = "HDM" }));
+        x.Custom().Text("Düzenle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-method", "GET" } }).Url(Url.Action("Update", "VWHDM_Faq", new { area = "HDM" }));
+        x.Custom().Text("Detay").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-default", "" } }).Url(Url.Action("Detail", "VWHDM_Faq", new { area = "HDM" }));
+        x.Custom().Text("SİL").HtmlAttributes(new Dictionary<string, object>() { { "data-ask", "" } }).Url(Url.Action("Delete", "VWHDM_Faq", new { area = "HDM" }));
+    }))

@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Kiracı Listesi";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+
+
+
+@(Html.Akilli()
+.Grid<CarTender.BusinessData.TEN_Tenant>("TEN_Tenant")
+.DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "TEN_Tenant", new { area = "TEN" })).Sort(a=>a.Add(c=>c.TenantCode)).PageSize(25))
+.Columns(x =>
+{
+    x.Bound(y => y.id).GridSelector(GridSelectorType.Checkbox).Width(150);
+    x.Bound(y => y.TenantCode).Title("Kiracı Kodu").Width(100);
+    x.Bound(y => y.TenantName).Title("Kiracı Adı").Width(200);
+    x.Bound(y => y.DBCatalog).Title("Katalog Adı").Width(200);
+    x.Bound(y => y.WebDomain).Title("Web Domainleri").Width(250);
+    x.Bound(y => y.ServiceDomain).Title("Servis Domainleri").Width(250);
+})
+.Scrollable(a=>a.Height(730))
+.Selectable(x => x.Mode(GridSelectionMode.Single))
+.ToolBar(x =>
+{
+    x.Custom().Text("Ekle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "always" }, { "data-method", "GET" } }).Url(Url.Action("Insert", "TEN_Tenant", new { area = "TEN",isPOC=false }));
+    x.Custom().Text("Düzenle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-method", "GET" } , { "data-modal", "false" }}).Url(Url.Action("Update", "TEN_Tenant", new { area = "TEN" }));
+    //x.Custom().Text("Detay").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-default", "" } }).Url(Url.Action("Detail", "TEN_Tenant", new { area = "TEN" }));
+    x.Custom().Text("Sil").HtmlAttributes(new Dictionary<string, object>() { { "data-ask", "" } }).Url(Url.Action("Delete", "TEN_Tenant", new { area = "TEN" }));
+}))

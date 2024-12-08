@@ -1,0 +1,66 @@
+﻿@model CarTender.BusinessData.VWSH_UserPageReport
+@{
+    ViewBag.Title = "Kullanıcı Havuzu";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("yellow").Text("Toplam Kullanıcı Sayısı").Value(Model.ToplamKullaniciSayisi + " Adet").IconClass("fa fa-users")
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("navy").Text("Onaylanmış Kullanıcı Sayısı").Value(Model.OnayliKullaniciSayisi + " Adet").IconClass("fa fa-user-plus")
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("blue").Text("Onay Bekleyen Kullanıcı Sayısı").Value(Model.OnaysizKullaniciSayisi + " Adet").IconClass("fa fa-user-times")
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        @Html.Akilli().Card().Color("red").Text("Son Kaydolma Tarihi").Value(Model.SonKayitTarihi.ToShortDateString()).IconClass("fa fa-calendar")
+    </div>
+</div>
+
+
+    
+@(Html.Akilli().Grid <CarTender.BusinessData.VWSH_User > ("VWSH_User")
+    .DataSource(a => a.Ajax().Read(q => q.Action("DataSource", "VWSH_User", new { area = "SH" })).PageSize(25))
+    .Columns(a =>
+    {
+        a.Bound(q => q.id).GridSelector(GridSelectorType.Checkbox).DataColumn(user => user.status);
+        a.Bound(y => y.Type_Title).Title("Kullanıcı Tipi").Width(80);
+        a.Bound(y => y.status_Title).Title("Kullanıcı Durumu").Width(90);
+        a.Bound(y => y.tckimlikno).Title("TC Kimlik No").Width(90);
+        a.Bound(y => y.firstname).Title("Ad ").ClientTemplate("# if (lastname != null) { #  <span>#=kendo.toString(firstname)# #=kendo.toString(lastname)#</span> # }else {# <span></span> #} #").Width(140);
+        a.Bound(y => y.title).Title("Ünvan").Width(120);
+        a.Bound(y => y.email).Title("Email").Width(120);
+    })
+    .ToolBar(x =>
+    {
+        x.Custom().Text("Ekle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "always" }, { "data-method", "GET" } }).Url(Url.Action("Insert", "VWSH_User", new { area = "SH" }));
+        x.Custom().Text("Düzenle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-method", "GET" } }).Url(Url.Action("Update", "VWSH_User", new { area = "SH" }));
+        x.Custom().Text("Detay").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-default", "" } }).Url(Url.Action("Detail", "VWSH_User", new { area = "SH" }));
+        x.Custom().Text("Sil").HtmlAttributes(new Dictionary<string, object>() { { "data-ask", "" } }).Url(Url.Action("Delete", "VWSH_User", new { area = "SH" }));
+    })
+)
+
+<script type="text/javascript">
+
+    $(document)
+
+        .on('ready', function () {
+
+        })
+        .on("load:grid", "#VWSH_User", function (e, data) {
+
+            $.each($('.k-grid-content [role="row"]').find('[data-event="GridSelector"]'), function (i, item) {
+                var color = $(item).attr('data-status') == 'true'
+                    ? '#1979b6'
+                    : '#ed5565';
+
+                $(item).parent('td').css('background-color', (color + ' !important'));
+
+            });
+
+        })
+    ;
+
+</script>

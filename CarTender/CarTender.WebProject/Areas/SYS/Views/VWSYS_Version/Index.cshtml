@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<script type="text/javascript">
+
+
+    function setBoolInTurkish(data) {
+        if (data) return "Evet";
+        return "Hayır";
+    };
+ 
+    function ChangeHtml(data) {
+        var y = $("<div/>").html(data).text();
+        return y;  
+
+    };
+
+
+    $(document)
+        .on("ready", function () {
+            $('[data-task="pdf"]').addClass('hide');
+            $('[data-task="excel"]').addClass('hide');
+            
+        })
+</script>
+
+
+@(Html.Akilli()
+    .Grid<CarTender.BusinessData.VWSYS_Version>("VWSYS_Version")
+    .DataSource(x => x.Ajax().Read(r => r.Action("DataSource", "VWSYS_Version", new { area = "SYS" })).PageSize(25))
+    .Columns(x =>
+    {
+        x.Bound(y => y.id).GridSelector(GridSelectorType.Checkbox);
+        x.Bound(y => y.versionNumber).Title("Versiyon Numarası").Width(180);
+        x.Bound(y => y.versionChange).Title("Versiyon Değişiklikleri").Encoded(true).ClientTemplate("#=ChangeHtml(data.versionChange)#").Width(600);
+       
+
+        x.Bound(y => y.isActive).Title("Aktif Versiyon mu?").ClientTemplate("#=setBoolInTurkish(data.isActive)#").Width(180);
+    })
+    .Selectable(x => x.Mode(GridSelectionMode.Multiple))
+    .ToolBar(x =>
+    {
+        x.Custom().Text("Ekle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "always" }, { "data-method", "GET" } }).Url(Url.Action("Insert", "VWSYS_Version", new { area = "SYS" }));
+        x.Custom().Text("Düzenle").HtmlAttributes(new Dictionary<string, object>() { { "data-show", "single" }, { "data-method", "GET" } }).Url(Url.Action("Update", "VWSYS_Version", new { area = "SYS" }));
+        x.Custom().Text("Sil").HtmlAttributes(new Dictionary<string, object>() { { "data-ask", "" } }).Url(Url.Action("Delete", "VWSYS_Version", new { area = "SYS" }));
+
+    })))

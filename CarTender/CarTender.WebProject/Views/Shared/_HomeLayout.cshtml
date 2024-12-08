@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>WorkOfTime | @ViewBag.Title</title>
+
+
+    <link rel="icon" type="image/x-icon" href="~/Content/Custom/Template/Images/favicon.ico" />
+
+    <!--Themes2 Css-->
+    <link href="~/Content/Themes/css/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/Content/Themes2/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/Themes2/css/font-awesome-all.css" rel="stylesheet" />
+    <link href="~/Content/Themes2/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Themes2/css/flaticon.css" rel="stylesheet" />
+    <link href="~/Content/Themes2/css/imagebg.css" rel="stylesheet" />
+    <link href="~/Content/Themes2/css/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/Themes2/css/jquery.fancybox.min.css" rel="stylesheet" />
+    <link href="~/Content/Themes2/css/modallar.css" rel="stylesheet" />
+    <link href="~/Content/Themes2/css/owl.css" rel="stylesheet" />
+    <link href="~/Content/Themes2/css/style.css" rel="stylesheet" />
+    <link href="~/Content/Themes2/css/responsive.css" rel="stylesheet" />
+
+
+    <!--Js-->
+    @*<script src="~/Content/Custom/js/master.js"></script>*@
+    <script src="~/Content/Custom/js/feedback.js"></script>
+
+    <script src="~/Content/Themes2/js/appear.js"></script>
+    <script src="~/Content/Themes2/js/isotope.js"></script>
+    <script src="~/Content/Themes2/js/jquery.js"></script>
+    <script src="~/Content/Themes2/js/jquery.paroller.min.js"></script>
+    <script src="~/Content/Themes2/js/map-helper.js"></script>
+    <script src="~/Content/Themes2/js/nav-tool.js"></script>
+    <script src="~/Content/Themes2/js/owl.js"></script>
+    <script src="~/Content/Themes2/js/jquery.fancybox.js"></script>
+    <script src="~/Content/Themes2/js/scrollbar.js"></script>
+    <script src="~/Content/Themes2/js/validation.js"></script>
+    <script src="~/Content/Themes2/js/tilt.jquery.js"></script>
+    <script src="~/Content/Themes2/js/wow.js"></script>
+
+
+    <style>
+        .main-footer.style-six .footer-top {
+            padding-bottom: 12px
+        }
+
+        .sticky-header {
+            background-color: #ff0000;
+        }
+
+        .menu-area .mobile-nav-toggler .icon-bar {
+            background-color: white;
+        }
+
+        .mobile-menu .menu-box {
+            background-color: #212121;
+        }
+
+        #preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            background: white url('../../Content/Custom/Template/Images/wot-loading.gif') no-repeat center center;
+        }
+    </style>
+    <!-- Microsoft Bing Clarity tracking code for https://workoftime.com/ -->
+    <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt"; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "femuxn2myd");</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNQKXGZNL1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DNQKXGZNL1');
+    </script>
+
+</head>
+
+<!--Navbar-->
+<body class="boxed_wrapper">
+
+    <div id="preloader"></div>
+
+    <!--Navbar-->
+
+    <header class="main-header">
+        <div class="outer-container">
+            <div class="container">
+                <div class="main-box clearfix">
+                    <div class="logo-box pull-left">
+                        <figure class="logo"><a href="~/Home/"><img src="~/Content/Custom/Template/Images/Homepage/wot-logo-header.png" width="250" height="51" alt="WOT Home Logo" title="WOT Home Logo"></a></figure>
+                    </div>
+                    <div class="menu-area pull-right clearfix">
+                        <!--Mobile Navigation Toggler-->
+                        <div class="mobile-nav-toggler">
+                            <i class="icon-bar"></i>
+                            <i class="icon-bar"></i>
+                            <i class="icon-bar"></i>
+                        </div>
+                        <nav class="main-menu navbar-expand-md navbar-light">
+                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                <ul class="navigation clearfix" id="test1">
+                                    <li>@Html.ActionLink("Ana Sayfa", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("Özellikler", "Feautures", "Home")</li>
+                                    <li>@Html.ActionLink("Ekran Görüntüleri", "ScreenShots", "Home")</li>
+                                    <li>@Html.ActionLink("Referanslar", "References", "Home")</li>
+                                    <li>@Html.ActionLink("Bize Sorun", "Asktous", "Home")</li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--sticky Header-->
+
+        <div class="sticky-header">
+            <div class="container clearfix">
+                <figure class="logo-box"><a href="/Home/"><img src="~/Content/Custom/Template/Images/Homepage/wot-logo-header.png" width="175" style="height:35px;" alt="WOT Home Logo" title="WOT Home Logo"></a></figure>
+                <div class="menu-area">
+                    <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><i class="fas fa-times"></i></div>
+
+        <nav class="menu-box">
+            <div class="nav-logo"><a href="#"><img src="~/Content/Custom/Template/Images/Homepage/wot-logo-header.png" alt="WOT Home Logo" title="WOT Home Logo"></a></div>
+            <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+            <div class="contact-info">
+                <h4>İletişim</h4>
+                <ul>
+                    <li><i class="fa fa-map-marker"></i> Arp Kule İş Merkezi Etimesgut\Ankara </li>
+                    <li><i class="fa fa-map-marker"></i> Yıldız Teknik Üniversitesi Teknopark B2 Blok / İstanbul</li>
+                    <li><i class="fa fa-phone"></i><a href="tel:+903124400250"> +90 (312) 440 02 50</a></li>
+                    <li><i class="fa fa-phone"></i><a href="tel:+902122121923"> +90 (212) 212 19 23</a></li>
+                    <li><a href="mailto:info@workoftime.com">info@workoftime.com</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <ul class="clearfix">
+                    <li><a href="https://www.linkedin.com/company/infolinetr/?originalSubdomain=tr" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://www.instagram.com/infolinetr/?hl=tr#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCzQ5O0c4iLPEak5JoN6q4zA" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="https://www.facebook.com/infolinebilgiteknolojileri/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <span class="fa fa-arrow-up"></span>
+    </button>
+
+    @RenderBody()
+
+    <!--Footer-->
+    @Html.Partial("~/Views/Shared/_LayoutFooter.cshtml")
+
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+            $(window).load(function () {
+                $('#preloader').fadeOut('slow', function () { $(this).remove(); });
+            });
+
+        });
+    </script>
+
+</body>
+
+
+</html>
+
+
