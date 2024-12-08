@@ -13,14 +13,14 @@ namespace CarTender.BusinessAccess
 {
 	public class VMHDM_FaqModel : VWHDM_Faq
 	{
-		private WorkOfTimeManagementDatabase db { get; set; }
+		private CarTenderDatabase db { get; set; }
 		private DbTransaction trans { get; set; }
 
         public VMHDM_FaqModel Load()
 		{
 			//This adamdan aldıgın data 
 
-			this.db = this.db ?? new WorkOfTimeManagementDatabase(); //baglantı
+			this.db = this.db ?? new CarTenderDatabase(); //baglantı
 			var faq = db.GetVWHDM_FaqById(this.id); //adamdan aldıgın datayı idye gore sorgula geri donusunde butun bilgiler gelir
 
             if (faq != null) //eger bossa degılse dıger kısımları doldurmak adına assagıdakı ıslemı gerceklestırıyoruz
@@ -32,7 +32,7 @@ namespace CarTender.BusinessAccess
 		}
         public ResultStatus Delete(DbTransaction transaction = null) //Transaction araştır ?
         {
-            db = db ?? new WorkOfTimeManagementDatabase();
+            db = db ?? new CarTenderDatabase();
             trans = transaction ?? db.BeginTransaction();
 
             var item = db.GetHDM_FaqById(this.id); //neden View'siz ?? 
@@ -70,7 +70,7 @@ namespace CarTender.BusinessAccess
         }
         private ResultStatus Update() //neden private tipi neden ResultStatus ? 
         {
-            db = db ?? new WorkOfTimeManagementDatabase();
+            db = db ?? new CarTenderDatabase();
             var dbresult = new ResultStatus { result = true };
 
             dbresult &= db.UpdateHDM_Faq(new HDM_Faq().B_EntityDataCopyForMaterial(this), false, this.trans); // ??
@@ -95,7 +95,7 @@ namespace CarTender.BusinessAccess
 
         public ResultStatus Save(Guid? userId = null, HttpRequestBase request = null, DbTransaction transaction = null)
         {
-            db = db ?? new WorkOfTimeManagementDatabase();
+            db = db ?? new CarTenderDatabase();
             trans = transaction ?? db.BeginTransaction();
             var data = db.GetVWHDM_FaqById(this.id);
             var res = new ResultStatus { result = true };
@@ -126,7 +126,7 @@ namespace CarTender.BusinessAccess
 
         private ResultStatus Insert()
         {
-            db = db ?? new WorkOfTimeManagementDatabase();
+            db = db ?? new CarTenderDatabase();
             var res = new ResultStatus { result = true };
 
             var dbresult = db.InsertHDM_Faq(new HDM_Faq().B_EntityDataCopyForMaterial(this), this.trans);

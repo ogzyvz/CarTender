@@ -149,7 +149,7 @@ namespace CarTender.WebProject.Areas.SYS.Controllers
         {
 
             Guid? id = null;
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
 
             try
             {

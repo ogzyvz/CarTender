@@ -34,7 +34,7 @@ namespace CarTender.BusinessAccess
     }
 
 
-    partial class WorkOfTimeManagementDatabase
+    partial class CarTenderDatabase
     {
 
         public SH_User[] GetSH_UserByStatus(EnumSH_UserStatus status, DbTransaction tran = null)

@@ -11,7 +11,7 @@ using CarTender.BusinessData;
 
 namespace CarTender.BusinessAccess
 {
-    partial class WorkOfTimeManagementDatabase
+    partial class CarTenderDatabase
     {
         public SH_Pages[] GetSH_PagesByAction(string Action, DbTransaction tran = null)
         {

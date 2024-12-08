@@ -33,9 +33,9 @@ namespace CarTender.BusinessAccess
             var insertList = new List<SYS_Enums>();
             var updateList = new List<SYS_Enums>();
 
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var enums = db.GetSYS_Enums().ToList();
-            //  var projectEnums = typeof(WorkOfTimeManagementDatabase).GetNestedTypes().Where(a => a.IsEnum == true).ToList();
+            //  var projectEnums = typeof(CarTenderDatabase).GetNestedTypes().Where(a => a.IsEnum == true).ToList();
             var projectEnums = Assembly.GetExecutingAssembly().GetTypes().Where(a => a.IsEnum == true).ToList();
 
             foreach (var item in projectEnums)

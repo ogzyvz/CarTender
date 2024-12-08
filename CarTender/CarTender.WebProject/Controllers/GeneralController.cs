@@ -13,7 +13,7 @@ namespace CarTender.WebProject.Controllers
 
         public JsonResult GetEnums([DataSourceRequest]DataSourceRequest request)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var condition = KendoToExpression.Convert(request);
             var result = db.GetSYS_Enums(condition).Select(a => new { Id = a.enumKey, enumDescription = a.enumDescription });
             return Json(result, JsonRequestBehavior.AllowGet);
@@ -33,7 +33,7 @@ namespace CarTender.WebProject.Controllers
 
         public JsonResult GetUT_City()
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var result = db.GetUT_CityCustom();
 
             return Json(result.Select(a => new { Id = a.id, Name = a.NAME, CityNumber = a.CityNumber }).ToArray(), JsonRequestBehavior.AllowGet);
@@ -41,28 +41,28 @@ namespace CarTender.WebProject.Controllers
 
         public JsonResult GetUT_TownByCityNumber(int CityNumber, string filtre)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var result = db.GetUT_TownCustomByCityNumberName(CityNumber, filtre);
             return Json(result.Select(a => new { Id = a.id, Name = a.NAME }).ToArray(), JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetSH_UserByStatus(EnumSH_UserStatus status)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var result = db.GetSH_UserByStatus(status).Select(a => new { Id = a.id, Name = a.firstname + " " + a.lastname + " (" + a.loginname + ")" });
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetSH_Role()
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var result = db.GetSH_Role().Select(a => new { Id = a.id, Name = a.rolname });
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetSH_Pages()
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var result = db.GetSH_Pages().Select(a => new { Id = a.id, Name = a.Action });
             return Json(result, JsonRequestBehavior.AllowGet);
         }

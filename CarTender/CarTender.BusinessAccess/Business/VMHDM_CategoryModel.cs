@@ -13,12 +13,12 @@ namespace CarTender.BusinessAccess
 {
 	public class VMHDM_CategoryModel : VWHDM_Category
 	{
-		private WorkOfTimeManagementDatabase db { get; set; }
+		private CarTenderDatabase db { get; set; }
         private DbTransaction trans { get; set; }
 
         public VMHDM_CategoryModel Load()
 		{
-			this.db = this.db ?? new WorkOfTimeManagementDatabase();
+			this.db = this.db ?? new CarTenderDatabase();
 			var category = db.GetVWHDM_CategoryById(this.id);
 
 			if (category  != null)
@@ -31,7 +31,7 @@ namespace CarTender.BusinessAccess
 
         public ResultStatus Save(Guid? userId = null, HttpRequestBase request = null, DbTransaction transaction = null)
         {
-            db = db ?? new WorkOfTimeManagementDatabase();
+            db = db ?? new CarTenderDatabase();
             trans = transaction ?? db.BeginTransaction();
             var data = db.GetVWHDM_CategoryById(this.id);
             var res = new ResultStatus { result = true };
@@ -62,7 +62,7 @@ namespace CarTender.BusinessAccess
 
         private ResultStatus Insert()
         {
-            db = db ?? new WorkOfTimeManagementDatabase();
+            db = db ?? new CarTenderDatabase();
             var res = new ResultStatus { result = true };
 
             var dbresult = db.InsertHDM_Category(new HDM_Category().B_EntityDataCopyForMaterial(this), this.trans);
@@ -86,7 +86,7 @@ namespace CarTender.BusinessAccess
 
         private ResultStatus Update()
         {
-            db = db ?? new WorkOfTimeManagementDatabase();
+            db = db ?? new CarTenderDatabase();
             var dbresult = new ResultStatus { result = true };
             dbresult &= db.UpdateHDM_Category(new HDM_Category().B_EntityDataCopyForMaterial(this), false, this.trans);
             if (!dbresult.result)
@@ -108,7 +108,7 @@ namespace CarTender.BusinessAccess
         }
         public ResultStatus Delete(DbTransaction transaction = null)
         {
-            db = db ?? new WorkOfTimeManagementDatabase();
+            db = db ?? new CarTenderDatabase();
             trans = transaction ?? db.BeginTransaction();
             var item = db.GetHDM_CategoryById(this.id);
             if (item == null)

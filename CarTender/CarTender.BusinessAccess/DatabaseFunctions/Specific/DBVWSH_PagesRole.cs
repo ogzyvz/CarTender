@@ -24,7 +24,7 @@ namespace CarTender.BusinessAccess
     }
 
 
-    partial class WorkOfTimeManagementDatabase
+    partial class CarTenderDatabase
     {
 
 

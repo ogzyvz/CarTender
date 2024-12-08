@@ -9,7 +9,7 @@ using Infoline;
 
 namespace CarTender.BusinessAccess
 {
-    public partial class WorkOfTimeManagementDatabase
+    public partial class CarTenderDatabase
     {
         public SH_User GetUserInfoByUserName(string userName)
         {

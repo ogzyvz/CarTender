@@ -27,7 +27,7 @@ namespace CarTender.WebProject.Areas.SH.Controllers
             request.Filters = new FilterDescriptor[0];
             request.Sorts = new SortDescriptor[0];
             request.Page = 1;
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var data = db.GetVWSH_Ticket().RemoveGeographies().ToDataSourceResult(request);
             data.Total = db.GetVWSH_TicketCount(condition.Filter);
             return Json(data, JsonRequestBehavior.AllowGet);
@@ -36,7 +36,7 @@ namespace CarTender.WebProject.Areas.SH.Controllers
 
         public ActionResult Detail(Guid id)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var data = db.GetVWSH_TicketById(id);
             return View(data);
         }
@@ -52,7 +52,7 @@ namespace CarTender.WebProject.Areas.SH.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public JsonResult Insert(SH_Ticket item)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var userStatus = (PageSecurity)Session["userStatus"];
             var feedback = new FeedBack();
 
@@ -69,7 +69,7 @@ namespace CarTender.WebProject.Areas.SH.Controllers
 
         public ActionResult Update(Guid id)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var data = db.GetSH_TicketById(id);
             return View(data);
         }
@@ -78,7 +78,7 @@ namespace CarTender.WebProject.Areas.SH.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public JsonResult Update(SH_Ticket item)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var userStatus = (PageSecurity)Session["userStatus"];
             var feedback = new FeedBack();
 
@@ -98,7 +98,7 @@ namespace CarTender.WebProject.Areas.SH.Controllers
         [HttpPost]
         public JsonResult Delete(string[] id)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var feedback = new FeedBack();
 
             var item = id.Select(a => new SH_Ticket { id = new Guid(a) });

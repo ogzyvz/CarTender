@@ -124,7 +124,7 @@ namespace CarTender.WebIntranet.Models
 
         public int FileCount(Guid dataId, string dataTable, string group)
         {
-            using (var db = new WorkOfTimeManagementDatabase().GetDB(null))
+            using (var db = new CarTenderDatabase().GetDB(null))
             {
                 return db.Table<SYS_Files>().Where(a => a.DataId == dataId && a.DataTable == dataTable && a.FileGroup == group).Count();
             }
@@ -135,7 +135,7 @@ namespace CarTender.WebIntranet.Models
         {
             var userStatus = (PageSecurity)HttpContext.Current.Session["userStatus"];
             var fileGroups = _dataTableFileGroup.Where(x => x.Key == _dataTable).FirstOrDefault();
-            using (var db = new WorkOfTimeManagementDatabase().GetDB(null))
+            using (var db = new CarTenderDatabase().GetDB(null))
             {
                 var result = db.Table<VWSYS_Files>().Where(x => x.DataId == dataId).Execute().ToArray();
                 return fileGroups.Value.Select(a => new FileBase
@@ -153,7 +153,7 @@ namespace CarTender.WebIntranet.Models
             var userStatus = (PageSecurity)HttpContext.Current.Session["userStatus"];
             var fileGroups = _dataTableFileGroup.Where(x => x.Key == _dataTable).FirstOrDefault();
 
-            using (var db = new WorkOfTimeManagementDatabase().GetDB(null))
+            using (var db = new CarTenderDatabase().GetDB(null))
             {
                 var result = db.Table<VWSYS_Files>().Where(x => x.DataTable == _dataTable && x.DataId.In(dataIds)).Execute().ToArray();
 
@@ -170,7 +170,7 @@ namespace CarTender.WebIntranet.Models
 
         public VWSYS_Files[] GETSYS_FilesByDataId(Guid dataId)
         {
-            using (var db = new WorkOfTimeManagementDatabase().GetDB(null))
+            using (var db = new CarTenderDatabase().GetDB(null))
             {
                 return db.Table<VWSYS_Files>().Where(x => x.DataId == dataId).Execute().ToArray();
             }
@@ -178,14 +178,14 @@ namespace CarTender.WebIntranet.Models
 
         public VWSYS_Files[] GETSYS_FilesByDataIdAndFileGroup(Guid dataId, string fileGroup)
         {
-            using (var db = new WorkOfTimeManagementDatabase().GetDB(null))
+            using (var db = new CarTenderDatabase().GetDB(null))
             {
                 return db.Table<VWSYS_Files>().Where(x => x.DataId == dataId && x.FileGroup == fileGroup).Execute().ToArray();
             }
         }
         public ResultStatusUI Delete(Guid id)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var trans = db.BeginTransaction();
             try
             {
@@ -250,7 +250,7 @@ namespace CarTender.WebIntranet.Models
             FeedBack FeedBack;
             try
             {
-                var db = new WorkOfTimeManagementDatabase();
+                var db = new CarTenderDatabase();
                 foreach (var path in entity.Select(data => HttpContext.Current.Server.MapPath(data.FilePath)).Where(path => File.Exists(path) == true))
                 {
                     File.Delete(path);
@@ -272,7 +272,7 @@ namespace CarTender.WebIntranet.Models
         {
             path = "/" + path.Substring(path.IndexOf("Files", StringComparison.Ordinal));
             var userStatus = (PageSecurity)HttpContext.Current.Session["userStatus"];
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var sysfiles = new SYS_Files
             {
                 DataId = dataId,

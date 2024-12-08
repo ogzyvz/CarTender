@@ -19,7 +19,7 @@ namespace CarTender.BusinessAccess
         public string extension { get; set; }
     }
 
-    partial class WorkOfTimeManagementDatabase
+    partial class CarTenderDatabase
     {
         //public ResultStatus InsertSA_DemoDemandDemo(Guid createdby,DbTransaction tran = null)
         //{

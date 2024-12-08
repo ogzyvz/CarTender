@@ -11,7 +11,7 @@ using CarTender.BusinessData;
 
 namespace CarTender.BusinessAccess
 {
-    partial class WorkOfTimeManagementDatabase
+    partial class CarTenderDatabase
     {
 
         public VWSH_PagesRolePageReport GetSH_DBVWSH_PagesRolePageReportSummary(DbTransaction tran = null)

@@ -11,7 +11,7 @@ using CarTender.BusinessData;
 
 namespace CarTender.BusinessAccess
 {
-    partial class WorkOfTimeManagementDatabase
+    partial class CarTenderDatabase
     {
 
         public UT_Town[] GetUT_TownCustomByCityNumber(int CityNumber, DbTransaction tran = null)

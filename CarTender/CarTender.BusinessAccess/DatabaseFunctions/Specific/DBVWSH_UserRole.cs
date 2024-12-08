@@ -22,7 +22,7 @@ namespace CarTender.BusinessAccess
         Pasif = 0
     }
 
-    partial class WorkOfTimeManagementDatabase
+    partial class CarTenderDatabase
     {
 
         public SH_UserRole[] GetSH_UserRoleByRoleId(Guid roleid)

@@ -11,23 +11,23 @@ using CarTender.BusinessData;
 
 namespace CarTender.BusinessAccess
 {
-    public partial class WorkOfTimeManagementDatabase
+    public partial class CarTenderDatabase
     {
         public string ConnectionString { get; private set; }
         public DatabaseType DatabaseType { get; private set; }
 
-        public WorkOfTimeManagementDatabase()
+        public CarTenderDatabase()
         {
             if (System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnection"] != null)
                 this.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
 
 #if DEBUG
-            ConnectionString = "Data Source=10.100.0.232;Initial Catalog=WorkOfTimeManagement;User ID=developer;Password=DevInfo2011Line.";
+            ConnectionString = "Data Source=10.100.0.232;Initial Catalog=CarTender;User ID=developer;Password=DevInfo2011Line.";
 #endif
 
         }
 
-        public WorkOfTimeManagementDatabase(string conn)
+        public CarTenderDatabase(string conn)
         {
             this.ConnectionString = conn;
         }

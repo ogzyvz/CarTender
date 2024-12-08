@@ -127,7 +127,7 @@ namespace CarTender.BusinessAccess
 
 
 
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             db.InsertSYS_Email(new SYS_Email
             {
                 id = Guid.NewGuid(),

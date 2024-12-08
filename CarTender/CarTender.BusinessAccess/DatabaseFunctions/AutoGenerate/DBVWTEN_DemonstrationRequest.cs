@@ -11,7 +11,7 @@ using CarTender.BusinessData;
 
 namespace CarTender.BusinessAccess
 {
-    partial class WorkOfTimeManagementDatabase
+    partial class CarTenderDatabase
     {
         /// <summary>
         /// VWTEN_DemonstrationRequest tablosundan tüm kayıtları çeken fonksiyondur

@@ -35,7 +35,7 @@ namespace CarTender.WebProject.Controllers
         [AllowEveryone]
         public ActionResult AskToUs()
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var categories = db.GetVWHDM_Category().Reverse().ToArray();
             var faqs = db.GetVWHDM_Faq();
             var quest = new VWHDM_Question { id = Guid.NewGuid() };
@@ -57,7 +57,7 @@ namespace CarTender.WebProject.Controllers
         [AllowEveryone,HttpPost]
         public ActionResult AskToUs(VWHDM_Question data)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             data.created = DateTime.Now;
 
             if (data.faqId_Title == null)
@@ -168,7 +168,7 @@ namespace CarTender.WebProject.Controllers
         public ActionResult LanguageInsert()
         {
 
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var model = new Dictionary<string, string>();
             var data = new LanguageSearch().GetAllPages()
                 .Where(a => System.IO.File.Exists(Server.MapPath(String.Concat((string.IsNullOrEmpty(a.Area) ? "~" : "~/Areas/" + a.Area), "/Views/", a.Controller, "/", a.Action, ".cshtml"))))

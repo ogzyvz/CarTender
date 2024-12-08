@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CarTender.BusinessAccess
 {
-    partial class WorkOfTimeManagementDatabase
+    partial class CarTenderDatabase
     {
         public ResultStatus InsertCMP_Company(CMP_Company item, DbTransaction tran = null)
         {

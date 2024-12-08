@@ -14,7 +14,7 @@ namespace CarTender.BusinessAccess
 {
 
 
-    partial class WorkOfTimeManagementDatabase
+    partial class CarTenderDatabase
     {
 
         public VWSYS_Version GetVWSYS_VersionExistByVersionNumber(string versionNumber, DbTransaction tran = null)

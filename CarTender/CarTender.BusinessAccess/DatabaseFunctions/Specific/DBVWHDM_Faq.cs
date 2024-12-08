@@ -12,7 +12,7 @@ using System.ComponentModel;
 
 namespace CarTender.BusinessAccess
 {
-    partial class WorkOfTimeManagementDatabase
+    partial class CarTenderDatabase
     {
         public VWHDM_Faq[] GetVWHDM_FaqByCategoryId(Guid categoryId, DbTransaction tran = null)
         {

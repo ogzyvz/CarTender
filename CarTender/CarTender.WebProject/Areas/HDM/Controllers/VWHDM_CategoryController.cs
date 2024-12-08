@@ -27,7 +27,7 @@ namespace CarTender.WebProject.Areas.HDM.Controllers
 			request.Filters = new FilterDescriptor[0];
 			request.Sorts = new SortDescriptor[0];
 			request.Page = 1;
-			var db = new WorkOfTimeManagementDatabase();
+			var db = new CarTenderDatabase();
 			var data = db.GetVWHDM_Category(condition).RemoveGeographies().ToDataSourceResult(request);
 			data.Total = db.GetVWHDM_CategoryCount(condition.Filter);
 			return Content(Infoline.Helper.Json.Serialize(data), "application/json");
@@ -36,7 +36,7 @@ namespace CarTender.WebProject.Areas.HDM.Controllers
 		{
 			var condition = KendoToExpression.Convert(request);
 
-			var db = new WorkOfTimeManagementDatabase();
+			var db = new CarTenderDatabase();
 			var data = db.GetVWHDM_Category(condition);
 			return Content(Infoline.Helper.Json.Serialize(data), "application/json");
 		}
@@ -89,7 +89,7 @@ namespace CarTender.WebProject.Areas.HDM.Controllers
 			//var data = db.DeleteHDM_Category(Guid.Parse(id));
 			//return null;
 			//return Json(new ResultStatusUI(new VMHDM_CategoryModel { id = id }.Delete()), JsonRequestBehavior.AllowGet);
-			var db = new WorkOfTimeManagementDatabase();
+			var db = new CarTenderDatabase();
 			var feedback = new FeedBack();
 			var item = id.Select(a => new HDM_Category
 			{

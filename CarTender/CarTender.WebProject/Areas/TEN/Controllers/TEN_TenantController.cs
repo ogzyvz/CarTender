@@ -28,7 +28,7 @@ namespace CarTender.WebProject.Areas.TEN.Controllers
             request.Filters = new FilterDescriptor[0];
             request.Sorts = new SortDescriptor[0];
             request.Page = 1;
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var data = db.GetTEN_Tenant(condition).RemoveGeographies().ToDataSourceResult(request);
             data.Total = db.GetTEN_TenantCount(condition.Filter);
             return Content(Infoline.Helper.Json.Serialize(data), "application/json");
@@ -39,7 +39,7 @@ namespace CarTender.WebProject.Areas.TEN.Controllers
         {
             var condition = KendoToExpression.Convert(request);
 
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var data = db.GetTEN_Tenant(condition);
             return Content(Infoline.Helper.Json.Serialize(data), "application/json");
         }
@@ -47,7 +47,7 @@ namespace CarTender.WebProject.Areas.TEN.Controllers
 
         public ActionResult Detail(Guid id)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var data = db.GetTEN_TenantById(id);
             return View(data);
         }
@@ -84,7 +84,7 @@ namespace CarTender.WebProject.Areas.TEN.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public JsonResult Insert(TEN_Tenant item)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var userStatus = (PageSecurity)Session["userStatus"];
             var res = new FileUploadSave(Request).SaveAs();
 
@@ -128,7 +128,7 @@ namespace CarTender.WebProject.Areas.TEN.Controllers
 
         public ActionResult Update(Guid id)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var data = db.GetTEN_TenantById(id);
             data.MailSSL = data.MailSSL ?? true;
             return View(data);
@@ -138,7 +138,7 @@ namespace CarTender.WebProject.Areas.TEN.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public JsonResult Update(TEN_Tenant item)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var userStatus = (PageSecurity)Session["userStatus"];
             var feedback = new FeedBack();
 
@@ -184,7 +184,7 @@ namespace CarTender.WebProject.Areas.TEN.Controllers
         [HttpPost]
         public JsonResult Delete(string[] id)
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var feedback = new FeedBack();
 
             var item = id.Select(a => new TEN_Tenant { id = new Guid(a) });

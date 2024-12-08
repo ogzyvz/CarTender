@@ -135,7 +135,7 @@ namespace CarTender.Business.Security
                 var ticketid = context.Request.Params["ticketid"];
                 if (ticketid != null)
                 {
-                    var db = new WorkOfTimeManagementDatabase();
+                    var db = new CarTenderDatabase();
                     var user = db.GetSH_UserByTicketid(new Guid(ticketid));
                     RenderResponse(context, user);
                 }

@@ -14,7 +14,7 @@ namespace Infoline.Web.Utility
     {
         public ResultStatus Run()
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var actions = new List<SH_Pages>();
             var update = new List<SH_Pages>();
             var insert = new List<SH_Pages>();
@@ -161,7 +161,7 @@ namespace Infoline.Web.Utility
         public ResultStatus CreateAndUpdateDeveloperRoles()
         {
 
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
 
             var role = db.GetSH_RoleById(Guid.Empty) ?? new SH_Role
             {

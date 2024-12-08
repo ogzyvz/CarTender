@@ -38,7 +38,7 @@ namespace CarTender.WebProject
 
         public bool CheckDebugStart()
         {
-            var db = new WorkOfTimeManagementDatabase();
+            var db = new CarTenderDatabase();
             var result = db.Login("infoline", "Se2105");
 
             if (result.LoginResult == LoginResult.OK)
@@ -65,7 +65,7 @@ namespace CarTender.WebProject
         {
             if (Session["ticketid"] != null)
             {
-                var db = new WorkOfTimeManagementDatabase();
+                var db = new CarTenderDatabase();
                 db.UpdateSH_Ticket(new SH_Ticket { id = new Guid(Session["ticketid"].ToString()), endtime = DateTime.Now });
                 Session.Remove("userStatus");
                 Session.Remove("ticketid");
