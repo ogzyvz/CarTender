@@ -22,7 +22,7 @@ namespace CarTender.BusinessAccess
                 this.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
 
 #if DEBUG
-            ConnectionString = "Data Source=10.100.0.232;Initial Catalog=CarTender;User ID=developer;Password=DevInfo2011Line.";
+            ConnectionString = "Data Source=94.73.147.7;Initial Catalog=CarTend;User ID=enucuz;Password=DevUcuz2024!!**";
 #endif
 
         }
