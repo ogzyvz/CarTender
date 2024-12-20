@@ -2316,7 +2316,18 @@
     <Content Include="html-files\probid\assets\img\footer-logo.svg" />
     <Content Include="html-files\probid\assets\img\home1\+-.jpg" />
     <Content Include="html-files\probid\assets\img\home1\-.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\1.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\10.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\11.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\12.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\13.jpg" />
     <Content Include="html-files\probid\assets\img\home1\2.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\4.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\5.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\6.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\7.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\8.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\9.jpg" />
     <Content Include="html-files\probid\assets\img\home1\auction-card-author-img1.png" />
     <Content Include="html-files\probid\assets\img\home1\auction-card-author-img10.png" />
     <Content Include="html-files\probid\assets\img\home1\auction-card-author-img11.png" />
@@ -2397,6 +2408,10 @@
     <Content Include="html-files\probid\assets\img\home1\icon\process-arrow2.svg" />
     <Content Include="html-files\probid\assets\img\home1\icon\process-arrow3.svg" />
     <Content Include="html-files\probid\assets\img\home1\icon\visa.svg" />
+    <Content Include="html-files\probid\assets\img\home1\IMG-20241220-WA0022.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\IMG-20241220-WA0023.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\IMG-20241220-WA0025.jpg" />
+    <Content Include="html-files\probid\assets\img\home1\IMG-20241220-WA0028.jpg" />
     <Content Include="html-files\probid\assets\img\home1\upcoming-auction-banner-img.jpg" />
     <Content Include="html-files\probid\assets\img\home2\auction-img1.jpg" />
     <Content Include="html-files\probid\assets\img\home2\auction-img2.jpg" />
@@ -3066,7 +3081,6 @@
     <Content Include="html-files\probid\assets\fonts\boxicons.woff" />
     <Content Include="html-files\probid\assets\fonts\boxicons.woff2" />
     <Content Include="html-files\probid\assets\img\.DS_Store" />
-    <Content Include="html-files\probid\assets\img\home1\.DS_Store" />
     <Content Include="html-files\probid\assets\img\home2\.DS_Store" />
     <Content Include="html-files\probid\assets\webfonts\bootstrap-icons.woff" />
     <Content Include="html-files\probid\assets\webfonts\bootstrap-icons.woff2" />
@@ -3082,6 +3096,7 @@
     <Content Include="html-files\probid\assets\webfonts\fa-solid-900.ttf" />
     <Content Include="html-files\probid\assets\webfonts\fa-solid-900.woff" />
     <Content Include="html-files\probid\assets\webfonts\fa-solid-900.woff2" />
+    <Content Include="html-files\probid\assets\img\home1\.DS_Store" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
