@@ -1059,16 +1059,16 @@
 		  var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 		  var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
 		  var seconds = Math.floor((t % (1000 * 60)) / 1000);
-		  $dataDays.html(`${days} <span>Days</span> <span>Days</span>`);
-		  $dataHours.html(`${hours} <span>Hours</span> <span>Hours</span>`);
-		  $dataMinutes.html(`${minutes} <span>Mint</span> <span>Minutes</span>`);
-		  $dataSeconds.html(`${seconds} <span>Sec</span> <span>Seconds</span>`);
+			$dataDays.html(`${days} <span>Gun</span> <span>Gun</span>`);
+			$dataHours.html(`${hours} <span>Saat</span> <span>Saat</span>`);
+			$dataMinutes.html(`${minutes} <span>Dakika</span> <span>Dakika</span>`);
+			$dataSeconds.html(`${seconds} <span>Saniye</span> <span>Saniye</span>`);
 		  if (t <= 0) {
 			clearInterval(x);
-			$dataDays.html("00 <span>Days</span> <span>Days</span>");
-			$dataHours.html("00 <span>Hours</span> <span>Hours</span>");
-			$dataMinutes.html("00 <span>Mint</span> <span>Minutes</span>");
-			$dataSeconds.html("00 <span>Sec</span> <span>Seconds</span>");
+			  $dataDays.html("00 <span>Gun</span> <span>Gun</span>");
+			  $dataHours.html("00 <span>Saat</span> <span>Saat</span>");
+			  $dataMinutes.html("00 <span>Dakika</span> <span>Dakika</span>");
+			  $dataSeconds.html("00 <span>Saniye</span> <span>Saniye</span>");
 		  }
 		}, 1000);
 	  });
