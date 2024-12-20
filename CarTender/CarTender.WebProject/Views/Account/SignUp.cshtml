@@ -188,49 +188,7 @@
                 {"placeholder", "Lütfen cep telefonu numarınızı giriniz."},
             }).Validate(Validations.TelefonNo(false))
     </div>
-    
-    <div class="form-group">
-        @(Html.Kendo().DropDownListFor(model => model.city).HtmlAttributes(new Dictionary<string, object>()
-            {
-                {"style", "width:100%;border:1px solid lightgray"},
-                {"class", "form-control"},
-            })
-            .Filter(FilterType.Contains)
-            .OptionLabel("Lütfen Şehir Seçiniz..")
-            .DataTextField("Name")
-            .DataValueField("Id")
-            .DataSource(s =>
-            {
-                s.Read(r =>
-                {
-                    r.Action("GetUT_City", "General", new { area = string.Empty }); //General controllerının içine datasının oldugu metodu yaz ilk parametreye method ismini ver
-                });
-            }).Validate(Validations.Required)
-        )
-    </div>
-    
-    <div class="form-group">
-        @(Html.Kendo().DropDownListFor(model => model.town).HtmlAttributes(new Dictionary<string, object>()
-            {
-                {"style", "width:100%;border:1px solid lightgray"},
-                {"class", "form-control"},
-            })
-            .OptionLabel("Lütfen İlçe Seçiniz..")
-            .DataTextField("Name")
-            .DataValueField("Id")
-            .Filter(FilterType.Contains)
-            .DataSource(s =>
-            {
-                s.Read(r =>
-                {
-                    r.Action("GetUT_TownByCityNumber", "General", new { area = string.Empty }).Data("GetCityId"); //General controllerının içine datasının oldugu metodu yaz ilk parametreye method ismini ver
-                })
-               .ServerFiltering(true);
-            }).Validate(Validations.Required)
-             .CascadeFrom("city")
-
-        )
-    </div>
+   
 
     <div class="form-group">
         @Html.TextAreaFor(model => model.address, new Dictionary<string, object>()

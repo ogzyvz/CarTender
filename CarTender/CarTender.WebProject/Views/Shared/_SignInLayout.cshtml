@@ -34,11 +34,10 @@
     <script src="~/Content/Plugins/Validator/js/Validator.js"></script>
     <script src="~/Content/Custom/js/master.js"></script>
     <!--Default-->
-
-
+    
     <style type="text/css">
         #layout {
-            background: url(/Content/Custom/img/satellite-communication-gps.jpg) !important;
+            background: url(/html-files/probid/assets/img/home1/home1-banner-bg.jpeg) !important;
             background-size: cover !important;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -48,7 +47,6 @@
 
 </head>
 <body>
-
     <div class="container-fluids">
         <div class="col-lg-9 col-md-7 col-sm-6 hidden-xs" id="layout">
 
@@ -57,14 +55,14 @@
             <div class="content">
                 <h3 class="header">
                     <a href="@Url.Action("Index","Home",new {area="" })">
-                        <img src="~/Content/Custom/img/infolinelogo.png" class="logo" />
+                        <img src="~/html-files/probid/assets/img/baselogo.png" class="logo" />
                     </a>
                     <br />
-                    <strong> INFOLINE Extension </strong><br /> ( @ViewBag.Title )
+                   <br /> ( @ViewBag.Title )
                 </h3>
                 @RenderBody()
                 <p class="text-center copyright">
-                    Infoline Bilgi Teknolojileri  <br> © @DateTime.Now.Year Tüm hakları Saklıdır.
+                  <br> © @DateTime.Now.Year Tüm hakları Saklıdır.
                 </p>
             </div>
         </div>

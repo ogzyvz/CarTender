@@ -2310,6 +2310,7 @@
     <Content Include="html-files\probid\assets\css\style.css" />
     <Content Include="html-files\probid\assets\css\swiper-bundle.min.css" />
     <Content Include="html-files\probid\assets\fonts\boxicons.svg" />
+    <Content Include="html-files\probid\assets\img\baselogo.png" />
     <Content Include="html-files\probid\assets\img\fav-icon.svg" />
     <Content Include="html-files\probid\assets\img\footer-logo-white.svg" />
     <Content Include="html-files\probid\assets\img\footer-logo.svg" />
